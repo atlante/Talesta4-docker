@@ -1,0 +1,935 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: reglesSpeciales.htm,v $
+$Revision: 1.17 $
+$Date: 2010/01/24 16:35:41 $
+
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Talesta</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet' type='text/css' href='../templates/Original/site.css' /></head>
+<body>
+<script type='text/javascript'>	function a(fe){		po=open(fe,"fenetre","Height=400,Width=650,screenX=1,scrollbars,resizable");	}</script>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div>
+
+<div id='main'>
+<br />
+<br />
+<table class='details' width='100%'>
+<tr><th colspan='5'><br />Les modifs<br /><br /></th></tr>
+<tr><th width='10%'>Nom Modif</th>
+	<th width='35%'>Objet	</th>
+	<th width='10%'>Impacts sur la base</th>
+	<th width='35%'>Fichiers impact&eacute;s</th>
+	<th width='10%'>Etat</th></tr>
+     <tr>
+        <td> register_globals</td>
+        <td> Mise en conformit&eacute; avec les futures evolutions de PHP (register_globals 
+          = Off ...)<br />
+          Suppression des @ devant les include qui empechent les erreurs de passer 
+          dans mon log (qu'est ce que ca m'a enerv&eacute; !!!!)</td>
+        <td> Aucun</td>
+        <td> Fichiers modif&eacute;s : index.php de talesta, header.php, get_help.php, bdc/etat.php<br />
+          <span class='cRGMOD'>Fichiers ajout&eacute;s : http_get_post.php</span> </td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> doses de nourritures</td>
+        <td> Utilisation du champ Munitions pour les sous_type nourriture pour 
+          pouvoir cr&eacute;er un objet type 'Ration de survie pour 4 jours)'</td>
+        <td> Aucun</td>
+        <td> joueur.php , manger.php , creer_objet.htm, objetpj.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> connexions</td>
+        <td> Modifs du syst&egrave;me de connexions cote MJ et PJ pour que (1) cela fonctione 
+          et (2) pour ne pas a avoir a cliquer sur le par ici </td>
+        <td> Aucun</td>
+        <td> Modifs des fichiers BeginSession.php, BeginSessionMJ.php, EndSession.php, EndSessionMJ.php, saisiepass.php, 
+          menu_site.php, header.php et les index.php et logout.php de game et admin<br />
+          <span class='cRGMOD'> ajout du r&eacute;pertoire commun et de son contenu 
+          (identification.php et login.php)</span> <br />
+          <span class='cRGADD'> Fichiers supprim&eacute;s : identification.php, identificationMJ.php, 
+          login.php de game et admin </span></td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> et le sexe feminin ??</td>
+        <td> Modifs de l'inscription qui ne sauvait pas le sexe =&gt; pas de filles. 
+          J'ai trouve ca dommage.</td>
+        <td> Aucun</td>
+        <td> inscription.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Les marchands ?? : Des voleurs !!</td>
+        <td> Demander l'accord du PJ qui achete, vend ou recharge un objet avant 
+          la transaction.</td>
+        <td> Aucun</td>
+        <td> armurerie.php, magasinmag.php, quincaillerie.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Accessibilit&eacute; des aides </td>
+        <td> Rendre les aides accessibles aux personnes concernees (MJ ou PNJ) 
+          .</td>
+        <td> Aucun</td>
+        <td> <span class='cRGMOD'>Fichiers ajout&eacute;s : Ce fichier + Aide.htm</span> 
+          <br />
+          Fichier modifi&eacute; about.php , admin/menu.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Effacement des fa </td>
+        <td> Les fa sont d&eacute;sormais stock&eacute;s au format .gz (si le moteur php l'accepte sinon ils sont au format normal) et d&eacute;compress&eacute;s &agrave; la vol&eacute;e. De plus , ils ont une taille max. A chaque lecture, si le fa est trop important, on l'efface apr&egrave;s l'avoir envoye par mail au pj/mj concern&eacute;. Enfin (id&eacute;e piqu&eacute;e du forum jdr-meridian), les actions du fa sont class&eacute;es de la plus r&eacute;cente &agrave; la plus ancienne, pour ne pas avoir &agrave; scroller jusqu'en bas et le bouton Reseter est en haut.  </td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : joueur.php, mj.php, fa.php, ja_pj.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Messages </td>
+        <td> Ajout et modifs de messages affich&eacute;s pour qu'ils soient tous dans 
+          messages.php et sans trop de fautes d'orthographe </td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : messages.php , login.php, modifier_desc_lieu.php, 
+          abandonner_objet.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Difficult&eacute; Utilisation sort </td>
+        <td> ajout des crit&egrave;res anonyme et permanent dans le calcul comme pour 
+          les armes.</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : Classe\magie.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Difficult&eacute; Utilisation objet </td>
+        <td> Correction de temporaire/permanent dans la classe objet.</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : Classe\objet.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Ajout de traces dans SQL </td>
+        <td> affichage des erreurs SQL dans le fichier de log d'apache suivant 
+          le boolean DEBUG_MODE.</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : bdd.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Navigation </td>
+        <td> suppression du retour a l'accueil qui trouble la navigation.</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : menu.template.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Cr&eacute;ation de MJ </td>
+        <td> modif pour que les MJ aient les droits a oui plutot qu'a non par 
+          defaut. Ceci pour ne pas a avoir a tout modifier et aussi en cas de creation de nouveaux droits </td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : miseenpage.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> utilisation passe partout </td>
+        <td> modif pour verifier qu'on a bien un passe.</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : dep_lp.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> complete la desc des PJ dans un meme lieu </td>
+        <td> (savoir s'il pisse le sang ...), voir les armures qu'il porte, voir 
+          les armes port&eacute;es  
+        </td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : voir_desc.php,messages.php, joueur.php</td>
+        <td> Test&eacute; et Valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> Remise de PA </td>
+        <td> Remise de PA pas seulement a la connexion : Actuellement un PJ qui 
+          ne se connecte pas pendant une semaine ne recoit pas de PA et ne peut 
+          donc se defendre ...</td>
+        <td> Aucun</td>
+        <td> Fichiers modifi&eacute;s : game/login.php, joueur.php </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> Etat temp des objets </td>
+        <td> posseder un objet avec un (ou plusieurs ) etat temporaire ne changeait 
+          rien</td>
+        <td> Aucun </td>
+        <td> Fichiers modifi&eacute;s : admin/creer_objet, admin/modifier_objet, admin/forms/objet.form<br />
+          Nouveau Fichier :admin/forms/objet2.form </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>Tenir la porte </td>
+        <td>  ne fonctionnait pas</td>
+        <td> Aucun </td>
+        <td> Fichiers modifi&eacute;s : game/dep_lp.php, classe/chemin.php (var $IDDepart) </td>
+        <td> Test&eacute; et valid&eacute; </td>
+      </tr>
+      <tr>
+        <td> Ajout d'indexes uniques sur les nom des persos, mjs et inscriptions  et autres tables </td>
+        <td> </td>
+        <td>  </td>
+        <td> Talesta4.sql </td>
+        <td> Test&eacute; et valid&eacute;</td>
+      </tr>
+      <tr>
+        <td> voir sa propre desc depuis l'ecran modifier info (idee inspir&eacute;e par le site de Markhor) 
+        </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> mod_info </td>
+        <td> Test&eacute; et valid&eacute;</td>
+      </tr>      
+      <tr>
+        <td> parler entre mj (id&eacute;e de Jenna, la personne aux 100 e-mails :) ) 
+        </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> parler_mj.php, const.php, menu_admin.php </td>
+        <td> Test&eacute; et valid&eacute;</td>      </tr>      
+      <tr>
+        <td> gestion des armes a 2 mains (id&eacute;e de Koneko, alias gigelf, alias .... :)  )
+        </td>
+        <td> </td>
+        <td> Aucun</td>
+        <td> include/const.php<br />
+        game/mettrearmure.php, enleverarmure.php, attaquer.php, actions.php </td>
+        <td> Test&eacute; et valid&eacute;</td>
+      </tr>      
+      <tr>
+        <td> moins de SQL 1° phase</td>
+        <td> </td>
+        <td> Aucun </td>
+        <td>  etattemp.php,  etattemppj.php, specialite.php, chemin.php, lieu.php, joueur.php</td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>      
+      <tr>
+        <td> moins de SQL 2° phase</td>
+        <td> </td>
+        <td> Aucun </td>
+        <td>  Tous les fichiers de game + beginsession.php + joueur.php</td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>      
+      <tr>
+        <td> création de guilde</td>
+        <td> Permet à un admin de créer une guilde et un responsable avec éventuellement, un lieu de réunion pour la guilde et sujet de discussion privée entre les membres da la guilde sur le forum</td>
+        <td> Aucun </td>
+        <td>  Ajoutés : admin/creerGuilde.php, forms/guilde.form.php <br /> Modifié : 	lieu.form.php, chemin.form.php</td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>      
+      <tr>
+        <td> refonte du menu admin</td>
+        <td> gracieusement offert par Tidou</td>
+        <td> Aucun </td>
+        <td>  Ajoutés : admin/gestion_XXXX.php <br /> Modifié : 	menu_admin.php</td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>   
+      <tr>
+        <td> mise en conformité avec HTML 4.01 </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> tous </td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>      
+      <tr>
+        <td> recharger les armes (creation de munitions pour pouvoir recharger ailleurs que dans une boutique</td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> <span class='cRGMOD'> objetpj.php, messgaes.php, const.php </span><br /><span class='cRGADD'>recharger_objet.php </span>  </td>
+        <td></td>     
+      </tr>      
+        <tr>
+        <td>  Afficher qu'il y a des objets par terre dans un lieu </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> classe/joueur.php, game/menu.php </td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr> 
+	  <tr>
+        <td>  Supprimer un PJ, lieu ou MJ ne suppprimait pas les fichiers associés (fa ou description) (demande de Kaeru) </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td> 	 admin/supprimer_lieu.php 1.9<br />
+	 admin/supprimer_mj.php 1.9<br />
+	 admin/supprimer_pj.php 1.10<br /> </td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>         
+       <tr>
+        <td>   autologin dans phpbb quand on se loggue dans talesta </td>
+        <td> </td>
+        <td> Aucun </td>
+        <td>  	identification/BeginSession.php , identification/BeginSessionMJ.php,	 identification/EndSession.php,
+	identification/EndSessionMJ.php,	 identification/SessionLeym.php,
+	 identification/SessionLeymMJ.php, saisiepass.php , 		commun/login.php</td>
+        <td> Test&eacute; et valid&eacute;</td>     
+      </tr>
+      <tr>
+        <td>  Les PJ et MJ peuvent se faire envoyer un mot de passe regénéré s'ils ont oublie le leur </td>
+        <td> </td>
+        <td> Aucun</td>        
+        <td> 	
+		commun/motdepasseperdu.php<br />
+		identification/saisiepass.php<br /></td>
+	<td>  Test&eacute; et valid&eacute;</td>     
+      </tr>        
+      <tr>
+        <td>  Cacher les mot de passe joueur aux MJ et les Crypter en base (Demande de Tatan)  </td>
+        <td> </td>
+        <td> 
+update TLT_Inscriptions set Pass = md5(Pass);<br />
+
+alter table TLT_Inscriptions CHANGE Pass Pass varchar(32);<br />
+
+update TLT_Perso set Pass = md5(Pass);<br />
+
+alter table TLT_Perso CHANGE Pass Pass varchar(32);<br />
+</td>
+        <td> 	game/mod_info.php<br />
+		commun/motdepasseperdu.php<br />
+		commun/identification.php<br />
+		admin/cimetiere.php 1.9 <br />
+	 admin/forms/infospj.form.php 1.11<br />
+	 admin/modifier_info_pj.php 1.13<br />
+	 admin/supprimer_pj.php 1.13<br />
+</td>
+        <td> Livré</td>     
+      </tr>        
+      <tr>
+        <td>  Integration du patch de Kaeru qui affiche qui est connecte </td>
+        <td> </td>
+        <td> Aucun</td>
+        <td> 	Ajouté: include/online.php<br />
+		modifié : inlude/menu_template.php 1.11<br />
+		modifié : site.css 1.12<br />		
+	</td>
+        <td> Livré</td>     
+      </tr>        
+      <tr>
+        <td>  Ajout de categories d'age pour le PJ, liaison du sexe, de la race et de l'age du PJ à des etats temporaires
+        (moins de boulot pour l'admin et plus de diversites pour les PJ) </td>
+        <td> </td>
+        <td> 
+<br />
+alter table TLT_Perso ADD ID_CategorieAge integer null;<br />
+<br />
+alter table TLT_Inscriptions ADD ID_CategorieAge integer null;<br />
+<br />
+# modif race , sexe<br />
+<br />
+alter table TLT_Perso ADD ID_Sexe integer not null;<br />
+<br />
+alter table TLT_Inscriptions ADD ID_Sexe integer not null;<br />
+<br />
+alter table TLT_Perso ADD ID_Race integer not null;<br />
+<br />
+alter table TLT_Inscriptions ADD ID_Race integer not null;<br />
+<br />
+	DROP TABLE IF EXISTS TLT_TypeEtatTemp;<br />
+	CREATE TABLE TLT_TypeEtatTemp (<br />
+	  ID_TypeEtatTemp integer NOT NULL auto_increment,<br />
+	  NomType varchar(50) NOT NULL default '',<br />
+	  PRIMARY KEY  (ID_TypeEtatTemp),<br />
+	  KEY ID_TypeEtatTemp (ID_TypeEtatTemp)<br />
+	) TYPE=MyISAM;<br />
+<br />
+INSERT INTO TLT_TypeEtatTemp VALUES (1,'Age') ;<br />
+<br />
+INSERT INTO TLT_TypeEtatTemp VALUES (2,'Race') ;<br />
+<br />
+INSERT INTO TLT_TypeEtatTemp VALUES (3,'Sexe') ;<br />
+<br />
+INSERT INTO TLT_TypeEtatTemp VALUES (4,'Lieu') ;<br />
+<br />
+INSERT INTO TLT_TypeEtatTemp VALUES (5,'Divers') ;<br />
+<br />
+<br />
+ALTER TABLE TLT_EtatTempNom ADD ID_TypeEtatTemp  integer UNSIGNED DEFAULT '5' NOT NULL AFTER ID_EtatTemp;<br />
+<br />
+update TLT_EtatTempNom set  ID_TypeEtatTemp  = 5;<br />
+<br />
+INSERT INTO TLT_EtatTempNom ( ID_TypeEtatTemp, Nom ) VALUES (1, 'Enfant');<br />
+<br />
+INSERT INTO TLT_EtatTempNom ( ID_TypeEtatTemp, Nom ) VALUES (1, 'Jeune Adulte');<br />
+<br />
+select @categorieParDefaut:=last_insert_id();<br />
+<br />
+insert into TLT_PersoEtatTemp (ID_Perso, ID_EtatTemp, Fin)<br />
+SELECT  ID_Perso,@categorieParDefaut ,-1<br />
+FROM TLT_Perso<br />
+where ID_CategorieAge is null;<br />
+<br />
+update TLT_Perso set ID_CategorieAge= @categorieParDefaut where ID_CategorieAge is null;<br />
+<br />
+update TLT_Inscriptions set ID_CategorieAge= @categorieParDefaut where ID_CategorieAge is null;<br />
+<br />
+<br />
+alter table TLT_Perso CHANGE ID_CategorieAge ID_CategorieAge integer not null;<br />
+<br />
+alter table TLT_Inscriptions CHANGE ID_CategorieAge ID_CategorieAge integer not null;<br />
+<br />
+INSERT INTO TLT_EtatTempNom ( ID_TypeEtatTemp, Nom ) VALUES (1, 'Adulte expérimenté');<br />
+<br />
+INSERT INTO TLT_EtatTempNom ( ID_TypeEtatTemp, Nom ) VALUES (1, 'Viellard');<br />
+<br />
+<br />
+ALTER TABLE TLT_EtatTempNom ADD INDEX ( ID_TypeEtatTemp ) ;<br />
+<br />
+# migration des races existantes<br />
+insert into TLT_EtatTempNom (ID_TypeEtatTemp, Nom, Visible)<br />
+SELECT  distinct TLT_TypeEtatTemp.ID_TypeEtatTemp ,race, 1<br />
+FROM (TLT_Perso LEFT JOIN TLT_EtatTempNom ON TLT_Perso.race = TLT_EtatTempNom.Nom) , TLT_TypeEtatTemp<br />
+where nomtype='Race'<br />
+and TLT_Perso.Race is not null<br />
+and TLT_Perso.Race <>''<br />
+and TLT_EtatTempNom.Nom is null;<br />
+<br />
+insert into TLT_EtatTempNom (ID_TypeEtatTemp, Nom, Visible)<br />
+SELECT  distinct TLT_TypeEtatTemp.ID_TypeEtatTemp ,race, 1<br />
+FROM (TLT_Inscriptions  LEFT JOIN TLT_EtatTempNom ON TLT_Inscriptions.race = TLT_EtatTempNom.Nom) , TLT_TypeEtatTemp<br />
+where nomtype='Race'<br />
+and TLT_Inscriptions.Race is not null<br />
+and TLT_Inscriptions.Race <>''<br />
+and TLT_EtatTempNom.Nom is null;<br />
+<br />
+<br />
+# migration des races des pjs<br />
+insert into TLT_PersoEtatTemp (ID_Perso, ID_EtatTemp, Fin)<br />
+SELECT  ID_Perso,ID_EtatTemp ,-1<br />
+FROM TLT_Perso,TLT_EtatTempNom  , TLT_TypeEtatTemp<br />
+where nomtype='Race'<br />
+and TLT_Perso.race = TLT_EtatTempNom.Nom<br />
+and TLT_Perso.Race is not null<br />
+and TLT_Perso.Race <>''<br />
+and TLT_EtatTempNom.ID_TypeEtatTemp = TLT_TypeEtatTemp.ID_TypeEtatTemp;<br />
+<br />
+update TLT_Perso, TLT_EtatTempNom, TLT_TypeEtatTemp set ID_Race =  TLT_EtatTempNom.ID_EtatTemp<br />
+where TLT_EtatTempNom.ID_TypeEtatTemp=TLT_TypeEtatTemp.ID_TypeEtatTemp<br />
+and nomtype='Race' and TLT_EtatTempNom.Nom=TLT_Perso.Race;<br />
+<br />
+# migration des sexes existants<br />
+update TLT_Perso set sexe =-1 where sexe=0;<br />
+<br />
+update TLT_Inscriptions set sexe =-1 where sexe=0;<br />
+<br />
+insert into TLT_EtatTempNom (ID_TypeEtatTemp, Nom, Visible)<br />
+SELECT  distinct TLT_TypeEtatTemp.ID_TypeEtatTemp ,sexe, 1<br />
+FROM (TLT_Perso LEFT JOIN TLT_EtatTempNom ON TLT_Perso.sexe = TLT_EtatTempNom.Nom) , TLT_TypeEtatTemp<br />
+where nomtype='Sexe'<br />
+and TLT_Perso.Sexe is not null<br />
+and TLT_EtatTempNom.Nom is null;<br />
+<br />
+insert into TLT_EtatTempNom (ID_TypeEtatTemp, Nom, Visible)<br />
+SELECT  distinct TLT_TypeEtatTemp.ID_TypeEtatTemp ,sexe, 1<br />
+FROM (TLT_Inscriptions LEFT JOIN TLT_EtatTempNom ON TLT_Inscriptions.sexe = TLT_EtatTempNom.Nom) , TLT_TypeEtatTemp<br />
+where nomtype='Sexe'<br />
+and TLT_Inscriptions.Sexe is not null<br />
+and TLT_EtatTempNom.Nom is null;<br />
+<br />
+update TLT_EtatTempNom set Nom = '0' where Nom='-1';<br />
+<br />
+update TLT_Perso set sexe = '0' where sexe='-1';<br />
+<br />
+update TLT_Inscriptions set sexe = '0' where sexe='-1';<br />
+<br />
+# migration des sexes des pjs<br />
+insert into TLT_PersoEtatTemp (ID_Perso, ID_EtatTemp, Fin)<br />
+SELECT  ID_Perso,ID_EtatTemp ,-1<br />
+FROM TLT_Perso,TLT_EtatTempNom  , TLT_TypeEtatTemp<br />
+where nomtype='Sexe'<br />
+and TLT_Perso.sexe = TLT_EtatTempNom.Nom<br />
+and TLT_EtatTempNom.ID_TypeEtatTemp = TLT_TypeEtatTemp.ID_TypeEtatTemp;<br />
+<br />
+update TLT_Perso, TLT_EtatTempNom, TLT_TypeEtatTemp set ID_Sexe =  TLT_EtatTempNom.ID_EtatTemp <br />
+where TLT_EtatTempNom.ID_TypeEtatTemp=TLT_TypeEtatTemp.ID_TypeEtatTemp<br />
+and nomtype='Sexe' and TLT_EtatTempNom.Nom=TLT_Perso.Sexe;<br />
+<br />
+<br />
+#migration des inscriptions a faire<br />
+<br />
+<br />
+update TLT_Inscriptions, TLT_EtatTempNom, TLT_TypeEtatTemp set ID_Race =  TLT_EtatTempNom.ID_EtatTemp<br />
+where TLT_EtatTempNom.ID_TypeEtatTemp=TLT_TypeEtatTemp.ID_TypeEtatTemp<br />
+and nomtype='Race' and TLT_EtatTempNom.Nom=TLT_Inscriptions.Race;<br />
+<br />
+<br />
+update TLT_Inscriptions, TLT_EtatTempNom, TLT_TypeEtatTemp set ID_Sexe =  TLT_EtatTempNom.ID_EtatTemp <br />
+where TLT_EtatTempNom.ID_TypeEtatTemp=TLT_TypeEtatTemp.ID_TypeEtatTemp<br />
+and nomtype='Sexe' and TLT_EtatTempNom.Nom=TLT_Inscriptions.Sexe;<br />
+<br />
+alter table TLT_Perso DROP Race;<br />
+<br />
+alter table TLT_Perso DROP Sexe;<br />
+<br />
+insert into  TLT_PersoEtatTemp (ID_Perso ,ID_EtatTemp , Fin)<br />
+SELECT  TLT_Perso.ID_Perso, ID_Sexe, '-1'<br />
+FROM TLT_Perso LEFT join TLT_PersoEtatTemp on <br />
+ TLT_Perso.ID_Sexe =  TLT_PersoEtatTemp.ID_EtatTemp and  TLT_Perso.ID_Perso = TLT_PersoEtatTemp.ID_Perso<br />
+where ID_EtatTemp is null;<br />
+<br />
+insert into  TLT_PersoEtatTemp (ID_Perso ,ID_EtatTemp , Fin)<br />
+SELECT  TLT_Perso.ID_Perso, ID_Race, '-1'<br />
+FROM TLT_Perso LEFT join TLT_PersoEtatTemp on <br />
+ TLT_Perso.ID_Race =  TLT_PersoEtatTemp.ID_EtatTemp and  TLT_Perso.ID_Perso = TLT_PersoEtatTemp.ID_Perso<br />
+where ID_EtatTemp is null;<br />
+<br />
+insert into  TLT_PersoEtatTemp (ID_Perso ,ID_EtatTemp , Fin)<br />
+SELECT  TLT_Perso.ID_Perso, ID_CategorieAge, '-1'<br />
+FROM TLT_Perso LEFT join TLT_PersoEtatTemp on <br />
+ TLT_Perso.ID_CategorieAge=  TLT_PersoEtatTemp.ID_EtatTemp and  TLT_Perso.ID_Perso = TLT_PersoEtatTemp.ID_Perso<br />
+where ID_EtatTemp is null;<br />
+<br />
+#fin modif race, sexe . Il reste a admin a renommer les etats temporaires du sexe avec l'interface<br />
+# dans la version de base, 0 doit etre Male, 1 doit etre femelle mais certains admin ont pu le modifier ou en ajouter<br />
+
+</td>
+        <td> 	modifié  dans admin : infospj.form.php, creer_etat, creerPNJ, inscrire, modifier_etat, modifier_info_pj, supprimer_pj<br />
+        	modifié  dans game : mod_info.php<br />
+        	modifié  dans include : const.php<br />
+        	modifié  dans main : inscription.php, joueurs.php <br />
+        	modifié  dans classe : joueur.php,etattemp.php <br />
+		supprimé : PNJ.form.php<br />		
+	</td>
+        <td> dev en cours, non livré chez FREE</td>     
+      </tr>        
+      <tr>
+        <td>  Intégration du menu Admin de tidou </td>
+        <td> </td>
+        <td> Aucun</td>
+        <td> 	Ajouté: gestion_etat.php, gestion_boutique.php, gestion_chemin.php, gestion_lieu.php, gestion_mjs.php, gestion_objet.php, gestion_pjs.php, gestion_sort.php, gestion_spec.php<br />
+        	modifié : menu_admin.php 1.11<br />		
+	</td>
+        <td> Livré</td>     
+      </tr>   
+
+      <tr>
+        <td>  Ajout de suppression de l'etat </td>
+        <td> </td>
+        <td> Aucun</td>
+        <td> 	Ajouté: supprimer_etat.php<br />
+		modifié : gestion_etat.php 1.2<br />		
+	</td>
+        <td> Livré</td>     
+      </tr>   
+      <tr>
+        <td>     relier automatiquement les races, le sexe, l'age du PJ a des etats temporaires (moins de boulot pour les MJs) pour plus de diversités dans les PJS.
+Ce systeme peut etre etendu pour plusieurs caract (classe de PJ...) </td>
+        <td> </td>
+        <td> Liste a faire</td>
+        <td> 	Liste a faire<br />
+	</td>
+        <td> Livré</td>     
+      </tr>   
+      <tr>
+        <td>     abandonner objet ne le fait plus disparaitre mais le place sur le lieu </td>
+        <td> </td>
+        <td> Liste a faire</td>
+        <td> 	Liste a faire<br />
+	</td>
+        <td> Livré</td>     
+      </tr>               
+      <tr>
+        <td> Autres modifs envisag&eacute;es </td>
+        <td>
+			<br />
+           <ul type="square">
+           <li>
+			  inclusion dans channel IRC ou autre moyen de dialoguer en direct entre joueurs/mj</li>
+			  </ul>
+          </td>        
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+<tr><th colspan='5'><br />Les &eacute;vols<br /><br /></th></tr>
+<tr><th width='10%'>Nom Evol</th>
+	<th width='35%'>Objet</th>	
+	<th width='10%'>Impacts sur la base</th>
+	<th width='35%'>Fichiers impact&eacute;s</th>
+	<th width='10%'>Etat</th></tr>
+	<tr><td>Secrets</td>	
+	<td>MJ peut cacher (ou laisser par terre visible) des objets dans des lieux et creer des chemins secrets<br />les PJS doivent fouiller le lieu pour les decouvrir </td>
+	<td> <span class='cRGMOD'>Ajout de 2 tables : TLT_EntiteCachee et TLT_EntiteCacheeConnueDe</span></td>
+	<td> <span class='cRGADD'>Nouveaux fichiers : cacher_objet.php, fouillerlieu.php</span><br />
+          Fichiers modifi&eacute;s : menu_admin.php, const.php, menu_jeu.php</td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+	
+	<tr><td>Ramasser objet</td>	
+	<td>Les PJ peuvent ramasser des objets presents dans les lieux </td>
+	<td> Aucun </td>
+	<td> <span class='cRGMOD'>Nouveaux fichiers : recuperer_objet.php</span><br />
+          Fichiers modifi&eacute;s : const.php, menu_jeu.php</td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+	
+	<tr><td>Vie des PNJ (les deux suivantes sont tres liees avec celle-ci)</td>
+	<td>Permettre aux PNJ d'agir lorsqu'un PJ arrive dans un lieu suivant son actionSurprise et/ou sa relation (cf. tableau 1) <br /> Remarque 1: pourra &ecirc;tre dispo pour les PJ aussi mais on verra<br /> Remarque 2: Pourra &ecirc;tre &eacute;tendu au stockage des relations PJ par PJ ( Pour le moment, un PNJ qui lance un sort de soin par defaut continue de le faire sur un PJ qui l'aurait attaque ) <br /> =&gt; Permet a un marchand d'accueillir un PJ qui entre et lui communiquer ses tarifs et ce qu'il vend. <br />=&gt; permet &agrave; un chapardeur de voler un PJ<br />=&gt; permet a une troupe d'orcs d'attaquait un PJ qui arrive<br /> Permet &agrave; un guerisseur de lancer un sort de soin sur un PJ....</td>
+	<td> ajout de champs dans tlt_perso : ActionSurprise, Relation, SortPrefere </td>
+	    <td> Fichiers modifi&eacute;s : const.php, header.php, dep_le.php, dep_la.php, 
+          dep_lg.php, status.php</td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+	
+	<tr><td> Vie des PJ deconnectes (et PNJs)</td>
+	<td>Permettre aux PJ non connect&eacute;s de r&eacute;agir en cas d'aggression (vol, attaque arme ou sort d'attaque) suivant sa reaction  </td>
+	<td> ajout de champs dans tlt_perso :  Reaction, SortPrefere  </td>
+	<td> <span class='cRGMOD'>Fichiers ajout&eacute;s : actions.php</span> <br />
+          Fichiers modifi&eacute;s : mod_info.php, joueur.php, const.php, header.php, 
+          attaquer.php, magie.php, parler.php, proposer.php, status.php, voler.php</td>
+	<td> Test&eacute; RAF  SortPrefere teleport et self teleport (il faut coder le(s) lieu(x) prefere(s))</td></tr>
+	
+	<tr><td> attaque/riposte</td>	
+	<td> Modification de l'attaque : Auparavant, si l'attaque echouait, l'attaquant se prenait automatiquement des dommages<br />Maintenant, une attaque est suivie d'une riposte (qui est une action de l'autre PJ suivant Reaction, SortPrefere). Etendu &agrave; toutes les aggressions (vol, sort d'attaque ...) (cf Tableau 2)</td>
+	<td> ajout de champs dans tlt_perso :  Reaction, SortPrefere</td>
+	    <td> const.php, header.php, status.php </td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+
+	<tr><td> on tourne en rond ??</td>	
+	<td> Modification de l'affichage du resultat du deplacement pour un deplacement aller (il indiquait le lieu de depart au lieu de celui d'arrivee</td>
+	<td> </td>
+	<td> dep_la.php,dep_le.php </td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+
+	
+	<tr><td> Cr&eacute;er un PNJ</td>
+	<td> Permettre de cr&eacute;er un PNJ dans admin <br />Remarque : Cela ne renseigne pas SortPrefere puisque les sorts sont donn&eacute;s ensuite... C'est au PNJ de se connecter pour pour renseigner cela</td>
+	<td> Aucun</td>
+	    <td> Fichiers Ajout&eacute;s <span class='cRGMOD'>creerPNJ.php, PNJ.form.php, 
+          menu_admin.php</span> </td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+
+	<tr><td> Erreur dans la barre de status</td>
+	  <td> correction des warnings ou erreurs<br />
+	  n'affiche pas le bonus des points de vie (vu par Kaeru) </td>
+	<td> Aucun</td>
+	<td> Fichiers modifi&eacute;s : barrestatus.php </td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>	
+
+	<tr><td> Archivage des joueurs </td>	
+	<td> Les joueurs peuvent archiver/desarchiver leur perso. Un script admin archive aussi les persos non connectes depuis 30 jours. Un perso archiv&eacute; ne peut plus agi, n'est plus visible et ne peut etre affecte par une action dans le jeu. </td>
+	<td>  tlt_archive, tlt_perso </td>
+	    <td> archiver.php, menu_admin.php, menu_jeu.php, joueur.php, lieu.php 
+          et tous les fichiers d'actions dans /game </td>
+	<td> </td></tr>
+
+	<tr><td> Ajout de pages diverses </td>	
+	<td>  ecrans affichants les inscriptions en attente, les persos, les mj, les magasins et leurs details....  </td>
+	<td>  Aucun </td>
+	<td> liste_magasins.php (Pour le moment accessibles aux admin), joueurs.php  </td>
+	<td> </td></tr>
+
+
+	<tr><td> Ajout du forum phpBB <br />en option<br /> </td>	
+	<td> creation d'un user phpBB a l'inscription des pj, a la creation des Pnj des mj et repercussion des modifs au cas ou  </td>
+	<td>  il faut installer phpBB avec les tables de talesta  </td>
+	<td>  liste_magasins.php , joueurs.php, const.php, creer_pnj, creer_mj, inscription.php </td>
+	<td> </td></tr>
+
+	<tr><td> Script auto </td>	
+	<td> Script ou je vais mettre plein de choses pour simplifier le boulot de l'admin (archiver les persos, lien jeu/forum, sauvegarde des fa et des tables...)  </td>
+	<td>  Aucun </td>
+	<td> script_SA uniquement accessible au mj d'Id 1 (celui qui est cree par defaut ) </td>
+	<td> </td></tr>
+
+	<tr><td> Maintenance </td>	
+	<td> Creation d'une page de maintenance pour bloquer les MJ (sauf celui cree par defaut) et les PJS  </td>
+	<td>  Aucun </td>
+	<td> Fichiers Modifies : BeginSession et  BeginSessionMJ, const.php<br />Fichier Ajoute : maintenance.htm </td>
+	<td> </td></tr>
+
+
+	<tr><td> Groupes de PJ pour deplacements communs </td>	
+	<td> Creation d'une page de maintenance pour bloquer les MJ (sauf celui cree par defaut) et les PJS  </td>
+	<td>  Creation de TLT_groupe et ajout de ID_groupe dans tlt_perso</td>
+	<td> Fichiers Modifies : dep_la.php, dep_le.php , dep_lp.php, dep_lg.php, messages.php<br />Fichiers Ajoutes : creer_groupe.php, entrer_groupe.php, quitter_groupe.php</td>
+	<td> </td></tr>
+
+	<tr><td> Creation des Points d'intelect (PI) en plus des Points d'action (PA) </td>	
+	<td> </td>
+	<td> ajout de PI, Interval_RemisePI, Derniere_RemisePI dans  tlt_perso, ajout de RPI dans TLT_EtatTempNom et TLT_SpecNom</td>
+	<td>   - PI pour les joueurs	<br />
+	Tous les fichiers game:<br />
+		- ajout d'un test sur les PI avec ceux des PA: Ex:	 ($PERSO->ModPA($liste_pas_actions["Quincaillerie"])) &amp;&amp; ($PERSO->ModPI($liste_pis_actions["Quincaillerie"]))){<br />
+	game\BarreStatus.php:<br />
+		- Pour affichage<br />
+	classe\joueur.php:<br />
+		- pour stocker PI, interval_remisePI et derniereRemisePI+ fonction qui vont avec<br />
+		(modPI, remisePIs, getPIMax, getRPI)<br />
+	admin\creerPNJ.php<br />
+	admin\inscrire.php<br />
+	admin\modifier_info_pj.php, admin\supprimer_pj.php<br />
+	admin\cimetiere.php<br />
+	admin\forms\PNJ.form.php, admin\forms\infospj.form.php<br />
+<br />
+   - PI pour les etats<br />
+	classe\etattemp.php:<br />
+		- bonus/malus de l'etat sur les PI comme pour les PA<br />
+	bdc\etat.php<br />
+	admin\creer_etat.php, admin\modifier_etat.php<br />
+<br />
+   - PI pour les specialites<br />
+	classe\specialite.php:<br />
+		- bonus/malus de l'etat sur les PI comme pour les PA<br />
+	bdc\spec.php<br />
+	admin\creer_spec.php, admin\modifier_spec.php, admin\supprimer_spec.php<br />
+	</td>
+	<td> </td></tr>
+
+	<tr><td> proposer PA </td>	
+	<td> empechait que le joueur fasse des ppa negatifs, ce qui lui remettait des PA </td>
+	<td> Aucun</td>
+	<td> proposer.php</td>
+	<td> Test&eacute; et Valid&eacute;</td></tr>
+
+	<tr><td> Aide au RolePlay (1)</td>	
+	<td> Suppression de l'affichage du nb exact de PV lors d'une attaque, d'un soin dans la feuille de perso et sur la barre de jeu...</td>
+	<td> Aucun</td>
+	<td> include/const<br />
+	game/barrestatus.php<br />
+	classe/joueur.php<br />
+	include/messages.php</td>
+	<td> </td></tr>
+
+	<tr><td> Aide au RolePlay (2)</td>	
+	<td> Suppression de l'affichage du nb exact de XP et du niveau dans la feuille de perso et sur la barre de jeu...</td>
+	<td> Aucun</td>
+	<td> include/const<br />
+	game/barrestatus.php<br />
+	classe/joueur.php<br />
+	</td>
+	<td> </td></tr>	
+	<tr><td> Ajout technique pour validation HTML des pages générées</td>	
+	<td> Ajout d'un parametre pour que le serveur stocke les fichiers HTML générés (pour validation confirmité)</td>
+	<td> aucun</td>
+	<td> Ajout du répertoire html, const.php, footer.php, header.php, admin/gethelp.php</td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>	
+	<tr><td> Ajout technique pour logs</td>	
+	<td> Ajout d'un parametre pour que le serveur stocke les logs dans un fichier bien precis</td>
+	<td> aucun</td>
+	<td> Ajout du répertoire logs, const.php, http_get_post.php</td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>
+	<tr><td> Apprentissage..</td>	
+	<td> Création de lieu d'apprentissage pour faire evoluer les compétences. <br />
+	ajout de l'action apprendre coté joueur <br /></td>
+	<td> aucun</td>
+	<td> game/apprendre.php, const.php, admin/forms/competence.form.php, admin/forms/competence2.form.php, admin/modifier_lieuapprentissage.php</td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>
+	<tr><td> admin/voir_lieu (pique chez Taranis, puis ameliore) </td>	
+	<td> voir un lieu, sa desc, les persos et objets s'y trouvant + liens pour modifier ces infos. <br /></td>
+	<td> aucun</td>
+	<td> admin/voir_lieu.php </td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>
+	<tr><td> listes diverses (pique chez Taranis) </td>	
+	<td> Liste des lieux, PJ, objets, sorts <br /></td>
+	<td> aucun</td>
+	<td> admin/registre.php, admin/listesort.php, admin/listeobjet.php, admin/registrelieux.php </td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>
+	<tr><td> Teleporter un PJ d'un lieu a un autre, liste des PJ morts (pique chez Meridian) </td>	
+	<td> <br /></td>
+	<td> aucun</td>
+	<td> admin/cimetiere.php, admin/teleporter.php</td>
+	<td> Test&eacute; et Valid&eacute; </td></tr>
+	<tr><td> Nouveau type de Chemin :Peage </td>	
+	<td> Les PJs doivent payer pour pouvoir passer<br /></td>
+	<td> aucun</td>
+	<td> dep_lx.php, messages.php, admin/creer_chemin.php</td>
+	<td> Livr&eacute; </td></tr>
+	<tr><td> Ajout de l'affichage des PJ et MJ connectes si l'admin le veut (patch de Kaeru)</td>	
+	<td> <br /></td>
+	<td> aucun</td>
+	<td> Fichiers Modifies : const.php, menu.template.php<br />Fichiers Ajoutes : online.php </td>
+	<td> Livr&eacute; </td></tr>
+
+	<tr><td> Aide à la personnalisation (1) </td>	
+	<td> Le calcul des reussites des actions et l'augmentation des competences est regroupe dans un meme fichier <br /></td>
+	<td> aucun</td>
+	<td> actions.php, apprendre.php, armurerie.php, banque.php, dep_lx.php, donner_argent.php, donner_objet.php, enleverarmure.php,fouillercadavre.php,fouillerlieu.php, lire.php, magasinmag.php, magie.php, quincaillerie.php, voler.php </td>
+	<td> Livr&eacute; </td></tr>
+	
+	<tr><td> Se cacher/Reveler </td>	
+	<td> Les PJs peuvent se cacher dans un lieu, les PJ peuvent révéler les objets caches aux autres joueurs du lieu <br /></td>
+	<td>ajout de Dissimule dans TLT_Perso</td>
+	<td> messages.php, menu_jeu.php, abandonner_objet.php, actions.php,  apprendre.php, armurerie.php, attaquer.php, banque.php, dep_lx.php, donner_argent.php, donner_objet.php, enleverarmure.php, fouillercadavre.php, fouillerlieu.php, lire.php, magasinmag.php, magie.php, manger.php, mettrearmure.php, oublier_sort.php, parler.php, quincaillerie.php, recharger_objet.php, recuperer_objet.php, voler.php, classe/lieu.php, classe/joueur.php, admin/forms/infospj.form.php, admin/forms/teleporter.form.php, admin/creerPNJ.php, admin/modifier_info_pj.php, admin/supprimer_pj.php, admin/teleporter.php, <br />
+		Nouveaux fichiers : reveler_entitecachee.php, secacher.php </td>
+	<td> Livr&eacute; </td></tr>
+
+	<tr><td> Aide à la personnalisation (2) </td>	
+	<td> Creation de variables pour l'intervalle de remise de PI et de PA <br /></td>
+	<td> aucun</td>
+	<td> const.php, admin/creerPNJ.php, admin/inscrire.php </td>
+	<td> Livr&eacute; </td></tr>
+
+	<tr><td> Nouvelle CompetenceSpeciale pour les objets </td>	
+	<td> Maudit (Ne peut pas être déséquipé) <br /></td>
+	<td> aucun</td>
+	<td> admin/forms/infospj.form.php, enleverarmure.php </td>
+	<td> Livr&eacute; </td></tr>
+
+	<tr><td> Ajout du gestionnaire de news (capnews adapte) </td>	
+	<td>  (l'utilisation est au choix de l'admin grace a un booleen) <br /></td>
+	<td> TLT_News</td>
+	<td>  nouveaux fichiers : admin/gestion_news.php, news/admin.php, news/config.php, news/index.php, main/index.php, const.php</td>
+	<td> Livr&eacute; </td></tr>
+
+
+	<tr><td> Integration de l'image avatar du forum dans le jeu </td>	
+	<td> </td>
+	<td> Aucun</td>
+	<td>  Liste a faire</td>
+	<td> Livr&eacute; </td></tr>
+
+
+
+        <tr><td colspan='5'><br /> Si vous avez envie d'autres modifs <a href='mailto:hixcks@hotmail.com'>Demande par mail &agrave; hixcks<br /><br /></a></td>
+      </tr>
+</table>
+
+
+<br />&nbsp;
+<br />&nbsp; Tableau 1 : Liste des actions des PNJ sur un PJ arrivant dans un lieu suivant le param&eacute;trage des PNJ si ces PNJ ont assez de PA et de PV bien sur..
+<br />&nbsp;
+
+<table class='details' width='100%'>
+<tr><td>Action surprise =&gt;<br />Relation V </td>
+	<td>Voler</td>
+	<td>Attaquer (arme)</td>
+	<td>Lancer un sort (magie)</td>
+	<td>Pas d'action (Le defaut)</td>
+	<td>Parler</td></tr>
+	<tr><td>Alli&eacute;</td>
+	<td>Rien</td>
+	<td>Rien</td>
+	<td>Sort si SortPrefere = soin </td>
+	<td>Rien</td><td>Parle</td></tr>
+	<tr><td>Amical</td>
+
+	<td>Rien </td>
+	<td>Rien </td>
+	<td>Rien </td>
+	<td>Rien </td><td>Parle</td></tr>
+	<tr><td>Neutre </td>
+	<td>Vol  </td>
+	<td>Rien  </td>
+	<td>Rien  </td>
+	<td>Rien  </td><td>Parle</td></tr>
+	<tr><td>Inamical </td>
+	<td>Vol  </td>
+	<td>Rien  </td>
+	<td>Rien  </td>
+	<td>Rien  </td><td>Parle</td></tr>
+	<tr><td>Ennemi </td>
+	<td>Vol   </td>
+	<td>Attaque   </td>
+	<td>Sort si SortPrefere &lt;&gt; soin   </td>
+	<td>Rien   </td><td>Parle</td></tr>
+</table>
+
+<br />&nbsp;
+<br />&nbsp; Tableau 2: Liste des ripostes des PJ deconnectes ou PNJ quand ils recoivent une aggression (vol, attaque avec arme ou sort autre que soin)si ces PJ ou PNJ ont assez de PA et de PV bien sur.<br />
+ATTENTION : Il n'y a pas de riposte quand on recoit une attaque surprise (PJ connect&eacute;) pour laisser le choix aux joueur de faire ce qu'il veut. 
+<br />&nbsp;
+
+<table class='details' width='100%' >
+<tr><td>Agression recue =&gt;<br />Reaction param&eacute;tr&eacute;e V </td>
+	<td>Vol r&eacute;ussi</td>
+	<td>Vol rat&eacute;</td>
+	<td>Vol rat&eacute; critique</td>
+	<td>Attaque r&eacute;ussie</td>
+	<td>Attaque rat&eacute;e</td>
+	<td>sort (autre que soin) r&eacute;ussi</td>
+	<td>sort (autre que soin) rat&eacute;</td>
+	</tr>
+	
+	<tr><td>Tenter de fuir (via proposer action)</td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Rien </td>
+	<td>Rien</td>
+	<td>tentative de fuite</td>
+	<td>tentative de fuite</td>
+	<td>Rien</td></tr>
+	<tr><td>Appeler &agrave; l'aide (ou au voleur via un parler &agrave; tous) </td>
+	<td>Rien * </td>
+	<td>Rien *</td>
+	<td>Appel</td>
+	<td>Appel </td>
+	<td>Appel</td>
+	<td>Appel </td>
+	<td>Appel </td></tr>
+	<tr><td>Riposter avec arme pr&eacute;f&eacute;r&eacute;e </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Attaque **</td>	
+	<td>Attaque **</td>
+	<td>Attaque **  </td>
+	<td>Attaque **  </td>
+	<td>Attaque ** </td></tr>
+	<tr><td>Riposter avec sort pr&eacute;f&eacute;r&eacute; </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Sort ***</td>	
+	<td>Sort ** </td>
+	<td>Sort *** </td>
+	<td>Sort ** </td>
+	<td>Sort *** </td>
+	</tr>
+	<tr><td>Pas de r&eacute;action </td>
+	<td>Rien * </td>
+	<td>Rien *</td>
+	<td>Rien</td>	
+	<td>Rien</td>
+	<td>Rien </td>
+	<td>Rien</td>
+	<td>Rien</td></tr>
+	<tr><td>Voler </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Vol **</td>
+	<td>Vol **</td>	
+	<td>Vol **</td>
+	<td>Vol **</td>
+	<td>Vol **</td></tr>
+</table>
+<table><tr><td>Rien * car le vol&eacute; ne s'est aper&ccedil;u de rien.</td></tr></table>
+<table><tr><td>Attaque ** attaque si l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Sort *** Sort si SortPreferee &lt;&gt; sort de soin et si l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Sort ** Sort si SortPreferee = sort de soin <br /> ou si SortPreferee &lt;&gt; sort de soin et l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Vol ** vol si l'aggression n'est pas anonyme.</td></tr></table>
+
+<br />
+
+
+
+<div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div>
+</div>
+<div id='barre_container'><div id='barre_vide'><table width='100%'><tr><td>&nbsp;</td></tr>
+</table></div></div></body></html>

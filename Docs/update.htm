@@ -1,0 +1,125 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: update.htm,v $
+$Revision: 1.1 $
+$Date: 2010/01/24 16:35:41 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title> Mise à jour du moteur de Talesta 4 </title>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head>
+<body>
+
+<div id='main'><br />
+<p>&nbsp;</p>
+<strong>Avertissement:</strong> Ce document a pour but d'aider quiconque veut mettre à jour Talesta sur son ordinateur personnel (par défaut, un utilisateur sur Windows). 
+Dans le cas probable où quelque chose ci-dessous ne serait pas clair pour un "profane" (personne la plus intéréssée par ce document),
+n'hésitez pas à me contacter (<a href="mailto:hixcks@hotmail.com">hixcks@hotmail.com</a> ou à exprimer vos remarques sur <a href="http://www.talesta.free.fr">http://www.talesta.free.fr</a>). 
+
+<p>&nbsp;</p>
+<strong>Pre-Requis:</strong>
+  
+  Mettre à jour le jeu n'est possible que si vous partez au moins de la version 3.4.080.(Pour déterminer la version, le script de mise a jour vous l'indique dans son premier écran. S'il n'arrive pas à déterminer la version, c'est mal parti, une installation complète est préférable.) Un autre pre-requis
+  est que le fichier include/config.php soit en 2 parties autour de la ligne 60:<ol>
+			    <li>Une première (du début jusqu'à la ligne 60) avec les définitions des tables et des paramètres de connexion à la base,</li>
+			    <li>une seconde (après la ligne 60) avec les définitions des parmètres du jeu.</li>
+			    </ol>
+  Il vous faut aussi bien avoir downloadé une archive de talesta  correspondant à votre version actuelle pour aller vers la dernière version (ex: Talesta4_V3_5_009f_to_V3_5_010.zip vous fait passer de la version V3_5_009f à V3_5_010)			    
+  
+
+<p>&nbsp;</p>
+<span class="fontSize3">1. Si vous êtes sur le serveur du jeu ou des joueurs se connectent, bloquer le jeu </span><ol type="1">
+    <li>  Prevenez vos joueurs par forum </li>
+    <li>  Mettre le jeu en mode maintenance pour que personne ne se connecte pendant la mise à jour.  ( soit modifier le ficheir include/config.php pour modifier Define("MAINTENANCE_MODE",0);  en Define("MAINTENANCE_MODE",2);  ou Mieux le faire avec l'interface en modifiant la valeur de maintenance à 'Maintenance pour les PJs et MJs'.<br />
+    Seul le MJ supreme pourra se connecter au jeu. </li>
+</ol>
+
+<span class="fontSize3">2.Faire un backup !!!!! </span><ol type="1">
+    <li>  Sauvegarder tous les fichiers du moteur. Et en particulier le fichier include/const.php (on verra plus bas pourquoi)) </li>
+    <li> vos données en base. </li>
+</ol>
+   
+<span class="fontSize3">3. Mise a jour</span>
+<ol> 
+  
+  <li>Copier le contenu du zip de talesta dans [RepEasyPHP]\www.</li>
+  <li>Lancer un client Web (Internet Explorer ou Netscape ou ...) et se connecter en tant que superadmin de talesta</li>
+  <li>Doit apparaître dans le menu, une partie 'Installation d'une nouvelle version de talesta', cliquer dessus</li> 
+  <li>On passe sur un écran qui indique qu'elle est la version actuelle, vers laquelle on va migrer... 
+  <img src='./MiseAJour.jpg' border='0' alt='MiseAJour.jpg' />
+  Appuyer sur le bouton continuer.
+  </li>
+  <li>Le script met à jour la base de données avec les différences entre les 2 versions s'il y en a. Appuyer sur le bouton continuer.</li>
+  <li>Le script met à jour le fichier include/config.php</li>
+  <li> Note spécifique a la version V3_5_010 :<ol> Cette version extrait plusieurs paramètres qui étaient jusqu'a ce jour dans include/const.php pour vous permettre de les configurer via l'interface et non en modifiant le fichier const.php a la main. Ce sont les types de magie.<br />
+  Donc, si vous avez modifié, ou ajouté des types de magie, il faut éditer le nouveau fichier include/config.php post-installation 
+  et remplacer<br />
+        	$liste_magiePerso=array(<br />
+                         "Air"=>"1001",<br />
+                         "Terre"=>"1002",<br />
+                         "Feu"=>"1003",<br />
+                         "Eau"=>"1004",<br />
+                         "Lumiere"=>"1005",<br />
+                         "Tenebre"=>"1006",<br />
+                         "Illusion"=>"1007",<br />
+                         "Psychique"=>"1008"<br />
+      	);<br />
+      	<br />
+      	avec les types de magie de votre ancien include/const.php<br />
+      	<br />
+      		$liste_magie = array(<br />
+        			"Pretre"=>1001,	<br />
+        			"Mage"=>1002,<br />
+        			"Exorciste"=>1003,<br />
+        			"Demoniste"=>1004,<br />
+        	);<br />
+
+        pour que votre fichier include/config.php ait à la fin (noter bien que $liste_magie devient  $liste_magiePerso)<br />
+        <br />
+        	$liste_magiePerso=array(<br />
+       			"Pretre"=>1001,	<br />
+        			"Mage"=>1002,<br />
+        			"Exorciste"=>1003,<br />
+        			"Demoniste"=>1004,<br />
+        	);<br />
+  </ol>
+  </li>
+  <li>Félicitations: Votre moteur Talesta4 a été mis à jour. Vous pouvez désormais aller dans la partie configuration et renseigner les nouveaux champs configurables et en particulier le champ de maintenance pour que les joueurs puissent se reconnecter</li>  
+</ol>
+<br />
+<p>&nbsp;</p>
+</div>
+
+
+
+   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br />
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

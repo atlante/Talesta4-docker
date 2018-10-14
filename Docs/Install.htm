@@ -1,0 +1,291 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: Install.htm,v $
+$Revision: 1.12 $
+$Date: 2010/01/24 16:35:38 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title> Installation du moteur de Talesta 4 </title>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head>
+<body>
+
+<div id='main'><br />
+<p>&nbsp;</p>
+<strong>Avertissement:</strong> Ce document a pour but d'aider quiconque veut installer Talesta sur son ordinateur personnel (par défaut, un utilisateur sur Windows). 
+S'y ajouteront des parties pour des installations plus complexes (réparties sur plusieurs machines), ou chez des hébergeurs.
+Malheureusement, le rédacteur de ce document est la pire personne qui soit pour ce rôle, c'est à dire un informaticien pure souche et qui connait bien Talesta. 
+Heureusement, Kaeru (Grand Merci à lui) est passé par là , pour clarifier les choses.
+Dans le cas probable où quelque chose ci-dessous ne serait pas clair pour un "profane" (personne la plus intéréssée par ce document),
+n'hésitez pas à me contacter (<a href="mailto:hixcks@hotmail.com">hixcks@hotmail.com</a> ou à exprimer vos remarques sur <a href="http://www.talesta.free.fr">http://www.talesta.free.fr</a>). 
+
+<p>&nbsp;</p>
+<strong>Pre-Requis:</strong>
+    Le moteur Talesta4 est écrit en php. Son utilisation nécessite un serveur HTTP et une base de données.
+    Pour le moment, les seules bases de données utilisables sont Mysql (car elle est la base la plus souvent offerte par les hébergeurs), PostGreSQL qui est une base open-source avec plus de possibilités que Mysql, et Oracle (car elle est ma base préférée, je déconseille aux débutants d'utiliser Oracle (beaucoup plus long à installer, configurer ...))
+    Les moyens les plus simples pour se procurer Mysql et un serveur HTTP sont:<ul>    
+    	 <li>wampserver (<a href="http://www.wampserver.com/">http://www.wampserver.com/</a>). La version utilisée pour ce document est WAMP5.1.4.4</li>
+    	 <li>OU easyphp (<a href="http://www.easyphp.org">http://www.easyphp.org</a>). La version utilisée pour ce document est Easyphp 1.7</li>
+    	 </ul>
+    Le moyen le plus simple pour se procurer PostGreSQL sous windows est: <a href="http://pgfoundry.org/projects/pginstaller">http://pgfoundry.org/projects/pginstaller</a>	 
+    	La version utilisée pour ce document est 8.0 Beta 5
+    <br />Les versions ultérieures de tous ces systèmes devraient fonctionner de la même façon.
+
+	    
+<p>&nbsp;</p>
+<strong>Notes techniques: </strong>
+    	Compatibilités avec les différentes versions de PHP:
+    		Cette version de Talesta4 est compatible avec toutes versions de PHP 4 supérieures ou égales à la 4.3.0 ou 5
+    	Compatibilités avec les différentes versions de Mysql:
+    		Toute version de Mysql 4 et 5 et de nombreuses versions Mysql 3 sont utilisables.   
+    		A noter certaines requetes ont ete optimisées pour les possesseurs de Mysql > 4.1 qui permet enfin les sous-requetes... 		
+    	Compatibilités avec les différentes versions d'Apache:	
+    		Cette version de Talesta4 est compatible (a priori, je n'ai travaillé qu'avec Apache 1.3.27 et 2.0.48) avec toutes versions d'Apache 1.3 ou 2.0
+<p>&nbsp;</p>
+<span class="fontSize3">1. Installer EasyPHP</span><ol type="1">
+    <li> Récupérer Easyphp sur <a href="http://www.easyphp.org">http://www.easyphp.org</a> </li>
+    <li> Lancer easyphp1-7_setup.exe pour installer le tout dans le répertoire de votre choix (dénommé par la suite dans ce document [RepEasyPHP])    </li>
+    <li> Une fois l'installation terminée, vous avez un client Web (Internet Explorer ou Netscape ou ...) ouvert avec la page d'accueil d'easyPHP affichée ([RepEasyPHP]\home\accueil.html).</li>
+    <li> Lancer EasyPHP (démarrer, programmes, EasyPHP 1.7, EasyPHP). Une icône (un E) apparait dans la barre de tâches et après quelques secondesn un petit carré rouge clignote, signifiant qu'EasyPHP est lancé).</li>
+    <li> Vérifions que tout fonctionne bien : 
+    	<ul type="square"><li> Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/">http://127.0.0.1/</a>. Le client Web affiche la page de EasyPHP et indique qu'il n'y a aucun répertoire dans www.</li>
+    	<li> Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/mysql/">http://127.0.0.1/mysql/</a>. Le client Web affiche la page de PhpMyAdmin.</li>
+       </ul>
+	   Si ces deux tests sont OK, nous pouvons passer à l'étape suivante, l'installation de Talesta.      </li>
+</ol>
+    
+<span class="fontSize3">OU 1bis. Installer WampServer</span><ol type="1">
+    <li> Récupérer WampServer sur <a href="http://www.wampserver.com/">http://www.wampserver.com/</a> </li>
+    <li> Lancer wamp5_1.4.4.exe pour installer le tout dans le répertoire de votre choix (dénommé par la suite dans ce document [RepEasyPHP])    </li>
+    <li> Une fois l'installation terminée, lancer wampserver (démarrer, programmes, Wampserver, start WampServer)  si ce n'est pas fait avec la case a cocher lors de l'install. Une icône (genre compteur de vitesse) apparait dans la barre de tâches, signifiant que wampServer est lancé).</li>
+    <li> Vérifions que tout fonctionne bien : 
+    	<ul type="square"><li> Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/">http://127.0.0.1/</a>. Le client Web affiche la page de WampServer et indique qu'il n'y a pas de projets.</li>
+    	<li> Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/phpmyadmin/">http://127.0.0.1/phpmyadmin/</a>. Le client Web affiche la page de PhpMyAdmin.</li>
+       </ul>
+	   Si ces deux tests sont OK, nous pouvons passer à l'étape suivante, l'installation de Talesta.      </li>
+</ol>
+  
+
+
+<span class="fontSize3">2. Une fois easyphp ou WAMPSERVER installé</span>
+<ol type="1">
+   <li> Copier le contenu du zip de talesta dans [RepEasyPHP]\www.</li>
+   <li> Il vous faut créer une base de données pour stocker vos données. Le nom par défaut de cette base est "talesta". 
+   Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/mysql/">http://127.0.0.1/mysql/</a>. Le client Web affiche la page de PhpMyAdmin.
+   Taper le nom de la base sous l'intitulé "Créer une base de données", puis appuyer sur le bouton "Créer". 
+   La base doit se créer et PHPMyAdmin doit s'être placé dans cette base et indiquer qu'il n'existe aucune table dans cette base.   </li>
+</ol>
+
+<span class="fontSize3">Méthode en utilisant le script d'Anthor</span>
+<ol> 
+  <li>   Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/talesta4/">http://127.0.0.1/talesta4/</a>. Le client Web vous redirige sur l'url http://localhost/talestaBD/main/install.php?action=newinstall</li>
+  <li> Renseigner le formulaire en tenant compte des indications données. 
+  Les informations les plus souvent renseignées sont:
+  <img src='../Docs/ParamMysql.jpg' alt='ParamMysql.jpg'></img>  
+  et voici celui pour un compte FREE. (il faut juste changer www.talesta dans base de données et nom d'utilisateur avec votre compte ainsi que le mot de passe)
+  <img src='../Docs/ParamFREE.jpg' alt='ParamFREE.jpg'></img> 
+  </li>
+<li> Le script exécute les requêtes SQL pour créer les tables et les affiche. Chaque requête est suivie d'un OK ou d'un KO. 
+  La fin de l'affichage du script doit être '208 instructions se sont executées correctement sur 208.' Cliquer sur 'Continuer'
+  
+  Seul souci rencontré une fois lors des tests (install sur une cle USB): Le temps d'exécution des requêtes SQL fait que le script PHP met plus de 30 sec à s'exécuter, ce qui génère une erreur 'PHP Fatal error:  Maximum execution time of 30 seconds exceeded in ....'
+  Dans ce cas, il faut modifier dans le fichier php.ini le paramètre max_execution_time pour l'augmenter et redémarrer Easyphp ou wampServer et recommencer.
+  </li>
+<li> Le script crée alors le fichier include/config.php qui recense les données saisies et affiche 'Écriture du fichier de configuration ../include/config.php... OK' et renomme le fichier install.php pour éviter que quelqu'un puisse rejour le script (ce qui ferait perdre vos données)</li>
+<li>
+Voici un exemple du fichier config.php généré:
+<pre>
+&lt;?php
+// config.php créée 08/23/05 23:04:13
+//Par Talesta Install Script
+
+Define("NOM_TABLE_SESSIONS",				"tlt_sessions");
+Define("NOM_TABLE_REGISTRE",				"tlt_perso");
+Define("NOM_TABLE_PERSO",					"tlt_perso");
+Define("NOM_TABLE_ENTITECACHEECONNUEDE",	"tlt_entitecacheeconnuede");
+Define("NOM_TABLE_ENTITECACHEE",			"tlt_entitecachee");
+Define("NOM_TABLE_LIEU",					"tlt_lieu");
+Define("NOM_TABLE_COMP",					"tlt_comp");
+Define("NOM_TABLE_SPEC",					"tlt_spec");
+Define("NOM_TABLE_SPECNOM",				"tlt_specnom");
+Define("NOM_TABLE_PERSOSPEC",				"tlt_persospec");
+Define("NOM_TABLE_OBJET",					"tlt_objets");
+Define("NOM_TABLE_PERSOOBJET",				"tlt_persoobjets");
+Define("NOM_TABLE_PERSOMAGIE",				"tlt_persomagie");
+Define("NOM_TABLE_MAGIE",					"tlt_magie");
+Define("NOM_TABLE_CHEMINS",				"tlt_chemins");
+Define("NOM_TABLE_MJ",						"tlt_mj");
+Define("NOM_TABLE_PERSOETATTEMP",			"tlt_persoetattemp");
+Define("NOM_TABLE_ETATTEMP",				"tlt_etattemp");
+Define("NOM_TABLE_ETATTEMPNOM",			"tlt_etattempnom");
+Define("NOM_TABLE_MAGASIN",				"tlt_zone");
+Define("NOM_TABLE_INSCRIPTION",			"tlt_inscriptions");
+Define("NOM_TABLE_ARCHIVE",				"tlt_archive");
+Define("NOM_TABLE_GROUPE",					"tlt_groupe");
+Define("NOM_TABLE_COMPOSITIONGROUPE",		"tlt_compositiongroupe");
+Define("NOM_TABLE_TYPEETAT",				"tlt_typeetattemp");
+Define("NOM_TABLE_QCM",					"tlt_qcm");
+Define("NOM_TABLE_ENGAGEMENT",			"tlt_engagement");
+Define("NOM_TABLE_NEWS",			"tlt_n_news");
+Define("NOM_TABLE_COMMENT_NEWS",			"tlt_n_commentaires");
+Define("NOM_TABLE_CONFIG_NEWS",			"tlt_n_config");
+
+
+Define("NOM_JEU",							"Talesta 4+");
+
+
+$hostbd = "127.0.0.1";
+$userbd = "root";
+$passbd = "";
+$bdd = "talesta";
+$dbmsJeu= "mysql"; //type de base de données 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// ATTENTION CE COMMENTAIRE DOIT TOUJOURS CE TROUVER A LA LIGNE 60 (soixante).
+Define("INSCRIPTIONS_OUVERTES", 1);      	//0 pour empecher les inscriptions
+Define("MAINTENANCE_MODE",0);         		// Mettez a 0 pour que tous les PJS et MJS puissent se connecter
+                      						// Mettez a 1 cette variable pour bloquer le jeu (tous les PNJ et PJ)
+                      						// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui créé à l'init de la base
+Define("IN_NEWS",0) ;               		//commentez la ligne pour ne pas utiliser les news ou mettre 0
+Define("COUNT_QCM", 1);               		//Pour definir le nombre de question que l'on veut poser avant l'inscription. Si 0 => Inscription sans questionnaire.
+Define("DEBUG_MODE",   1);          		// Mettez a 1 si vous voulez voir des infos telles que les requetes SQL . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel
+Define("DEBUG_HTML", 0);             		// Mettez a 1 si vous voulez stocker les fichiers HTML générés pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel
+Define("SHOW_TIME",   1);             		// Mettez a 1 si vous voulez voir les temps d'execution (SQL et PHP) (Rem: L'affichage se fera de toute facon si DEBUG_MODE=1). Ne laissez surtout pas a 1 pdt le deroulement du jeu reel
+Define("AFFICHE_CONNECTES",   1);       	// Mettez a 1 si vous voulez voir le sous-menu des PJ et MJ connectes  dans le menu de gauche (genere plus de SQL)
+Define("IN_FORUM", 0);       		// commentez la ligne pour ne pas utiliser les liens vers les forums ou mettre 0
+Define("AFFICHE_XP",	1); // Mettez a 1 si vous voulez voir les infos d'XP et de niveau
+Define("AFFICHE_PV",	1); // Mettez a 1 si vous voulez voir les infos des Points de vie, dégats
+Define("AFFICHE_AVATAR_FORUM",	1); // Mettez a 1 si vous voulez afficher les images des PJs dans le lieu
+Define("AFFICHE_NB_MAX_AVATAR",	5); // Nombre de PJs/MJs/PNJs max dans un meme lieu au dela duquel on n'affiche pas les images (pour des raisons de temps de chargement et de surcharge de la page (-1 = pas de limitation). Ne sert que si AFFICHE_AVATAR_FORUM = 1.
+Define("POURCENTAGE_PV_PERSO_AUTOP", 80);
+Define("POURCENTAGE_PV_PERSO_LEGEREMENTBLESSE", 60);
+Define("POURCENTAGE_PV_PERSO_ABIME", 40);
+Define("POURCENTAGE_PV_PERSO_CRITIQUE", 20);
+Define ("INTERVAL_REMISEPI", 90); //intervalle de temps (en heures) pour la remise des PI
+Define ("INTERVAL_REMISEPA", 72); //intervalle de temps (en heures) pour la remise des PA
+?>
+</pre></li>
+<li>Félicitations: Votre moteur Talesta4 est installé. Vous pouvez désormais cliquer sur admin dans le menu pour vous connecter avec le login et le mot de passe que vous avez choisis pour MJ principal </li>
+
+	<li> OPTIONNEL: Pour l'utilisation d'un forum en relation avec Talesta4, il vous faut récupérer l'un des forums supportés
+	<ul><li>phpBB (<a href="http://www.phpBB.com">http://www.phpBB.com</a> La version utilisée pour ce document est la 2.0.10, mais la version actuelle 2.0.17 fonctionne tres bien aussi), dézipper le zip dans [RepEasyPHP]\www, Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/phpBB2/install/install.php">http://127.0.0.1/phpBB2/install/install.php</a>, 
+	renseigner les champs Type de la base de données avec "Mysql 4.x", Nom de votre Base de données : Nom de base choisie à l'étape 2, "Nom d'utilisateur:" root, "mot de passe" laissez à vide, "préfixe des tables" : laisser phpbb_, "Nom d'utilisateur  et mot de passe " : mettez les meme que ceux de l'étape 3. Puis appuyez sur "Démarrer l'installation". Si vous n'avez pas d'erreur, Cliquer sur "Terminer l'installation", puis supprimer les répertoires [RepEasyPHP]\www\phpBB2\install et [RepEasyPHP]\www\phpBB2\contrib comme demandé.
+	</li>
+	<li>phorum 5 (<a href="http://phorum.org">http://phorum.org</a> La version utilisée pour ce document est la 5.0.16)
+	</li>
+	<li> D'autres viendront surement (IBP, PUNBB )
+	</li>
+	</ul>
+  Une fois l'installation du forum faire, il faut se conencter avec le "MJ supreme", aller dans la partie configuration et renseigner les champs
+  <ul><li>Cocher la case oui pour 'Utiliser un forum conjointement avec le jeu ? :'</li>
+  <li>Si utilisation d'un forum, chemin (relatif au repertoire talesta/include ) d'acces ? (Attention : Ne pas oublier le '/' à la fin. ) :</li>	
+  <li>Si utilisation d'un forum, type du forum ? :</li>   	
+  <li>Selon votre choix, cocher la case oui ou non pour 'Créer un membre du forum par PNJ (nécessite que chaque PNJ ait une adresse email unique) ?' 	 </li>
+  </ul>
+  Et valider les modifs. A ce moment-là, le moteur va créer un membre du forum pour chaque joueur et MJ du jeu. Quand un PJ ou MJ se connecteront au jeu, ils seront automatiquement identifiés sur le forum.
+ </li>
+</ol>
+<br />
+<!--
+<span class="fontSize3">Je laisse la méthode de l'installation de la version précédente (3.3) pour les curieux (la méthode ci-dessus est préférable)</span>
+<ol> 
+   <li> Il faut modifier le fichier [RepEasyPHP]\www\talesta4\include\db\Talesta4.mysql.sql pour donner le nom et mot de passe voulu au MJ d'ID 1 (MJ supreme qui a tous les droits). Il faut donc modifier la ligne INSERT INTO tlt_mj (id_mj, nom, pass, titre, flags, email, lastaction, fanonlu, wantmail) VALUES("1", "Admin", "", "MJ Supreme", "111111111111111111111111111111111111111111111111", "", "1051302306", "1", "0");
+   et la transformer en INSERT INTO tlt_mj (id_mj, nom, pass, titre, flags, email, lastaction, fanonlu, wantmail) VALUES("1", "Nom du MJ d'ID 1", "Mot de passe du MJ d'ID 1", "MJ Supreme", "111111111111111111111111111111111111111111111111", "", "1051302306", "1", "0");</li>
+   <li> Ensuite avec PHPMyAdmin, cliquer sur l'onglet SQL, cliquer sur le bouton "parcourir" et sélectionner le fichier [RepEasyPHP]\www\talesta4\Talesta4.sql, et appuyer sur le bouton "Exécuter". Les tables de la base doivent se créer.
+   Si une erreur apparaît et qu'elle n'est pas due à l'insert into tlt_mj, noter-la et renseigner vous sur <a href="http://talesta.free.fr/">http://talesta.free.fr/</a>
+   Si aucune erreur n'apparaît, vérifier avec PHPMyAdmin que la table tlt_mj contient l'enregistrement concernant le MJ d'ID 1 avec le nom et le mot de passe donnés. Votre base est prête.</li>
+   <li> Configuration de l'accès à la base de données depuis l'application. Il vous faut modifier le fichier [RepEasyPHP]\www\talesta4\include\bdd.php:
+<ul type="square">   	<li> Si vous n'avez pas choisi le nom par défaut pour la base de données à l'étape 1, il vous faut modifier dans le fichier la ligne 
+   	function connectionBDD($bdd= "talesta") par function connectionBDD($bdd= "nom de base choisi").</li>
+   	<li> Les paramètres par défaut de EasyPHP pour l'accès au serveur de base de données sont serveur =127.0.0.1, user=root, password="".
+   	Les paramètres par défaut de talesta sont identiques. Donc, il n'y a rien de plus à modifier.
+   	 Il faut modifier $hostbd="127.0.0.1"; ,  $userbd="root"; et $passbd = "";</li></ul></li>
+	<li> OPTIONNEL: Pour l'utilisation d'un forum en relation avec Talesta4, il vous faut récupérer phpBB (<a href="http://www.phpBB.com">http://www.phpBB.com</a> La version utilisée pour ce document est la 2.0.10, mais la version actuelle 2.0.13 fonctionne tres bien aussi), dézipper le zip dans [RepEasyPHP]\www, Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/phpBB2/install/install.php">http://127.0.0.1/phpBB2/install/install.php</a>, 
+	renseigner les champs Type de la base de données avec "Mysql 4.x", Nom de votre Base de données : Nom de base choisie à l'étape 2, "Nom d'utilisateur:" root, "mot de passe" laissez à vide, "préfixe des tables" : laisser phpbb_, "Nom d'utilisateur  et mot de passe " : mettez les meme que ceux de l'étape 3. Puis appuyez sur "Démarrer l'installation". Si vous n'avez pas d'erreur, Cliquer sur "Terminer l'installation", puis supprimer les répertoires [RepEasyPHP]\www\phpBB2\install et [RepEasyPHP]\www\phpBB2\contrib comme demandé.
+	 Ensuite avec PHPMyAdmin, sélectionner la base de Talesta4, cliquer sur l'onglet SQL, cliquer sur le bouton "parcourir" et sélectionner le fichier [RepEasyPHP]\www\talesta4\PostInstallPHPBB.sql, et appuyer sur le bouton "Exécuter". 
+      Les catégories, forums et le groupe des MJ.  </li>
+  </ol>
+  Félicitations: Votre moteur Talesta4 est installé.    Lancer un client Web (Internet Explorer ou Netscape ou ...) et saisir cette URL <a href="http://127.0.0.1/talesta4/admin/">http://127.0.0.1/talesta4/admin/</a>, 
+  entrer le login et le mot de passe du "MJ suprême" que vous avez modifiés à l'étape 3. Vous pouvez désormais créer votre monde (sorts, objets, lieux ...) et sa configuration (via la partie admin du moteur, menu 'Configuration Générale' depuis la version 3.4). <br />
+-->  
+<p>&nbsp;</p>
+<!--
+<span class="fontSize3">Voici les variables du fichier include/config.php que vous pouvez modifier pour personnaliser votre Talesta4:</span>
+
+A noter : Depuis la version 3.4, vous pouvez les modifier dans la partie admin du moteur, menu 'Configuration Générale'.
+<ul type="square">
+<li>NOM_JEU : Variable qui regroupe les affichages du jeu. A changer a votre convenance. </li>
+<li>TAILLE_MAX_FA : Une fois arrivé à cette taille limite, le FA d'un PJ, MJ est lui est envoyé par mail et remis à zéro sur le serveur. (Cette taille peut être faible car les FA sont stockés sur le serveur au format gzip quand cette option est disponible avec votre config PHP (Chez FREE par exemple, c'est OK)) </li>
+<li>MAINTENANCE_MODE : Variable qui redirige les joueurs et/ou les MJ autre que Admin (ID =1) vers une page affichant la maintenance du site pour permettre a Admin de faire des opérations sur le serveur et bloquer tout le monde pendant ce temps. 
+<ul>
+	<li>Mettez a 0 pour que tous les PJS et MJS puissent se connecter</li>
+	<li>Mettez a 1 cette variable pour bloquer le jeu (tous les PNJ et PJ)</li>
+	<li>Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui créé à l'init de la base</li> 	
+</ul></li>
+<li>DEBUG_MODE: Variable qui permet de sauvegarder les logs et le SQL dans le fichier paramétré ci-dessous (FICHIER_LOG) pour pouvoir visualiser les erreurs (Ex :Chez FREE, on a pas acces au fichier de log). 1 pour sauvegarder, 0 pour non. Laisser 0 en production </li>
+<li>FICHIER_LOG : cf. DEBUG_MODE </li>
+<li>SHOW_TIME : Variable qui permet d'afficher les temps d'execution PHP et SQL en bas de chaque page (0 pas d'affichage si DEBUG_MODE = 0, 1 = affichage)</li>
+<li>DEBUG_HTML : Variable qui permet de sauvegarder l'HTML généré dans le répertoire paramétré ci-dessous (REP_HTML) pour pouvoir valider la syntaxe HTML. 1 pour sauvegarder, 0 pour non. Laisser 0 en production </li>
+<li>REP_HTML : cf. DEBUG_HTML </li>
+<li>AFFICHE_XP: Determine si on affiche les points d'experience dans la fiche de perso, la status barre du haut ... 1 pour afficher, 0 pour non </li>
+<li>AFFICHE_PV : Determine si on affiche les points de Vie dans les degats, la fiche de perso, la status barre du haut ... 1 pour afficher, 0 pour non</li>
+<li>AFFICHE_CONNECTES : Détermine si on affiche le menu des PJs/MJs conectés (patch de Kaeru)</li>
+<li>INTERVAL_REMISEPI : Temps (en heures) au bout duquel les remises de PI (Point d'intellect) seront faites</li>
+<li>INTERVAL_REMISEPA : Temps (en heures) au bout duquel les remises de PA (Point d'Action) seront faites</li>
+<li>IN_NEWS : Détermine si on utilise le gestionnaire de news (capnews adapté) avec le site (1 pour oui, 0 pour non)</li>
+<li>AFFICHE_AVATAR_FORUM : Mettez a 1 si vous voulez afficher les images des PJs dans le lieu</li>
+<li>AFFICHE_NB_MAX_AVATAR: Nombre de PJs/MJs/PNJs max dans un meme lieu au dela duquel on n'affiche pas les images (pour des raisons de temps de chargement et de surcharge de la page (-1 = pas de limitation). Ne sert que si AFFICHE_AVATAR_FORUM = 1</li>
+<li>INSCRIPTIONS_OUVERTES: Autoriser ou non les inscriptions (O : Pas d'inscriptions, 1 inscriptions possibles)</li>
+<li>COUNT_QCM: Définir le nombre de question que l'on veut poser avant l'inscription. Si 0 => Inscription sans questionnaire
+
+
+</ul>
+ -->
+</div>
+
+
+
+   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br />
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

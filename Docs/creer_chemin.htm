@@ -1,0 +1,70 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: creer_chemin.htm,v $
+$Revision: 1.14 $
+$Date: 2010/01/24 16:35:39 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- G&eacute;n&eacute;r&eacute; a partir du script, creer_chemin.php, le [13/04/2003 &agrave; 15:50] //-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head><title>Talesta</title><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head><body>
+
+<div id='main'>
+<div class ='centerSimple'><form action='creer_chemin.php' method='post'>
+
+<table class='details'><tr><td>Lieu de D&eacute;part : </td><td><select name='ID_Lieu_1'><option value='1'>SPE-Lieu de Depart</option></select></td><td><span class='c0'>Le point de depart du chemin</span></td></tr>
+<tr><td>Lieu d'Arriv&eacute;e : </td><td><select name='ID_Lieu_2'><option value='1'>SPE-Lieu d'Arriv&eacute;e</option></select></td><td><span class='c0'>L'arriv&eacute;e du chemin</span></td></tr>
+<tr><td>Difficulte : </td><td><input type='text' name='Difficulte' value='' size='5' /></td><td><span class='c0'>La difficult&eacute; du chemin. Represente le lanc&eacute; de d&eacute; du programme lors d'un lieu passage,d'un lieu aller, d'un lieu nage/escalade, le montant à payer pour un lieu péage</span></td></tr>
+<tr><td>Type : </td><td><select name='Type'><option value='0' selected='selected'>Lieu Entrer</option>
+<option value='1'>Lieu Passage</option>
+<option value='2'>Lieu Guilde</option>
+<option value='3'>Lieu Aller</option>
+<option value='4'>Lieu Secret</option>
+<option value='4'>Lieu Escalader</option>
+<option value='4'>Lieu Nager</option>
+</select></td>
+<td><span class='c0'>Le type du chemin</span><ul>
+<li>Lieu Entrer = Deplacement gratuit</li>
+<li>Lieu Passage = porte ferm&eacute;e a clef</li> 
+<li>Lieu Guilde = Necessite un mot de passe</li> 
+<li>Lieu Aller = Deplacement qui coute autant de PAs que la distance</li>
+<li> Lieu Secret = Le joueur doit fouiller le lieu pour trouver le chemin</li>
+<li> Lieu Escalade/Nage = A choisir en fonction de la carte du monde du jeu</li>
+</ul> </td>
+</tr>
+<tr><td>Pass : </td><td><input type='text' name='Pass' value='' size='20' /></td><td><span class='c0'>Le mot de passe (pour le Lieu Guilde)</span></td></tr>
+<tr><td>Distance : </td><td><input type='text' name='Distance' value='' size='5' /></td><td><span class='c0'>La distance (Cout en PAs pour le Lieu Aller)</span></td></tr>
+<tr><td>Retour ?</td><td><input type='checkbox' name='retour' /></td><td><span class='c0'>Creation automatique du chemin inverse ou pas. Si oui, le chemin inverse est cree, exactement identique. SAUF dans le cas d'un lieu guilde, ou le retour est un lieu entrer (besoin d'un pass pour entrer, pas pour sortir). Cette option est vivement conseill&eacute;e.</span></td></tr>
+<tr><td colspan='3'><span class='c0'>Note : Lorsqu'un lieu passage est cree, une clef correspondante est inseree dans les objets. Lorsqu'un joueur ouvre une porte et souhaite la tenir ouverte, il faut imperativement que la base contienne une clef qui correspond a cette porte.<br />A noter &eacute;galement qu'une seule clef est cr&eacute;&eacute;, meme si le retour est coch&eacute;, une clef pouvant toujours marcher dans les deux sens.</span></td></tr>
+</table></form>
+
+</div>   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

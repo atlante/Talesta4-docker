@@ -1,0 +1,171 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: tab_pnj.htm,v $
+$Revision: 1.7 $
+$Date: 2010/01/24 16:35:41 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head><title>Talesta</title><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' />
+<style type="text/css">
+<!--
+.Style1 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head><body>
+<script type='text/javascript'>	function a(fe){		po=open(fe,"fenetre","Height=400,Width=650,screenX=1,scrollbars,resizable");	}</script>
+
+<div id='main'>
+  <p align="center"><span class="Style1">Tableaux d'aide pour la cr&eacute;ation de PNJs.</span><br />
+    <br />
+  </p>
+  <p><strong>Tableau 1:<br />
+  </strong>Liste des actions des PNJ sur un PJ arrivant dans un lieu suivant le param&eacute;trage des PNJ si ces PNJ ont assez de PA et de PV bien sur.. </p>
+  <table class='details' width='100%'>
+<tr><td>Action surprise =&gt;<br />Relation V </td>
+	<td>Voler</td>
+	<td>Attaquer (arme)</td>
+	<td>Lancer un sort (magie)</td>
+	<td>Pas d'action (Le defaut)</td>
+	<td>Parler</td></tr>
+	<tr><td>Alli&eacute;</td>
+	<td>Rien</td>
+	<td>Rien</td>
+	<td>Sort si SortPrefere = soin </td>
+	<td>Rien</td><td>Parle</td></tr>
+	<tr><td>Amical</td>
+
+	<td>Rien </td>
+	<td>Rien </td>
+	<td>Rien </td>
+	<td>Rien </td><td>Parle</td></tr>
+	<tr><td>Neutre </td>
+	<td>Vol  </td>
+	<td>Rien  </td>
+	<td>Rien  </td>
+	<td>Rien  </td><td>Parle</td></tr>
+	<tr><td>Inamical </td>
+	<td>Vol  </td>
+	<td>Rien  </td>
+	<td>Rien  </td>
+	<td>Rien  </td><td>Parle</td></tr>
+	<tr><td>Ennemi </td>
+	<td>Vol   </td>
+	<td>Attaque   </td>
+	<td>Sort si SortPrefere &lt;&gt; soin   </td>
+	<td>Rien   </td><td>Parle</td></tr>
+</table>
+
+<br />&nbsp;
+<br /> 
+<strong>Tableau 2:</strong> <br />
+Liste des ripostes des PJ deconnectes ou PNJ quand ils recoivent une aggression (vol, attaque avec arme ou sort autre que soin)si ces PJ ou PNJ ont assez de PA et de PV bien sur.<br />
+<br />
+<strong>/!\ATTENTION/!\</strong><br />
+Il n'y a pas de riposte quand on recoit une attaque surprise (PJ connect&eacute;) pour laisser le choix aux joueur de faire ce qu'il veut. 
+<br />&nbsp;
+
+<table class='details' width='100%' >
+<tr><td>Agression recue =&gt;<br />Reaction param&eacute;tr&eacute;e V </td>
+	<td>Vol r&eacute;ussi</td>
+	<td>Vol rat&eacute;</td>
+	<td>Vol rat&eacute; critique</td>
+	<td>Attaque r&eacute;ussie</td>
+	<td>Attaque rat&eacute;e</td>
+	<td>sort (autre que soin) r&eacute;ussi</td>
+	<td>sort (autre que soin) rat&eacute;</td>
+	</tr>
+	
+	<tr><td>Tenter de fuir (via proposer action)</td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Rien </td>
+	<td>Rien</td>
+	<td>tentative de fuite</td>
+	<td>tentative de fuite</td>
+	<td>Rien</td></tr>
+	<tr><td>Appeler &agrave; l'aide (ou au voleur via un parler &agrave; tous) </td>
+	<td>Rien * </td>
+	<td>Rien *</td>
+	<td>Appel</td>
+	<td>Appel </td>
+	<td>Appel</td>
+	<td>Appel </td>
+	<td>Appel </td></tr>
+	<tr><td>Riposter avec arme pr&eacute;f&eacute;r&eacute;e </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Attaque **</td>	
+	<td>Attaque **</td>
+	<td>Attaque **  </td>
+	<td>Attaque **  </td>
+	<td>Attaque ** </td></tr>
+	<tr><td>Riposter avec sort pr&eacute;f&eacute;r&eacute; </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Sort ***</td>	
+	<td>Sort ** </td>
+	<td>Sort *** </td>
+	<td>Sort ** </td>
+	<td>Sort *** </td>
+	</tr>
+	<tr><td>Pas de r&eacute;action </td>
+	<td>Rien * </td>
+	<td>Rien *</td>
+	<td>Rien</td>	
+	<td>Rien</td>
+	<td>Rien </td>
+	<td>Rien</td>
+	<td>Rien</td></tr>
+	<tr><td>Voler </td>
+	<td>Rien *</td>
+	<td>Rien *</td>
+	<td>Vol **</td>
+	<td>Vol **</td>	
+	<td>Vol **</td>
+	<td>Vol **</td>
+	<td>Vol **</td></tr>
+</table>
+<table><tr><td>Rien * car le vol&eacute; ne s'est aper&ccedil;u de rien.</td></tr></table>
+<table><tr><td>Attaque ** attaque si l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Sort *** Sort si SortPreferee &lt;&gt; sort de soin et si l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Sort ** Sort si SortPreferee = sort de soin <br /> ou si SortPreferee &lt;&gt; sort de soin et l'aggression n'est pas anonyme.</td></tr></table>
+<table><tr><td>Vol ** vol si l'aggression n'est pas anonyme.</td></tr></table>
+
+
+
+<br />
+   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

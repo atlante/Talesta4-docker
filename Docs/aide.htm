@@ -1,0 +1,239 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $ 
+
+$RCSfile: aide.htm,v $
+$Revision: 1.11 $
+$Date: 2010/01/24 16:35:39 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Talesta</title>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' />
+<style type="text/css">
+<!--
+.Style1 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<script type='text/javascript'>	function a(fe){		po=open(fe,"fenetre","Height=400,Width=650,screenX=1,scrollbars,resizable");	}</script>
+<div id='main'><br />
+<div class ='centerSimple'>
+<br />&nbsp;
+<br /><span class="Style1">Aide pour doser les sorts, armes et diffcult&eacute;s ... </span>
+<br />&nbsp;
+<br />&nbsp;
+<br />Calcul des PA, PV et PO
+<br />&nbsp;	
+<table class='detailscenter'>
+<tr><td>PA</td><td>Sagesse</td></tr>
+<tr><td>PO</td><td>Charisme</td></tr>
+<tr><td>PV</td><td>Constitution</td>
+</tr></table>
+
+
+<br />&nbsp;
+<br />Calcul de r&eacute;ussite des actions 
+<br />&nbsp;	
+<br /> Note : Tous ces calculs sont désormais regroupés dans le fichier actions.php
+<table class='detailscenter'>
+<tr><td>Actions</td>
+	<td>Caract&eacute;ristiques</td>
+	<td>Comp&eacute;tences</td>
+	<td>Calcul de R&eacute;ussite</td></tr>
+	
+	<tr><td>Sort d'attaque</td>
+	<td>1. Comp&eacute;tence du sort</td>
+	<td>2. Caract du sort</td>
+	<td> (1. + 2.) du Lanceur - (1. + 2.) de Cible + De(20) - De(20) + De((1. + 2.) du Lanceur) - De((1. + 2.) de Cible) - DifficulteUtilisationSort</td></tr>
+	
+	<tr>
+	<td>Sort de soin</td>
+	<td>1. Comp&eacute;tence du sort</td>
+	<td>2. Caract du sort</td>
+	<td> (1. + 2.) du Lanceur + (1. + 2.) de Cible + De(20) + De((1. + 2.) du Lanceur) + De((1. + 2.) de Cible) - De(40) - De(40) - DifficulteUtilisationSort</td></tr>
+	
+	<tr>
+	<td>Sort de t&eacute;l&eacute;portation</td>
+	<td>1. Comp&eacute;tence du sort</td>
+	<td>2. Caract du sort</td>
+	<td> (1. + 2.) du Lanceur - (1. + 2.) de Cible + De(20) - De(20) + De((1. + 2.) du Lanceur) - De((1. + 2.) de Cible) - DifficulteUtilisationSort</td></tr>
+	
+	<tr>
+	<td>Sort d'autot&eacute;l&eacute;portation</td>
+	<td> (1. + 2.) du Lanceur + De(20) - De(20) + De((1. + 2.) du Lanceur)  - DifficulteUtilisationSort</td></tr>
+	
+	<tr>
+	<td>Voler</td>
+	<td>1. Dexterite</td>
+	<td>2. Vol<br />3. Vigilance de la Cible</td>
+	<td> 1. + 2. du Voleur + De(20) - De(20) - 3.  - 1. de la Cible</td></tr>
+	
+	<tr>
+	<td>Attaquer</td>
+	<td>1. Comp&eacute;tence de l'arme  </td>
+	<td>2. Caract&eacute;ristique de l'arme</td>
+	<td> (1. + 2.) + De(20) - (1. + 2.) de cible - De(20) - Difficult&eacute;UtilisationArme</td></tr>
+	
+	<tr>
+	<td>Fouiller cadavre</td>
+	<td>1. Dexterite  <br />2. Charisme du Cible</td>
+	<td>3. Observation<br />4. Aura du Cible</td>
+	<td> 1. + 3. - 2. - 4. + de(20) - de(20)</td></tr>
+	
+	<tr>
+	<td>Lire</td>
+	<td>1. Intelligence </td>
+	<td>2. Alphabetisation </td>
+	<td>1. + 2. + De(20) - De(20) - DifficulteUtilisationLivre </td></tr>
+	
+	<tr>
+	<td>Se d&eacute;placer (aller) (possibilite de se faire attaquer )</td>
+	<td>1. Constitution  </td>
+	<td>2. Aura </td>
+	<td> 1. + 2. + de(20) - difficulteChemin</td></tr>
+	
+	<tr>
+	
+	<td>Crocheter</td>
+	<td>1. Dexterite</td>
+	<td>2. Crochetage </td>
+	<td> 1. + 2. + de(20) - de (difficulte)</td></tr>
+	
+	<tr>
+	
+	<td>Utiliser un passe partout</td>
+	<td>1. Dexterite</td>
+	<td>2. Crochetage </td>
+	<td> 1. + 2. + de(20) - de (difficulte) + BonusMinObjet + De(BonusMaxObjet-BonusMinObjet)</td></tr>
+	
+	<tr>
+	<td>Apprendre un sort</td>
+	<td>1. Intelligence</td>
+	<td>2. Comp&eacute;tence du sort</td>
+	<td>1. + 2. + De(20) - DifficulteUtilisationSort</td></tr>
+	
+	<tr>
+	
+	
+	
+	<td>n&eacute;gociations (Achat, Vente, Recharge)</td>
+	<td>1. Charisme</td>
+	<td>2. Aura</td>
+	<td>1. + 2. + De(20) - De(50)</td></tr>
+	
+	<tr>
+		
+	<td>Fouiller le lieu</td>
+	<td> </td>
+	<td>1. Dissimulation<br />2. Vigilance</td>
+	<td> 1. + 2. - De(20) - difficulteChemin</td>
+	
+</tr></table>
+
+
+<br />&nbsp;
+<br />Difficut&eacute; d'utilisation des objets
+<br />&nbsp;
+
+	
+<table class='detailscenter'>
+<tr><td></td>
+	<td>1. D&eacute;g&acirc;ts min<br />2. D&eacute;g&acirc;ts max </td>
+	<td> </td></tr>
+	
+	<tr>
+	<td>Difficult&eacute; du Livre</td>
+	<td> </td>
+	<td>1. +2. * </td></tr>
+	
+	<tr>
+	<td>Difficult&eacute; de l'arme</td>
+	<td>3. Comp&eacute;tence Sp&eacute;ciale<br />4. Anonyme<br />5. Temporaire<br />6. ProvoqueEtat  </td>
+	<td>1. +2. * </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 3.</td>
+	<td>+5 </td></tr>
+	<tr>	
+	<td> </td>
+	<td>Si 4.</td>
+	<td>+5 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 5.</td>
+	<td>-5 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 6.</td>
+	<td>+5 </td></tr>
+	
+	<tr>
+	<td>Difficult&eacute; du Sort T&eacute;l&eacute;portation</td>
+	<td> </td>
+	<td></td></tr>
+	
+	<tr>
+	<td>Difficult&eacute; du Sort Auto-t&eacute;l&eacute;portation</td>
+	<td> </td>
+	<td></td></tr>
+	
+	<tr>
+	<td>Difficult&eacute; des autres Sorts</td>
+	<td>3. Charges limit&eacute;es<br />4. Anonyme<br />5. Temporaire<br />6. ProvoqueEtat<br />7. Sort de transfert  </td>
+	<td> 1. + 2. *2 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 3.</td>
+	<td>-2 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 4.</td>
+	<td>+5 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 5.</td>
+	<td>-5 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 6.</td>
+	<td>+5 </td></tr>
+	<tr>
+	<td> </td>
+	<td>Si 7.</td>
+	<td>+5 </td>
+
+	</tr></table>
+
+   
+</div>    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

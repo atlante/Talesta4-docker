@@ -1,0 +1,213 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: creer_pnj.htm,v $
+$Revision: 1.10 $
+$Date: 2010/01/24 16:35:40 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- G&eacute;n&eacute;r&eacute; a partir du script, creer_chemin.php, le [13/04/2003 &agrave; 15:50] //-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head><title>Talesta</title><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' />
+</head>
+<body><script type='text/javascript'>	function a(fe){		po=open(fe,"fenetre","Height=400,Width=650,screenX=1,scrollbars,resizable");	}</script>
+<div id='main'>
+<div class ='centerSimple'><form action='creer_chemin.php' method='post'>
+
+    <table class="details">
+    <tbody>
+      <tr>
+        <td>Nom du Personnage</td>
+        <td><input maxlength="25" size="35" name="Nom" /></td>
+        <td><strong>Le nom du PNJ (64 caract&egrave;res maximum.</strong></td>
+      </tr>
+      <tr>
+        <td>Mot de Passe</td>
+        <td><input maxlength="50" size="35" name="Pass" /></td>
+        <td><strong>Le mot de passe pour se connecter au compte du pnj. </strong></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input maxlength="80" size="35" name="Email" /></td>
+        <td><strong>Pas obligatoire.</strong></td>
+      </tr>
+      <tr>
+        <td>Race</td>
+        <td><select name="Race">
+            <option value="Humain" selected="selected">Humain</option>
+            <option value="Elfe">Elfe</option>
+            <option 
+    value="Nain">Nain</option>
+        </select></td>
+        <td><strong>La race du PNJ.</strong></td>
+      </tr>
+      <tr>
+        <td>Sexe</td>
+        <td><select name="Sexe">
+            <option value="0" selected="selected">Male</option>
+            <option 
+        value="1">Femelle</option>
+        </select></td>
+        <td><strong>Le sexe du PNJ. </strong></td>
+      </tr>
+      <tr>
+        <td>R&eacute;actions lors d'une rencontre</td>
+        <td><select name="Relation">
+            <option value="0" selected="selected">Alli&eacute;</option>
+            <option value="1">Amical</option>
+            <option value="2">Neutre</option>
+            <option 
+        value="3">Inamical</option>
+            <option value="4">Ennemi</option>
+        </select></td>
+        <td><strong>Voir les tableaux <a href="tab_pnj.htm">ICI</a> </strong></td>
+      </tr>
+      <tr>
+        <td>R&eacute;actions lors d'une aggression ou d'un vol</td>
+        <td><select name="Reaction">
+            <option value="0" selected="selected">Tenter de fuir</option>
+            <option value="1">Appeler &agrave; l'aide (ou au voleur)</option>
+            <option value="2">Riposter avec arme(s) &eacute;quip&eacute;e(s)</option>
+            <option 
+        value="3">Riposter avec sort pr&eacute;f&eacute;r&eacute;</option>
+            <option value="4">Pas de r&eacute;action</option>
+            <option value="5">Voler</option>
+        </select></td>
+        <td><strong>Voir les tableaux <a href="tab_pnj.htm">ICI</a> </strong></td>
+      </tr>
+      <tr>
+        <td>Action surprise lors d'une arriv&eacute;e d'un PJ</td>
+        <td><select name="ActionSurprise">
+            <option value="0" selected="selected">Voler</option>
+            <option value="1">Attaquer (arme)</option>
+            <option value="2">Lancer un sort (magie)</option>
+            <option value="4">Pas d'action</option>
+            <option 
+        value="5">Parler</option>
+        </select></td>
+        <td><strong>Voir les tableaux <a href="tab_pnj.htm">ICI</a> </strong></td>
+      </tr>
+      <tr>
+        <td>Lieu : </td>
+        <td><select name="lieu">
+            <option value="3" selected="selected">Car-Ar&egrave;ne</option>
+            <option value="8">Car-Armurerie</option>
+            <option 
+        value="2">Car-Auberge</option>
+            <option value="1">Car-Carearan - Centre ville</option>
+            <option value="4">Car-Dojo</option>
+            <option 
+        value="9">Car-Guilde de magie</option>
+            <option value="23">Che-Caraeran - Zougenotou 1/2</option>
+            <option value="22">Che-Caraeran - Zougenotou 2/2</option>
+            <option value="18">Che-Pedith - Zougenotou 1/4</option>
+            <option value="17">Che-Pedith - Zougenotou 2/4</option>
+            <option 
+        value="16">Che-Pedith - Zougenotou 3/4</option>
+            <option value="11">Che-Pont cass&eacute;</option>
+            <option value="15">Che-Trouville - Pedith - Zougenotou 4/4</option>
+            <option value="12">Che-Trouville - Pedith 1/4</option>
+            <option value="13">Che-Trouville - Pedith 2/4</option>
+            <option 
+        value="14">Che-Trouville - Pedith 3/4</option>
+            <option value="10">Che-Vers pont cass&eacute;</option>
+            <option value="20">Ped-Pedith - Centre ville</option>
+            <option value="6">Tro-Auberge</option>
+            <option value="7">Tro-Champs d'Orge</option>
+            <option value="5">Tro-Trouville</option>
+            <option 
+        value="19">Zou-Zougenotou - Centre ville</option>
+            <option 
+        value="21">Zul-Zulaikha - Centre ville</option>
+        </select></td>
+        <td><strong>Choisir le lieu o&ugrave; va se trouver le PNJ. </strong></td>
+      </tr>
+      <tr>
+        <td>PA</td>
+        <td><input maxlength="4" size="35" value="20" name="PA" /></td>
+        <td><strong>Choisir le nombre de Points d'Action qu'aura le PNJ. </strong>
+<h3><strong>Avertissement Hixcks : Cette valeur est réduite à son PAMax() à la prochaine remise. Donc, meme si on cree un PNJ avec 500 PA, il ne les gardera pas longtemps. Pour créer un PNJ avec beaucoup de PA, il faut lui affecter un état temporaire avec un rpa important pour augmenter son PAMax() en plus de lui mettre une grosse valeur dans PA</strong></h3></td>
+      </tr>
+      <tr>
+        <td>PO</td>
+        <td><input maxlength="4" size="35" value="20" name="PO" /></td>
+        <td><strong>Choisir le nombre de Points d'Or qu'aura le PNJ. </strong></td>
+      </tr>
+      <tr>
+        <td>PV</td>
+        <td><input maxlength="4" size="35" value="25" name="PV" /></td>
+        <td><strong>Choisir le nombre de Points de Vie qu'aura le PNJ. </strong>
+<h3><strong>Avertissement Hixcks : Cette valeur est réduite à son PVMax() à la prochaine remise. Donc, meme si on cree un PNJ avec 500 PV, il ne les gardera pas longtemps. Pour créer un PNJ avec beaucoup de PV, il faut lui affecter un état temporaire avec un rpv important pour augmenter son PVMax() en plus de lui mettre une grosse valeur dans PV</strong></h3></td>
+      </tr>
+      <tr>
+        <td>PI</td>
+        <td><input maxlength="4" size="35" value="25" name="PI" /></td>
+        <td><strong>Choisir le nombre de Points d'Intllect qu'aura le PNJ. </strong>
+<h3><strong>Avertissement Hixcks : Cette valeur est réduite à son PIMax() à la prochaine remise. Donc, meme si on cree un PNJ avec 500 PI, il ne les gardera pas longtemps. Pour créer un PNJ avec beaucoup de PI, il faut lui affecter un état temporaire avec un rpi important pour augmenter son PIMax() en plus de lui mettre une grosse valeur dans PI</strong></h3></td>
+      </tr>
+      <tr>
+        <td>Phrase Pr&eacute;f&eacute;r&eacute;e </td>
+        <td><textarea name="PhrasePreferee" rows="10" cols="40"></textarea></td>
+        <td><strong>C'est la phrase qui sera dite &agrave; l'entr&eacute; d'un joueur dans le lieu o&ugrave; se trouve le PNJ si l'option &quot;Parler&quot; est s&eacute;lection&eacute;e dans le menu &quot;Action surprise lors d'une arriv&eacute;e d'un PJ&quot;.</strong></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><textarea name="Desc" rows="10" cols="40"></textarea></td>
+        <td><strong>Description du PNJ (visible par tout le monde) </strong></td>
+      </tr>
+      <tr>
+        <td>Background</td>
+        <td><textarea name="Background" rows="10" cols="40"></textarea></td>
+        <td><strong>Histoire du PNJ (visible uniquement par le PJ et les MJs) </strong></td>
+      </tr>
+      <tr>
+        <td>Commentaires entre MJs</td>
+        <td><textarea name="commentaires_mj" rows="10" cols="40"></textarea></td>
+        <td><strong>Visible et saisissable uniquement par les MJs.</strong></td>
+      </tr>
+
+      <tr>
+        <td>Valider ? : </td>
+        <td><select name="valider">
+            <option value="0" selected="selected">Non</option>
+            <option 
+        value="1">Oui</option>
+        </select></td>
+        <td><strong>Validation de la cr&eacute;ation du PNJ.</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<br /></div>
+
+<br />
+   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

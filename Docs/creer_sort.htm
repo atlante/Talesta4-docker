@@ -1,0 +1,693 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: creer_sort.htm,v $
+$Revision: 1.15 $
+$Date: 2010/01/24 16:35:40 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- G&eacute;n&eacute;r&eacute; a partir du script, creer_magie.php, le [13/04/2003 &agrave; 15:19] //-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Talesta</title><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head><body>
+
+<div id='main'>
+<div class ='centerSimple'><form action='creer_magie.php' method='post'>
+
+
+<table class='details'><tr><td>Nom du sort : </td><td><input type='text' name='Nom' value='' size='15' /></td><td><span class='c0'>Le nom du Sort, (64 char max)</span></td></tr>
+<tr><td>Type de sort : </td><td><select name='Type'><option value='Air'>Air</option>
+<option value='Terre'>Terre</option>
+<option value='Feu'>Feu</option>
+<option value='Eau'>Eau</option>
+<option value='Lumiere'>Lumiere</option>
+<option value='Tenebre'>Tenebre</option>
+</select></td><td><span class='c0'>Le Type de sort</span></td></tr>
+<tr><td>Sous Type de sort : </td><td><select name='Sous_Type'><option value='Paralysie'>Paralysie</option>
+<option value='Attaque'>Attaque</option>
+<option value='Soin'>Soin</option>
+<option value='Teleport'>Teleport</option>
+<option value='Teleport_Self'>Teleport Self</option>
+</select></td><td><span class='c0'>Le Sous type du Sort</span></td></tr>
+<tr><td>Effets Mini  sur la cible: </td><td><input type='text' name='Degats_Min' value='' size='5' /></td><td><span class='c0'>Les Effets Minimum que va provoquer le sort sur la cible:</span>
+<ul>
+<li><span class='c0'>les dégâts sur les points de vie (PV) si le sort est de type Attaque,</span></li>
+<li><span class='c0'>les dégâts sur les points d'action (PA) si le sort est de type Paralysie,</span></li> 
+<li><span class='c0'>les apports sur les points de vie (PV) si le sort est de type Soin</span></li> 
+ </ul>
+ </td></tr>
+<tr><td>Effets Max sur la cible: </td><td><input type='text' name='Degats_Max' value='' size='5' /></td><td><span class='c0'>Les effets Maximum que va provoquer le sort sur la cible (cf. Effets Min)</span></td></tr>
+<tr><td>Prix du sort: </td><td><input type='text' name='Prix_Base' value='' size='4' /></td><td><span class='c0'>Prix demand&eacute; pour apprendre le sort dans les magasins. Determine aussi le prix pour recharger un sort</span></td></tr>
+<tr><td>Description: </td><td><textarea name='Description' rows='5' cols='35'></textarea></td><td><span class='c0'>Description du sort (BREVE !!)</span></td></tr>
+<tr><td>Place: </td><td><input type='text' name='Place' value='' size='4' /></td><td><span class='c0'>La place que prendra le sort dans le grimoire du PJ</span></td></tr>
+<tr><td>Image (touchez pas): </td><td><input type='text' name='Image' value='' size='15' /></td><td><span class='c0'>Permet de surdefinir l'image d'un sort. Doit etre exprim&eacute; relativement au repertoire /images/. Par exemple, pour faire une boule de feu avec une image de livre, entrez </span><span class='c1'>Icones/IconLivre.png</span></td></tr>
+<tr><td>Permanent: </td><td><select name='Permanent'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Determine si les sort est permanent. Un Sort permanent ne peut pas perdu en cas de mort.</span></td></tr>
+<tr><td>Anonyme: </td><td><select name='Anonyme'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Determine si le sort est Anonyme. Un sort anonyme permet une action sur quelqu'un sans qu'il connaisse l'identite du lanceur.</span></td></tr>
+<tr><td>Charges (-1 = infini) : </td><td><input type='text' name='Charges' value='' size='4' /></td><td><span class='c0'>Le nombre de charges d'un Sort. -1 represente des charges infinies</span></td></tr>
+<tr><td>Caracteristique : </td><td><select name='Caracteristique'><option value='Force'>Force</option>
+<option value='Sagesse'>Sagesse</option>
+<option value='Dexterite'>Dexterite</option>
+<option value='Intelligence'>Intelligence</option>
+<option value='Constitution'>Constitution</option>
+<option value='Charisme'>Charisme</option>
+</select></td><td><span class='c0'>La caracteristique qui sera utilis&eacute;e dans les jets de d&eacute;s.</span></td></tr>
+<tr><td>Competence : </td><td><select name='Competence'><option value='Air'>Air</option>
+<option value='Terre'>Terre</option>
+<option value='Feu'>Feu</option>
+<option value='Eau'>Eau</option>
+<option value='Lumiere'>Lumiere</option>
+<option value='Tenebre'>Tenebre</option>
+<option value='Lame Courte'>Lame Courte</option>
+<option value='Lame Longue'>Lame Longue</option>
+<option value='Vol'>Vol</option>
+<option value='Masse Legere'>Masse Legere</option>
+<option value='Masse Lourde'>Masse Lourde</option>
+<option value='Crochetage'>Crochetage</option>
+<option value='Hache Courte'>Hache Courte</option>
+<option value='Hache Longue'>Hache Longue</option>
+<option value='Dissimulation'>Dissimulation</option>
+<option value='Arc Court'>Arc Court</option>
+<option value='Arc Long'>Arc Long</option>
+<option value='Vigilance'>Vigilance</option>
+<option value='Petite Fronde'>Petite Fronde</option>
+<option value='Grande Fronde'>Grande Fronde</option>
+<option value='Aura'>Aura</option>
+<option value='Artefact Mineur'>Artefact Mineur</option>
+<option value='Artefact Majeur'>Artefact Majeur</option>
+<option value='Observation'>Observation</option>
+</select></td><td><span class='c0'>La competence qui sera utilis&eacute;e dans les jets de d&eacute;s.</span></td></tr>
+<tr><td>Cible du sort (N'est pas utilisé pour le moment): </td><td><select  name='typecible'>	<option value='1'>1 PJ</option>
+	<option value='2'>1 Zone</option>
+	<option value='3'>Lanceur</option>
+</select></td></tr>
+<tr><td>Peut être lancé à distance: (N'est pas utilisé pour le moment)</td><td><select  name='sortdistant'>	<option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td></tr>
+<tr><td>Utilisable uniquement par</td><td><select name='ID_EtatTempSpecifique'>
+	<option value=''>&nbsp;</option>
+	<option value='30'>Adulte expérimenté</option>
+
+	<option value='13' selected='selected'>Elfe</option>
+	<option value='28'>Enfant</option>
+	<option value='5'>faiblesse</option>
+	<option value='7'>Fatigue</option>
+	<option value='8'>Fatique morale</option>
+	<option value='9'>Femelle</option>
+
+	<option value='6'>Force de Géant de Pierre</option>
+	<option value='18'>Gobelin</option>
+	<option value='16'>Humain</option>
+	<option value='3'>ivre</option>
+	<option value='29'>Jeune Adulte</option>
+	<option value='4'>malade</option>
+
+	<option value='10'>Male</option>
+	<option value='17'>Mannequin</option>
+	<option value='14'>Nain</option>
+	<option value='31'>Viellard</option>
+</select></td><td><span class='c0'>Le sort ne sera utilisable uniquement par un PJ ayant cet état temporaire. Comme les états temporaires incluent les races, l'age... On peut limiter l'utilisation d'un sort à une race...</span></td></tr>
+</table></form>
+<script type='text/javascript'>
+	var chainetemp = "";
+
+		
+	function getCssValue(tagRef,element) {
+	  //var tag = document.all(tagRef);
+	  var tag = document.getElementById(tagRef);
+	  var value= tag.style[element];
+	  if(value==null || value=='' || value=='undefined'){
+	    var aClass = tag.className;
+	    var cssRules = 'rules';
+	    for (var sSheet=0; sSheet < document.styleSheets.length; sSheet++){
+	    	  if (document.styleSheets[0].cssRules) {
+			for (var rule=0; rule < document.styleSheets[sSheet].cssRules.length; rule++) {
+		    		var currentClass = document.styleSheets[sSheet].cssRules[rule].selectorText.substring(1);
+	        		if (currentClass == aClass) {
+	          			return document.styleSheets[sSheet].cssRules[rule].style[element];
+	        		}
+	      		}	    	  	
+
+	      	} else {	
+		      for (var rule=0; rule < document.styleSheets[sSheet][cssRules].length; rule++) {
+			    var currentClass = document.styleSheets[sSheet][cssRules][rule].selectorText.substring(1);
+		        if (currentClass == aClass) {
+		          return document.styleSheets[sSheet][cssRules][rule].style[element];
+		        }
+		      }
+	      }
+	    }
+	  }
+	  return  value;
+	}	
+
+
+	function RAZ(){
+		document.forms[1].ListAdd.options.length = 0;
+		document.forms[0].chaine.value = "";
+		document.forms[0].provoqueetatValue.value = "";
+		chainetemp= "";
+	}
+	
+	function ajouteprovoqueetat(operateur){
+
+		if (operateur=='-') { 
+			classoption=getCssValue('etatsupprime','color');
+			style = 'etatsupprime';
+		}
+		else {
+			 classoption=getCssValue('etatajout','color');			
+			 style = 'etatajout';
+		}	 
+		chainetemp = chainetemp + operateur + document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value 
+			+ ";" + document.forms[1].pourcent.value + ";" + document.forms[1].duree.value+ "|" ;
+		document.forms[1].ListAdd.options.length = document.forms[1].ListAdd.options.length +1;
+		document.forms[1].ListAdd.options[(document.forms[1].ListAdd.options.length -1)].text =
+			document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].text 
+			+ ';' + document.forms[1].pourcent.value + '%;' + document.forms[1].duree.value+ ' h' ;
+		document.forms[1].ListAdd.options[(document.forms[1].ListAdd.options.length -1)].style.color=classoption;
+		document.forms[1].ListAdd.options[(document.forms[1].ListAdd.options.length -1)].style.fontWeight='bold';
+		document.forms[0].chaine.value = chainetemp;
+		document.forms[0].provoqueetatValue.value = document.forms[0].provoqueetatValue.value + 
+		'<option class=\''+style+'\' value=\''+operateur+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value+'\'>' 
+		+ document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].text 
+		+ ';' + document.forms[1].pourcent.value + '%;' + document.forms[1].duree.value+ ' h' 
+		+ '<\/option>';	
+	}
+
+				
+</script>
+<table class='detailscenter'  width='60%'><tr><td>Influence sur les états<br />(<span id='etatajout' class='etatajout'>Etats Ajoutes</span><br /><span id='etatsupprime' class='etatsupprime'>Etats Supprimes</span>)</td><td>	<form action='creer_magie.php' method='post'><select  name='provoqueetat'>
+	<option value='4'>ADULTE EXPÉRIMENTÉ</option>
+	<option value='187'>Air Niveau -1</option>
+	<option value='144'>Air Niveau -2</option>
+	<option value='101'>Air Niveau -3</option>
+	<option value='58'>Air Niveau -4</option>
+	<option value='15'>Air Niveau -5</option>
+	<option value='230'>Air Niveau 1</option>
+	<option value='273'>Air Niveau 2</option>
+	<option value='592'>Air Niveau 3</option>
+	<option value='635'>Air Niveau 4</option>
+	<option value='678'>Air Niveau 5</option>
+	<option value='215'>Alphabetisation Niveau -1</option>
+	<option value='172'>Alphabetisation Niveau -2</option>
+	<option value='129'>Alphabetisation Niveau -3</option>
+	<option value='86'>Alphabetisation Niveau -4</option>
+	<option value='43'>Alphabetisation Niveau -5</option>
+	<option value='258'>Alphabetisation Niveau 1</option>
+	<option value='577'>Alphabetisation Niveau 2</option>
+	<option value='620'>Alphabetisation Niveau 3</option>
+	<option value='663'>Alphabetisation Niveau 4</option>
+	<option value='706'>Alphabetisation Niveau 5</option>
+	<option value='204'>Arc Court Niveau -1</option>
+	<option value='161'>Arc Court Niveau -2</option>
+	<option value='118'>Arc Court Niveau -3</option>
+	<option value='75'>Arc Court Niveau -4</option>
+	<option value='32'>Arc Court Niveau -5</option>
+	<option value='247'>Arc Court Niveau 1</option>
+	<option value='290'>Arc Court Niveau 2</option>
+	<option value='609'>Arc Court Niveau 3</option>
+	<option value='652'>Arc Court Niveau 4</option>
+	<option value='695'>Arc Court Niveau 5</option>
+	<option value='205'>Arc Long Niveau -1</option>
+	<option value='162'>Arc Long Niveau -2</option>
+	<option value='119'>Arc Long Niveau -3</option>
+	<option value='76'>Arc Long Niveau -4</option>
+	<option value='33'>Arc Long Niveau -5</option>
+	<option value='248'>Arc Long Niveau 1</option>
+	<option value='567'>Arc Long Niveau 2</option>
+	<option value='610'>Arc Long Niveau 3</option>
+	<option value='653'>Arc Long Niveau 4</option>
+	<option value='696'>Arc Long Niveau 5</option>
+	<option value='211'>Artefact Majeur Niveau -1</option>
+	<option value='168'>Artefact Majeur Niveau -2</option>
+	<option value='125'>Artefact Majeur Niveau -3</option>
+	<option value='82'>Artefact Majeur Niveau -4</option>
+	<option value='39'>Artefact Majeur Niveau -5</option>
+	<option value='254'>Artefact Majeur Niveau 1</option>
+	<option value='573'>Artefact Majeur Niveau 2</option>
+	<option value='616'>Artefact Majeur Niveau 3</option>
+	<option value='659'>Artefact Majeur Niveau 4</option>
+	<option value='702'>Artefact Majeur Niveau 5</option>
+	<option value='210'>Artefact Mineur Niveau -1</option>
+	<option value='167'>Artefact Mineur Niveau -2</option>
+	<option value='124'>Artefact Mineur Niveau -3</option>
+	<option value='81'>Artefact Mineur Niveau -4</option>
+	<option value='38'>Artefact Mineur Niveau -5</option>
+	<option value='253'>Artefact Mineur Niveau 1</option>
+	<option value='572'>Artefact Mineur Niveau 2</option>
+	<option value='615'>Artefact Mineur Niveau 3</option>
+	<option value='658'>Artefact Mineur Niveau 4</option>
+	<option value='701'>Artefact Mineur Niveau 5</option>
+	<option value='218'>Arts Martiaux Niveau -1</option>
+	<option value='175'>Arts Martiaux Niveau -2</option>
+	<option value='132'>Arts Martiaux Niveau -3</option>
+	<option value='89'>Arts Martiaux Niveau -4</option>
+	<option value='46'>Arts Martiaux Niveau -5</option>
+	<option value='261'>Arts Martiaux Niveau 1</option>
+	<option value='580'>Arts Martiaux Niveau 2</option>
+	<option value='623'>Arts Martiaux Niveau 3</option>
+	<option value='666'>Arts Martiaux Niveau 4</option>
+	<option value='709'>Arts Martiaux Niveau 5</option>
+	<option value='223'>AttaqueSournoise Niveau -1</option>
+	<option value='180'>AttaqueSournoise Niveau -2</option>
+	<option value='137'>AttaqueSournoise Niveau -3</option>
+	<option value='94'>AttaqueSournoise Niveau -4</option>
+	<option value='51'>AttaqueSournoise Niveau -5</option>
+	<option value='266'>AttaqueSournoise Niveau 1</option>
+	<option value='585'>AttaqueSournoise Niveau 2</option>
+	<option value='628'>AttaqueSournoise Niveau 3</option>
+	<option value='671'>AttaqueSournoise Niveau 4</option>
+	<option value='714'>AttaqueSournoise Niveau 5</option>
+	<option value='209'>Aura Niveau -1</option>
+	<option value='166'>Aura Niveau -2</option>
+	<option value='123'>Aura Niveau -3</option>
+	<option value='80'>Aura Niveau -4</option>
+	<option value='37'>Aura Niveau -5</option>
+	<option value='252'>Aura Niveau 1</option>
+	<option value='571'>Aura Niveau 2</option>
+	<option value='614'>Aura Niveau 3</option>
+	<option value='657'>Aura Niveau 4</option>
+	<option value='700'>Aura Niveau 5</option>
+	<option value='229'>Charisme Niveau -1</option>
+	<option value='186'>Charisme Niveau -2</option>
+	<option value='143'>Charisme Niveau -3</option>
+	<option value='100'>Charisme Niveau -4</option>
+	<option value='57'>Charisme Niveau -5</option>
+	<option value='272'>Charisme Niveau 1</option>
+	<option value='591'>Charisme Niveau 2</option>
+	<option value='634'>Charisme Niveau 3</option>
+	<option value='677'>Charisme Niveau 4</option>
+	<option value='720'>Charisme Niveau 5</option>
+	<option value='222'>Combat2Armes Niveau -1</option>
+	<option value='179'>Combat2Armes Niveau -2</option>
+	<option value='136'>Combat2Armes Niveau -3</option>
+	<option value='93'>Combat2Armes Niveau -4</option>
+	<option value='50'>Combat2Armes Niveau -5</option>
+	<option value='265'>Combat2Armes Niveau 1</option>
+	<option value='584'>Combat2Armes Niveau 2</option>
+	<option value='627'>Combat2Armes Niveau 3</option>
+	<option value='670'>Combat2Armes Niveau 4</option>
+	<option value='713'>Combat2Armes Niveau 5</option>
+	<option value='228'>Constitution Niveau -1</option>
+	<option value='185'>Constitution Niveau -2</option>
+	<option value='142'>Constitution Niveau -3</option>
+	<option value='99'>Constitution Niveau -4</option>
+	<option value='56'>Constitution Niveau -5</option>
+	<option value='271'>Constitution Niveau 1</option>
+	<option value='590'>Constitution Niveau 2</option>
+	<option value='633'>Constitution Niveau 3</option>
+	<option value='676'>Constitution Niveau 4</option>
+	<option value='719'>Constitution Niveau 5</option>
+	<option value='200'>Crochetage Niveau -1</option>
+	<option value='157'>Crochetage Niveau -2</option>
+	<option value='114'>Crochetage Niveau -3</option>
+	<option value='71'>Crochetage Niveau -4</option>
+	<option value='28'>Crochetage Niveau -5</option>
+	<option value='243'>Crochetage Niveau 1</option>
+	<option value='286'>Crochetage Niveau 2</option>
+	<option value='605'>Crochetage Niveau 3</option>
+	<option value='648'>Crochetage Niveau 4</option>
+	<option value='691'>Crochetage Niveau 5</option>
+	<option value='12'>DEMI-ELFE</option>
+	<option value='226'>Dexterite Niveau -1</option>
+	<option value='183'>Dexterite Niveau -2</option>
+	<option value='140'>Dexterite Niveau -3</option>
+	<option value='97'>Dexterite Niveau -4</option>
+	<option value='54'>Dexterite Niveau -5</option>
+	<option value='269'>Dexterite Niveau 1</option>
+	<option value='588'>Dexterite Niveau 2</option>
+	<option value='631'>Dexterite Niveau 3</option>
+	<option value='674'>Dexterite Niveau 4</option>
+	<option value='717'>Dexterite Niveau 5</option>
+	<option value='203'>Dissimulation Niveau -1</option>
+	<option value='160'>Dissimulation Niveau -2</option>
+	<option value='117'>Dissimulation Niveau -3</option>
+	<option value='74'>Dissimulation Niveau -4</option>
+	<option value='31'>Dissimulation Niveau -5</option>
+	<option value='246'>Dissimulation Niveau 1</option>
+	<option value='289'>Dissimulation Niveau 2</option>
+	<option value='608'>Dissimulation Niveau 3</option>
+	<option value='651'>Dissimulation Niveau 4</option>
+	<option value='694'>Dissimulation Niveau 5</option>
+	<option value='190'>Eau Niveau -1</option>
+	<option value='147'>Eau Niveau -2</option>
+	<option value='104'>Eau Niveau -3</option>
+	<option value='61'>Eau Niveau -4</option>
+	<option value='18'>Eau Niveau -5</option>
+	<option value='233'>Eau Niveau 1</option>
+	<option value='276'>Eau Niveau 2</option>
+	<option value='595'>Eau Niveau 3</option>
+	<option value='638'>Eau Niveau 4</option>
+	<option value='681'>Eau Niveau 5</option>
+	<option value='7'>ELFE</option>
+	<option value='2'>ENFANT</option>
+	<option value='219'>Escalade Niveau -1</option>
+	<option value='176'>Escalade Niveau -2</option>
+	<option value='133'>Escalade Niveau -3</option>
+	<option value='90'>Escalade Niveau -4</option>
+	<option value='47'>Escalade Niveau -5</option>
+	<option value='262'>Escalade Niveau 1</option>
+	<option value='581'>Escalade Niveau 2</option>
+	<option value='624'>Escalade Niveau 3</option>
+	<option value='667'>Escalade Niveau 4</option>
+	<option value='710'>Escalade Niveau 5</option>
+	<option value='14'>FEMELLE</option>
+	<option value='189'>Feu Niveau -1</option>
+	<option value='146'>Feu Niveau -2</option>
+	<option value='103'>Feu Niveau -3</option>
+	<option value='60'>Feu Niveau -4</option>
+	<option value='17'>Feu Niveau -5</option>
+	<option value='232'>Feu Niveau 1</option>
+	<option value='275'>Feu Niveau 2</option>
+	<option value='594'>Feu Niveau 3</option>
+	<option value='637'>Feu Niveau 4</option>
+	<option value='680'>Feu Niveau 5</option>
+	<option value='224'>Force Niveau -1</option>
+	<option value='181'>Force Niveau -2</option>
+	<option value='138'>Force Niveau -3</option>
+	<option value='95'>Force Niveau -4</option>
+	<option value='52'>Force Niveau -5</option>
+	<option value='267'>Force Niveau 1</option>
+	<option value='586'>Force Niveau 2</option>
+	<option value='629'>Force Niveau 3</option>
+	<option value='672'>Force Niveau 4</option>
+	<option value='715'>Force Niveau 5</option>
+	<option value='10'>GOBLEIN</option>
+	<option value='217'>Grande Arbalete Niveau -1</option>
+	<option value='174'>Grande Arbalete Niveau -2</option>
+	<option value='131'>Grande Arbalete Niveau -3</option>
+	<option value='88'>Grande Arbalete Niveau -4</option>
+	<option value='45'>Grande Arbalete Niveau -5</option>
+	<option value='260'>Grande Arbalete Niveau 1</option>
+	<option value='579'>Grande Arbalete Niveau 2</option>
+	<option value='622'>Grande Arbalete Niveau 3</option>
+	<option value='665'>Grande Arbalete Niveau 4</option>
+	<option value='708'>Grande Arbalete Niveau 5</option>
+	<option value='208'>Grande Fronde Niveau -1</option>
+	<option value='165'>Grande Fronde Niveau -2</option>
+	<option value='122'>Grande Fronde Niveau -3</option>
+	<option value='79'>Grande Fronde Niveau -4</option>
+	<option value='36'>Grande Fronde Niveau -5</option>
+	<option value='251'>Grande Fronde Niveau 1</option>
+	<option value='570'>Grande Fronde Niveau 2</option>
+	<option value='613'>Grande Fronde Niveau 3</option>
+	<option value='656'>Grande Fronde Niveau 4</option>
+	<option value='699'>Grande Fronde Niveau 5</option>
+	<option value='201'>Hache Courte Niveau -1</option>
+	<option value='158'>Hache Courte Niveau -2</option>
+	<option value='115'>Hache Courte Niveau -3</option>
+	<option value='72'>Hache Courte Niveau -4</option>
+	<option value='29'>Hache Courte Niveau -5</option>
+	<option value='244'>Hache Courte Niveau 1</option>
+	<option value='287'>Hache Courte Niveau 2</option>
+	<option value='606'>Hache Courte Niveau 3</option>
+	<option value='649'>Hache Courte Niveau 4</option>
+	<option value='692'>Hache Courte Niveau 5</option>
+	<option value='202'>Hache Longue Niveau -1</option>
+	<option value='159'>Hache Longue Niveau -2</option>
+	<option value='116'>Hache Longue Niveau -3</option>
+	<option value='73'>Hache Longue Niveau -4</option>
+	<option value='30'>Hache Longue Niveau -5</option>
+	<option value='245'>Hache Longue Niveau 1</option>
+	<option value='288'>Hache Longue Niveau 2</option>
+	<option value='607'>Hache Longue Niveau 3</option>
+	<option value='650'>Hache Longue Niveau 4</option>
+	<option value='693'>Hache Longue Niveau 5</option>
+	<option value='6'>HUMAIN</option>
+	<option value='193'>Illusion Niveau -1</option>
+	<option value='150'>Illusion Niveau -2</option>
+	<option value='107'>Illusion Niveau -3</option>
+	<option value='64'>Illusion Niveau -4</option>
+	<option value='21'>Illusion Niveau -5</option>
+	<option value='236'>Illusion Niveau 1</option>
+	<option value='279'>Illusion Niveau 2</option>
+	<option value='598'>Illusion Niveau 3</option>
+	<option value='641'>Illusion Niveau 4</option>
+	<option value='684'>Illusion Niveau 5</option>
+	<option value='227'>Intelligence Niveau -1</option>
+	<option value='184'>Intelligence Niveau -2</option>
+	<option value='141'>Intelligence Niveau -3</option>
+	<option value='98'>Intelligence Niveau -4</option>
+	<option value='55'>Intelligence Niveau -5</option>
+	<option value='270'>Intelligence Niveau 1</option>
+	<option value='589'>Intelligence Niveau 2</option>
+	<option value='632'>Intelligence Niveau 3</option>
+	<option value='675'>Intelligence Niveau 4</option>
+	<option value='718'>Intelligence Niveau 5</option>
+	<option value='3'>JEUNE ADULTE</option>
+	<option value='195'>Lame Courte Niveau -1</option>
+	<option value='152'>Lame Courte Niveau -2</option>
+	<option value='109'>Lame Courte Niveau -3</option>
+	<option value='66'>Lame Courte Niveau -4</option>
+	<option value='23'>Lame Courte Niveau -5</option>
+	<option value='238'>Lame Courte Niveau 1</option>
+	<option value='281'>Lame Courte Niveau 2</option>
+	<option value='600'>Lame Courte Niveau 3</option>
+	<option value='643'>Lame Courte Niveau 4</option>
+	<option value='686'>Lame Courte Niveau 5</option>
+	<option value='196'>Lame Longue Niveau -1</option>
+	<option value='153'>Lame Longue Niveau -2</option>
+	<option value='110'>Lame Longue Niveau -3</option>
+	<option value='67'>Lame Longue Niveau -4</option>
+	<option value='24'>Lame Longue Niveau -5</option>
+	<option value='239'>Lame Longue Niveau 1</option>
+	<option value='282'>Lame Longue Niveau 2</option>
+	<option value='601'>Lame Longue Niveau 3</option>
+	<option value='644'>Lame Longue Niveau 4</option>
+	<option value='687'>Lame Longue Niveau 5</option>
+	<option value='213'>Lance Courte Niveau -1</option>
+	<option value='170'>Lance Courte Niveau -2</option>
+	<option value='127'>Lance Courte Niveau -3</option>
+	<option value='84'>Lance Courte Niveau -4</option>
+	<option value='41'>Lance Courte Niveau -5</option>
+	<option value='256'>Lance Courte Niveau 1</option>
+	<option value='575'>Lance Courte Niveau 2</option>
+	<option value='618'>Lance Courte Niveau 3</option>
+	<option value='661'>Lance Courte Niveau 4</option>
+	<option value='704'>Lance Courte Niveau 5</option>
+	<option value='214'>Lance Longue Niveau -1</option>
+	<option value='171'>Lance Longue Niveau -2</option>
+	<option value='128'>Lance Longue Niveau -3</option>
+	<option value='85'>Lance Longue Niveau -4</option>
+	<option value='42'>Lance Longue Niveau -5</option>
+	<option value='257'>Lance Longue Niveau 1</option>
+	<option value='576'>Lance Longue Niveau 2</option>
+	<option value='619'>Lance Longue Niveau 3</option>
+	<option value='662'>Lance Longue Niveau 4</option>
+	<option value='705'>Lance Longue Niveau 5</option>
+	<option value='191'>Lumiere Niveau -1</option>
+	<option value='148'>Lumiere Niveau -2</option>
+	<option value='105'>Lumiere Niveau -3</option>
+	<option value='62'>Lumiere Niveau -4</option>
+	<option value='19'>Lumiere Niveau -5</option>
+	<option value='234'>Lumiere Niveau 1</option>
+	<option value='277'>Lumiere Niveau 2</option>
+	<option value='596'>Lumiere Niveau 3</option>
+	<option value='639'>Lumiere Niveau 4</option>
+	<option value='682'>Lumiere Niveau 5</option>
+	<option value='13'>MALE</option>
+	<option value='198'>Masse Legere Niveau -1</option>
+	<option value='155'>Masse Legere Niveau -2</option>
+	<option value='112'>Masse Legere Niveau -3</option>
+	<option value='69'>Masse Legere Niveau -4</option>
+	<option value='26'>Masse Legere Niveau -5</option>
+	<option value='241'>Masse Legere Niveau 1</option>
+	<option value='284'>Masse Legere Niveau 2</option>
+	<option value='603'>Masse Legere Niveau 3</option>
+	<option value='646'>Masse Legere Niveau 4</option>
+	<option value='689'>Masse Legere Niveau 5</option>
+	<option value='199'>Masse Lourde Niveau -1</option>
+	<option value='156'>Masse Lourde Niveau -2</option>
+	<option value='113'>Masse Lourde Niveau -3</option>
+	<option value='70'>Masse Lourde Niveau -4</option>
+	<option value='27'>Masse Lourde Niveau -5</option>
+	<option value='242'>Masse Lourde Niveau 1</option>
+	<option value='285'>Masse Lourde Niveau 2</option>
+	<option value='604'>Masse Lourde Niveau 3</option>
+	<option value='647'>Masse Lourde Niveau 4</option>
+	<option value='690'>Masse Lourde Niveau 5</option>
+	<option value='220'>Nage Niveau -1</option>
+	<option value='177'>Nage Niveau -2</option>
+	<option value='134'>Nage Niveau -3</option>
+	<option value='91'>Nage Niveau -4</option>
+	<option value='48'>Nage Niveau -5</option>
+	<option value='263'>Nage Niveau 1</option>
+	<option value='582'>Nage Niveau 2</option>
+	<option value='625'>Nage Niveau 3</option>
+	<option value='668'>Nage Niveau 4</option>
+	<option value='711'>Nage Niveau 5</option>
+	<option value='8'>NAIN</option>
+	<option value='212'>Observation Niveau -1</option>
+	<option value='169'>Observation Niveau -2</option>
+	<option value='126'>Observation Niveau -3</option>
+	<option value='83'>Observation Niveau -4</option>
+	<option value='40'>Observation Niveau -5</option>
+	<option value='255'>Observation Niveau 1</option>
+	<option value='574'>Observation Niveau 2</option>
+	<option value='617'>Observation Niveau 3</option>
+	<option value='660'>Observation Niveau 4</option>
+	<option value='703'>Observation Niveau 5</option>
+	<option value='11'>ORC</option>
+	<option value='216'>Petite Arbalete Niveau -1</option>
+	<option value='173'>Petite Arbalete Niveau -2</option>
+	<option value='130'>Petite Arbalete Niveau -3</option>
+	<option value='87'>Petite Arbalete Niveau -4</option>
+	<option value='44'>Petite Arbalete Niveau -5</option>
+	<option value='259'>Petite Arbalete Niveau 1</option>
+	<option value='578'>Petite Arbalete Niveau 2</option>
+	<option value='621'>Petite Arbalete Niveau 3</option>
+	<option value='664'>Petite Arbalete Niveau 4</option>
+	<option value='707'>Petite Arbalete Niveau 5</option>
+	<option value='207'>Petite Fronde Niveau -1</option>
+	<option value='164'>Petite Fronde Niveau -2</option>
+	<option value='121'>Petite Fronde Niveau -3</option>
+	<option value='78'>Petite Fronde Niveau -4</option>
+	<option value='35'>Petite Fronde Niveau -5</option>
+	<option value='250'>Petite Fronde Niveau 1</option>
+	<option value='569'>Petite Fronde Niveau 2</option>
+	<option value='612'>Petite Fronde Niveau 3</option>
+	<option value='655'>Petite Fronde Niveau 4</option>
+	<option value='698'>Petite Fronde Niveau 5</option>
+	<option value='194'>Psychique Niveau -1</option>
+	<option value='151'>Psychique Niveau -2</option>
+	<option value='108'>Psychique Niveau -3</option>
+	<option value='65'>Psychique Niveau -4</option>
+	<option value='22'>Psychique Niveau -5</option>
+	<option value='237'>Psychique Niveau 1</option>
+	<option value='280'>Psychique Niveau 2</option>
+	<option value='599'>Psychique Niveau 3</option>
+	<option value='642'>Psychique Niveau 4</option>
+	<option value='685'>Psychique Niveau 5</option>
+	<option value='225'>Sagesse Niveau -1</option>
+	<option value='182'>Sagesse Niveau -2</option>
+	<option value='139'>Sagesse Niveau -3</option>
+	<option value='96'>Sagesse Niveau -4</option>
+	<option value='53'>Sagesse Niveau -5</option>
+	<option value='268'>Sagesse Niveau 1</option>
+	<option value='587'>Sagesse Niveau 2</option>
+	<option value='630'>Sagesse Niveau 3</option>
+	<option value='673'>Sagesse Niveau 4</option>
+	<option value='716'>Sagesse Niveau 5</option>
+	<option value='221'>Soin Naturel Niveau -1</option>
+	<option value='178'>Soin Naturel Niveau -2</option>
+	<option value='135'>Soin Naturel Niveau -3</option>
+	<option value='92'>Soin Naturel Niveau -4</option>
+	<option value='49'>Soin Naturel Niveau -5</option>
+	<option value='264'>Soin Naturel Niveau 1</option>
+	<option value='583'>Soin Naturel Niveau 2</option>
+	<option value='626'>Soin Naturel Niveau 3</option>
+	<option value='669'>Soin Naturel Niveau 4</option>
+	<option value='712'>Soin Naturel Niveau 5</option>
+	<option value='192'>Tenebre Niveau -1</option>
+	<option value='149'>Tenebre Niveau -2</option>
+	<option value='106'>Tenebre Niveau -3</option>
+	<option value='63'>Tenebre Niveau -4</option>
+	<option value='20'>Tenebre Niveau -5</option>
+	<option value='235'>Tenebre Niveau 1</option>
+	<option value='278'>Tenebre Niveau 2</option>
+	<option value='597'>Tenebre Niveau 3</option>
+	<option value='640'>Tenebre Niveau 4</option>
+	<option value='683'>Tenebre Niveau 5</option>
+	<option value='188'>Terre Niveau -1</option>
+	<option value='145'>Terre Niveau -2</option>
+	<option value='102'>Terre Niveau -3</option>
+	<option value='59'>Terre Niveau -4</option>
+	<option value='16'>Terre Niveau -5</option>
+	<option value='231'>Terre Niveau 1</option>
+	<option value='274'>Terre Niveau 2</option>
+	<option value='593'>Terre Niveau 3</option>
+	<option value='636'>Terre Niveau 4</option>
+	<option value='679'>Terre Niveau 5</option>
+	<option value='9'>TROLL</option>
+	<option value='5'>VIELLARD</option>
+	<option value='206'>Vigilance Niveau -1</option>
+	<option value='163'>Vigilance Niveau -2</option>
+	<option value='120'>Vigilance Niveau -3</option>
+	<option value='77'>Vigilance Niveau -4</option>
+	<option value='34'>Vigilance Niveau -5</option>
+	<option value='249'>Vigilance Niveau 1</option>
+	<option value='568'>Vigilance Niveau 2</option>
+	<option value='611'>Vigilance Niveau 3</option>
+	<option value='654'>Vigilance Niveau 4</option>
+	<option value='697'>Vigilance Niveau 5</option>
+	<option value='197'>Vol Niveau -1</option>
+	<option value='154'>Vol Niveau -2</option>
+	<option value='111'>Vol Niveau -3</option>
+	<option value='68'>Vol Niveau -4</option>
+	<option value='25'>Vol Niveau -5</option>
+	<option value='240'>Vol Niveau 1</option>
+	<option value='283'>Vol Niveau 2</option>
+	<option value='602'>Vol Niveau 3</option>
+	<option value='645'>Vol Niveau 4</option>
+	<option value='688'>Vol Niveau 5</option>
+</select><br />Pourcentage de déclenchement: <input value='100'  name='pourcent' type='texte' /><br />Durée en heures: <input value='-1' name='duree'  type='texte' /><br /><br /><input value="Provoque l'etat" type='button' onclick="ajouteprovoqueetat('')" /><input value="Annule l'etat" type='button' onclick="ajouteprovoqueetat('-')" /><input value="Voir l'etat" type='button' onclick="a('../bdc/etat.php?for_mj=1&amp;num_etat='+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value)" /><br />&nbsp;<br /><select name="ListAdd" size='5'></select><br />&nbsp;<br /><input value="Remettre a Zero" type='button' onclick="RAZ(1)" /></form></td></tr></table>
+
+
+
+<!--  a terminer 
+<p>&nbsp;</p>
+<table class='details'>
+<tr><td colspan = '4'> Magie majeure</td></tr>
+<tr><td>Type de Cible:</td><td>Distant</td><td>TypeSort</td><td>Remarque</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>Soin</td><td> Si cible n'est pas morte</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Si cible n'est pas morte</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>Teleport</td><td>Si cible n'est pas morte</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>AutoTeleport</td><td>non généré car correspond à la catégorie Autotéport sur le lanceur uniquement</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>Résurrection</td><td>Si cible est morte</td></tr>
+
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>Soin</td><td></td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td></td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>Teleport</td><td></td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>Résurrection</td><td>Si cible est morte</td></tr>
+
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Soin</td><td></td></tr>        
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Ok mais le lanceur étant dans la zone va prendre des degats aussi</td></tr>
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Teleport</td><td></td></tr>    
+<tr><td>2 (1 Zone)</td><td>Non</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Résurrection</td><td></td></tr>
+                                                                   
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>Soin</td><td></td></tr>        
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td></td></tr>
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>Teleport</td><td></td></tr>    
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>Résurrection</td><td></td></tr>
+                                                                               
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Soin</td><td> </td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Supprimé car stupide </td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Teleport</td><td> Supprimé car correspond à la catégorie ci-dessous</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>AutoTeleport</td><td> </td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Résurrection</td><td> Impossible par définition</td></tr>                 
+                                                                               
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Soin</td><td> Impossible par définition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td> Impossible par définition</td></tr>                         
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Teleport</td><td> Impossible par définition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>AutoTeleport</td><td> Impossible par définition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Résurrection</td><td> Impossible par définition</td></tr>                 
+</table>
+-->
+</div>
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>
+

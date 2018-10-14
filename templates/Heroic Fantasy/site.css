@@ -1,0 +1,423 @@
+/*
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: site.css,v $
+$Revision: 1.2 $
+$Date: 2010/01/24 10:29:38 $
+
+*/
+
+
+/* site */
+html, div  {
+	margin: 0; padding: 0;
+	}
+
+/* scrollbars (SEULEMENT POUR IE, sur les autres, aucun changement ne sera visible) */ 
+body { 
+scrollbar-3dlight-color : #8C6450; /* couleur des ombres claires */ 
+scrollbar-arrow-color : #8C6450; /* couleur des flèches */ 
+scrollbar-base-color : #E3D3B9; /* couleur générale */ 
+scrollbar-darkshadow-color : #8C6450; /* couleur des ombres foncées */ 
+scrollbar-shadow-color : #8C6450; /* couleur des ombres foncées */ 
+} 
+/* fin scrollbars */
+
+
+/* formulaire */ 
+input { 
+border-style:solid; /* style graphique de la bordure du champ de saisie */ 
+border-width:1px; /* Taille de la bordure du champ de saisie */ 
+border-color:#8C6450; /* couleur des bordures des champs de saisie */ 
+background-color:#E3D3B9; /* couleur de fond des champs de saisie */ 
+color:#8C6450; /* couleur du texte tapé dans un champs de saisie */ 
+} 
+select, option { 
+background-color:#E3D3B9; /* couleur de fond des menus déroulants */ 
+color:#8C6450; /* couleur du texte des menus déroulants */ 
+} 
+textarea { 
+border-style:solid; /* style graphique de la bordure du champ de texte */ 
+border-width:1px; /* Taille de la bordure du champ de texte */ 
+border-color:#8C6450; /* couleur des bordures des champs de texte */ 
+background-color:#E3D3B9; /* couleur de fond des champs de texte */ 
+color:#8C6450; /* couleur du texte tapé dans un champs de texte */ 
+} 
+/* fin formulaire */ 
+
+body {  
+	background-color: rgb(18, 50, 93);
+	/*background-image: url(images/bg.jpg);*/
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+
+	font-family: Tahoma, Verdana, Helvetica;
+	font-size:10pt;
+	margin: 0; padding: 0;
+
+	color:#FFddaa; /* Couleur du texte */
+
+	}
+
+.center {
+	border:1px solid red;
+	text-align:center;
+	}
+
+
+/* remise en page des tables ;) */
+
+#main table {
+	font-size:95%;
+	}
+
+#main table, #main td {
+	border-collapse:collapse;
+	border:0px solid;
+	padding:1px;
+	}
+
+#main td {
+	width:auto;
+	}
+
+#main table.container tr, #main table.container td, #main table.container th
+{
+
+}
+
+
+#main table.details,
+#main table.details td,
+#main table.details th,
+#main table.details tr
+{
+	border:2px solid rgb(20%,40%,30%);
+}
+
+div#barre td, th {
+
+	padding-left:5px;
+	white-space: nowrap;
+	}
+
+div#barre table {
+	width:100%;
+	
+
+	text-align:center;
+	border-collapse:collapse;
+}
+
+
+
+
+/*pure css menu*/
+
+div#menu {
+	position:absolute;
+	top:150px;
+	left:0px;
+
+	width:135px;
+	padding:0px;
+
+	color: rgb(70%, 60%, 20%);
+	text-align:left;
+
+	background-color: rgb(0%,10%,8%);
+	background-image: url(images/bg_menu.jpg);
+	/*background-position: 0px 35px;
+	background-repeat: no-repeat;*/
+		
+	margin-left:10px;
+	border:1px solid #9D6D3C;
+}
+
+#menu p {
+	padding:0 ;margin:0;
+	
+	}
+
+#menu h4 {
+	padding:0 ;margin:0;
+
+	font-size: 85%;
+	padding-bottom:4px;
+
+	}
+
+#menu a.t1 {
+   text-decoration: none;
+   color: rgb(70%, 60%, 20%);
+   text-align:center;
+   display: block;
+
+   padding-right:4px;
+
+   border:1px solid rgb(10%,5%,0%);
+   border-bottom:1px solid rgb(10%,5%,0%);
+
+   background-image: url(images/trame_dark.png);
+   }
+
+#menu a.t1:hover {
+   color:navajowhite;
+
+   background-color: #29071C;
+   background-image: none;
+
+   border:1px solid rgb(41%,28%,8%);
+   }
+
+
+#menu a.t2 {
+font-size : 7pt;
+   text-decoration: none;
+   color: rgb(70%, 60%, 45%);
+   text-align:right;
+   display: block;
+
+   padding-right:5px;
+
+   border:1px solid rgb(10%,5%,0%);
+   border-bottom:1px solid rgb(10%,5%,0%);
+
+   background-image: url(images/trame_dark.png);
+   }
+
+#menu a.t2:hover {
+   color:navajowhite;
+
+   background-color: #29071C;
+   background-image: none;
+
+   border:1px solid rgb(41%,28%,8%);
+   }
+
+
+img.top {
+	vertical-align:text-bottom;
+	padding-bottom:4px;
+	}
+
+img.bottom {
+	vertical-align:text-bottom;
+	}
+
+
+
+#gauche {
+	background-color:rgb(0%,10%,8%);
+	background-image: url(images/header2.jpg);
+	background-repeat: no-repeat;
+	background-color: #12325D;
+	}
+
+/*main*/
+
+
+
+#main {
+	padding:10px;
+/*	margin-top:69px;
+	margin-left:157px;
+*/
+
+	background-color:rgb(0%,10%,8%);
+	background-image: url(images/bg2.jpg);
+	background-repeat: repeat;
+
+	border:1px solid #9D6D3C;
+	}
+
+
+#main h1 {
+	margin-top:10px;
+	margin-left:20px;
+	margin-bottom:20px;
+	white-space: nowrap;
+	}
+
+
+#main a {
+	font-weight:bold;
+	color: rgb(90%,90%,80%);
+	text-decoration: none;
+	}
+
+#main a:visited {
+	color: rgb(90%,90%,80%);
+}
+
+#main a:hover {
+	color: white;
+}
+
+#barre {
+
+	width:auto;
+	}
+
+#barre_vide {
+
+	width:auto;
+
+	}
+
+
+.listeTypeNone {              
+	list-style-type: none;
+}                    
+
+
+
+/* couleurs */
+
+
+.c0 {	/*defaut pj*/
+	font-weight: bold;
+	color: rgb(241, 192, 109);}	/*jaunebrillant*/
+.c23 { /*mj*/
+	font-weight: bold;
+	color: rgb(177, 241, 227);}	/*bleubrillant*/
+.c6 {	/*race*/
+	font-weight: bold;
+	color: rgb(80, 146, 163);}	/*bleugris*/
+.c3 {	/*lieu*/
+	font-weight: bold;
+	color: rgb(86, 152, 142);}	/*vertgris*/
+
+
+.c1 {	/*pa*/
+	font-weight: bold;
+	color: rgb(252, 169, 8);}
+.c5 {	/*pv*/
+	font-weight: bold;
+	color: rgb(244,104,27);}
+.c4 {	/*xp*/
+	font-weight: bold;
+	color: rgb(184,158,98);}
+.c2 {	/*gold*/
+	font-weight: bold;
+	color: rgb(254, 154, 47);}
+
+
+.c7 {	/*specialite*/
+	font-weight: bold;
+	color: rgb(154,122,224);}	/*mauve*/
+
+.c8 {	/*comp*/
+	font-weight: 900;
+	color: rgb(154,122,224);}	/*mauve*/
+.c9 {	/*bonus*/
+	font-weight: bold;
+	color: rgb(159,203,244);}	/*bleuciel*/
+.c10 {	/*malus*/
+	font-weight: bold;
+	color: rgb(122, 54, 198);}	/*violet*/
+
+
+.c11 {	/*etattemp*/
+	font-weight: bold;
+	color: rgb(196, 110, 103);}
+.c12 {	/*date*/
+	font-weight: bold;
+	color: rgb(196,198,169);}
+
+
+.c13 {	/*objet*/
+	font-weight: bold;
+	color: rgb(147,198,201);}
+.c14 { /*spell*/
+	font-weight: bold;
+	color: rgb(157,145,215);}
+
+.c15 { /*durabilite*/
+	font-weight: bold;
+	color: rgb(200,158,200);}	/*default*/
+.c16 { /*ammo*/
+	font-weight: bold;
+	color: rgb(200,158,200);}	/*default*/
+.c17 { /*degats*/
+	font-weight: bold;
+	color: rgb(221,108,56);}
+.c18 { /*poids chap, place*/
+	font-weight: bold;
+	color: rgb(200,158,200);}	/*default*/
+.c20 {	/*equiped*/
+	font-weight: bold;
+	color: rgb(53, 122, 139);}
+.c19 {  font-weight: bold; color: rgb(196,198,169);} /*date color*/
+
+
+.c21 { font-weight: bold; color: rgb(255,255,255);}
+
+.c24 {	/*pi*/
+	font-weight: bold;
+	color: rgb(53, 122, 139);}
+
+
+.c25 {
+   color: rgb(153, 0, 0);
+}
+
+
+.cRGMOD {
+   color: rgb(153, 153, 153);
+}
+
+
+.cRGADD {
+   color: rgb(102, 102, 102);
+}
+.centerSimple {
+	text-align:center;
+	margin-left: auto; margin-right: auto
+	}
+
+#main table.detailscenter,
+#main table.detailscenter td,
+#main table.detailscenter th,
+#main table.detailscenter tr
+ 	{
+	border:2px solid rgb(20%,40%,30%);
+	margin-left: auto; margin-right: auto
+	}
+
+#main table.stats,
+#main table.stats td,
+#main table.stats th,
+#main table.stats tr
+ 	{
+	margin-left: auto; margin-right: auto
+	}
+
+.justify {
+text-align: justify;
+}
+	
+.fontSize3 { font-size : 15pt;}
+
+#main table.news
+{
+	border:2px solid rgb(20%,40%,30%);
+	margin-left: auto; margin-right: auto
+}
+#main table.news td,
+#main table.news th,
+#main table.news tr 
+{
+	border:2px solid rgb(20%,40%,30%);
+	padding:10px;
+
+}
+
+/* AJOUT SCRIPT D'INSTALLATION */
+
+.ok { color: #008800; font-weight: bold; }
+.failed { color: #880000; font-weight: bold; }
+
+
+.etatajout {color: #101CFF;font-weight: bold; }
+.etatsupprime {color: #F4101C;font-weight: bold; }

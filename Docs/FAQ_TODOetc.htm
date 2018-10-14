@@ -1,0 +1,548 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: FAQ_TODOetc.htm,v $
+$Revision: 1.8 $
+$Date: 2010/01/24 16:35:37 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Talesta</title>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' />
+<style type="text/css">
+<!--
+.Style1 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<script type='text/javascript'>	function a(fe){		po=open(fe,"fenetre","Height=400,Width=650,screenX=1,scrollbars,resizable");	}</script>
+<div id='main'><br />
+<br />&nbsp;
+<br /><span class="Style1">Questions souvents posées, Nouveautés, Ce qui est prévu pour la prochaine version (Document initié avec la 3.4, donc ce qui est avant...)</span>
+<br />&nbsp;
+<br />&nbsp;
+
+<br />&nbsp;
+
+<br /><center><span class="fontSize3">Nouveautés</span></center>
+<br />&nbsp;	
+<br />
+Version 3.5.010 dite de Sandre. Un immense merci à lui.
+<br />
+<ol><li>
+Système de résurrection (Merci à Pahcixam). Il est paramétrable avec le nombre max de résurrections, et le lieu post résurrectionnel.
+</li>
+<li>Les tailles max des images des lieux sont aussi paramétrables et elles ne sont plus forcées à une taille fixe
+</li>
+<li>Les images des lieux sont désormais uploadables depuis les écrans créer_lieu/modifier_lieu.
+</li>
+<li>Différents types de nourriture (Merci à Arkhar)</li>
+<li>Quêtes: un MJ ou PNJ peut proposer des quetes à un/des PJS. Il y a plusieurs types de quetes. Pour chaque quete, recompence, punitions sont possibles. </li>
+<li>Monstres: Vous pouvez désormais créer un bestaire. Ensuite, pour chaque lieu, définir les chances :) qu'a un PJ de tomber sur tel monstre en arrivant dans le lieu.<br />
+Et ou, vous pouvez placer des monstres à la main dans un lieu choisi.</li>
+<li>Consultation des PPA via un ecran</li>
+<li>Un etat temp fournit au PJ qui le recoit des sorts, objets (ces objets sont equipes si possible donc les monstres sont prets a servir) et impacte son lieu de départ</li>
+<li>Les armureries et les quincaillerie peuvent desormais gerer un stock. Celui-ci evolue quand un PJ achete ou vend</li>
+<li>La mise a jour du moteur conserve désormais l'integralites des parametres du fichier include/config.php.</li>
+<li>Les messages (inclus dans le fichier include/messages.php) peuvent desormais être personnalisés dans un fichier qui est propre a chaque jeu (qui ne sera jamais inclus dans les livraisons donc ces messages ne seront pas perdus à chaque mise a jour).<br />
+Ces messages sont à mettre dans le fichier (qui est donc a créer par vos soins) include/messages_perso.php<br />
+Ce fichier doit commencer par &lt;?php  et finir par ?&gt;<br />
+Entre les deux, vous pouvez définir tous vos messages personalisés de la même facon qu'ils le sont dans include/messages.php<br />
+Ex: Vous voulez changer le texte de d'erreur 'Désolé mais vous vous êtes trompés ou votre inscription n'a pas encore été validée' par 'Ce n'est pas le bon mot de passe. Un trou de mémoire ?' lorsque le PJ s'est trompé de mot de passe , votre fichier include/messages_perso.php doit être: <br />
+&lt;?php<br />
+        $loginrefuse = "Ce n'est pas le bon mot de passe. Un trou de mémoire ? ";<br />
+?&gt;<br />
+</li>
+<li>travaux divers pour plus de personnalisations: Sans aller jusqu'au bout de l'idee de Yannou pour l'internationalisation (séduisante mais y'a vraiment trop de choses pour que je le fasse seul), de plus en plus de libellés sont dans messages et peuvent être personnalisés grace à ce qu'il y a ci-dessus. 
+Il serait aussi possible de personnaliser les menus si plusieurs bonnes volontés se manifestent.
+Plus de parametres dans configuration génarale (en particulier les couts de PA et PI des actions)
+</li>
+<li>lancer un sort peut demander des PVs et des POs au lanceur. De plus, les sorts n'ont plus le meme coût en PA et PI</li>
+<li>un peu de securité avec différents .htaccess à des endroits stratégiques (répertoire de fas,logs,html...)</li>
+<li>Finie la belle vie pour les joueurs (enfin les mauvais) 1: Lorsque les FAs sont archivés, ils peuvent être envoyés à un mail d'un MJ (parametrable dans le menu config)</li>
+<li>Finie la belle vie pour les joueurs (enfin les mauvais) 2: Certaines actions sont tracées (parametrable dans le menu config)</li>
+<li>Correction des bugs vus sur terra-gloria : Remises, reset de FA, Envois de mails au comptes yahoo</li>
+<li> Modifs sur fouiller cadavre: Suivant la configuration, possibilité de récupérer les objets équipés ou non, et si oui, la reussite peut etre automatique ou non (Ca fait 10 min qu'il nous tape avec son epee, c'est quand meme malheureux de pas la trouver une fois qu'on l'a acheve)</li>
+</ol>
+<br />
+<br />
+<br />
+Version 3.5.002
+<br />
+<ol><li>
+elle n'apporte aucune nouvelle fonctionnalite mais les corrections sur le wantmail et les problemes avec le forum.
+Rien de tres glorieux quoi.</li>
+<li>
+Ah si, un petit truc qui peut etre sympa, le fait que sous FREE on obtienne enfin le error.log qui se remplit.
+Ca devrait aider a solutionner certains problemes puisqu'on aura enfin une trace.
+</li></ol>
+
+<br />
+<br />
+Version 3.5.000
+<ol>     
+  <li> mise en place des templates (Anthor)
+  Voici les 4 templates actuels et leurs spécificités:<br />
+Original
+<ul><li>Affichage des titres dans la partie principale</li>
+	<li>Affichage du copyright dans la partie principale</li>
+	<li>Affichage du temps généré en dessous de la partie principale</li>
+	<li>Barre de statut en haut</li>
+	<li>Menu de niveau 1 sont alignés à droite</li>
+	<li>Menu de niveau 2 sont alignés à droite</li>
+</ul>
+Heroic Fantasy<ul>
+	<li>Images spécifiques</li>
+	<li>Affichage des titres dans la partie principale</li>
+	<li>Affichage du copyright en dessous de la partie principale</li>
+	<li>Affichage du temps généré en dessous de la partie principale</li>
+	<li>Barre de statut en bas</li>
+	<li>Menu de niveau 1 sont centrés</li>
+	<li> Menu de niveau 2 sont alignés à droite en plus petit</li>
+</ul>
+Science Fiction<ul>
+	<li> Images spécifiques</li>
+	<li> Affichage des titres dans la partie principale et dans la barre du haut du navigateur</li>
+	<li>Affichage du copyright dans la partie principale</li>
+	<li> Affichage du temps généré en dessous de la partie principale</li>
+	<li> Barre de statut en haut</li>
+	<li> Menu de niveau 1 sont alignés à droite</li>
+	<li> Menu de niveau 2 sont alignés à droite</li>
+	<li> Partie principale centrée par rapport au menu</li>
+</ul>  
+Science Fiction 2<ul>
+	<li> Images spécifiques</li>
+	<li> Affichage des titres dans la partie principale </li>
+	<li>Affichage du copyright en dessous de la partie principale</li>
+	<li>Affichage du temps généré en dessous de la partie principale</li>
+	<li>Barre de statut en bas</li>
+	<li> Menu de niveau 1 sont alignés à droite</li>
+	<li> Menu de niveau 2 sont alignés à droite</li>
+	<li>Menu a droite</li>
+	
+</ul>  Ceci n'est que le début des templates. Peu de pages sont 'templatisées' pour le moment...(Avis aux volontaires)
+  </li>
+  <li> Plus de types de formats d'images pour les lieux (jpg, gif et png dans cet ordre de priorité). Ce qui modifie la reponse a la quesion1 de la Version 3.4</li>
+  <li> Possibilité d'ajouter autant de critères de caratérisation et/ou personnalisation à un PJ qu'on le désire sans avoir à ne rien modifier ni dans le code ni dans le SQL </li>
+  <li> Probleme avec apostrophe dans barre de status du jeu (Pahcixam) </li>
+  <li> Ajout des titres pour chaque page (Chub) </li>
+  <li> Script de patch pour faire des installations incrémentales </li>
+  <li> Possibilité de poser/cacher de l'or dans un lieu (bep42)</li>
+  <li> Correction du Bug de conception sur les objets caches </li>
+  <li> Un PJ peut recevoir des droits MJs pour que s'ajoutent des actions MJS à son menu de jeu</li>
+  <li> Correction du bug sur les intervalles de remises PI, PA pour les PNJ</li>
+  <li> Scripts POSTInstall des forums intégrés en PHP</li>
+  <li> Meilleure liaison entre un forum et le jeu</li>
+  <li> 2 types de composantes de sorts:<br />
+	<ul><li> 1 seule composante de sort (elle-même étant un objet composé ou non). Dans ce cas, le lanceur de sort doit posséder cette composante de sort au moment du lancement du sort.
+	Si cette composante est une composition d'objet, elle doit avoir été créée auparavant.
+	Ex: Sort necessitant une potion, potion qui est un mélange de plusieurs ingrédients. 
+	Cette potion peut avoir été achetée toute faite ou le lanceur peut l'avoir obtenue en mélangeant les différents ingrédients n'importe quand avant le lancement du sort.
+	</li>
+	<li>plusieurs composantes de sorts (elles-même étant des objets composés ou non)
+	Dans ce cas, le mélange se fait au moment du lancement du sort
+	donc difficulté supplémentaire
+	Ex: Mélange de plusieurs ingrédients pour obtenir une réaction chimique...
+	</li></ul>
+  </li>	
+  <li> Limiter l'acces a un lieu à un etat temp (race, ....)</li>
+  <li> Quantités de PO, PV, PA, PI donnés à un nouveau PJ configurables dans la partie admin</li>
+  <li> Quantités des PO, PV, PA, PI donnés à chaque remise configurables dans la partie admin</li>
+</ol>
+
+Version 3.4.080
+<ol>     
+  <li> une install scriptee. (Anthor) => une nouvelle doc d'install</li>
+  <li> un minimum de securite (on pourrait faire encore beaucoup plus mais le besoin ne se fait pas sentir pour le moment)</li>
+  <li> la possibilite de pouvoir changer les extensions des scripts (.php) facilement sans devoir modifier le code des fichiers) pour ceux qui ont des hebergeurs à double version de PHP (4 et 5)</li>
+  <li> une compatibilite avec plusieurs bases et plusieurs forums</li>
+  <li> debut de commentaires du code pour faire une doc avec doxygen (idee de KyuJaq).</li>
+  <li> et cote jeu,<ul>
+  <li> des competences d'artisanat (Uriel)</li>
+  	<li> la notion d'engagement lors des combats (Tidou)</li>
+  	<li> des lieux qui produisent des materiaux (bois, plantes, pierre ..) : Ces lieux sont en fait des magasins qui gerent du stock</li>
+  	<li> des sons dans les lieux (Taranis)</li>
+  	<li> des notions piquees chez Uriel (competence combats a 2 armes, competence attaque sournoise)</li>
+  	<li> combiner objets (KyuJaq)</li>
+	<li> poids des objets en decimaux  	</li>
+	<li> Les MJs peuvent modifier leur fiches (email, mot de passe, ....)</li>
+	<li> modifications de plusieurs calculs de reussite pour pouvoir faire une doc d'aide à la creation d'objets afin de determiner les intervalles possibles des differents champs et pour eviter les triches lors des negociations.</li>
+	<li> personnalisation du jeu par script (configuration Générale par Anthor (n'est-ce pas qu'il est bon celui-la ?)) en autorisant ou non des actions.</li>
+	<li> et bien sur, les corrections des bugs des versions precedentes 	</li>
+	<li> d'autres petites choses issues d'idees du forum (En particulier de Zeibaker qui est aussi un des grands artisans de cette version, avec les habitués que l'on ne cite plus)</li>
+</ul></li>
+  <li>Nouvelles compétences :<ul>
+	<li>AttaqueSournoise: Ne sert qu'à donner un bonus sur une attaque lorsque l'on est caché et que le cible de le sait pas.</li>
+	<li>Combat2Armes: Sert à compenser un peu les malus d'attaques recus pour attaques à 2 armes</li>
+	<li>+ celles de l'artisanat</li>
+</ul></li>	
+</ol>
+
+<br /><center><span class="fontSize3">FAQ</span></center>
+<br />&nbsp;	
+
+Version 3.5.002
+<ol>   
+  <li>
+Q (de Sandre merci à lui) : 	Lorsqu'on demande la création du forum, il demande dans config l'emplacement de lui-ci.<br />
+	Mais quel emplcement de fichier cherche-t-il ?<br />
+	/talesta/include/forum/forum_phpBB2.php<br />
+	C'est ce fichier ? Ou faut-il installer préalablement le forum...<br />
+	Enfin je ne sais pas trop dans quel ordre je dois réaliser tout ceci, et quel fichier il veut que j'ailleur chercher<br />
+<br />
+
+R: Effectivement, il faut que tu installes un des forums supportes (actuellement: phorum ou phpBB qui est plus complet a mon avis) separement du moteur. <br />
+Precision 1: il faut installer le forum sur la meme base de données que le moteur car il y a des requetes qui attaquent les tables du moteur et du forum en meme temps.<br />
+Precision2 : avec FREE qui est en mode PHP_SAFE_MODE on, il ne faut pas installer le forum a la racine mais dans un repertoire.<br />
+Precision3 : consequence de la precision 1, les types de base doivent etre identiques. Donc si tu installes le moteur sur une base postgreSQL, le forum doit l'etre aussi (et comme phorum ne supporte que mysql....)<br />
+<br />
+Verifier que le forum fonctionne normalement avant de faire le lien avec le moteur pour eviter les doutes....<br />
+<br />
+Ensuite, dans la config du moteur, tu lui indiques qu'il y a un forum (type) + le chemin entre les 2. Comme indique sur l'ecran le chemin est entre 
+le repertoire talesta/include et le forum <br />
+Ex1: si tu es sur FREE et que tu as ton moteur dans /talestaXXX et le forum dans /phpBBXXX, le chemin a mettre est ../../phpBBXXX/ (premier ../ pour remonter de include a la racine du moteur, deuxieme ../ pour remonter a la racine du site, et enfin le chemin pour acceder a phpBBXXX)<br />
+<br />
+Ex2: sur le site de la communaute, le ftp est le suivant: <br />
+            /moteur pour le moteur<br />
+            /phpBB2 pour phpbb<br />
+            /phorum pour phorum<br />
+<br />
+Pour activer phpbb, il faut mettre ../../phpBB2 et pour phorum ../../phorum
+<br />
+Si le chemin n'est pas bon, tu es prevenu, et le moteur fonctionne comme s'il n'y avait pas de forum.<br />
+Si la config est bonne, des liens vers le forum doivent apparaitre dans le menu et les membres du forum doivent etre crees/mis a jour avec les infos des PJs et MJs. (cela permet qu'un PJ ou MJ connecte au moteur est automatiquement connecte au forum). Attention, ce veut dire que le forum peut etre utilise pour autre chose que le jeu (question qui avait deja ete posee), meme si je ne vois pas bien l'interet,  mais que si un joueur ou un mj prend le meme nom qu'un membre du forum, il aura priorite par rapport a l'ancien membre du forum.<br />
+L'admin du moteur peut creer, mettre a jour les membres du forum avec les PJS, et MJs du moteur a tout moment avec le script qui est dans le menu admin 'Script Divers'.<br />
+<br />
+Des categories, et phorums specifiques pour le moteur sont crees, les MJs peuvent moderes ces forums.<br />
+<br />
+Comme je n'ai pas retouve de topic avec la liste des fonctionnalites moteur/forum, je les liste ici rapidement (si vous voulez plus de details, demandez):<ol>
+        <li> Mise a jour des membres du forum avec les PJS/ MJS</li>
+        <li>Affichage des avatars du forum dans le jeu (si le forum supporte les avatars, phorum ne le fait pas par ex...)</li>
+        <li> creation de forums specifiques aux guildes avec designation d'un gerant...</li>
+        <li> utilisation des smyleys du forum en plus de ceux des news dans le news.</li>
+        <li> affichage du bouton "private message" dans la liste des PJS...</li>
+      </ol>
+<br />
+Peut etre un jour, un forum specifiques pour les magasins avec ce qui est vendu dedans.. Ou d'autres idees...<br />
+Peut etre un autre jour aussi, d'autres forums seront rendus compatibles (IBP dans sa version gratuite, punbb...)<br />
+
+</li>
+  <li>
+Q (de Sandre merci encore à lui) : Voilà, j'ai vu que le patch pour passer à la dernière version est mis à disposition...
+Je voulais juste être certain, l'install du patch c'est tout simplement la copie des fichiers sur l'hébergeur ?
+On remplace les anciens par les nouveaux, c'est bien ça ?<br />
+R: Tu peux juste copier les nouveaux fichiers a la place des anciens, te connecter avec le MJ d'ID=1 et dans le menu admin, tu dois avoir une partie 'Installation  d'une nouvelle version' 
+ou sera affichee la version actuelle et celle que tu vas installer.<br />
+En suivant la procedure, la base de données va être mise à jour via le fichier include\db\UpdateTalesta4.mysqlV3_5_001versV3_5_002.sql si tu pars de la V3_5_001 pour aller vers la V3_5_002
+et le patche sera terminé.
+</li>
+<li>
+		Q de Pahcixam merci a lui aussi:Comment on fait pour que les images ne soit pas redimensionnées dans les lieux et quelles gardent leur dimensions d'origine ?
+<br />		
+		R1: Les dimensions ont ete mises pour evitees qu'on ait des ecrans avec des images dans tout l'ecran. Pour le moment, on ne peux qu'enlever les dimensions pour qu'elles ne soient pas redimensionnées. (c'est dans game/menu.php<br />
+		
+		    if($ext_image<>""){<br />
+		                $temp[0]= "&lt;img src='../lieux/vues/view".$PERSO->Lieu->ID.$ext_image."' height='194' width='400' border='0' alt='image du lieu' /&gt;";<br />
+		            } else {<br />
+		                $temp[0]= "&lt;img src='../lieux/vues/noview.png' height='194' width='400' border='0' alt=\"Pas d'image de lieu\" /&gt;";<br />
+		    }<br />
+		
+		Il faut virer height='194' width='400' .
+    <br />		
+		Mais on pourrait faire mieux a savoir:
+		   - mettre la largeur et la longueur en variables parametrees dans configg.php
+		ET [
+		   - ajouter ces 2 params, uniquement si les dimensions de l'image sont plus grosses que celles-ci
+		   ou encore mieux
+		   - redimensionner en php l'image ce qui permettraient de garder les proportions
+		]
+		<br />
+		Ex: tu decides que tes images soient  maxi 400*200.
+		Si  ton image est plus petite , ok rien ne se passe on l'affiche.
+		Sinon, on la redimensionne suivant la dimension qui depasse. Si elle fait 800*300, on la redimenssionne a 400*150 et si elle fait 600*300, on la redimensionne a 400*200.
+		<br />
+		<br />
+		R2 de Pahcixam
+		<br />
+		Oué il me semble que j'avais fait un truc du genre ya pa longtemps je vais regarde si je peut pas l'incrémenter et si sa marche je délivreré un patch (avec votre accord bien sûr  big_smile)
+    <br />
+    R3 : OK donc on attend Pahcixam.... si vous trouvez qu'il est trop long, envoyez lui un mail ;)    	
+</li>
+
+<li>
+ Q de Pahcixam merci a lui aussi encore: Comment fait-on pour désactiver le log (fichier logs/error.log) parce que en 15 jour mon fichier error.log faisait 200 Mo, et mon hebergeur n'est pas très content !!<br />
+ R: tu te connectes avec le MJ d'ID =1 , et dans la partie 'Configuration Generale'<br />
+ il y a une partie 'Fonctions de débuggages'<br />
+il suffit de choisir dans la combobox 'Mode debug', l'option 'Pas de debug'. Le fichier error.log ne sera plus alimente.
+</li>
+</ol>
+
+
+
+Version 3.5.000
+<ol>   
+  <li>
+  Q: J'ai récupéré la dernière version de talesta. Comment mettre à jour mon jeu ?<br />
+  R: Patcher le jeu n'est possible que si vous partez au moins de la version 3.4.080. Un autre pre-requis
+  est que le fichier include/config.php soit en 2 parties autour de la ligne 60:<ol>
+			    <li>Une première (du début jusqu'à la ligne 60) avec les définitions des tables et des paramètres de connexion à la base,</li>
+			    <li>une seconde (après la ligne 60) avec les définitions des parmètres du jeu.</li>
+			    </ol>
+			 Si vous avez modifié ce script à la main, ce n'est peut être plus le cas. Il suffit de le remettre comme indiqué est c'est OK<br />
+  Si tout cela est OK passons à la suite. Sinon, désolé il n'est pas possible de patcher le jeu. Il faut tout réinstaller. Ca sera pour la prochaine version<br />
+     Les étapes : 
+     <ol><li> Faire un backup !!!!! Sauvegarder tous les fichiers du moteur et aussi vos données en base.</li>
+     <li> Dézipper la nouvelle version à la place de l'ancienne. Comme les versions livrées ne fournissent pas de include/config.php, vos paramétrages seront conservés</li>
+     <li> Vous connecter au jeu en tant qu'admin</li>
+     <li> Choisir dans le menu de gauche, Installation d'une nouvelle version de talesta</li>
+     <li> Suivre les instructions.  Le process est <ol>
+     	<li>de mettre à jour la base de données via un script de différences entre la version livrée et la précédente</li>
+     	<li>mettre à jour le fichier de include/config.php pour ajouter les nouveaux paramètres</li>
+     	</ol>
+     	</li> 	     
+     </ol>     
+  </li>
+  <li>
+
+	Q: Comment fonctionnent les avatars (images représentants les PJs dans le jeu) ?<br />
+	R: Pour le moment, vient de l'avatar du forum (donc si le forum utilisé n'accepte pas les avatars (Ex: phorum) ...)<br />
+		Exemple avec PHPBB:
+			 <ol><li>Avatar de la gallery de PHPBB : Il faut créer un rép dans phpBB2\images\avatars\gallery (Ex images) et y coller les images. </li>
+			<li>Faire un upload depuis son PC : PHPBB uploade le fichier et le place dans phpBB2\images\avatars. Le nom de l'image est cryptee et stockee dans la colonne user_avatar de la table phpbb_users, la colonne user_avatar_type = 1 </li>
+			 <li>Envoyer l'Avatar à partir d'une URL pour qu'elle soit copiee sur le site : PHPBB uploade le fichier et le place dans phpBB2\images\avatars. Le nom de l'image est cryptee et stockee dans la colonne user_avatar de la table phpbb_users, la colonne user_avatar_type = 1. </li>
+			 <li>Relier une image externe : PHPBB sotcke l'URL de l'image dans dans la colonne user_avatar de la table phpbb_users, la colonne user_avatar_type = 2.  Si l'URL est modifiée dans le jeu, la modif est reportée dans le forum</li>
+		<li>(Remarque : Malheureusement, je ne peux pas tester cela avec max-q. Le proxy plante alors que cela fonctionne tres bien sans.... Donc intégration manuelle)	 </li>
+	</ol>
+	=> Conclusion: Si dans le jeu, on donne une URL (commencant par http.....), l'image va apparaitre dans le jeu et dans le forum. Si on donne un nom de fichier, il faut qu'il se trouve dans phpBB2\images\avatars pour que l'image apparaisse dans le jeu et le forum.<br />
+	Pour être complet sur le sujet (je peux rêver, non), pour des raisons de performances d'affichage, l'admin peut configurer le nombre d'avatars maxi à afficher dans un lieu (Ex: Afficher les avatars s'il y a moins de X joueurs dans le lieu).
+	De même l'admin peut décider de ne pas afficher les avatars dans le jeu via la configuration. En cas contraire,l'avatar d'un PJ apparaît dans sa fiche de Perso, dans sa description et dans les lieux.
+</li>
+<li>
+	Q: A quoi sert 'Créer Fichier Graphviz' dans la partie du menu admin/Gestion des chemins ?<br />
+	R: Ce script (creer_map.php) génère le fichier graph.txt dans /lieux/descriptions. Ce fichier est le point d'entrée de l'utilitaire dot qui va nous génèrer une carte du monde au format gif et HTML map qui sont utilisées par la suite par le menu 'voir carte' de admin/gestion des chemins qui apparaît quans la carte est générée.<br />
+	Malheureusement, entre ces 2 étapes, il y a l'exécution de dot (via la commmande 'dot -Tcmap -o ../lieux/vues/map.cmap -Tgif -o ../lieux/vues/map.gif ../lieux/descriptions/graph.txt') qui ne peut se faire qu'en local puisque dot n'est pas installé sur le serveur de votre hébergeur. Donc les étapes sont:  générer le fichier graph.txt via le menu 'Créer Fichier Graphviz', récupérer le fichier généré en local, lancer la commande dot ci-dessus et transférer les fichiers générés map.cmap et map.gif dans /lieux/vues.<br />
+	Une fois transférés, ces 2 fichiers font apparaître le menu 'voir carte' dans le menu admin/Gestion des chemins et la carte est visible par les MJs. Pour le moment, la carte permet de visualiser les lieux et les chemins (en distinguant les différents types de lieux et de chemins...), et pour chaque lieu de cliquer dessus pour partir sur la partie admin/voir_lieu.php.<br />
+	Bien d'autres choses pourraient être envisagées par la suite. Si vous êtes intéressés par ce sujet, que vous vouliez installer graphviz (qui contient dot) chez vous, ou tout simplement voulez voir le monde de votre jeu, contactez hixcks.
+</li>
+<li>
+	Q: QUID des données déjà en base lors de l'installation ? Je voudrais faire un jeu futuriste ou sans elfe ....<br />
+	R: Les états temporaires, MJS, sorts, objets,... fournis à l'installation peuvent etre supprimés. <br />
+	Seules restrictions: l'objet d'ID=1 (objet par défaut que tout le monde possède), le MJ d'ID = 1 (MJ qui a tous les droits), le sort d'ID=1 (sort par défaut que tout le monde possède) , le lieu d'ID=1 (lieu de depart des joueurs admis), l'etattempnom d'ID = 1 (Etat normal), la specnom d'ID=1 (Pas de Spécialités). Néanmoins, ceux-ci peuvent être renommés.
+</li>
+<li>
+	Q: Comment fonctionnent les PVs, PAs, POs, PIs et leur remises ?<br />
+	R: 
+	Chaque action du PJ lui coûte des PAs et PIs (paramétrés dans $liste_pas_actions et $liste_pis_actions dans le fichier include/const.php).
+	Chaque blessure recue au combat coute des PVs, chaque blessure recue par sort coute des PVs ou PAs ou PAs. Les POs eux descendent quand un PJ achete ou fait réparer, ou quand il se fait voler. <br />	
+	Ces PXs (X étant I, O, A, ou V) ont donc tendance à descendre rapidement.
+	Heureusement, au bout d'un certain temps (appelé Intervalle de Remise), une remise de Px (X étant I, O, A, ou V) s'effectue et les Px (X étant I, O, A, ou V) sont augmentés par un RPx (X étant I, O, A, ou V). <br />
+	Il est tout à fait possible de mettre des RPx (X étant I, O, A, ou V) négatifs. Un admin avait mis un RPo négatif pour forcer les joueurs à se trouver un métier et en considérant que vivre dans une ville a un coût (auberges...) par exemple. Le tout est de gérer ce qu'il se passe au cas ou la valeur Px (i, o, a,v) tombe à 0 ou devient négative. (Pour les PVs, le Perso meurt; pour les PAs, il ne plus peut faire d'action nécessitant des PAs; pour les PIs, il ne plus peut faire d'action nécessitant des PAs)
+	Par contre pour les POs ???? C'est a l'admin de gérer ca.<br /> 	
+	Toutes ces données sont désomais configurables dans la partie admin/configuration générale
+</li>
+<li>
+	Q: Suite à la lecture de la question précédente, je pensais trouver un Intervalle de Remise pour les POs et les PVs mais il n'y en a que pour les PIs et PAs.... On m'aurait menti ?<br />
+	R: Dans la version initiale de talesta, il n'y avait pas de PIs et il n'y avait qu'un seul intervalle de remise au bout duquel les PVs, PAs et POs étaient modifiés. Au moment de l'ajout des PIs, il a semblé intéressant de séparer les PIs du reste, mais l'action n'a pas été menée pour séparer les POs des PVs et des PAs. Voila pourquoi les POs, PVs et PAs sont modifiés en meme temps et qu'il n'y a pas d'intervalle de remise des POs et PVs.
+	Venez plaider votre cause sur le forum pour faire changer cela, ou mieux faites le vous même et envoyez nous le résultat pour en faire profiter tout le monde ;)		
+</li>
+
+<li>
+	Q: Suite à la lecture des 2 questions précédentes, j'ai modifié la valeur des 'Base du nombre de PXs (X étant I, O, A, ou V) que recoit un nouveau PJ :' et/ou 'Base du nombre de PXs (X étant I, O, A, ou V) que recoit un PJ à chaque remise de PXs (X étant I, O, A, ou V)' et je n'obtiens pas le résultat attendu.... On m'aurait menti ?<br />
+	R: Ces valeurs ne sont que des valeurs de base auxquelles s'ajoutent des bonus/malus venant des états temporaires et/ou spécialités et/ou des caractéristiques du PJ: <br />
+	Ex pour les RPXs (X étant I, O, A, ou V): A la valeur paramétrée dans 'Base du nombre de PXs (X étant I, O, A, ou V) que recoit un PJ à chaque remise de PXs (X étant I, O, A, ou V)', s'ajoutent ou se retranchent des RPXs (X étant I, O, A, ou V) des états temporaires et spécialités que possède le PJ.<br />
+	A cela s'ajoutent ou se retranchent aussi des bonus/malus des caractéristiques du PJ (Ex: Pour les PVs, la Constitution est importante)
+	(voir les fonctions getRPA(),getRPI(), getRPV() et getRPO() du fichier classe/joueur).	<br />
+	Voila donc pourquoi chaque joueur a ses propres RPXs (X étant I, O, A, ou V).<br />
+</li>
+
+<li>
+	Q: A propos des templates fournis ?<br />
+	R: Ils ne sont là que pour l'exemple et peuvent être supprimés ou remplacés par d'autres. (le script de config Générale parcourt le répertoire templates et considère tout sous-répertoire comme un template).<br />
+	 Néanmoins, celui appelé original est utilisé dans les scripts situés dans le répertoire docs et au moment de l'install. Je vous conseille donc de conserver celui-la.<br />
+</li>
+<li>
+	Q: Quelles sont les différences entre les spécialités et les états temps ?<br />
+	R: Ces 2 notions existent dans la version initiale du moteur. Bien qu'elles diffèrent, elles impactent le joueur qui les portent de la meme facon: bonus/malus sur les  RPXs (X étant I, O, A, ou V) et sur les caractéristiques.	
+	Nous vous conseillons de n'utiliser que les etats temps qui ont été et continueront à être améliorés. <br />
+</li>
+<li>
+	Q: Comment eviter le redimensionnement des images lors de l'affichage du lieu ou on se trouve (menu situation) ?<br />
+	R: Les dimensions des images de lieux sont fixées en HTML (height='194' width='400') dans game/meun.php pour eviter des debordement d'écran<br />
+	Pour le moment, il est nécessaire de supprimer ces 2 attributs de la balise img. Une évolution aura prochainemenet lieu pour pouvoir parametrer ces dimensions Maxi dans le menu admin/config et pour ne redimensionner que les images plus grandes 	
+</li>
+</ol>        
+
+
+Version 3.4
+<ol>   
+  <li>
+  Q: Comment associer une image à un lieu <br />
+  R: Pour le moment, ces images sont à mettre dans le repertoire \lieux\vues et doivent être
+  	en extension png (format le plus adapté pour ce type d'utilisation). <br />
+     Ex: view2.png représente l'image du lieu d'ID = 2.
+  </li>
+  <li> Q : Certaines fonctionnalités semblent avoir disparues dans la 3.4<br/>
+       R : Les fonctionnalités Se cacher, la gestion des groupes de PJ, l'engagement, les news ont été "booleanisées" et ne sont pas activées par défaut. Il faut se connecter en tant que MJ d'ID=1 et modifier les paramètres du jeu dans config. Générale 
+        </li>
+  <li> Q : J'ai des problemes de droits d'ecriture<br/>
+       R : L'utilisateur qui fait touner apache doit avoir les droits d'ecriture sur<ul>
+       <li>/admin/Sauvegarde</li>
+<li>/fas</li>
+<li>/lieux/descriptions</li>
+<li>/lieux/sons</li>
+<li>/lieux/vues</li>
+<li>/logs/</li>
+<li>/pjs/descriptions </li>
+<li>/include/   (pour l'install et la personnalisation )</li>
+<li>/admin/Sauvegarde</li>
+<li>/fas</li>
+<li>/lieux/descriptions</li>
+<li>/lieux/sons</li>
+<li>/lieux/vues</li>
+<li>/logs/</li>
+<li>/pjs/descriptions </li>
+<li>/include/   (pour l'install et la personnalisation )</li>
+ </ul>
+        </li>
+  <li> Q : Certaines fonctionnalités (creer/modifier un pj, inscrire un pj) plantent lorsque le jeu est en relation avec le forum<br/>
+       R : N'avez vous pas oublié de passer le script PostInstallXXXXX.sql (Attention, il faut remplacer dans ce fichier les prefixes des noms de tables de forum si vous n'avez pas garde le prefixe par defaut et aussi celles du moteur) (avec XXXXX etant le nom du forum) avec phpmyadmin sur la base?
+       Ensuite, utilisez 'Script Divers' dans le menu Admin pour tout resynchronyser. Ce script sera, je l'espere, integré à l'installation dans une prochaine version. </li>
+  <li> Q : Je n'arrive pas à utiliser les MJ donnés à titre d'exemple dans mjs.sql quand le jeu est en relation avec le forum<br/>
+       R : Les MJs n'ont pas été créés coté forum. Utilisez 'Script Divers' dans le menu Admin pour les créer. 
+        </li>
+  <li> Q : Est-il possible de créer d'autres races que celles présentes, ou de gérer des métissages (demi-elfe ...)<br/>
+       R : Oui. cf. <a href='InfosSupPJEtatsTemps.htm'>InfosSupPJEtatsTemps.htm</a>
+        </li>
+  <li> Q (reprise du forum) : j'ai récupéré la version XXX
+	Je travaille actuellement dessus, pour ajouter certaines capacitées.
+	Puis-je les ajouter au jeu sans modification au copyright (je sais pas si on a le droit).<br/>
+       R (reprise du forum aussi :)) : Oui tu as le droit de rajouter ton propre code sur le moteur déjà existant.
+Tu as le droit de laisser le copyright comme il est, mais tu as aussi le droit de rajouter une indication comme quoi tu développe aussi le code de ton jeu.
+Tu as également le droit (mais pas forcement une obligation) de partager ton code avec les autres par l'intermédiaire de ce forum pour faire avancer les choses.
+        </li>
+ <li> Q : Est-il possible d'ajouter des caractéristiques telle que (Force,Sagesse....)<br/>
+
+R: Tout à fait. Exemple avec Rapidité:
+
+	<ul><li> Modifier dans const.php pour ajouter une ligne dans le tableau $liste_caracs <br />
+	
+		"Rapidité"=>7 <br />
+		(Ne pas oublier la virgule sur la ligne précédente). Le numero (Ici 7) doit être unique dans $liste_caracs, $liste_competences, $liste_artisanat, $liste_magie.<br />
+	</li>
+	<li>
+	- Modifier dans include/miseenpage.php pour ajouter dans le tableau $liste_images<br />
+	
+		"Rapidité"			=>"../templates/$template_name/images/Icones/Icon Rapidité.png" <br />
+		(Ne pas oublier la virgule sur la ligne précédente. Le nom du fichier .png peut comporter des espaces et/ou des accents)<br />
+	</li>	
+	</ul>
+	
+Voila. Vous a fait le plus facile. Il reste à déterminer comment faire évoluer cette caractéristique. Et là pour le moment, il vous faut modifier le code.
+</li>
+
+
+<li> Q :Est-il possible d'ajouter des compétences telles que (Lame Courte....) <br />
+
+R: Voir la question au sujet des caractéristiques. Il faut modifier le tableau $liste_competences dans const.php à la place de $liste_caracs 
+</li>	
+
+<li> Q :Est-il possible d'ajouter des artisanats tels que (Bucheron....) <br />
+
+R: Voir la question au sujet des caractéristiques. Il faut modifier le tableau $liste_artisanat dans const.php à la place de $liste_caracs 
+</li>
+
+	
+<li> Q :Est-il possible d'ajouter des types de sorts tels que (Air....) <br />
+
+R: Voir la question au sujet des caractéristiques. Il faut modifier le tableau $liste_magie dans const.php à la place de $liste_caracs 
+</li>
+  <li> Q : Comment puis-je contribuer à l'essor du moteur<br/>
+       R : D'un tas de manières possibles:
+       		<ul><li>Amener des nouvelles idées</li><li>Prévenir d'un bug</li><li>Intégrer une des équipes (développeurs, testeurs, graphistes, animateur du forum, documentalistes...)</li>
+       		<li>Ou simplement venir nous faire un petit bonjour ou parler de nous...</li>
+       		</ul>       		
+        </li>
+
+
+  <li> Q : Pour les autres questions, cf. forum et/ou wiki. Ce document s'etoffera au fur et à mesure
+</li>	
+</ol>
+
+
+<br /><center><span class="fontSize3">TODO. Les futures versions </span></center>
+<br />&nbsp;	
+Ces idées n'ont pas d'ordre de priorités pour le moment. Si l'une d'entre elles vous intéresse (ou si vous en avez d'autres), venez plaider votre cause :)
+<ol>   
+  <li> Etre compatible avec plus d'hebergeurs. (Pour cela il faudrait un état des lieux et des comptes pour pouvoir tester)</li>
+  <li> Ajouter des compatibilités avec d'autres forum (IBP, punbb ...)     </li>
+  <li> La magie majeure (Sorts à distance sur un PJ, sort sur un lieu (lieu du lanceur ou lieu proche)</li>	
+  <li> Pleins d'idees sur les lieux : mieux caracteriser les lieux (bruit, emcombrement, etendue ...) pour 
+  diversifier les caculs des réussites de certaines actions </li>
+  <li> Améliorer les magasins pour qu'ils puissent avoir chacun leur prix</li>
+  <li> Créer un magasin de type Bureau de change pour avoir plusieurs monnaies et que chaque magasin travaille dans la monnaie qu'il veut</li>
+  <li> Surveiller un lieu </li>	  
+  <li> arreter ligoter, bailloner, assommer un PJ </li>	
+  <li> Se reposer, dormir </li>	
+  <li> Limiter l'acces a un chemin à un etat temp (race, ....)</li>
+  <li> Plein d'autres idées sur le forum</li>	
+  <li> Pouvoir configurer sur quelles competences se font les actions</li>
+  <li> Utiliser l'excellente librairie jpgraph pour générer des stats</li>
+  <li> modifier un peu les sorts, armes, lieux pour que leurs effets s'aggravent dans le temps (Ex: Sort de Maladie qui entraine des nausees le premier jour (Perte de quelques PA/PV), des douleurs la premiere semaine , la mort ensuite </li>
+</ol>
+
+
+<br /><center><span class="fontSize3">le WHATCANIDO ? Si vous avez un peu de temps pour aider</span></center>
+<br />&nbsp;	
+Talesta progresse par bonds grace aux bonnes volontés d'habitués et des membres de passage. Il n'est pas nécessaire de savoir coder pour pouvoir aider. (Demander à Sandre par ex.)<br />
+Nous recherchons:
+<ol>   
+  <li>Des personnes ayant un compte chez un hébergeur pour valider la compatibilité avec notre moteur</li>
+  <li>Un(e) (des) graphiste(s) pour créer des icônes de compétences, d'objets, des images de lieux...</li>	
+  <li>Un(e) (des) graphiste(s) pour créer des templates</li>	
+  <li>Un(e) (des) personne(s) connaissant CSS pour les pages du moteur et/ou du forum</li>
+  <li>Un(e) (des) personne(s) pour créer des mondes de tests (lieux, objets ...)</li>  
+  <li>Un(e) (des) personne(s) pour faire des tests des developpements (plus y'a de tests, moins y'a de bugs)</li>
+  <li>Un(e) (des) personne(s) pour faire des tutoriaux sur un sujet particulier (cela permet d'apprendre le fonctionnement interne du moteur)</li>
+  <li>Un(e) (des) personne(s) pour dénicher des images de lieux, des sons pour jouer dans les lieux....</li>
+  <li>Un(e) (des) personne(s) connaissant PHP pour le développement</li>
+</ol>
+Si vous avez un peu de temps à consacrer n'hésitez pas. Talesta progressera plus vite et à la facon dont vous l'entendez.  
+<br />
+<br />
+<br />
+<br />
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>
+

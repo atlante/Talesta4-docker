@@ -1,0 +1,100 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: creer_etattemp.htm,v $
+$Revision: 1.13 $
+$Date: 2010/01/24 16:35:39 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- G&eacute;n&eacute;r&eacute; a partir du script, creer_etat.php, le [13/04/2003 &agrave; 14:23] //-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<title>Talesta</title><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head><body>
+
+<div id='main'>
+<div class ='centerSimple'><form action='creer_etat.php' method='post'>Nom de l'etat : <input type='text' name='nom_etat' value='' size='15' /><span class='c0'>&lt;-- Le nom de votre Etat Temporaire (50 char max)</span><br />
+RPO : <input type='text' name='RPO' value='0' size='4' /> RPA : <input type='text' name='RPA' value='0' size='4' /> RPI : <input type='text' name='RPI' value='0' size='4' />RPV : <input type='text' name='RPV' value='0' size='4' /><br />
+<span class='c0'>RPO represente le nombre de Pieces d'OR que le PJ avec cet Etat gagnera a chaque remise de PAs. Peut etre n&eacute;gatif<br />
+RPA represente le nombre de Points d'action qu'un PJ peut reporter d'un tour a l'autre. Ne peut qu'etre positif ou nul.<br />
+RPI represente le nombre de Points d'Intellect qu'un PJ peut reporter d'un tour a l'autre. Ne peut qu'etre positif ou nul.<br />
+RPV represente le nombre de Points de Vie que le PJ gagnera a chaque remise. Peut etre n&eacute;gatif. Peut entrainer la mort.
+</span>
+<br />Type d'état <select name='ID_TypeEtatTemp'>
+
+	<option value='1'  selected='selected'>Age</option>
+	<option value='6'>classe</option>
+	<option value='5'>Divers</option>
+	<option value='4'>Lieu</option>
+	<option value='2'>Race</option>
+	<option value='3'>Sexe</option>
+
+</select><br />
+
+<br />Visible par les tiers :<select name='Visible'><option value='0'>Non</option><option value='1' selected='selected'>Oui</option></select><br />
+<span class='c0'>Est-ce que l'etat temp sera visible dans la description du PJ qui l'a ou non ?
+</span>
+
+<br />Utilisable à l'inscription (PJ) :<select  name='utilisableinscription'>
+	<option value='0'>Non</option><option value='1' selected='selected'>Oui</option>
+</select><br />
+<span class='c0'>Est-ce que l'etat temp sera visible dans la sélection correspondante par le PJ ? (utile si vous créer un état temp pour des PNJs mais pas pour des PJs (Ex: Race Demi-Dieu)</span>
+
+
+<table border='0' width='100%' class='container' align='center'>
+	<tr><td   align='left' colspan='1'>&nbsp;</td><td   align='left' colspan='1'>&nbsp;</td><td   align='center' colspan='1'>&nbsp;</td><td   align='right' colspan='1'><table border='1'  class='details'>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconForce.png' alt='Force' border='0' /></td><td   colspan='1'>Force</td><td   colspan='1'><input type='text' name='comp[1]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconSagesse.png' alt='Sagesse' border='0' /></td><td   colspan='1'>Sagesse</td><td   colspan='1'><input type='text' name='comp[2]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconDexterite.png' alt='Dexterite' border='0' /></td><td   colspan='1'>Dexterite</td><td   colspan='1'><input type='text' name='comp[3]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconIntelligence.png' alt='Intelligence' border='0' /></td><td   colspan='1'>Intelligence</td><td   colspan='1'><input type='text' name='comp[4]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconConstitution.png' alt='Constitution' border='0' /></td><td   colspan='1'>Constitution</td><td   colspan='1'><input type='text' name='comp[5]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconCharisme.png' alt='Charisme' border='0' /></td><td   colspan='1'>Charisme</td><td   colspan='1'><input type='text' name='comp[6]' size='4' value='0' /></td></tr>
+</table>
+</td></tr>
+</table>
+<span class='c0'>Les Bonus ou Malus aux differentes caracteristiques et competences. Peuvent etre negatif. Les bonus/malus s'expriment en NIVEAUX et pas en Point d'experience.</span>
+<br />&nbsp;<table border='0' width='100%' class='container'>
+	<tr><td   align='left' colspan='1'>&nbsp;</td><td   align='left' colspan='1'><table border='1'  class='details'>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconLameCourte.png' alt='Lame Courte' border='0' /></td><td   colspan='1'>Lame Courte</td><td   colspan='1'><input type='text' name='comp[201]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconLameLongue.png' alt='Lame Longue' border='0' /></td><td   colspan='1'>Lame Longue</td><td   colspan='1'><input type='text' name='comp[202]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconVol.png' alt='Vol' border='0' /></td><td   colspan='1'>Vol</td><td   colspan='1'><input type='text' name='comp[203]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconMasseLegere.png' alt='Masse Legere' border='0' /></td><td   colspan='1'>Masse Legere</td><td   colspan='1'><input type='text' name='comp[301]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconMasseLourde.png' alt='Masse Lourde' border='0' /></td><td   colspan='1'>Masse Lourde</td><td   colspan='1'><input type='text' name='comp[302]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconCrochetage.png' alt='Crochetage' border='0' /></td><td   colspan='1'>Crochetage</td><td   colspan='1'><input type='text' name='comp[303]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconHacheCourte.png' alt='Hache Courte' border='0' /></td><td   colspan='1'>Hache Courte</td><td   colspan='1'><input type='text' name='comp[401]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconHacheLongue.png' alt='Hache Longue' border='0' /></td><td   colspan='1'>Hache Longue</td><td   colspan='1'><input type='text' name='comp[402]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconDissimulation.png' alt='Dissimulation' border='0' /></td><td   colspan='1'>Dissimulation</td><td   colspan='1'><input type='text' name='comp[403]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconArcCourt.png' alt='Arc Court' border='0' /></td><td   colspan='1'>Arc Court</td><td   colspan='1'><input type='text' name='comp[501]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconArcLong.png' alt='Arc Long' border='0' /></td><td   colspan='1'>Arc Long</td><td   colspan='1'><input type='text' name='comp[502]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconVigilance.png' alt='Vigilance' border='0' /></td><td   colspan='1'>Vigilance</td><td   colspan='1'><input type='text' name='comp[503]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconPetiteFronde.png' alt='Petite Fronde' border='0' /></td><td   colspan='1'>Petite Fronde</td><td   colspan='1'><input type='text' name='comp[601]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconGrandeFronde.png' alt='Grande Fronde' border='0' /></td><td   colspan='1'>Grande Fronde</td><td   colspan='1'><input type='text' name='comp[602]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconAura.png' alt='Aura' border='0' /></td><td   colspan='1'>Aura</td><td   colspan='1'><input type='text' name='comp[603]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconArtefactMineur.png' alt='Artefact Mineur' border='0' /></td><td   colspan='1'>Artefact Mineur</td><td   colspan='1'><input type='text' name='comp[701]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconArtefactMajeur.png' alt='Artefact Majeur' border='0' /></td><td   colspan='1'>Artefact Majeur</td><td   colspan='1'><input type='text' name='comp[702]' size='4' value='0' /></td><td   colspan='1'><img src='../templates/Original/images/Icones/IconObservation.png' alt='Observation' border='0' /></td><td   colspan='1'>Observation</td><td   colspan='1'><input type='text' name='comp[703]' size='4' value='0' /></td></tr>
+</table>
+</td><td   align='center' colspan='1'><table border='1' class='details'>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconAir.png' alt='Air' border='0' /></td><td   colspan='1'>Air</td><td   colspan='1'><input type='text' name='comp[1001]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconTerre.png' alt='Terre' border='0' /></td><td   colspan='1'>Terre</td><td   colspan='1'><input type='text' name='comp[1002]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconFeu.png' alt='Feu' border='0' /></td><td   colspan='1'>Feu</td><td   colspan='1'><input type='text' name='comp[1003]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconEau.png' alt='Eau' border='0' /></td><td   colspan='1'>Eau</td><td   colspan='1'><input type='text' name='comp[1004]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconLumiere.png' alt='Lumiere' border='0' /></td><td   colspan='1'>Lumiere</td><td   colspan='1'><input type='text' name='comp[1005]' size='4' value='0' /></td></tr>
+	<tr><td   colspan='1'><img src='../templates/Original/images/Icones/IconTenebre.png' alt='Tenebre' border='0' /></td><td   colspan='1'>Tenebre</td><td   colspan='1'><input type='text' name='comp[1006]' size='4' value='0' /></td></tr>
+</table>
+</td><td   align='right' colspan='1'>&nbsp;</td></tr>
+</table>
+<br />&nbsp;</form></div>
+<a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Vous pouvez aussi jeter un coup d'oeil pour créer plus de diversités dans les PJs grâce aux Etats temporaires</a><br />
+   
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

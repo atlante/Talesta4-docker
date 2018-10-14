@@ -1,0 +1,131 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: Artisanat.htm,v $
+$Revision: 1.4 $
+$Date: 2010/01/24 16:35:37 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title> Installation du moteur de Talesta 4 </title>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' /></head>
+<body>
+
+<div id='main'><br />
+<p>&nbsp;</p>
+<center><span class="fontSize3">Doc sur les différents types d'objets, leur créations, et comment en rajouter</span></center>
+
+<p>&nbsp;</p>
+<span class="fontSize3">1. Les différents types d'objets apportés par la 3.4</span>
+<ol type="1">
+    <li> Les Produits Naturels : Ce sont des objets que l'on peut "récolter" en se promenant dans la nature (Ex: Champignon dans une foret, Minerai de Fer dans une mine, Bois, Cuir, Pierre dans une carrière ...)
+    Ces objets sont à affecter dans un magasin de produits naturels pour que les PJs puissent les récolter. Ces magasins gerent une quantite et une periode de regeneration ou non (Cette notion pourrait etre etendu aux autres magasins dans une version ultérieure)
+    <br />Pour en ajouter, il suffit d'en ajouter dans include/const.php dans $liste_type_objs avec les autres 'ProduitNaturel', puis de créer un objet de ce type avec l'application.</li>
+    <li> Les Objets Simples : Ce sont des objets d'un seul matériau (Manche en bois, tete de hache ..) qui servent a composer des objets 'finaux'.
+    <br />Leur sous-type est le matériau en question. Pour le moment, le reste des champs (durabilite....) n'a pas d'importance (Ce sont les champs des objets finaux qui en ont)
+    <br />Pour en ajouter, il faut les créer dans l'application sans oublier de mettre le matériau en sous-type</li>
+    <li> Les Outils : Ce sont des objets utilisables par les PJs pour 
+    	<ul type="square"><li>"récolter" les produits naturels,</li>
+    	<li> fabriquer des objets simples à partir de ces produits naturels,</li>
+    	<li> ou pour réparer des produits finaux</li>
+    	</ul>
+    <br />Leur sous-type est la compétence pour laquelle ils sont utilisés. Le champ compétence est identique. Le champ caractéristique sert (en plus de la compétence) pour la réussite de l'action </li>
+</ol>
+
+<span class="fontSize3">2. Les différentes actions de l'artisanat apportés par la 3.4</span>
+<ol type="1">
+    <li> Recolter. Cette action permet de récolter un Produit Naturel fournit par le lieu. 
+    Suivant le type du Produit, cela nécessite un outil ou non. Ex: Recolter du minerai necessite un objet de type 'outil', et de sous type 'Mineur', ramasser un champignon ne necéssite pas d'outil.    
+    </li>
+    <li> Artisanat. Cette action permet de créer des objets simples (d'un seul matériau) à partir de produit naturels de ce matériau
+    Cette action necessite un objet de type 'outil', et de sous type de la compétence artisanale associée à l'action.
+    </li>
+    <li> Combiner objets. Cette action permet de créer des objets 'finaux' à partir d'objets simples (d'un seul matériau)
+    La compétence utilisée est le dernier parametre de $liste_type_objs dans include/const.php  (ArtisanArmeMelee pour une arme de Melee, ArtisanOutil pour un outil ...)
+    </li>
+    <li> Reparer : Cette action permet de réparer un objet abimé. Pour le moment, les types d'objets réparables sont:
+    <ul type="square"><li>ArmeJet. </li>
+    <li> ArmeMelee</li>
+    <li> Armure</li>
+    <li> Outils</li>
+    </ul>
+    La compétence utilisée est le dernier parametre de $liste_type_objs dans include/const.php  (ArtisanArmeMelee pour une arme de Melee, ArtisanOutil pour un outil ...)
+    </li>
+</ol>   
+    
+
+<span class="fontSize3">3. Des exemples pour être plus clair (on peut toujours rever) </span>
+<br />
+Des exemples utilisés pour les test sont fournis dans les fichiers sql à la racine du site:
+<ol type="1">
+<li> produitsnaturels.sql</li>
+<li> composantes.sql</li>
+<li> plantes.sql</li>
+<li> armes.sql</li>
+<li> outils.sql</li>
+</ol>
+
+<span class="fontSize3">4. Comment personaliser, ajouter, modifier ?</span>
+<ol type="1">
+<li> Ajouter des types d'objets à réparer: 
+    <ul type="square"><li>Modifier reparation.php pour ajouter une action qui determine les objets à réparer ($ObjetsReparables) et le sous-type d'outil utilisable ($sousTypeOutil) </li>
+    <li> Modifier menu_jeu.php pour ajouter l'action dans le menu </li>
+    <li> Modifier const.php pour ajouter une ligne dans liste_type_objs du type 
+    			"Outil;ArtisanXXXXX"=>array("Outil - ArtisanXXXXX","Bras",2,1,"ArtisanOutil"), avec XXXXX le type d'objets à réparer
+    </li>
+    <li> bien sur, creer l'outil avec le sous-type ArtisanXXXXX</li>
+    <li> Modifier const.php pour ajouter une ligne dans liste_artisanat du type ArtisanXXXXX</li>
+    </ul>
+</li>
+</ol>    
+
+<ol type="1">
+<li> Ajouter des types d'objets à récolter: 
+    <ul type="square"><li>Modifier recolte.php pour ajouter une action qui determine les objets à récolter ($SousTypeProduit), 
+    	l'obligation d'avoir un outil ou non ($necessiteOutil) pour l'action
+    	et le sous-type d'outil utilisable ($sousTypeOutil) </li>
+    <li> Modifier menu_jeu.php pour ajouter l'action dans le menu </li>
+    <li> Modifier const.php pour ajouter une ligne dans liste_type_objs du type 
+    			"Outil;XXXXXX"=>array("Outil - XXXXXXX","Bras",2,1,"ArtisanOutil"), avec XXXXX le sous-type de l'outil
+    </li>
+    <li> bien sur, creer l'outil avec le sous-type XXXXX</li>
+    <li> Modifier const.php pour ajouter une ligne dans liste_artisanat du type $SousTypeOutil</li>
+    </ul>
+</li>
+</ol>    
+
+<span class="fontSize3">5. Les ouvertures que cela offre pour les prochaines versions </span>
+<ol type="1">
+    <li> Les Composantes de Sorts</li>
+    <li> Les batiments </li>	
+</ol>    
+
+    
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+	<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div><div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<center><b>Session correctement détruite</b></center>

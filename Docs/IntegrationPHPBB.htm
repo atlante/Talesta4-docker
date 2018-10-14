@@ -1,0 +1,237 @@
+<!--
+Fichier de Talesta4 (cf. http://www.talesta.free.fr) version: $Name: V3_6 $  
+
+$RCSfile: IntegrationPHPBB.htm,v $
+$Revision: 1.9 $
+$Date: 2010/01/24 16:35:38 $
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Talesta</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="description" content="page de Talesta 4" />
+<meta name="keywords" content="Talesta moteur pour jdr jeux de roles" />
+<link rel='stylesheet'  type='text/css' href='../templates/Original/site.css' />
+<style type="text/css">
+<!--
+.Style1 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<div id='main'>
+  <p align="center"><span class="Style1">Fichiers modifiés pour l'intégration avec PHPBB</span><br />
+    <br />
+  </p>
+  <p align="center">Il ne vous reste plus qu'à faire de même avec le forum de votre choix<br />
+    <br />
+  </p>
+
+
+Version 3.4
+<div style="margin-left: 2em"><br />
+Le moteur est compatible désormais avec PHPBB et Phorum5
+Grace à la classe forum.
+Chaque forum à son propre fichier (dans include/forum) et reproduit les fonctionnalités de la classe forum.
+Le choix du fichier se fait dans include/http_get_post.php
+
+<pre>	if (defined('IN_FORUM') &amp;&amp; (IN_FORUM==1)) {
+		switch($typeforum)
+		{
+			case 'phpBB': 
+				include( '../include/forum/forum_phpBB2.'.$phpExtJeu);
+				break;
+
+			case 'phorum':
+				include( '../include/forum/forum_phorum5.'.$phpExtJeu);
+				break;
+			....
+</pre>
+La variable $typeforum est modifiée dans admin/configuration générale (admin/config.php), 
+<pre>
+			$liste_type_forum=array(
+				"0"=>"phpBB",
+				"1"=>"phorum"
+			);
+</pre>
+
+Pour le moment, il faut aussi créer un fichier PostInstallXXXX.sql   avec XXXX etant le type de forum, pour créer, essentiellement, les types de membres (PJ_PNJ et MJ), des forums, des topics
+et la configuration générale du forum. 
+Note: Ces fichiers seront prochainement remplacees par des methodes de la classe forum pour que toute l'install soit scriptée.
+</div><br />
+Version 3.3
+<div style="margin-left: 2em"><br />  
+
+<table class='details' width='100%'>
+
+<tr><td>PostInstallPHPBB.sql</td><td> Crée le groupe d'utilisateurs MJ<br />
+Crée le groupe d'utilisateurs PJ_PNJ<br />
+Crée différentes catégories et forums du forum:
+<ul>
+<li> Communications Hors Jeu
+<ul><li> Accueil des nouveaux</li>
+<li> Annonces </li></ul>
+</li>
+<li> Communications en Jeu
+<ul><li> Demande des joueurs</li>
+<li>Annonces des MJ </li></ul>
+</li>
+<li> Guildes et Groupements de PJ </li>
+<li> Magasins
+	<ul><li>HVG -- Forge</li>
+	</ul>
+</li>
+<li> Modifs techniques à apporter
+	<ul><li>Bugs</li>
+	<li>Idées</li></ul>
+</li>
+</ul>	
+Affecte les droits de modération aux MJs
+</td></tr>
+<tr><td>admin/forms/infospj.form.php</td><td> Image d'avatar (gestion d'images uploades, url, gallery)
+</td></tr>
+<tr><td>admin/forms/mj.form.php
+</td><td> Image d'avatar
+</td></tr>	
+<tr><td>admin/creerPNJ.php
+</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)<br />
+ Affecte ce membre au rôle PJ_PNJ
+</td></tr>
+<tr><td>admin/creer_mj.php
+</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)<br />
+Affecte ce membre au rôle MJ
+</td></tr>
+<tr><td>admin/inscrire.php
+</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email)<br />
+ Affecte ce membre au rôle PJ_PNJ
+</td></tr>
+
+<tr><td>admin/modifier_info_pj.php
+</td><td> Mise à jour du membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)
+</td></tr>
+
+<tr><td>admin/modifier_mj.php
+</td><td> Mise à jour du membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)
+</td></tr>
+<tr><td>admin/supprimer_mj.php
+</td><td> Suppression du membre dans le forum<br />
+ Suppression des affectations du MJ aux différents groupes<br />
+ Que faire des messages ??<br />
+</td></tr>
+<tr><td>admin/menu_admin.php
+</td><td> lien vers le forum
+	</td></tr>
+
+<tr><td>admin/listeMagasin.php
+</td><td> lien vers l'ID du forum noté dans le lieu
+	</td></tr>
+	
+<tr><td>admin/supprimer_pj.php
+</td><td> Suppression du membre dans le forum<br />
+Suppression des affectations du PJ aux différents groupes<br />
+Que faire des messages ??	<br />
+	</td></tr>
+
+<tr><td>admin/forms/guilde.form.php<br />
+admin/creerGuilde.php
+	</td><td> Fichiers spécialement créés pour une guilde:<br />
+		Crée un lieu <br />
+		Crée un gérant (PJ) de la guilde <br />
+		Crée un chemin pour rattacher la guilde au monde <br />
+		Crée un nouveau forum dans la catégorie Guildes <br />
+		Donne les droits au gérant sur ce forum <br />
+		</td></tr>
+	
+
+<tr><td>admin/scriptsSA.php
+</td><td> </td></tr>
+
+<tr><td>classe/joueur.php
+</td><td> Gestion de l'image</td></tr>
+	
+<tr><td>classe/mj.php
+</td><td> Gestion de l'image</td></tr>
+
+<tr><td>classe/lieu.php
+</td><td> affichage de l'image avec les noms des PJs</td></tr>
+
+<tr><td>main/menu_site.php</td></tr>
+
+<tr><td>main/forum.php
+</td><td> iframe de Kaeru</td></tr>
+	
+<tr><td>main/joueurs.php
+</td><td> bouton "pm" (en allant le chercher dans le template par defaut, langue par defaut)</td></tr>
+
+<tr><td>main/index.php
+</td><td> lien vers le forum</td></tr>
+	
+<tr><td>game/mod_info.php
+</td><td> Mise a jour du membre (email, passwsord, image de l'avatar)	</td></tr>
+	
+<tr><td>include/const.php
+</td><td> les variables IN_FORUM et CHEMIN_FORUM</td></tr>
+	
+<tr><td>include/http_get_post.php		
+</td><td> utilisation de scripts PHPBB pour les variables globales (compatibilite PHP 4 &amp; 5)</td></tr>
+	
+<tr><td>commun/motdepasseperdu.php
+</td><td> Mise a jour du membre (password)</td></tr>
+	
+<tr><td>commun/login.php	
+</td><td> fonction d'autoconnect dans le forum quand on se connecte au jeu</td></tr>
+
+<tr><td>identification/sessionleym
+</td><td> fonction d'autoconnect dans le forum quand on se connecte au jeu</td></tr>
+	
+<tr><td>identification/sessionleymMJ
+</td><td> fonction d'autoconnect dans le forum quand on se connecte au jeu</td></tr>	
+<tr><td>news/archive
+</td><td> utilisation des smileys de PHPBB dans les news</td></tr>
+
+<tr><td>news/index
+</td><td> utilisation des smileys de PHPBB dans les news</td></tr>
+
+<tr><td>admin/news_add_news
+</td><td> utilisation des smileys de PHPBB dans les news</td></tr>
+
+<tr><td>admin/news_csl_news
+</td><td> utilisation des smileys de PHPBB dans les news</td></tr>
+
+<tr><td>admin/news_mod_news
+</td><td> utilisation des smileys de PHPBB dans les news</td></tr>
+
+</table>
+
+</div>
+
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+
+
+<div id='menu'>
+<img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
+	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
+	<h4><a class='t1' href='../Docs/creer_lieu.htm'>Lieux</a></h4>
+	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
+	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
+	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
+<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
+<img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />
+</div>
+<div id='barre_container'><div id='barre'>
+<table border='0' width='95%' align='center'>
+</table>
+</div><img class='line' src='../templates/Original/images/bg_line.jpg' alt='bg_line.jpg' /></div>
+</body>
+</html>
