@@ -6,7 +6,7 @@ $RCSfile: scripts_SA.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.29 $
 $Date: 2010/02/28 22:58:10 $
@@ -97,27 +97,27 @@ if ($MJ->ID =="1") {
 
 		if(! file_exists ( dirname($HTTP_SERVER_VARS["PATH_TRANSLATED"]).SAUVEGARDE))
 			if (! mkdir(dirname($HTTP_SERVER_VARS["PATH_TRANSLATED"]).SAUVEGARDE,0744)) {
-				logDate ("impossible de créer le rep " .$HTTP_SERVER_VARS["PATH_TRANSLATED"].SAUVEGARDE,E_USER_WARNING,1);
+				logDate ("impossible de crer le rep " .$HTTP_SERVER_VARS["PATH_TRANSLATED"].SAUVEGARDE,E_USER_WARNING,1);
 				$erreur=1;
 			}	
 		if (!isset($erreur)) {
 			if (!chmod(dirname($HTTP_SERVER_VARS["PATH_TRANSLATED"]).SAUVEGARDE , 0744))
-				logDate ("chmod de " .$HTTP_SERVER_VARS["PATH_TRANSLATED"].SAUVEGARDE. " échoué",E_USER_WARNING,1);
+				logDate ("chmod de " .$HTTP_SERVER_VARS["PATH_TRANSLATED"].SAUVEGARDE. " chou",E_USER_WARNING,1);
 			$now=dirname($HTTP_SERVER_VARS["PATH_TRANSLATED"]).SAUVEGARDE;	
 			$now.=date("d_m_Y_H_i_s");	
 			
 		  	if (mkdir ($now, 0744)) {	
 		  		if (!chmod($now , 0744))
-		  			logDate ("chmod de " .$now. " échoué",E_USER_WARNING,1);
+		  			logDate ("chmod de " .$now. " chou",E_USER_WARNING,1);
 		  		if (mkdir ($now."/Tables_export/", 0744)) {
 		  		    if (!chmod($now."/Tables_export/" , 0744)) 
-		  		    	logDate ("chmod de " .$now. "/Tables_export échoué",E_USER_WARNING,1);
+		  		    	logDate ("chmod de " .$now. "/Tables_export chou",E_USER_WARNING,1);
 		  		    if ($db->sql_export($now."/Tables_export/")===FALSE) {
 		  		    	logDate ("backup des tables SQL dans " .$now."/Tables_export/ impossible",E_USER_WARNING,1);
 		  		    	verifDroits($now."/Tables_export/");
 		  		    }	
 				}
-				else logDate ("impossible de créer le rep " .$now."/Tables_export/",E_USER_WARNING,1);
+				else logDate ("impossible de crer le rep " .$now."/Tables_export/",E_USER_WARNING,1);
 		  		if (mkdir ($now."/FAs/", 0744)) {	
 		  			if (!chmod($now."/FAs/" , 0744))
 		  		    	logDate ("chmod de " .$now. "/FAs",E_USER_WARNING,1);
@@ -131,9 +131,9 @@ if ($MJ->ID =="1") {
 
 					}		
 				}
-				else logDate ("impossible de créer le rep " .$now."/FAs",E_USER_WARNING,1);
+				else logDate ("impossible de crer le rep " .$now."/FAs",E_USER_WARNING,1);
 			}	
-			else logDate ("impossible de créer le rep " .$now,E_USER_WARNING,1);
+			else logDate ("impossible de crer le rep " .$now,E_USER_WARNING,1);
 			$template_main .= "fin sauvegarde des tables";
 		}
 	}

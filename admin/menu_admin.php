@@ -6,7 +6,7 @@ $RCSfile: menu_admin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.24 $
 $Date: 2010/02/28 22:58:06 $
@@ -196,7 +196,7 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 		  }
 		  closedir($dir);
 	 } 	  
-	 else $template_main .= "Impossible d'accèder à '". $rep ."'";
+	 else $template_main .= "Impossible d'accder  '". $rep ."'";
 
 	if (! isset($liens_menu)) 
 		$liens_menu=array();	
@@ -210,7 +210,7 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 
 	if ($act=='gestionPPAs')			
 		array_push ($liens_menu,
-			array(2,"../admin/repondre_ppa.".$phpExtJeu,"PPAs à traiter","" ,true),
+			array(2,"../admin/repondre_ppa.".$phpExtJeu,"PPAs  traiter","" ,true),
 			array(2,"../admin/liste_ppa.".$phpExtJeu,"Liste des PPAs","" ,true));
 
         array_push ($liens_menu,
@@ -251,10 +251,10 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 			array(2,"../admin/cimetiere.".$phpExtJeu,"Liste des PJ/PNJ morts","" ,$MJ->aDroit($liste_flags_mj["SupprimerPJ"])),		
 			array(2,"../admin/teleporter.".$phpExtJeu,"d&eacute;placer PJ/PNJ","" ,$MJ->aDroit($liste_flags_mj["DeplacerPJ"])),
 			array(2,"../admin/registre.".$phpExtJeu,"Registre","" ,$MJ->aDroit($liste_flags_mj["Registre"])),
-			array(2,"../admin/donnerdroits_pj.".$phpExtJeu,"Donner droits MJ à un PJ","" ,$MJ->aDroit($liste_flags_mj["CreerMJ"]) && $MJ->aDroit($liste_flags_mj["DonnerDroitsMJauxPJs"])),
-			array(2,"../admin/supprimerdroits_pj.".$phpExtJeu,"Supprimer droits MJ à un PJ","" ,$MJ->aDroit($liste_flags_mj["SupprimerMJ"]) && $MJ->aDroit($liste_flags_mj["SupprimerDroitsMJauxPJs"])),
-			array(2,"../admin/modifierdroits_pj.".$phpExtJeu,"Modifier droits MJ à un PJ","" ,$MJ->aDroit($liste_flags_mj["ModifierMJ"]) && $MJ->aDroit($liste_flags_mj["ModifierDroitsMJauxPJs"])),
-			array(2,"../admin/listeActionsTracees.".$phpExtJeu,"Liste des actions tracées","" ,true)
+			array(2,"../admin/donnerdroits_pj.".$phpExtJeu,"Donner droits MJ  un PJ","" ,$MJ->aDroit($liste_flags_mj["CreerMJ"]) && $MJ->aDroit($liste_flags_mj["DonnerDroitsMJauxPJs"])),
+			array(2,"../admin/supprimerdroits_pj.".$phpExtJeu,"Supprimer droits MJ  un PJ","" ,$MJ->aDroit($liste_flags_mj["SupprimerMJ"]) && $MJ->aDroit($liste_flags_mj["SupprimerDroitsMJauxPJs"])),
+			array(2,"../admin/modifierdroits_pj.".$phpExtJeu,"Modifier droits MJ  un PJ","" ,$MJ->aDroit($liste_flags_mj["ModifierMJ"]) && $MJ->aDroit($liste_flags_mj["ModifierDroitsMJauxPJs"])),
+			array(2,"../admin/listeActionsTracees.".$phpExtJeu,"Liste des actions traces","" ,true)
 
 		);
 
@@ -269,7 +269,7 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 
 	if ($act=='gestionBestiaire')		
 		array_push ($liens_menu,
-			array(2,"../admin/creerBestiaire.".$phpExtJeu,"Créer Bestiaire","" ,$MJ->aDroit($liste_flags_mj["CreerBestiaire"])),
+			array(2,"../admin/creerBestiaire.".$phpExtJeu,"Crer Bestiaire","" ,$MJ->aDroit($liste_flags_mj["CreerBestiaire"])),
 			array(2,"../admin/modifier_spec_Bestiaire.".$phpExtJeu,"Modifier Spec Bestiaire","" ,$MJ->aDroit($liste_flags_mj["ModifierSpecPJ"])),
 			array(2,"../admin/modifier_etat_Bestiaire.".$phpExtJeu,"Modifier Etats Bestiaire","" ,$MJ->aDroit($liste_flags_mj["ModifierEtatPJ"])),
 			array(2,"../admin/modifier_info_Bestiaire.".$phpExtJeu,"Modifier Infos Bestiaire","" ,$MJ->aDroit($liste_flags_mj["ModifierBestiaire"])),
@@ -365,7 +365,7 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 			array(2,"../admin/supprimer_chemin.".$phpExtJeu,"Supprimer Chemin","" ,$MJ->aDroit($liste_flags_mj["SupprimerChemin"])),
 			array(2,"../admin/modifier_chemin.".$phpExtJeu,"Modifier Chemin","" ,$MJ->aDroit($liste_flags_mj["ModifierChemin"])),
 			array(2,"../admin/registrechemin.".$phpExtJeu,"Table des Chemins","" ,$MJ->aDroit($liste_flags_mj["RegistreLieux"])),
-			array(2,"../admin/creer_map.".$phpExtJeu,"Créer Fichier Graphviz","" ,$MJ->aDroit($liste_flags_mj["CreerCarte"])), 
+			array(2,"../admin/creer_map.".$phpExtJeu,"Crer Fichier Graphviz","" ,$MJ->aDroit($liste_flags_mj["CreerCarte"])), 
 			array(2,"../admin/voir_map.".$phpExtJeu,"Voir carte","" ,$MJ->aDroit($liste_flags_mj["VoirCarte"]) && file_exists("../lieux/vues/map.cmap") && file_exists("../lieux/vues/map.gif")) 
 		);		
 	
@@ -427,9 +427,9 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 			array(2,"../admin/modifier_objet.".$phpExtJeu,"Modifier Objet","" ,$MJ->aDroit($liste_flags_mj["ModifierObjet"])),
 			array(2,"../admin/cacher_objet.".$phpExtJeu,"Placer/Cacher Objet","" ,$MJ->aDroit($liste_flags_mj["ModifierObjet"])),
 			array(2,"../admin/listeobjet.".$phpExtJeu,"Table des objets","" ,$MJ->aDroit($liste_flags_mj["listeObjets"])),
-			array(2,"../admin/creer_Livre.".$phpExtJeu,"Créer les livres","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"])),
-			array(2,"../admin/creer_Armures.".$phpExtJeu,"Créer les armures","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"])),
-			array(2,"../admin/creer_Munitions.".$phpExtJeu,"Créer les munitions","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"]))
+			array(2,"../admin/creer_Livre.".$phpExtJeu,"Crer les livres","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"])),
+			array(2,"../admin/creer_Armures.".$phpExtJeu,"Crer les armures","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"])),
+			array(2,"../admin/creer_Munitions.".$phpExtJeu,"Crer les munitions","" ,$MJ->aDroit($liste_flags_mj["CreerObjet"]))
 	);	
 	
 	array_push ($liens_menu,
@@ -446,13 +446,13 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 			array(2,"../admin/supprimer_magie.".$phpExtJeu,"Supprimer Sort","" ,$MJ->aDroit($liste_flags_mj["SupprimerMagie"])),
 			array(2,"../admin/modifier_magie.".$phpExtJeu,"Modifier Sort","" ,$MJ->aDroit($liste_flags_mj["ModifierMagie"])),
 			array(2,"../admin/listesort.".$phpExtJeu,"Table des sorts","" ,$MJ->aDroit($liste_flags_mj["listeSorts"])),
-			array(2,"../admin/creer_Sorts.".$phpExtJeu,"Créer des sorts de test","" ,$MJ->aDroit($liste_flags_mj["CreerMagie"]))
+			array(2,"../admin/creer_Sorts.".$phpExtJeu,"Crer des sorts de test","" ,$MJ->aDroit($liste_flags_mj["CreerMagie"]))
 	);
 	
 	
 		
 	array_push ($liens_menu,
-		array(1,"../admin/menu.$phpExtJeu?act=gestionSpec","Gestion des Spécialisations","" ,$MJ->aDroit($liste_flags_mj["CreerSpec"])||
+		array(1,"../admin/menu.$phpExtJeu?act=gestionSpec","Gestion des Spcialisations","" ,$MJ->aDroit($liste_flags_mj["CreerSpec"])||
 				$MJ->aDroit($liste_flags_mj["SupprimerSpec"])||
 				$MJ->aDroit($liste_flags_mj["ModifierSpec"])||
 				$MJ->aDroit($liste_flags_mj["listeSpecs"])
@@ -500,7 +500,7 @@ if(!defined("__MENU_ADMIN.PHP") ) {
 	array_push ($liens_menu,					
 		array(1,"../admin/creerGuilde.".$phpExtJeu,"Cr&eacute;er une guilde","" ,$MJ->aDroit($liste_flags_mj["CreerLieu"]) && $MJ->aDroit($liste_flags_mj["CreerChemin"]) && (defined("IN_FORUM") && (IN_FORUM==1))),
 		array(1,"../admin/scripts_SA.".$phpExtJeu,"Scripts Divers","" ,$MJ->ID ==1),
-		array(1,"../admin/chargeDansTable.".$phpExtJeu,"Chargement de données","" ,$MJ->ID ==1),
+		array(1,"../admin/chargeDansTable.".$phpExtJeu,"Chargement de donnes","" ,$MJ->ID ==1),
 		array(1,"../admin/logout.".$phpExtJeu,"Deconnexion","" ,-1)
 	);
 

@@ -6,7 +6,7 @@ $RCSfile: commentaires.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:28 $
@@ -20,7 +20,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER commentaires.php
@@ -49,7 +49,7 @@ $total_comment ='';
 while ($data =  $db->sql_fetchrow($requete)) {
 	$comment = $sh_comment;
 	$comment = str_replace ('#AUTEUR#', $data['auteur'], $comment);
-	$comment = str_replace ('#DATE#', date("d-m-Y \à H\hi", $data['news_date']), $comment);
+	$comment = str_replace ('#DATE#', date("d-m-Y \ H\hi", $data['news_date']), $comment);
 	$comment = str_replace ('#TEXTE#', nl2br ($data['texte']), $comment);
 	$total_comment .= $comment;
 }

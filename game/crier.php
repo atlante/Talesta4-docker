@@ -6,7 +6,7 @@ $RCSfile: crier.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.4 $
 $Date: 2006/04/18 11:09:17 $

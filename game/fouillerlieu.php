@@ -6,7 +6,7 @@ $RCSfile: fouillerlieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/01/24 17:44:02 $
@@ -58,7 +58,7 @@ else {
 					<!--<input type='hidden' name='etape' value='1' />-->
 					<input type='hidden' name='id_entitecachee' value='".$PERSO->Lieu->Chemins[$i]->ID.$sep.$valeurs[0]."'>";
 					$PERSO->OutPut( GetMessage("fouiller_lieu_chemin01",$valeurs));
-					$template_main .= " Voulez-vous le dévoiler ? ".BOUTON_ENVOYER."</form>";
+					$template_main .= " Voulez-vous le dvoiler ? ".BOUTON_ENVOYER."</form>";
 					$SQL = "INSERT INTO ".NOM_TABLE_ENTITECACHEECONNUEDE."  (id_entitecachee, id_perso) select e.id,  ".$PERSO->ID." from ".NOM_TABLE_ENTITECACHEE ." e where e.id_entite = ".$PERSO->Lieu->Chemins[$i]->ID;
 					$db->sql_query($SQL);
 				} 
@@ -94,7 +94,7 @@ else {
 				<!--<input type='hidden' name='etape' value='1' />-->
 				<input type='hidden' name='id_entitecachee' value='".$row["identite"].$sep.$valeurs[0]."'>";
 				$PERSO->OutPut( GetMessage("fouiller_lieu_01",$valeurs));
-				$template_main .= " Voulez-vous le démasquer ? ".BOUTON_ENVOYER."</form>";
+				$template_main .= " Voulez-vous le dmasquer ? ".BOUTON_ENVOYER."</form>";
 				$SQL = "INSERT INTO ".NOM_TABLE_ENTITECACHEECONNUEDE."  (id_entitecachee, id_perso) values  (".$row["identite"].",  ".$PERSO->ID.")";
 				$db->sql_query($SQL);
 			} 
@@ -130,7 +130,7 @@ else {
 				$template_main .= "<form name='formobjdev".$i."' method='post' action='./reveler_entitecachee.$phpExtJeu'>
 				<!--<input type='hidden' name='etape' value='1' />-->
 				<input type='hidden' name='id_entitecachee' value='".$row["id_entite"].$sep.$valeurs[0]."'>";
-				$template_main .= " Voulez-vous le dévoiler ? ".BOUTON_ENVOYER."</form>";			
+				$template_main .= " Voulez-vous le dvoiler ? ".BOUTON_ENVOYER."</form>";			
 				$SQL = "INSERT INTO ".NOM_TABLE_ENTITECACHEECONNUEDE."  (id_entitecachee, id_perso) values  (".$row["identite"].",  ".$PERSO->ID.")";
 				$db->sql_query($SQL);
 			} 

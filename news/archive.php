@@ -6,7 +6,7 @@ $RCSfile: archive.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2006/01/31 12:26:28 $
@@ -21,13 +21,13 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER archive.php
 
 include ('function.'.$phpExtJeu);
-$template_main .= "<center><h3><hr>News archivées de ". NOM_JEU."</hr></h3></center><br /><br />";
+$template_main .= "<center><h3><hr>News archives de ". NOM_JEU."</hr></h3></center><br /><br />";
 
 /* On recupere la config dapuis la base */
 //mysql_connect (DB_HOST, DB_LOGIN, DB_PASS);

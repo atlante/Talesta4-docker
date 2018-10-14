@@ -6,7 +6,7 @@ $RCSfile: listeActionsTracees.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2010/02/28 22:58:05 $
@@ -95,7 +95,7 @@ if (isset($HTTP_POST_VARS['etape']) && (!isset($HTTP_GET_VARS['etape']))
 	
 	$template_main .= "<table width='100%' class='details'>";
 	$template_main .= "<tr><td colspan='14' align='center'>Liste des actions</td></tr>";
-	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>Action</span></td><td align='center'>Auteur</td><td align='center'><span class='c5'>Lieu </span></td><td align='center'><span class='c5'>Détail </span></td><td align='center'><span class='c5'>Date</span></td></tr>";
+	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>Action</span></td><td align='center'>Auteur</td><td align='center'><span class='c5'>Lieu </span></td><td align='center'><span class='c5'>Dtail </span></td><td align='center'><span class='c5'>Date</span></td></tr>";
 	while($row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td><span class='c5'>".$row["id_trace"]."</span></td>";
 		$template_main .= "<td>".$row["action"]."</td>";

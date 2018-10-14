@@ -6,7 +6,7 @@ $RCSfile: quete.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/01/24 16:36:43 $
@@ -24,8 +24,8 @@ if(!defined("__QUETE.PHP") ) {
 		var $detail_type_queteID;	///< l'ID du detail dy type
 		var $detail_type_quete;		///< l'instance du detail (le PJ ou l'objet ou le lieu)
 		var $nom_quete;
-		var $duree_quete;               ///< durée de la quête en jours réels (ou -1 pour illimitée)
-		var $public;                    ///< proposée dans un lieu, sinon il faut discuter avec le PJ/MJ qui propose...
+		var $duree_quete;               ///< dure de la qute en jours rels (ou -1 pour illimite)
+		var $public;                    ///< propose dans un lieu, sinon il faut discuter avec le PJ/MJ qui propose...
 		var $cyclique;			///< 
 		var $proposepartype;		///< Qui propose la quete (un MJ ou PJ)
 		var $proposepar;		///< l'Identifiant du MJ ou PJ qui propose la quete
@@ -38,9 +38,9 @@ if(!defined("__QUETE.PHP") ) {
 		var $recompenses;		///< la liste des recompenses en cas de reussite
 		var $punitions;                 ///< la liste des punitions en cas d'echec
 		var $validationquete;	        ///< determine s'il faut une validation du proposant quand un pj affirme avoir termine la quete (1 pour validation par proposant, 0 pour validation automatique). Ex: si la quete est trouver lieu L et que le PJ s'y trouve et que validationquete = 1 => la quete est reussie si le PJ clique sur terminer quete, sinon, il faut que le proposant de la quete valide en plus)
-		var $lieuAffiche;               ///< indique dans quel lieu cette quete est affichée (quete publique uniquement)
+		var $lieuAffiche;               ///< indique dans quel lieu cette quete est affiche (quete publique uniquement)
 		var $proposantAnonyme;          ///< indique si on sait qui propose la quete (quete publique uniquement)
-		var $EtatTempSpecifique;	///< l'etat temp a avoir pour pouvoir acceder à la quete
+		var $EtatTempSpecifique;	///< l'etat temp a avoir pour pouvoir acceder  la quete
 		
 		function Quete($id_quete){
 			global $db;
@@ -111,7 +111,7 @@ if(!defined("__QUETE.PHP") ) {
 		
     
 		/**
-		*    retourne la description utilisée dans la fiche de PJ
+		*    retourne la description utilise dans la fiche de PJ
 		*    
 		*/
 		function description(){
@@ -127,7 +127,7 @@ if(!defined("__QUETE.PHP") ) {
 			$temp[0] .= "num_quete=".$this->id_quete."')\">".$this->nom_quete."</a>";			
 			//$temp[2]= $this->acteurProposant->nom;
                         
-                        if ((!$this->proposantAnonyme) || (isset($PËRSO) && $PERSO->ID == $this->acteurProposant->ID)) {
+                        if ((!$this->proposantAnonyme) || (isset($PRSO) && $PERSO->ID == $this->acteurProposant->ID)) {
                                 if ($this->proposepartype==1)
                                         $temp[1] = span(" MJ ".$this->acteurProposant->nom,"mj"); 
                                 else $temp[1] = span(" PJ ".$this->acteurProposant->nom,"pj");

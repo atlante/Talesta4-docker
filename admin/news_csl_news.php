@@ -6,7 +6,7 @@ $RCSfile: news_csl_news.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:19 $
@@ -25,7 +25,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_csl_news.php

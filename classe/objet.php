@@ -6,7 +6,7 @@ $RCSfile: objet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.16 $
 $Date: 2010/01/24 16:36:42 $
@@ -26,18 +26,18 @@ if(!defined("__OBJET.PHP") ) {
 		var $Degats;
 		var $anonyme;
 		var $durabilite;		///< durabiliteMax de l'objet (constante). Chaque instance de cet objet a sa propre durabilite dans objetpj
-		var $prix_base;			///< prix de base de l'objet neuf (utilisé pour calculer le prix de vente ou d'ahat suivant son usure et l'habilete de negociation du joueur)
-		var $image;			///< image de surclasse de l'icone asocié à l'objet.
+		var $prix_base;			///< prix de base de l'objet neuf (utilis pour calculer le prix de vente ou d'ahat suivant son usure et l'habilete de negociation du joueur)
+		var $image;			///< image de surclasse de l'icone asoci  l'objet.
 		var $munitions;			///< munitionsMax de l'objet (constante). Chaque instance de cet objet a ses propres munitions dans objetpj
-		var $poids;			///< poids de l'objet (peut être 1 chiffre à virgule depuis la version 3.4.080)																																												 XiÕ \ñ PqQ Á          Á  ( œ¼ñ ×`Q Á         @ò ´bQ     ñº
-		var $permanent;			///< indique si l'objet est une partie physique du PJ et ne peut etre enlevé à son propriétaire (Ex: poing)
+		var $poids;			///< poids de l'objet (peut tre 1 chiffre  virgule depuis la version 3.4.080)																																												 Xi \ PqQ             (  `Q          @ bQ     
+		var $permanent;			///< indique si l'objet est une partie physique du PJ et ne peut etre enlev  son propritaire (Ex: poing)
 		var $caracteristique;           
 		var $competence;
-		var $provoqueetat;		///< indique les états que provoque cet objet (sur son possesseur pour une armure, une nourriture, un livre), sur son adversaire pour une arme
+		var $provoqueetat;		///< indique les tats que provoque cet objet (sur son possesseur pour une armure, une nourriture, un livre), sur son adversaire pour une arme
 		var $competencespe;
-		var $PartieCorps;		///< indique la partie du corps qu'occupera l'objet une fois équipé (sert pour ne pas mettre 2 casques sur 1 tete). Voir aussi $QteTotale et $QteOccupee pour les éléments multiples (bras ...)
-		var $QteTotale;			///< indique la quantite maximale d'objets de ce type que peut mettre un pj (Ex 2 mains => 2 épées courtes )
-		var $QteOccupee;		///< indique la quantite qu'occupe cet objet (Ex 2 mains =>  2 épées courtes mais 1 seule épée à 2 mains )
+		var $PartieCorps;		///< indique la partie du corps qu'occupera l'objet une fois quip (sert pour ne pas mettre 2 casques sur 1 tete). Voir aussi $QteTotale et $QteOccupee pour les lments multiples (bras ...)
+		var $QteTotale;			///< indique la quantite maximale d'objets de ce type que peut mettre un pj (Ex 2 mains => 2 pes courtes )
+		var $QteOccupee;		///< indique la quantite qu'occupe cet objet (Ex 2 mains =>  2 pes courtes mais 1 seule pe  2 mains )
 		var $EtatTempSpecifique;
 		
 		function Objet($id_objet){

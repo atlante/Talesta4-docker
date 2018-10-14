@@ -6,7 +6,7 @@ $RCSfile: news_mod_news.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2006/01/31 12:26:19 $
@@ -25,7 +25,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_mod_news.php
@@ -64,7 +64,7 @@ include ('../news/function.'.$phpExtJeu);
 		$texte = addslashes ($_POST['texte']);
 		$sql ="UPDATE ".NOM_TABLE_NEWS." SET titre='".$_POST['titre']."', texte='".$texte."' WHERE id=".$_POST['id'];
 		if ($db->sql_query ($sql))
-			$template_main .= "Votre news '".$_POST['titre']."' a bien été modifiée";
+			$template_main .= "Votre news '".$_POST['titre']."' a bien t modifie";
 		else $template_main .= $db->erreur;	
 		//$db->sql_close ();
 	} else {

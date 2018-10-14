@@ -6,7 +6,7 @@ $RCSfile: listeobjet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2010/02/28 22:58:05 $
@@ -38,7 +38,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	if (!isset($competence))
 		$competence="";
 	$template_main .= "filtrer par type: " . $varType[1]. ", sous type: " . $varsousType[1];
-	$template_main .= ", compétence: <select name='competence' onChange='submit()'>";
+	$template_main .= ", comptence: <select name='competence' onChange='submit()'>";
 		$temp = array_merge($liste_artisanat,$liste_competences);
 		ksort($temp);
 		reset($temp);
@@ -76,7 +76,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	
 	$template_main .= "<table width='100%' class='details'>";
 	$template_main .= "<tr><td colspan='14' align='center'>Liste des objets</td></tr>";
-	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'>Sous-type</td><td align='center'><span class='c5'>Dégats</span></td><td align='right'><span class='c2'>Prix</span></td><td align='right'>Dur.</td><td align='center'>poids</td><td align='center'>Carac.</td><td align='center'>Compétence</td><td align='center'>anonyme</td><td align='center'><span class='c5'>spécial</span></td><td align='center'>Perm.</td><td>Réservé aux</td></tr>";
+	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'>Sous-type</td><td align='center'><span class='c5'>Dgats</span></td><td align='right'><span class='c2'>Prix</span></td><td align='right'>Dur.</td><td align='center'>poids</td><td align='center'>Carac.</td><td align='center'>Comptence</td><td align='center'>anonyme</td><td align='center'><span class='c5'>spcial</span></td><td align='center'>Perm.</td><td>Rserv aux</td></tr>";
 	while($row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td><span class='c5'>".$row["id_objet"]."</span></td>";
 		$template_main .= "<td><span class='c0'>".$row["nom"]."</span></td>";
@@ -84,7 +84,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		$template_main .= "<td>".$row["sous_type"]."</td>";
 		$degatmin = $row["degats_min"];
 		$degatmax = $row["degats_max"];
-		$template_main .= "<td><span class='c5'> de $degatmin à $degatmax"."</span></td>";
+		$template_main .= "<td><span class='c5'> de $degatmin  $degatmax"."</span></td>";
 		$template_main .= "<td align='right'><span class='c2'>".$row["prix_base"]."</span></td>";
 		$template_main .= "<td align='right'>".$row["durabilite"]."</td>";
 		$template_main .= "<td align='right'>".$row["poids"]."</td>";

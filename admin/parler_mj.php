@@ -6,7 +6,7 @@ $RCSfile: parler_mj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.14 $
 $Date: 2006/02/21 21:47:03 $

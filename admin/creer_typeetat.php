@@ -6,7 +6,7 @@ $RCSfile: creer_typeetat.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.6 $
 $Date: 2006/01/31 12:26:17 $
@@ -69,8 +69,8 @@ if($etape===0){
 	$SQL = "SELECT * FROM ".NOM_TABLE_TYPEETAT;
 	$result2 = $db->sql_query($SQL);
 	$template_main .= "<table class='detailscenter'>";
-	$template_main .= "<tr><td align='center' colspan='3'>Liste des types d'états temporaires</td></tr>";
-	$template_main .= "<tr><td align='center'>Nom du type</td><td>Critère d'inscription</td><td>Modifiable par le pj durant le jeu</td></tr>";
+	$template_main .= "<tr><td align='center' colspan='3'>Liste des types d'tats temporaires</td></tr>";
+	$template_main .= "<tr><td align='center'>Nom du type</td><td>Critre d'inscription</td><td>Modifiable par le pj durant le jeu</td></tr>";
 	while($row = $db->sql_fetchrow($result2)) {
 		$template_main .= "<tr><td>".span($row["nomtype"],"etattemp")."</td>";
 		switch($row["critereinscription"]) {

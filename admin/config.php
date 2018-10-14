@@ -6,7 +6,7 @@ $RCSfile: config.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.17 $
 $Date: 2010/05/15 08:50:22 $
@@ -29,12 +29,12 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 			);
 
 $tab_listes = array (
-        array("liste_type_lieu_apparitionPerso", "Liste des Types de lieu (critère pour les apparitions automatiques de monstres)",2,"valeur","cle"),
+        array("liste_type_lieu_apparitionPerso", "Liste des Types de lieu (critre pour les apparitions automatiques de monstres)",2,"valeur","cle"),
         array("liste_magiePerso", "Liste des magies",1001,"cle","valeur")
 );     
 
 $liste_type_remise=array(
-	"TOTALE"=>"Remise Totale (les point remontent à leur maximum)",
+	"TOTALE"=>"Remise Totale (les point remontent  leur maximum)",
 	"PARTIELLE"=>"Remise Partielle (les point ne remontent qu'en partie)"
 );
 
@@ -62,7 +62,7 @@ if(isset($action) && $action=='write')
 	$Modif .="Define(\"INSCRIPTIONS_OUVERTES\", ".$inscription.");      	//0 pour empecher les inscriptions\n";
 	$Modif .="Define(\"MAINTENANCE_MODE\", ".$maintenance.");         		// Mettez a 0 pour que tous les PJS et MJS puissent se connecter\n";
 	$Modif .="                      						// Mettez a 1 cette variable pour bloquer le jeu (tous les PNJ et PJ)\n";
-	$Modif .="                      						// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui créé à l'init de la base\n";
+	$Modif .="                      						// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui cr  l'init de la base\n";
 	$Modif .="Define(\"IN_NEWS\", ".$news.") ;               		//commentez la ligne pour ne pas utiliser les news ou mettre 0\n";
 	$Modif .="Define(\"COUNT_QCM\", ".$qcm.");               		//Pour definir le nombre de question que l'on veut poser avant l'inscription. Si 0 => Inscription sans questionnaire\n";
 
@@ -83,7 +83,7 @@ if(isset($action) && $action=='write')
 	if (!isset($debug_jeu_only))
 		$debug_jeu_only=1;
 	$Modif .="Define(\"DEBUG_JEU_ONLY\", ".$debug_jeu_only .");          	// Mettez a 0, pour avoir du debug du jeu + forum +...; 1 pour le jeu uniquement\n";
-	$Modif .="Define(\"DEBUG_HTML\", ".$mode_html.");             		// Mettez a 1 si vous voulez stocker les fichiers HTML générés pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
+	$Modif .="Define(\"DEBUG_HTML\", ".$mode_html.");             		// Mettez a 1 si vous voulez stocker les fichiers HTML gnrs pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 	$Modif .="Define(\"SHOW_TIME\", ".$time_sql.");             		// Mettez a 1 si vous voulez voir les temps d'execution (SQL et PHP) (Rem: L'affichage se fera de toute facon si DEBUG_MODE=1). Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 	$Modif .="Define(\"AFFICHE_CONNECTES\", ".$whosonline.");       	// Mettez a 1 si vous voulez voir le sous-menu des PJ et MJ connectes dans le menu de gauche (genere plus de SQL)\n";
 
@@ -97,7 +97,7 @@ if(isset($action) && $action=='write')
 	        $creeMembrePNJ=0;	
 	$Modif .=listeParamForum($foruminclus, $lien_forum, $typeforumChoix,$typeforum, $aff_ava, $nb_aff_ava, $hautMaxLieu, $largMaxLieu , $creeMembrePNJ);
 	$Modif .= "Define(\"AFFICHE_XP\",	".$xp_lvl."); // Mettez a 1 si vous voulez voir les infos d'XP et de niveau\n";
-	$Modif .= "Define(\"AFFICHE_PV\",	".$pv_degat."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dégats\n";
+	$Modif .= "Define(\"AFFICHE_PV\",	".$pv_degat."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dgats\n";
 	$Modif .= "\n";
 	if ($pj_autop=="")
 	        $pj_autop=80;
@@ -135,10 +135,10 @@ if(isset($action) && $action=='write')
 	if ($qRemisePo=="")
 	        $qRemisePo=0;
 	        
-	$Modif .="Define(\"QUANTITE_REMISE_PAS\", ".$qRemisePa.");		//nb de PA ajoutés à chaque remise de PAs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_PVS\", ".$qRemisePv.");		//nb de PV ajoutés à chaque remise de PVs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_PIS\", ".$qRemisePi.");		//nb de PI ajoutés à chaque remise de PIs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_POS\", ".$qRemisePo.");		//nb de PO ajoutés à chaque remise de POs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PAS\", ".$qRemisePa.");		//nb de PA ajouts  chaque remise de PAs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PVS\", ".$qRemisePv.");		//nb de PV ajouts  chaque remise de PVs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PIS\", ".$qRemisePi.");		//nb de PI ajouts  chaque remise de PIs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_POS\", ".$qRemisePo.");		//nb de PO ajouts  chaque remise de POs  \n";
 	
 	if ($remisePI=="")
 	        $remisePI=90;
@@ -249,7 +249,7 @@ if(isset($action) && $action=='write')
                 C'est l'inverse pour 	$liste_type_lieu_apparitionPerso=array(	            
                                                 2=>"Foret",                    
                                                 3=>"Caverne, Sous-terrain",
-                                                4=>"Ville fortitiée")	
+                                                4=>"Ville fortitie")	
                 */
                function modifieListe($nomliste,$cleMini,$posLibelle="valeur", $posID="cle") {
                         global ${"chaine_".$nomliste};
@@ -335,16 +335,16 @@ if(isset($action) && $action=='write')
 	$Modif .= "?>";
 	
 	if (fwrite($monfichier , $Modif)===false) {
-		$template_main .= "Probleme à l'écriture de '".$monfichier."'";
+		$template_main .= "Probleme  l'criture de '".$monfichier."'";
 	}
 	//efface ce qui reste si on n'est pas a la fin
 	if (feof ($monfichier)===false)
 		ftruncate($monfichier,ftell ($monfichier));
 	// SURTOUT PAS OUBLIER DE FERMER LE FICHIER...
 	if (fclose($monfichier)===false)
-		$template_main .= "Probleme à la fermeture de '".$monfichier."'";
+		$template_main .= "Probleme  la fermeture de '".$monfichier."'";
 	
-	$template_main .="Constantes reconfigurées... ";
+	$template_main .="Constantes reconfigures... ";
 	if (isset($MessageWarning) && $MessageWarning<>"") $template_main .= "<br />Mais, ". $MessageWarning;
 }
 else
@@ -368,7 +368,7 @@ else
                 C'est l'inverse pour 	$liste_type_lieu_apparitionPerso=array(	            
                                                 2=>"Foret",                    
                                                 3=>"Caverne, Sous-terrain",
-                                                4=>"Ville fortitiée")	
+                                                4=>"Ville fortitie")	
                 */
         function traiteListe($listeTraitee,$libelle,$posLibelle="valeur", $posID="cle"){
                 global ${$listeTraitee};
@@ -377,7 +377,7 @@ else
                 $temp .= "<table class='detailscenter'>";
                 $temp .= "<tr><td colspan='2' align='center'>$libelle</td></tr>";
                 if ($compteur==0) {
-                        $temp .= "<tr><td colspan='2'>Aucun élément</td></tr>";        
+                        $temp .= "<tr><td colspan='2'>Aucun lment</td></tr>";        
                 }                
                 else {
                         if ($posLibelle=="valeur" && $posID=="cle")
@@ -429,7 +429,7 @@ else
                 
                 $temp .= "\t<form id='".$nomliste."' name='". $nomliste."' action='".NOM_SCRIPT."' method='post'>";        
                 $temp .= "<table class='detailscenter'>";
-                $temp .= "<tr><td>Nouvel élément dans ". $libelle."</td><td><input type='text' name='libelle' value='' /></td></tr>";
+                $temp .= "<tr><td>Nouvel lment dans ". $libelle."</td><td><input type='text' name='libelle' value='' /></td></tr>";
                 $temp .= "<tr><td><select name=\"ListAdd\" size='5'></select></td>";
                 $temp .= "<td><input value=\"Ajouter\" type='button' onclick=\"ajoute".$nomliste."(document.forms[0].chaine_".$nomliste.")\" />\n";
                 $temp .= "<br /><br /><input value=\"Remettre a Zero\" type='button' onclick=\"RAZ".$nomliste."()\" /></td></tr>";
@@ -441,7 +441,7 @@ else
 	/// FORMULAIRE DE MODIF CONST
 	$template_main .= "<center>
 	<form action='".NOM_SCRIPT."' method='post'>
-	Vous devez avoir mis les droits d'écriture sur le fichier <tt>\"include/config.".$phpExtJeu."\"</tt> afin de modifier la configuration.<br /><br /><br />";
+	Vous devez avoir mis les droits d'criture sur le fichier <tt>\"include/config.".$phpExtJeu."\"</tt> afin de modifier la configuration.<br /><br /><br />";
 	
 	$template_main .= "<input type='hidden' name='action' value='write' />
 	<table width='90%'><tr><td colspan='2' align='center'><b><u>Options du site<br /><br /></u></b></td>
@@ -465,19 +465,19 @@ else
 	$template_main .= ">Maintenance pour les PJs et les MJs</option></select></td>
 	</tr>
 	<tr>
-		<td width='50%'>Afficher le questionnaire à l'inscription ?<br />(Pensez à modifier dans la gestion des questions...) :</td><td><select name='qcm'><option value='0' ";
+		<td width='50%'>Afficher le questionnaire  l'inscription ?<br />(Pensez  modifier dans la gestion des questions...) :</td><td><select name='qcm'><option value='0' ";
 	 if((!defined("COUNT_QCM"))||COUNT_QCM==0) $template_main .='selected="selected"';
 	$template_main .= ">NON</option><option value='1' ";
 	 if(defined("COUNT_QCM") && COUNT_QCM==1) $template_main .='selected="selected"';
-	$template_main .= ">OUI, avec 1 réponse</option><option value='2' ";
+	$template_main .= ">OUI, avec 1 rponse</option><option value='2' ";
 	 if(defined("COUNT_QCM") && COUNT_QCM==2) $template_main .='selected';
-	$template_main .= ">OUI, avec 2 réponses</option><option value='3' ";
+	$template_main .= ">OUI, avec 2 rponses</option><option value='3' ";
 	 if(defined("COUNT_QCM") && COUNT_QCM==3) $template_main .='selected="selected"';
-	$template_main .= ">OUI, avec 3 réponses</option><option value='4' ";
+	$template_main .= ">OUI, avec 3 rponses</option><option value='4' ";
 	 if(defined("COUNT_QCM") && COUNT_QCM==4) $template_main .='selected="selected"';
-	$template_main .= ">OUI, avec 4 réponses</option><option value='5' ";
+	$template_main .= ">OUI, avec 4 rponses</option><option value='5' ";
 	 if(defined("COUNT_QCM") && COUNT_QCM==5) $template_main .='selected="selected"';
-	$template_main .= ">OUI, avec 5 réponses</option></select></td>
+	$template_main .= ">OUI, avec 5 rponses</option></select></td>
 	</tr>
 	<tr>
 		<td width='50%'>Inscriptions ouvertes ? :</td><td><input type='radio' name='inscription' value='1' ";
@@ -494,21 +494,21 @@ else
 	$template_main .= " /></td>
 	</tr>
 	<tr>
-		<td width='50%'>Afficher les connectés ? :</td><td><input type='radio' name='whosonline' value='1' ";
+		<td width='50%'>Afficher les connects ? :</td><td><input type='radio' name='whosonline' value='1' ";
 	 if(defined("AFFICHE_CONNECTES") && AFFICHE_CONNECTES==1) $template_main .='checked="checked"';
 	$template_main .= " /> OUI |NON <input type='radio' name='whosonline' value='0' ";
 	 if((!defined("AFFICHE_CONNECTES"))|| AFFICHE_CONNECTES==0) $template_main .='checked="checked"';
 	$template_main .= " /></td>
 	</tr>
 	<tr>
-		<td width='50%'>Utiliser un forum conjointement avec le jeu ? (Attention : Ne pas oublier d'installer le forum avant, ni d'exécuter le script SQL correspondant au forum (PostInstallPHORUM.sql ou PostInstallPHPBB.sql) dans phpmyadmin avant :</td><td><input type='radio' name='foruminclus' value='1' ";
+		<td width='50%'>Utiliser un forum conjointement avec le jeu ? (Attention : Ne pas oublier d'installer le forum avant, ni d'excuter le script SQL correspondant au forum (PostInstallPHORUM.sql ou PostInstallPHPBB.sql) dans phpmyadmin avant :</td><td><input type='radio' name='foruminclus' value='1' ";
 	 if(defined("IN_FORUM") && IN_FORUM==1) $template_main .='checked="checked"';
 	$template_main .= " /> OUI |NON <input type='radio' name='foruminclus' value='0' ";
 	 if((!defined("IN_FORUM"))|| IN_FORUM==0) $template_main .='checked="checked"';
 	$template_main .= " /></td>
 	</tr>
 	<tr>
-		<td width='50%'>Si utilisation d'un forum, chemin (relatif au repertoire talesta/include <!--ou absolu en http://.....-->) d'acces ? (Attention : Ne pas oublier le '/' à la fin. <!--Une URL absolue ne fonctionne pas sous Windows, et nécessite que allow_url_fopen soit à 1 dans php.ini sous Unix-->) :</td><td><input type='texte' name='lien_forum' value='";
+		<td width='50%'>Si utilisation d'un forum, chemin (relatif au repertoire talesta/include <!--ou absolu en http://.....-->) d'acces ? (Attention : Ne pas oublier le '/'  la fin. <!--Une URL absolue ne fonctionne pas sous Windows, et ncessite que allow_url_fopen soit  1 dans php.ini sous Unix-->) :</td><td><input type='texte' name='lien_forum' value='";
 	 if(defined("IN_FORUM") && IN_FORUM==1 && defined("CHEMIN_FORUM")) $template_main .= CHEMIN_FORUM; 
 	$template_main .= "' /> </td>
 	</tr>
@@ -532,7 +532,7 @@ else
 			else 	$var=faitSelect("typeforumChoix","","",-50,array(),$liste_type_forum);
 			$template_main .= $var[1]. "</td></tr>";
 
-$template_main .= " <tr><td width='50%'>Si utilisation d'un forum, créer un membre du forum par PNJ (nécessite que chaque PNJ ait une adresse email unique) ? :</td><td><input type='radio' name='creeMembrePNJ' value='1' ";
+$template_main .= " <tr><td width='50%'>Si utilisation d'un forum, crer un membre du forum par PNJ (ncessite que chaque PNJ ait une adresse email unique) ? :</td><td><input type='radio' name='creeMembrePNJ' value='1' ";
 if(defined("CREE_MEMBRE_PNJ") &&  CREE_MEMBRE_PNJ==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='creeMembrePNJ' value='0' ";
 if((!defined("CREE_MEMBRE_PNJ"))||CREE_MEMBRE_PNJ==0) $template_main .='checked="checked"';
@@ -554,7 +554,7 @@ $template_main .= " /></td></tr>";
 	}
 			
 	if (count($liste_template)<>0) {
-		$template_main .= "<tr><td width='50%'>Template utilisé ? :</td><td>";
+		$template_main .= "<tr><td width='50%'>Template utilis ? :</td><td>";
 		
 		if (isset($template_name)) {
 			$var=faitSelect("template_name","","",urldecode($template_name),array(),$liste_template);
@@ -565,7 +565,7 @@ $template_main .= " /></td></tr>";
 		$template_main .= $var[1]. "</td></tr>";
 	}
 	
-	$template_main .= "<tr><td width='50%'>Langue utilisée ? :</td><td>";
+	$template_main .= "<tr><td width='50%'>Langue utilise ? :</td><td>";
 
 			if (isset($langue))
 				$var=faitSelect("langueChoix","","",$langue,array(),$liste_langue);
@@ -582,7 +582,7 @@ $template_main .= " /> OUI |NON <input type='radio' name='xp_lvl' value='0' ";
  if((!defined("AFFICHE_XP"))|| AFFICHE_XP==0) $template_main .='checked="checked"';
 $template_main .= " /></td>
 </tr>
-<tr><td width='50%'>Voir les infos des Points de vie, dégats ? :</td><td><input type='radio' name='pv_degat' value='1' ";
+<tr><td width='50%'>Voir les infos des Points de vie, dgats ? :</td><td><input type='radio' name='pv_degat' value='1' ";
 
  if(defined("AFFICHE_PV") && AFFICHE_PV==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='pv_degat' value='0' ";
@@ -602,11 +602,11 @@ $template_main .= "<tr><td width='50%'>Nombre d'avatars max par lieu ? :</td><td
  if (defined("AFFICHE_NB_MAX_AVATAR")) $template_main .= AFFICHE_NB_MAX_AVATAR; else $template_main .= "0"; 
 $template_main .= "' /> ( -1 = Pas de limite )</td></tr>";
 
-$template_main .= "<tr><td width='50%'>Largeur max d'une image de lieu ? (-1 pour illimitée, attention à l'affichage) :</td><td><input type='text' name='largMaxLieu' size='3' value='";
+$template_main .= "<tr><td width='50%'>Largeur max d'une image de lieu ? (-1 pour illimite, attention  l'affichage) :</td><td><input type='text' name='largMaxLieu' size='3' value='";
 
  if (defined("LARG_MAX_LIEU")) $template_main .= LARG_MAX_LIEU; else $template_main .= "400"; 
 $template_main .= "' /> </td></tr>";
-$template_main .= "<tr><td width='50%'>Hauteur max d'une image de lieu ? (-1 pour illimitée, attention à l'affichage) :</td><td><input type='text' name='hautMaxLieu' size='3' value='";
+$template_main .= "<tr><td width='50%'>Hauteur max d'une image de lieu ? (-1 pour illimite, attention  l'affichage) :</td><td><input type='text' name='hautMaxLieu' size='3' value='";
 
  if (defined("HAUT_MAX_LIEU")) $template_main .= HAUT_MAX_LIEU; else $template_main .= "200"; 
 $template_main .= "' /> </td></tr>";
@@ -624,24 +624,24 @@ $template_main .= "' /></td></tr>";
 
 
 $template_main .= "<tr><td colspan='2' align='center'><hr width='25%' /></td></tr>
-<tr><td width='50%'>Pourcentage de PV pour lesquels l'état du PJ est considéré comme \"Au top\" :</td><td><input type='text' name='pj_autop' size='3' value='";
+<tr><td width='50%'>Pourceest considr comme \"Au top\" :</td><td><input type='text' name='pj_autop' size='3' value='";
 
  if (defined("POURCENTAGE_PV_PERSO_AUTOP")) $template_main .= POURCENTAGE_PV_PERSO_AUTOP; else $template_main .= "80"; 
-$template_main .= "' /> ( Défaut = 80 )</td>
+$template_main .= "' /> ( Dfaut = 80 )</td>
 </tr>
 <tr>
-	<td width='50%'>Pourcentage de PV pour lesquels l'état du PJ est considéré comme \"Légèrement blessé\" :</td><td><input type='text' name='pj_blesse' size='3' value='";
+	<td width='50%'>Pourcentage de PV pour lesquels l'tat du PJ est considr comme \"Lgrement bless\" :</td><td><input type='text' name='pj_blesse' size='3' value='";
  if (defined("POURCENTAGE_PV_PERSO_LEGEREMENTBLESSE")) $template_main .= POURCENTAGE_PV_PERSO_LEGEREMENTBLESSE; else $template_main .= "60"; 
-$template_main .= "' /> ( Défaut = 60 )</td>
+$template_main .= "' /> ( Dfaut = 60 )</td>
 </tr>
-<tr><td width='50%'>Pourcentage de PV pour lesquels l'état du PJ est considéré comme \"Abimé\" :</td><td><input type='text' name='pj_abime' size='3' value='";
+<tr><td width='50%'>Pourcentage de PV pour lesquels l'tat du PJ est considr comme \"Abim\" :</td><td><input type='text' name='pj_abime' size='3' value='";
  if (defined("POURCENTAGE_PV_PERSO_ABIME")) $template_main .= POURCENTAGE_PV_PERSO_ABIME; else $template_main .= "40"; 
-$template_main .= "' /> ( Défaut = 40 )</td>
+$template_main .= "' /> ( Dfaut = 40 )</td>
 </tr>
-<tr><td width='50%'>Pourcentage de PV pour lesquels l'état du PJ est considéré comme \"Critique\" :</td><td><input type='text' name='pj_critique' size='3' value='";
+<tr><td width='50%'>Pourcentage de PV pour lesquels l'tat du PJ est considr comme \"Critique\" :</td><td><input type='text' name='pj_critique' size='3' value='";
 
  if (defined("POURCENTAGE_PV_PERSO_CRITIQUE")) $template_main .= POURCENTAGE_PV_PERSO_CRITIQUE; else $template_main .= "20"; 
-$template_main .= "' /> ( Défaut = 20 )</td>
+$template_main .= "' /> ( Dfaut = 20 )</td>
 </tr>
 <tr><td colspan='2' align='center'><hr width='25%' /></td></tr>";
 
@@ -660,17 +660,17 @@ $template_main .= "</td></tr>";
 $template_main .= "<tr>
 	<td width='50%'>Base du nombre de PVs que recoit un nouveau PJ (si le type de remise de PVs est partielle):</td><td><input type='text' name='basePv' size='3' value='";
  if (defined("BASE_PVS")) $template_main .= BASE_PVS; else $template_main .= "25"; 
-$template_main .= "' /> ( Défaut = 25 )</td>
+$template_main .= "' /> ( Dfaut = 25 )</td>
 </tr>
 <tr>
 	<td width='50%'>Base du nombre de PAs que recoit un nouveau PJ :</td><td><input type='text' name='basePa' size='3' value='";
  if (defined("BASE_PAS")) $template_main .= BASE_PAS; else $template_main .= "20"; 
-$template_main .= "' /> ( Défaut = 20 )</td>
+$template_main .= "' /> ( Dfaut = 20 )</td>
 </tr>
 <tr>
 	<td width='50%'>Base du nombre de POs que recoit un nouveau PJ:</td><td><input type='text' name='basePo' size='3' value='";
  if (defined("BASE_POS")) $template_main .= BASE_POS; else $template_main .= "20"; 
-$template_main .= "' /> ( Défaut = 20 )</td></tr>";
+$template_main .= "' /> ( Dfaut = 20 )</td></tr>";
 
 
 
@@ -688,43 +688,43 @@ $template_main .= "</td></tr>";
 $template_main .= "<tr>
 	<td width='50%'>Base du nombre de PIs que recoit un nouveau PJ (si le type de remise de PIs est partielle):</td><td><input type='text' name='basePi' size='3' value='";
  if (defined("BASE_PIS")) $template_main .= BASE_PIS; else $template_main .= "20"; 
-$template_main .= "' /> ( Défaut = 20 )</td></tr>";
+$template_main .= "' /> ( Dfaut = 20 )</td></tr>";
 
 
 $template_main .= "<tr>
-	<td width='50%'>Base du nombre de PAs que recoit un PJ à chaque remise de PAs :</td><td><input type='text' name='qRemisePa' size='3' value='";
+	<td width='50%'>Base du nombre de PAs que recoit un PJ  chaque remise de PAs :</td><td><input type='text' name='qRemisePa' size='3' value='";
  if (defined("QUANTITE_REMISE_PAS")) $template_main .= QUANTITE_REMISE_PAS; else $template_main .= "5"; 
-$template_main .= "' /> ( Défaut = 5 )</td>
+$template_main .= "' /> ( Dfaut = 5 )</td>
 </tr>
 <tr>
-	<td width='50%'>Base du nombre de PVs que recoit un PJ à chaque remise de PVs:</td><td><input type='text' name='qRemisePv' size='3' value='";
+	<td width='50%'>Base du nombre de PVs que recoit un PJ  chaque remise de PVs:</td><td><input type='text' name='qRemisePv' size='3' value='";
  if (defined("QUANTITE_REMISE_PVS")) $template_main .= QUANTITE_REMISE_PVS; else $template_main .= "2"; 
-$template_main .= "' /> ( Défaut = 2 )</td>
+$template_main .= "' /> ( Dfaut = 2 )</td>
 </tr>
 <tr>
-	<td width='50%'>Base du nombre de PIs que recoit un PJ à chaque remise de PIs :</td><td><input type='text' name='qRemisePi' size='3' value='";
+	<td width='50%'>Base du nombre de PIs que recoit un PJ  chaque remise de PIs :</td><td><input type='text' name='qRemisePi' size='3' value='";
  if (defined("QUANTITE_REMISE_PIS")) $template_main .= QUANTITE_REMISE_PIS; else $template_main .= "5"; 
-$template_main .= "' /> ( Défaut = 5 )</td>
+$template_main .= "' /> ( Dfaut = 5 )</td>
 </tr>
 <tr>
-	<td width='50%'>Base du nombre de POs que recoit un PJ à chaque remise de POs:</td><td><input type='text' name='qRemisePo' size='3' value='";
+	<td width='50%'>Base du nombre de POs que recoit un PJ  chaque remise de POs:</td><td><input type='text' name='qRemisePo' size='3' value='";
  if (defined("QUANTITE_REMISE_POS")) $template_main .= QUANTITE_REMISE_POS; else $template_main .= "0"; 
-$template_main .= "' /> ( Défaut = 0 )</td>
+$template_main .= "' /> ( Dfaut = 0 )</td>
 </tr>
 
 <tr>
 	<td width='50%'>Intervalle de temps (en heures) pour la remise des PI :</td><td><input type='text' name='remisePI' size='3' value='";
  if (defined("INTERVAL_REMISEPI")) $template_main .= INTERVAL_REMISEPI; else $template_main .= "90"; 
-$template_main .= "' /> ( Défaut = 90 )</td>
+$template_main .= "' /> ( Dfaut = 90 )</td>
 </tr>
 <tr>
 	<td width='50%'>Intervalle de temps (en heures) pour la remise des PA :</td><td><input type='text' name='remisePA' size='3' value='";
  if (defined("INTERVAL_REMISEPA")) $template_main .= INTERVAL_REMISEPA; else $template_main .= "72"; 
-$template_main .= "' /> ( Défaut = 72 )</td></tr>";
+$template_main .= "' /> ( Dfaut = 72 )</td></tr>";
 
 $template_main .="<tr><td colspan='2' align='center'><hr width='25%' /></td></tr>
 <tr>
-	<td width='50%'>Permettre aux PJs de se regrouper en groupe (pour déplacements communs par ex.) ? :</td><td><input type='radio' name='groupePJs' value='1' ";
+	<td width='50%'>Permettre aux PJs de se regrouper en groupe (pour dplacements communs par ex.) ? :</td><td><input type='radio' name='groupePJs' value='1' ";
  if(defined("GROUPE_PJS") && GROUPE_PJS==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='groupePJs' value='0' ";
  if((!defined("GROUPE_PJS")) || GROUPE_PJS==0) $template_main .='checked="checked"';
@@ -745,7 +745,7 @@ $template_main .= " /> OUI |NON <input type='radio' name='riposteGroupee' value=
 $template_main .= " /></td>
 </tr>
 <tr>
-	<td width='50%'>Gérer l'engagement/dégagement lors d'une attaque avec une arme de toucher ? :</td><td><input type='radio' name='engagement' value='1' ";
+	<td width='50%'>Grer l'engagement/dgagement lors d'une attaque avec une arme de toucher ? :</td><td><input type='radio' name='engagement' value='1' ";
  if(defined("ENGAGEMENT") && ENGAGEMENT==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='engagement' value='0' ";
  if((!defined("ENGAGEMENT")) || ENGAGEMENT==0) $template_main .='checked="checked"';
@@ -757,9 +757,9 @@ $template_main .= " /></td>
 $template_main .= " /> OUI |NON <input type='radio' name='secacher' value='0' ";
  if((!defined("SECACHER")) || SECACHER==0) $template_main .='checked="checked"';
 $template_main .= " /></td></tr><tr>
-	<td width='50%'>Distance en PA Maxi entre 2 lieux à laquelle porte un cri :</td><td><input type='text' name='distance_cri' size='3' value='";
+	<td width='50%'>Distance en PA Maxi entre 2 lieux  laquelle porte un cri :</td><td><input type='text' name='distance_cri' size='3' value='";
  if (defined("DISTANCE_CRI")) $template_main .= DISTANCE_CRI; else $template_main .= "2"; 
-$template_main .= "' /> ( Défaut = 2 )</td></tr>"; 
+$template_main .= "' /> ( Dfaut = 2 )</td></tr>"; 
 $template_main .= "<tr><td colspan='2' align='center'><hr width='25%' /></td></tr>";
 
 $template_main .= " <tr>
@@ -770,12 +770,12 @@ $template_main .= " /> OUI |NON <input type='radio' name='resurrection' value='0
 $template_main .= " /></td></tr>"; 
  
 $template_main .= " <tr>
-	<td width='50%'>Nombre de PV d'un joueur ressucité:</td><td><input type='text' name='pv_resurrection' value=' ";
+	<td width='50%'>Nombre de PV d'un joueur ressucit:</td><td><input type='text' name='pv_resurrection' value=' ";
  if(defined("PV_RESURRECTION")) $template_main .= PV_RESURRECTION; else $template_main .= "10"; 
 $template_main .= "' /></td></tr>"; 
  
 $template_main .= " <tr>
-	<td width='50%'>Nb Max de résurrections pour un PJ ? (-1 pour illimité) :</td><td><input type='text' name='nb_max_resurrection' size='3' value='";
+	<td width='50%'>Nb Max de rsurrections pour un PJ ? (-1 pour illimit) :</td><td><input type='text' name='nb_max_resurrection' size='3' value='";
  if(defined("NB_MAX_RESURRECTION")) $template_main .= NB_MAX_RESURRECTION; else $template_main .= "0"; 
 $template_main .= "' /></td></tr>"; 
  
@@ -796,7 +796,7 @@ $template_main .= " </td></tr>";
 
 
 
-$template_main .= " <tr><td>Autorise la récupération d'objets équipés sur un mort pendant la fouille du cadavre</td><td>";
+$template_main .= " <tr><td>Autorise la rcupration d'objets quips sur un mort pendant la fouille du cadavre</td><td>";
 $template_main .= " <input type='radio' name='fouille_objets_equipes' value='1' ";
  if(defined("FOUILLE_OBJETS_EQUIPES") && FOUILLE_OBJETS_EQUIPES==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='fouille_objets_equipes' value='0' ";
@@ -804,7 +804,7 @@ $template_main .= " /> OUI |NON <input type='radio' name='fouille_objets_equipes
 $template_main .= " /></td></tr>"; 
 
 
-$template_main .= " <tr><td>Si oui,  réussite automatique de la fouille du cadavre sur un objet équipé</td><td>";
+$template_main .= " <tr><td>Si oui,  russite automatique de la fouille du cadavre sur un objet quip</td><td>";
 $template_main .= " <input type='radio' name='reussite_auto_fouille_objets_equipes' value='1' ";
  if(defined("REUSSITE_AUTO_FOUILLE_OBJETS_EQUIPES") && REUSSITE_AUTO_FOUILLE_OBJETS_EQUIPES==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='reussite_auto_fouille_objets_equipes' value='0' ";
@@ -812,7 +812,7 @@ $template_main .= " /> OUI |NON <input type='radio' name='reussite_auto_fouille_
 $template_main .= " /></td></tr>"; 
 
 
-$template_main .= " <tr><td>Délai laissé aux PJS pour fouiller les monstres morts avant leur suppression (en h)</td><td>";
+$template_main .= " <tr><td>Dlai laiss aux PJS pour fouiller les monstres morts avant leur suppression (en h)</td><td>";
 $template_main .= " <input type='text' name='delai_suppression_monstresmorts' value='";
 if(defined("DELAI_SUPPRESSION_MONSTRESMORTS") && DELAI_SUPPRESSION_MONSTRESMORTS!="") 
         $template_main .= DELAI_SUPPRESSION_MONSTRESMORTS;
@@ -829,7 +829,7 @@ $template_main .= " /></td></tr>";
 $template_main .= "<tr><td colspan='2' align='center'><hr width='25%' /></td></tr></table>";
 
 
-$template_main .= "<table width='90%'><tr><td colspan='3' align='center'><b><u>Les couts de PA et PI des actions</u></b><br />Rappel les montants sont négatifs s'ils coutent des PA et/ou des PI au PJ qui fait l'action</td></tr>";
+$template_main .= "<table width='90%'><tr><td colspan='3' align='center'><b><u>Les couts de PA et PI des actions</u></b><br />Rappel les montants sont ngatifs s'ils coutent des PA et/ou des PI au PJ qui fait l'action</td></tr>";
 
 $template_main .= "<tr><td>Action</td><td>Cout en PA</td><td>Cout en PI</td></tr>";
 foreach($liste_pas_actions as $key => $value) {
@@ -856,7 +856,7 @@ foreach($liste_actions_tracees as $key => $value) {
 }  
 
  
-$template_main .= "<tr><td colspan='2' align='center'><b><u><br /><br /><br />Fonctions de débuggages<br /><br /></u></b></td></tr><tr>";
+$template_main .= "<tr><td colspan='2' align='center'><b><u><br /><br /><br />Fonctions de dbuggages<br /><br /></u></b></td></tr><tr>";
 
 			if(defined("DEBUG_MODE")) {
 				$var=faitSelect("mode_debug","","",$liste_type_debug[DEBUG_MODE],array(),$liste_type_debug);
@@ -878,7 +878,7 @@ $template_main .= " /> OUI |NON <input type='radio' name='debug_jeu_only' value=
 $template_main .= " /></td></tr>";
 
 $template_main .="<tr>
-	<td width='50%'>Stocker les fichiers HTML générés pour valider la syntaxe HTML ? :</td><td><input type='radio' name='mode_html' value='1' ";
+	<td width='50%'>Stocker les fichiers HTML gnrs pour valider la syntaxe HTML ? :</td><td><input type='radio' name='mode_html' value='1' ";
  if(defined("DEBUG_HTML") && DEBUG_HTML==1) $template_main .='checked="checked"';
 $template_main .= " /> OUI |NON <input type='radio' name='mode_html' value='0' ";
  if((!defined("DEBUG_HTML")) || DEBUG_HTML==0) $template_main .='checked="checked"';

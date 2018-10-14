@@ -20,12 +20,12 @@ $Date: 2010/01/24 16:35:39 $
 <tr><td>Trigramme : </td><td><input type='text' name='Trigramme' value='' size='3' maxlength='3' /></td><td><span class='c0'>Le Trigramme, (3 char max). Tous les lieux d'un meme super lieu doivent avoir le meme Trigramme. Dans l'affichage des choix de lieu dans les actions, ils sont toujours group&eacute;s par trigramme similaire</span></td></tr>
 <tr><td>ID_Forum (inutile ?) : </td><td><input type='text' name='ID_Forum' value='' size='5' /></td><td><span class='c0'>Au cas ou vous voudriez faire des forums reli&eacute;s a l'endroit ou se trouve els PJs dans le jeu</span></td></tr>
 <tr><td>Acessible par Teleport: </td><td><select name='Accessible'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si le lieu peut etre atteint par un sort de teleportation</span></td></tr>
-<tr><td>Fichier audio: </td><td><input type='text'  maxlength='50' name='cheminfichieraudio' value='' size='50' /></td><td><span class='c0'>Fond sonore qu'entend le joueur (s'il a modifié ses paramètres personnels du jeu pour entendre les sons) dans le lieu (Peut être une URL ou un fichier présent dans ./lieux/sons, de type wav ou mp3 ( autres formats possibles mais non testés))</span></td></tr>
+<tr><td>Fichier audio: </td><td><input type='text'  maxlength='50' name='cheminfichieraudio' value='' size='50' /></td><td><span class='c0'>Fond sonore qu'entend le joueur (s'il a modifi ses paramtres personnels du jeu pour entendre les sons) dans le lieu (Peut tre une URL ou un fichier prsent dans ./lieux/sons, de type wav ou mp3 ( autres formats possibles mais non tests))</span></td></tr>
 <tr><td>Peut: Manger</td><td><select name='Flags[0]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Se nourrir dans ce lieu</span></td></tr>
 <tr><td>Peut: Attaquer</td><td><select name='Flags[1]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Attaquer dans ce lieu</span></td></tr>
 <tr><td>Peut: Magie</td><td><select name='Flags[2]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Magie dans ce lieu</span></td></tr>
 <tr><td>Peut: Lire</td><td><select name='Flags[3]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Lire un Livre dans ce lieu</span></td></tr>
-<tr><td>Peut: Prier</td><td><select name='Flags[4]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si le flag "Prier" est à oui, tout proposer action effectuer dans ce lieu verra son nombre de PAs et Pis consacrés doubler gratuitement.</span></td></tr>
+<tr><td>Peut: Prier</td><td><select name='Flags[4]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si le flag "Prier" est  oui, tout proposer action effectuer dans ce lieu verra son nombre de PAs et Pis consacrs doubler gratuitement.</span></td></tr>
 <tr><td>Peut: Voler</td><td><select name='Flags[5]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Voler dans ce lieu</span></td></tr>
 <tr><td>Peut: Banque</td><td><select name='Flags[6]'><option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Banque dans ce lieu</span></td></tr>
 <tr><td>Peut: SeCacher</td><td><select name='Flags[7]'><option value='0'>Non</option><option value='1' selected='selected'>Oui</option></select></td><td><span class='c0'>Si on peut utiliser l'action Se Cacher dans ce lieu</span></td></tr>
@@ -51,7 +51,7 @@ $Date: 2010/01/24 16:35:39 $
 				
 </script>
 <table class='details'><tr><td>Provoque Etat</td><td>	<form action='creer_lieu.php' method='post'><select name='ProvoqueEtat'>
-	<option value='30'>Adulte expérimenté</option>
+	<option value='30'>Adulte expriment</option>
 	<option value='13'>Elfe</option>
 	<option value='28'>Enfant</option>
 	<option value='5'>faiblesse</option>
@@ -59,7 +59,7 @@ $Date: 2010/01/24 16:35:39 $
 	<option value='7'>Fatigue</option>
 	<option value='8'>Fatique morale</option>
 	<option value='9'>Femelle</option>
-	<option value='6'>Force de Géant de Pierre</option>
+	<option value='6'>Force de Gant de Pierre</option>
 	<option value='18'>Gobelin</option>
 	<option value='16'>Humain</option>
 
@@ -78,10 +78,10 @@ $Date: 2010/01/24 16:35:39 $
 
    
     
-<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communaut Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
 <div id='menu'>
 <img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
-	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise  jour</a></h4>
 	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
 	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
 	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
@@ -89,9 +89,9 @@ $Date: 2010/01/24 16:35:39 $
 	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
 	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
 	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
-	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
-<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
-	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide cration de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide russite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversits dans les PJs</a></h4>
 <h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
 <h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
 <img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />

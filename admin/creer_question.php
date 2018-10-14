@@ -6,7 +6,7 @@ $RCSfile: creer_question.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.10 $
 $Date: 2010/05/15 08:55:10 $
@@ -32,7 +32,7 @@ if(!isset($etape)){
 
 if($etape==2){
 	if($MJ->aDroit($liste_flags_mj["CreerQuestion"])){
-		if($valider==1) { //  création
+		if($valider==1) { //  cration
 //			$SQL="select nom from ".NOM_TABLE_MJ." where nom ='". $nom."'";
 			//$recherche1 = $db->sql_query($SQL);	
 			$SQL="select question from ".NOM_TABLE_QCM." where question ='". ConvertAsHTML($question)."'";
@@ -76,7 +76,7 @@ if($etape==2){
 				}	
 			}
 			else {
-				$MJ->Output("La question ".span(ConvertAsHTML($question),"mj")." est déjà existante",true);		
+				$MJ->Output("La question ".span(ConvertAsHTML($question),"mj")." est dj existante",true);		
 				$etape=-1;
 			}	
 		}		

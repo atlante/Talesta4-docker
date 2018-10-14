@@ -6,7 +6,7 @@ $RCSfile: modifier_spec_pj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.16 $
 $Date: 2006/09/05 06:41:21 $

@@ -6,7 +6,7 @@ $RCSfile: spec.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2006/06/20 20:14:46 $
@@ -44,7 +44,7 @@ if(isset($PERSO)){
 }
 if($peutvoir){
 	if ($Spec_vu == null)
-		$template_main .= "Cette spécialité n'existe pas";
+		$template_main .= "Cette spcialit n'existe pas";
 	else {			
 		
 		$template_main .= "<div class ='centerSimple'>nom de la sp&eacute;cialisation : ".span($Spec_vu->nom,"specialite")."<br />";

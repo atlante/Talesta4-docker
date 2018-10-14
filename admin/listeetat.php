@@ -6,7 +6,7 @@ $RCSfile: listeetat.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.11 $
 $Date: 2006/01/31 12:26:18 $
@@ -27,7 +27,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		$critere="";	
 	$varType=faitSelect("filtreType",$SQLtype,"",$filtreType, array(),array("&nbsp;")," onChange='submit()' ");
 	$template_main .= "filtrer par type: " . $varType[1];
-	$template_main .= ", critère d'inscription: <select name='critere' onChange='submit()'>";
+	$template_main .= ", critre d'inscription: <select name='critere' onChange='submit()'>";
 		$temp = array("Oui"=>"Oui", "Non"=>"Non");
 		ksort($temp);
 		reset($temp);
@@ -62,7 +62,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	$template_main .="<table width='100%'><tr><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_nom&amp;filtreType=$filtreType&amp;critere=$critere\"><span class='c0'>Tri par nom</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_type&amp;filtreType=$filtreType&amp;critere=$critere\"><span class='c0'>Tri par type</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_id&amp;filtreType=$filtreType&amp;critere=$critere\"><span class='c0'>Tri par id</span></a></td></tr></table>";
 	$template_main .= "<table width='100%' class='detailscenter'>";
 	$template_main .= "<tr><td colspan='5' align='center'>Liste des etats</td></tr>";
-	$template_main .= "<tr><td>Numero</td><td>nom</td><td>type</td><td>Critère d'inscription ?</td><td>Modifiable par le pj durant le jeu</td><td>Sélectionnable par un PJ à l'inscription ?</td><td>Visible ?</td></tr>";
+	$template_main .= "<tr><td>Numero</td><td>nom</td><td>type</td><td>Critre d'inscription ?</td><td>Modifiable par le pj durant le jeu</td><td>Slectionnable par un PJ  l'inscription ?</td><td>Visible ?</td></tr>";
 	//for($i=0;$i<$db->sql_numrows($result2);$i++){
 	while($row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td>".$row["id_etattemp"]."</td><td><a href=\"javascript:a('../bdc/etat.$phpExtJeu?for_mj=1&amp;num_etat=".$row["id_etattemp"]."')\">".span($row["nom"],"etattemp")."</a></td>";

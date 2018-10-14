@@ -6,7 +6,7 @@ $RCSfile: oublier_sort.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.18 $
 $Date: 2006/04/18 11:07:53 $
@@ -70,7 +70,7 @@ if($etape=="1"){
 		$mess = GetMessage("oublier_sort",$valeurs);
 		if ($PERSO->SortPrefere == $id_sort) {
 			$PERSO->SupprimerSortPrefere();		
-			$mess = $mess . " Ceci était votre sort préféré. Pensez à reconfigurer votre personnage.";	
+			$mess = $mess . " Ceci tait votre sort prfr. Pensez  reconfigurer votre personnage.";	
 		}	
 		$PERSO->OutPut($mess,true);
 		}

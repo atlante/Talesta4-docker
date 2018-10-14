@@ -6,7 +6,7 @@ $RCSfile: modifier_lieuapprentissage.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2006/01/31 12:26:18 $
@@ -87,7 +87,7 @@ if($etape=="1"){
 }
 if($etape===0){
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "De quel Lieu voulez vous &eacute;ditez la salle d'entraînement ?<br />";
+	$template_main .= "De quel Lieu voulez vous &eacute;ditez la salle d'entranement ?<br />";
 	$SQL = "Select concat(concat(T1.id_lieu,'$sep'),T1.nom) as idselect, concat(concat(T1.trigramme,'-'),T1.nom) as labselect from ".NOM_TABLE_LIEU." T1 WHERE T1.id_lieu > 1 ORDER BY T1.trigramme, T1.nom ASC";
 	$var=faitSelect("id_cible",$SQL,"",-1);
 	$template_main .= $var[1];

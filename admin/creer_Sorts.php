@@ -6,7 +6,7 @@ $RCSfile: creer_Sorts.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2010/02/28 22:58:04 $
@@ -29,14 +29,14 @@ $coeffPrix = 30;
 if(!(isset($etape))){
 	
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Ce script sert à créer un jeu de données pour les tests du moteur. <br />";
-	$template_main .= "Pour chaque école de magie (type de sort) et pour chaque sous type de sorts (soin, paralysie ...),<br />";
-	$template_main .= "Il va créer 3 niveaux de Sorts (novice, intermédiaire et confirmé). <br />"; 
-	$template_main .= "Les effetsMin sont dépandants du niveau (entre \$effetsMinInf (qui est à $effetsMinInf) et \$effetsMinSup (qui est à $effetsMinSup), effetsMax = EffetsMin+4 <br />";
-	$template_main .= ", le prix de ces sorts est de niveau donné * \$coeffPrix (actuellement à $coeffPrix), .<br />";
-	$template_main .= "\$effetsMinInf, \$effetsMinSup, \$coeffPrix peuvent être modifiés pour être adaptés à votre jeu .<br />";
-	//$template_main .= " <b>Le script creer_etatCarac doit avoir été utilisé avant celui-ci. </b><br />";
-	$template_main .= "<input type='submit' value='Création' /><input type='hidden' name='etape' value='1' />";
+	$template_main .= "Ce script sert  crer un jeu de donnes pour les tests du moteur. <br />";
+	$template_main .= "Pour chaque cole de magie (type de sort) et pour chaque sous type de sorts (soin, paralysie ...),<br />";
+	$template_main .= "Il va crer 3 niveaux de Sorts (novice, intermdiaire et confirm). <br />"; 
+	$template_main .= "Les effetsMin sont dpandants du niveau (entre \$effetsMinInf (qui est  $effetsMinInf) et \$effetsMinSup (qui est  $effetsMinSup), effetsMax = EffetsMin+4 <br />";
+	$template_main .= ", le prix de ces sorts est de niveau donn * \$coeffPrix (actuellement  $coeffPrix), .<br />";
+	$template_main .= "\$effetsMinInf, \$effetsMinSup, \$coeffPrix peuvent tre modifis pour tre adapts  votre jeu .<br />";
+	//$template_main .= " <b>Le script creer_etatCarac doit avoir t utilis avant celui-ci. </b><br />";
+	$template_main .= "<input type='submit' value='Cration' /><input type='hidden' name='etape' value='1' />";
 	$template_main .= "</form>";
 	
 	$template_main .= "</div>";	
@@ -52,7 +52,7 @@ else if ($etape=="1") {
         	$SQL ="Select id_typeetattemp  from ".NOM_TABLE_TYPEETAT."  where nomtype='Divers'";
         	$result = $db->sql_query($SQL);
         	if($db->sql_numrows($result)== 0){
-        	   $template_main .= "Aucun type d'etat nommé Divers";	
+        	   $template_main .= "Aucun type d'etat nomm Divers";	
         	}	
         	else {
         	}
@@ -80,19 +80,19 @@ else if ($etape=="1") {
         		foreach($liste_type_cible as $typecible => $valeurCible) {
         			switch ($typecible){
         				case 1:	
-        					$desc = ", la cible étant un PJ (lanceur ou autre)";		
+        					$desc = ", la cible tant un PJ (lanceur ou autre)";		
         					if ($sortdistant==0) 
         						$majeur="";
         					else 	$majeur=" sur 1 PJ distant";
         					break;
         				case 2:
-        					$desc = ", la cible étant une zône";
+        					$desc = ", la cible tant une zne";
         					if ($sortdistant==0)
         						$majeur=" sur Zone";
         					else 	$majeur=" sur Zone distante";
         					break;
         				case 3:
-        					$desc = ", la cible étant le lanceur uniquement";
+        					$desc = ", la cible tant le lanceur uniquement";
         					$majeur=" sur soi";
         					break;					
         			}	
@@ -112,8 +112,8 @@ else if ($etape=="1") {
         					$niveau = "novice";
         				else 	
         				if ($effetsMin ==$effetsMinSup)
-        					$niveau = "confirmé";
-        				else $niveau = "intermédiaire";	
+        					$niveau = "confirm";
+        				else $niveau = "intermdiaire";	
         				foreach($liste_magie as $competence => $numeroCompetence) {
         					$type = $competence;
         					foreach($liste_stype_sorts as $sous_type => $soustypeNum) {
@@ -135,7 +135,7 @@ else if ($etape=="1") {
         						else {
         							$description="Sort ".$majeur." de ".$sous_type. " du type ".$competence." de niveau ".$niveau;
         							if ($sortdistant==1)
-        								$description .= " et pouvant être lancé à distance";
+        								$description .= " et pouvant tre lanc  distance";
         							$description .=$desc;
         							$nom=$sous_type. " ".$majeur." ".$niveau." du type ".$competence;
         							include "./creer_magie.".$phpExtJeu;		

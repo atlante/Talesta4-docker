@@ -6,7 +6,7 @@ $RCSfile: inscrire.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.29 $
 $Date: 2010/05/15 08:54:36 $
@@ -43,9 +43,9 @@ if($etape==2){
 		}	
 		if ($ok) {
 			if($valider=="0"){//on tej
-				$message = "Désolé, mais l'inscription de votre personnage a été refusée.\n Réessayez avec une meilleure description, ou contactez les MJs.\n";
-				$message .= "Pour rappel, votre description était: " . $Desc ."\n";
-				$message .= "          et votre background était: " . $Back ."\n";
+				$message = "Dsol, mais l'inscription de votre personnage a t refuse.\n Ressayez avec une meilleure description, ou contactez les MJs.\n";
+				$message .= "Pour rappel, votre description tait: " . $Desc ."\n";
+				$message .= "          et votre background tait: " . $Back ."\n";
 				if (isset($Commentaires) && $Commentaires<>"")				 
 					$message .= "Commentaires du valideur d'inscription: ". $Commentaires;
 				EnvoyerMail($MJ->email,$email,"[".NOM_JEU." - Inscription]",$message, $files);
@@ -60,7 +60,7 @@ if($etape==2){
 				$mess = "\nPour rappel, votre description est: " . $Desc ."\n";
 				$mess .= "          et votre background est: " . $Back ."\n";
 				if(defined("IN_FORUM")&& IN_FORUM==1) $mess .= " PS: Vous &ecirc;tes aussi inscrit avec les m&ecirc;me login/mot de passe sur le forum ";
-				EnvoyerMail($MJ->email,$email,"[".NOM_JEU." - Inscription]","Votre inscription a été acceptée. Vous pouvez désormais jouer en entrant votre nom de personnage et votre mot de passe, en cliquant sur \"jouer\" dans le menu du site.\n bonne chance et bon jeu. \n \t".$mess, $files);
+				EnvoyerMail($MJ->email,$email,"[".NOM_JEU." - Inscription]","Votre inscription a t accepte. Vous pouvez dsormais jouer en entrant votre nom de personnage et votre mot de passe, en cliquant sur \"jouer\" dans le menu du site.\n bonne chance et bon jeu. \n \t".$mess, $files);
 				if(defined("BASE_PAS"))
 					$nbPAs = BASE_PAS;
 				else 	$nbPAs =20;
@@ -206,15 +206,15 @@ if($etape==2){
 									$description = str_replace("?>","",$description);
                                                         		if(! file_exists ("../pjs/descriptions/"))
                                                         			if (! mkdir("../pjs/descriptions/",0744)) {
-                                                        				logDate ("impossible de créer le rep '../pjs/descriptions/'",E_USER_WARNING,1);
+                                                        				logDate ("impossible de crer le rep '../pjs/descriptions/'",E_USER_WARNING,1);
                                                         				$erreur=1;
                                                         			}
 									if (($f = fopen("../pjs/descriptions/desc_".$result_id.".txt","w+b"))!==false) {
 										if (fwrite ($f, $description)===false) {
-											$template_main .= "Probleme à l'écriture de '../pjs/descriptions/desc_".$result_id.".txt'";
+											$template_main .= "Probleme  l'criture de '../pjs/descriptions/desc_".$result_id.".txt'";
 										}
 										if (fclose ($f)===false)
-											$template_main .= "Probleme à la fermeture de '../pjs/descriptions/desc_".$result_id.".txt'";
+											$template_main .= "Probleme  la fermeture de '../pjs/descriptions/desc_".$result_id.".txt'";
 									}	
 									else die ("impossible d'ouvrir le fichier ../pjs/descriptions/desc_".$result_id.".txt en ecriture");	
 									$MJ->OutPut("PJ ".span(ConvertAsHTML($nom),"pj")." correctement inscrit",true);
@@ -276,7 +276,7 @@ if($etape=="1"){
 
 	$template_main .= "<tr><td>Valider ? : </td><td><select name='valider'><option value='ChoixNonFait'>&nbsp;</option><option value='0'>Non</option><option value='1'>Oui</option></select></td></tr>";
 	$template_main .= "<tr><td>Commentaires envoy&eacute;s au joueur en cas de refus: </td><td><textarea name='Commentaires' cols='40' rows='10'></textarea></td></tr>";
-	$template_main .= "<tr><td>Fichier à envoyer en attachement du mail (Ex: Fichier de regles ou fichier de bienvenue ... Attention, il faut donner le chemin complet depuis le répertoire admin) : </td><td><input type='text' name='fichier1' size='50' value='' /></td></tr>";
+	$template_main .= "<tr><td>Fichier  envoyer en attachement du mail (Ex: Fichier de regles ou fichier de bienvenue ... Attention, il faut donner le chemin complet depuis le rpertoire admin) : </td><td><input type='text' name='fichier1' size='50' value='' /></td></tr>";
 	$template_main .= "</table><br />";
 	$template_main .= "<input type='hidden' name='pass' value='".$row["pass"]."' />";
 	$template_main .= "<div class ='centerSimple'><br />".BOUTON_ENVOYER;

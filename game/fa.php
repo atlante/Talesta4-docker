@@ -6,7 +6,7 @@ $RCSfile: fa.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.16 $
 $Date: 2006/01/31 12:26:24 $
@@ -34,7 +34,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		$fagz = $PERSO->GetCheminFA();			
 		if(file_exists($fagz)){		
 			$temp=TAILLE_MAX_FA*1024;
-			$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autorisés</p>";
+			$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autoriss</p>";
 		}
 		$template_main .= ($contenu);
 	}	

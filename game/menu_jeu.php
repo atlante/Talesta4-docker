@@ -6,7 +6,7 @@ $RCSfile: menu_jeu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.25 $
 $Date: 2010/01/24 17:44:03 $
@@ -99,7 +99,7 @@ if(!defined("__MENU_JEU.PHP") ) {
 		array(2,"../game/parler.".$phpExtJeu,"Parler (".span(abs($liste_pas_actions["Parler"]),"pa")."/".span(abs($liste_pis_actions["Parler"]),"pi") .")","" ,$act=='ActionsPJS' && $PERSO->Lieu->permet($liste_flags_lieux["Parler"])),
 		array(2,"../game/crier.".$phpExtJeu,"Crier (".span(abs($liste_pas_actions["Crier"]),"pa")."/".span(abs($liste_pis_actions["Crier"]),"pi") .")","" ,$act=='ActionsPJS' && $PERSO->Lieu->permet($liste_flags_lieux["EntendreCriExterieur"]) && $PERSO->Lieu->permet($liste_flags_lieux["Parler"])),
 		array(2,"../game/attaquer.".$phpExtJeu,"Attaquer (".span(abs($liste_pas_actions["Attaquer"]),"pa")."/".span(abs($liste_pis_actions["Attaquer"]),"pi").")","" ,$act=='ActionsPJS' && $PERSO->Lieu->permet($liste_flags_lieux["Attaquer"])),
-		array(2,"../game/desengagement.".$phpExtJeu,"Se désengager (".span(abs($liste_pas_actions["Attaquer"]),"pa")."/".span(abs($liste_pis_actions["Attaquer"]),"pi").")","",$act=='ActionsPJS' &&($PERSO->Engagement==1) && defined("ENGAGEMENT") && ENGAGEMENT==1),
+		array(2,"../game/desengagement.".$phpExtJeu,"Se dsengager (".span(abs($liste_pas_actions["Attaquer"]),"pa")."/".span(abs($liste_pis_actions["Attaquer"]),"pi").")","",$act=='ActionsPJS' &&($PERSO->Engagement==1) && defined("ENGAGEMENT") && ENGAGEMENT==1),
 		array(2,"../game/fouillercadavre.".$phpExtJeu,"Fouiller Cadavre (".span(abs($liste_pas_actions["FouillerCadavre"]),"pa")."/".span(abs($liste_pis_actions["FouillerCadavre"]),"pi").")","" ,$PERSO->Lieu->permet($liste_flags_lieux["FouillerCadavre"]) && $act=='ActionsPJS'),
 		array(2,"../game/donner_objet.".$phpExtJeu,"Donner Objet (".span(abs($liste_pas_actions["DonnerObjet"]),"pa")."/".span(abs($liste_pis_actions["DonnerObjet"]),"pi").")","",$act=='ActionsPJS'),
 		array(2,"../game/donner_argent.".$phpExtJeu,"Donner Argent (".span(abs($liste_pas_actions["DonnerArgent"]),"pa")."/".span(abs($liste_pis_actions["DonnerArgent"]),"pi").")","",$act=='ActionsPJS'),
@@ -126,16 +126,16 @@ if(!defined("__MENU_JEU.PHP") ) {
 		array(2,"../game/mettrearmure.".$phpExtJeu,"Mettre Arme/Armure (".span(abs($liste_pas_actions["MettreArmure"]),"pa")."/".span(abs($liste_pis_actions["MettreArmure"]),"pi").")","" ,$act=='GestionInv'),
 		array(2,"../game/recharger_objet.".$phpExtJeu,"Recharger Arme (".span(abs($liste_pas_actions["RechargerObjet"]),"pa")."/".span(abs($liste_pis_actions["RechargerObjet"]),"pi").")","" ,$act=='GestionInv'),
 		array(1,"../game/menu.".$phpExtJeu."?act=GestionQuetes","Gestion des quetes","" ,-1),
-		array(2,"../game/voirQueteLieu.".$phpExtJeu,"Repondre à une annonce (".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes' && $PERSO->Lieu->possedeQuetesPubliquesDispos()),
-		array(2,"../game/repondreQuete.".$phpExtJeu,"Repondre à une quete (".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes'),
+		array(2,"../game/voirQueteLieu.".$phpExtJeu,"Repondre  une annonce (".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes' && $PERSO->Lieu->possedeQuetesPubliquesDispos()),
+		array(2,"../game/repondreQuete.".$phpExtJeu,"Repondre  une quete (".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes'),
 		array(2,"../game/terminer_quete.".$phpExtJeu,"Terminer une quete (".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes'),
-		array(2,"../game/gerer_quete_proposee.".$phpExtJeu,"Gérer vos offres(".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes' && $PERSO->pnj==1),
+		array(2,"../game/gerer_quete_proposee.".$phpExtJeu,"Grer vos offres(".span("0","pa")."/".span("0","pi").")","" ,$act=='GestionQuetes' && $PERSO->pnj==1),
 		array(1,"../game/menu.".$phpExtJeu."?act=Artisanat","Artisanat","" ,-1),
 		
 		array(2,"../game/combiner_objets.".$phpExtJeu,"Combiner objets (".span(abs($liste_pas_actions["CombinerObjets"]),"pa")."/".span(abs($liste_pis_actions["CombinerObjets"]),"pi").")","",$act=='Artisanat'),
-		array(2,"../game/reparation.".$phpExtJeu."?action=ArmeMelee","Réparer une arme de mêlée (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
-		array(2,"../game/reparation.".$phpExtJeu."?action=ArmeJet","Réparer une arme de jet (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
-		array(2,"../game/reparation.".$phpExtJeu."?action=Armure","Réparer une armure (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
+		array(2,"../game/reparation.".$phpExtJeu."?action=ArmeMelee","Rparer une arme de mle (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
+		array(2,"../game/reparation.".$phpExtJeu."?action=ArmeJet","Rparer une arme de jet (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
+		array(2,"../game/reparation.".$phpExtJeu."?action=Armure","Rparer une armure (".span(abs($liste_pas_actions["ReparerObjet"]),"pa")."/".span(abs($liste_pis_actions["ReparerObjet"]),"pi").")","",$act=='Artisanat'),
 		array(2,"../game/recolte.".$phpExtJeu."?action=Miner","Miner (".span(abs($liste_pas_actions["Miner"]),"pa")."/".span(abs($liste_pis_actions["Miner"]),"pi").")","",$PERSO->Lieu->aMagasin($liste_types_magasins["Produits Naturels"],array("Metal")) && $act=='Artisanat'),
 		array(2,"../game/recolte.".$phpExtJeu."?action=Cueillir","Cuellir (".span(abs($liste_pas_actions["Cueillir"]),"pa")."/".span(abs($liste_pis_actions["Cueillir"]),"pi").")","",$PERSO->Lieu->aMagasin($liste_types_magasins["Produits Naturels"],array("Vegetaux","Nourriture","Dopant","Stimulant","Consistant","Vitaminant","Revigorant","Rare")) && $act=='Artisanat'),
 		array(2,"../game/recolte.".$phpExtJeu."?action=Scier","Scier (".span(abs($liste_pas_actions["Scier"]),"pa")."/".span(abs($liste_pis_actions["Scier"]),"pi").")","",$PERSO->Lieu->aMagasin($liste_types_magasins["Produits Naturels"],array("Bois")) && $act=='Artisanat'),
@@ -146,7 +146,7 @@ if(!defined("__MENU_JEU.PHP") ) {
 		array(2,"../game/artisanat.".$phpExtJeu."?action=Tissage","Artisan:Tissage (".span(abs($liste_pas_actions["CreerObjet"]),"pa")."/".span(abs($liste_pis_actions["CreerObjet"]),"pi").")","", $act=='Artisanat'),
 		array(2,"../game/artisanat.".$phpExtJeu."?action=Brasserie","Artisan:Brasserie (".span(abs($liste_pas_actions["CreerObjet"]),"pa")."/".span(abs($liste_pis_actions["CreerObjet"]),"pi").")","", $act=='Artisanat'),
 		array(2,"../game/artisanat.".$phpExtJeu."?action=Cuir","Artisan:Cuir (".span(abs($liste_pas_actions["CreerObjet"]),"pa")."/".span(abs($liste_pis_actions["CreerObjet"]),"pi").")","", $act=='Artisanat'),
-		array(1,"../game/menu.".$phpExtJeu."?act=Magasin","Achats/Dépenses","" ,$PERSO->Lieu->aMagasin($liste_types_magasins["Lieu d'apprentissage"])||$PERSO->Lieu->aMagasin($liste_types_magasins["Magasin Magique"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Magasin Magique-Recharge"])
+		array(1,"../game/menu.".$phpExtJeu."?act=Magasin","Achats/Dpenses","" ,$PERSO->Lieu->aMagasin($liste_types_magasins["Lieu d'apprentissage"])||$PERSO->Lieu->aMagasin($liste_types_magasins["Magasin Magique"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Magasin Magique-Recharge"])
 			|| $PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Quincaillerie"])|| $PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie-Repare"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie-Recharge"]) ||$PERSO->Lieu->permet($liste_flags_lieux["Banque"]) ),
 		array(2,"../game/banque.".$phpExtJeu,"Banque (".span(abs($liste_pas_actions["Banque"]),"pa")."/".span(abs($liste_pis_actions["Banque"]),"pi").")","" ,$PERSO->Lieu->permet($liste_flags_lieux["Banque"])&& $act=="Magasin"),
 		array(2,"../game/armurerie.".$phpExtJeu,"Armurerie (".span(abs($liste_pas_actions["Armurerie"]),"pa")."/".span(abs($liste_pis_actions["Armurerie"]),"pi").")","" ,($PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie-Repare"]) || $PERSO->Lieu->aMagasin($liste_types_magasins["Armurerie-Recharge"]))&& $act=="Magasin"),

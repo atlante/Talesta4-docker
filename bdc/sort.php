@@ -6,7 +6,7 @@ $RCSfile: sort.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.17 $
 $Date: 2010/01/24 16:36:51 $
@@ -109,7 +109,7 @@ if($peutvoir){
 				case 2:
 					if ($Sort_vu->SortDistant==0)
 						$majeur=" Majeur: Affecte tous les PJs du lieu du lanceur";
-					else 	$majeur=" Majeur: Affecte tous les PJs d'un lieu pouvant être différent de celui du lanceur";
+					else 	$majeur=" Majeur: Affecte tous les PJs d'un lieu pouvant tre diffrent de celui du lanceur";
 					break;
 				case 3:
 					$majeur="Mineur: sur le lanceur lui meme";
@@ -120,7 +120,7 @@ if($peutvoir){
 			$template_main .= "</td><td>".$majeur;
 			$template_main .= "</td></tr>";
 			$template_main .= "<tr><td>";
-			$template_main .= "Nécessite les composantes de sort: </td><td>";			
+			$template_main .= "Ncessite les composantes de sort: </td><td>";			
 			if ($Sort_vu->composantes!="") {
 				$Sort_vu->setObjetsComposantesSort();
 				$nb_composantes = count($Sort_vu->ObjetsComposantesSort);

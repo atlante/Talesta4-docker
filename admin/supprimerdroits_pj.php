@@ -6,7 +6,7 @@ $RCSfile: supprimerdroits_pj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/02/21 18:29:09 $
@@ -95,7 +95,7 @@ if($etape===0){
 
 if($etape=="0"){
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Quel PJ voulez vous rétrograder ?<br />";
+	$template_main .= "Quel PJ voulez vous rtrograder ?<br />";
 	$SQL = "Select concat(concat(role_mj,'$sep'),id_perso)  as idselect, T1.nom as labselect from ".NOM_TABLE_REGISTRE." T1 where role_mj is not null ORDER BY T1.nom ASC";
 	$var=faitSelect("id_cible",$SQL,"",-1);
 	$template_main .= $var[1];

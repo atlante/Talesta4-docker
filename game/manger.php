@@ -6,7 +6,7 @@ $RCSfile: manger.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.19 $
 $Date: 2010/01/24 17:44:03 $
@@ -207,7 +207,7 @@ if($etape=="1"){
 		        if($typeact == "stimule"){
 			            $PERSO->ModPI($valeurs[1], true);
 			            $PERSO->OutPut(GetMessage("manger_03",$valeurs));
-			            //$PERSO->OutPut("Consommer cela vous réveille, vous regagnez quelques PIs");
+			            //$PERSO->OutPut("Consommer cela vous rveille, vous regagnez quelques PIs");
 		        }
 		
 		        if($typeact == "consiste"){

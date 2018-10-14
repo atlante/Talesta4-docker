@@ -6,7 +6,7 @@ $RCSfile: joueurs.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2010/05/15 08:42:16 $
@@ -81,7 +81,7 @@ $template_main .= "<h1><br />&nbsp; Les participants<br />&nbsp;</h1>";
 					$template_main .= "&nbsp;<a href='".$forum->ScriptPrivateMessage($row_pm["idselect"],$row["nom"])."'>";
 					if ($forum->URLimagePrivateMessage()<>null) 
 						$template_main .= "<img src='".$forum->URLimagePrivateMessage()."' alt='icon_pm.gif' border='0' />";
-					else $template_main .= "Envoi d'un message Privé";	
+					else $template_main .= "Envoi d'un message Priv";	
 					$template_main .= "</a>";
 				}
 				$template_main .= "</td>";
@@ -173,7 +173,7 @@ $template_main .="
 				$template_main .= "&nbsp;<a href='".$forum->ScriptPrivateMessage($row_pm["idselect"],$row["nom"])."'>";
 				if ($forum->URLimagePrivateMessage()<>null) 
 					$template_main .= "<img src='".$forum->URLimagePrivateMessage()."' alt='icon_pm.gif' border='0' />";
-				else $template_main .= "Envoi d'un message Privé";	
+				else $template_main .= "Envoi d'un message Priv";	
 				$template_main .= "</a>";
 
 			}

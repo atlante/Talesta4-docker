@@ -6,7 +6,7 @@ $RCSfile: fa.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.12 $
 $Date: 2006/01/31 12:26:17 $
@@ -35,7 +35,7 @@ if(! isset($del))
 	$fagz = $MJ->GetCheminFA();			
 	if(file_exists($fagz)){		
 		$temp=TAILLE_MAX_FA*1024;
-		$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autorisés</p>";
+		$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autoriss</p>";
 	}
 		$contenu = $MJ->LireFA();
 		$template_main .= ($contenu);

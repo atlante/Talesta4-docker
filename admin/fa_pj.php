@@ -6,7 +6,7 @@ $RCSfile: fa_pj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.18 $
 $Date: 2006/09/05 06:41:20 $
@@ -36,7 +36,7 @@ if($etape=="1"){
 			$fagz = $PERSO->GetCheminFA();			
 			if(file_exists($fagz)){		
 				$temp=TAILLE_MAX_FA*1024;
-				$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autorisés</p>";
+				$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autoriss</p>";
 			}
 			$template_main .= ($contenu);
 		}	

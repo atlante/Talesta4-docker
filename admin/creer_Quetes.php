@@ -6,7 +6,7 @@ $RCSfile: creer_Quetes.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/02/28 22:58:04 $
@@ -30,9 +30,9 @@ $coeffDegats = 5;
 if(!(isset($etape))){
 	
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Ce script sert à créer un jeu de données pour les tests du moteur. <br />";
-	$template_main .= "Il va créer des Quetes.<br />";
-	$template_main .= "<input type='submit' value='Création' /><input type='hidden' name='etape' value='1' />";
+	$template_main .= "Ce script sert  crer un jeu de donnes pour les tests du moteur. <br />";
+	$template_main .= "Il va crer des Quetes.<br />";
+	$template_main .= "<input type='submit' value='Cration' /><input type='hidden' name='etape' value='1' />";
 	$template_main .= "</form>";
 	
 	$template_main .= "</div>";	

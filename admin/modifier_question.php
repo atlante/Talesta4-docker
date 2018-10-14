@@ -6,7 +6,7 @@ $RCSfile: modifier_question.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.6 $
 $Date: 2006/01/31 12:26:19 $
@@ -36,7 +36,7 @@ if($etape==2){
 		}
 		$SQL .= " WHERE id_question = ".$id_cible;
 		if($db->sql_query($SQL))
-			$MJ->Output("question ".span(ConvertAsHTML($question),"pj")." correctement modifiée",true);
+			$MJ->Output("question ".span(ConvertAsHTML($question),"pj")." correctement modifie",true);
 		
 	}
 	else $template_main .= GetMessage("droitsinsuffisants");

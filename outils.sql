@@ -11,7 +11,7 @@ INSERT INTO tlt_objets ( type, sous_type, nom, degats_min, degats_max, anonyme, 
  VALUES ( 'Outil', 'ArtisanArmeJet', 'Retendeur de corde', 1, 4, 0, -1, 30, 'Retendeur de corde', 1, NULL, 0, -1, 'Dexterite', 'ArtisanArmeJet', NULL, NULL, NULL, NULL);
 
 INSERT INTO tlt_objets ( type, sous_type, nom, degats_min, degats_max, anonyme, durabilite, prix_base, description, poids, image, permanent, munitions, caracteristique, competence, provoqueetat, competencespe, id_etattempspecifique, composantes) 
- VALUES ( 'Outil', 'ArtisanArmeMelee', 'Pierre à aiguiser', 1, 4, 0, -1, 20, 'Pierre à aiguiser', 1, NULL, 0, -1, 'Dexterite', 'ArtisanArmeMelee', NULL, NULL, NULL, NULL);
+ VALUES ( 'Outil', 'ArtisanArmeMelee', 'Pierre  aiguiser', 1, 4, 0, -1, 20, 'Pierre  aiguiser', 1, NULL, 0, -1, 'Dexterite', 'ArtisanArmeMelee', NULL, NULL, NULL, NULL);
 
 INSERT INTO tlt_objets ( type, sous_type, nom, degats_min, degats_max, anonyme, durabilite, prix_base, description, poids, image, permanent, munitions, caracteristique, competence, provoqueetat, competencespe, id_etattempspecifique, composantes) 
  VALUES ( 'Outil', 'Bucheron', 'Scie', 1, 3, 0,50, 30, 'Scie de bucheron', 10, NULL, 0, -1, 'Force', 'ArtisanBois', NULL, NULL, NULL, NULL);

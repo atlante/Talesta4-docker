@@ -24,19 +24,19 @@ $Date: 2010/01/24 16:35:38 $
 </head>
 <body>
 <div id='main'>
-  <p align="center"><span class="Style1">Fichiers modifiés pour l'intégration avec PHPBB</span><br />
+  <p align="center"><span class="Style1">Fichiers modifis pour l'intgration avec PHPBB</span><br />
     <br />
   </p>
-  <p align="center">Il ne vous reste plus qu'à faire de même avec le forum de votre choix<br />
+  <p align="center">Il ne vous reste plus qu' faire de mme avec le forum de votre choix<br />
     <br />
   </p>
 
 
 Version 3.4
 <div style="margin-left: 2em"><br />
-Le moteur est compatible désormais avec PHPBB et Phorum5
-Grace à la classe forum.
-Chaque forum à son propre fichier (dans include/forum) et reproduit les fonctionnalités de la classe forum.
+Le moteur est compatible dsormais avec PHPBB et Phorum5
+Grace  la classe forum.
+Chaque forum  son propre fichier (dans include/forum) et reproduit les fonctionnalits de la classe forum.
 Le choix du fichier se fait dans include/http_get_post.php
 
 <pre>	if (defined('IN_FORUM') &amp;&amp; (IN_FORUM==1)) {
@@ -51,7 +51,7 @@ Le choix du fichier se fait dans include/http_get_post.php
 				break;
 			....
 </pre>
-La variable $typeforum est modifiée dans admin/configuration générale (admin/config.php), 
+La variable $typeforum est modifie dans admin/configuration gnrale (admin/config.php), 
 <pre>
 			$liste_type_forum=array(
 				"0"=>"phpBB",
@@ -59,18 +59,18 @@ La variable $typeforum est modifiée dans admin/configuration générale (admin/con
 			);
 </pre>
 
-Pour le moment, il faut aussi créer un fichier PostInstallXXXX.sql   avec XXXX etant le type de forum, pour créer, essentiellement, les types de membres (PJ_PNJ et MJ), des forums, des topics
-et la configuration générale du forum. 
-Note: Ces fichiers seront prochainement remplacees par des methodes de la classe forum pour que toute l'install soit scriptée.
+Pour le moment, il faut aussi crer un fichier PostInstallXXXX.sql   avec XXXX etant le type de forum, pour crer, essentiellement, les types de membres (PJ_PNJ et MJ), des forums, des topics
+et la configuration gnrale du forum. 
+Note: Ces fichiers seront prochainement remplacees par des methodes de la classe forum pour que toute l'install soit scripte.
 </div><br />
 Version 3.3
 <div style="margin-left: 2em"><br />  
 
 <table class='details' width='100%'>
 
-<tr><td>PostInstallPHPBB.sql</td><td> Crée le groupe d'utilisateurs MJ<br />
-Crée le groupe d'utilisateurs PJ_PNJ<br />
-Crée différentes catégories et forums du forum:
+<tr><td>PostInstallPHPBB.sql</td><td> Cre le groupe d'utilisateurs MJ<br />
+Cre le groupe d'utilisateurs PJ_PNJ<br />
+Cre diffrentes catgories et forums du forum:
 <ul>
 <li> Communications Hors Jeu
 <ul><li> Accueil des nouveaux</li>
@@ -85,12 +85,12 @@ Crée différentes catégories et forums du forum:
 	<ul><li>HVG -- Forge</li>
 	</ul>
 </li>
-<li> Modifs techniques à apporter
+<li> Modifs techniques  apporter
 	<ul><li>Bugs</li>
-	<li>Idées</li></ul>
+	<li>Ides</li></ul>
 </li>
 </ul>	
-Affecte les droits de modération aux MJs
+Affecte les droits de modration aux MJs
 </td></tr>
 <tr><td>admin/forms/infospj.form.php</td><td> Image d'avatar (gestion d'images uploades, url, gallery)
 </td></tr>
@@ -98,28 +98,28 @@ Affecte les droits de modération aux MJs
 </td><td> Image d'avatar
 </td></tr>	
 <tr><td>admin/creerPNJ.php
-</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)<br />
- Affecte ce membre au rôle PJ_PNJ
+</td><td> Cre le membre dans le forum (mme mot de passe, de nom, d'email, d'image d'avatar)<br />
+ Affecte ce membre au rle PJ_PNJ
 </td></tr>
 <tr><td>admin/creer_mj.php
-</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)<br />
-Affecte ce membre au rôle MJ
+</td><td> Cre le membre dans le forum (mme mot de passe, de nom, d'email, d'image d'avatar)<br />
+Affecte ce membre au rle MJ
 </td></tr>
 <tr><td>admin/inscrire.php
-</td><td> Crée le membre dans le forum (même mot de passe, de nom, d'email)<br />
- Affecte ce membre au rôle PJ_PNJ
+</td><td> Cre le membre dans le forum (mme mot de passe, de nom, d'email)<br />
+ Affecte ce membre au rle PJ_PNJ
 </td></tr>
 
 <tr><td>admin/modifier_info_pj.php
-</td><td> Mise à jour du membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)
+</td><td> Mise  jour du membre dans le forum (mme mot de passe, de nom, d'email, d'image d'avatar)
 </td></tr>
 
 <tr><td>admin/modifier_mj.php
-</td><td> Mise à jour du membre dans le forum (même mot de passe, de nom, d'email, d'image d'avatar)
+</td><td> Mise  jour du membre dans le forum (mme mot de passe, de nom, d'email, d'image d'avatar)
 </td></tr>
 <tr><td>admin/supprimer_mj.php
 </td><td> Suppression du membre dans le forum<br />
- Suppression des affectations du MJ aux différents groupes<br />
+ Suppression des affectations du MJ aux diffrents groupes<br />
  Que faire des messages ??<br />
 </td></tr>
 <tr><td>admin/menu_admin.php
@@ -127,23 +127,23 @@ Affecte ce membre au rôle MJ
 	</td></tr>
 
 <tr><td>admin/listeMagasin.php
-</td><td> lien vers l'ID du forum noté dans le lieu
+</td><td> lien vers l'ID du forum not dans le lieu
 	</td></tr>
 	
 <tr><td>admin/supprimer_pj.php
 </td><td> Suppression du membre dans le forum<br />
-Suppression des affectations du PJ aux différents groupes<br />
+Suppression des affectations du PJ aux diffrents groupes<br />
 Que faire des messages ??	<br />
 	</td></tr>
 
 <tr><td>admin/forms/guilde.form.php<br />
 admin/creerGuilde.php
-	</td><td> Fichiers spécialement créés pour une guilde:<br />
-		Crée un lieu <br />
-		Crée un gérant (PJ) de la guilde <br />
-		Crée un chemin pour rattacher la guilde au monde <br />
-		Crée un nouveau forum dans la catégorie Guildes <br />
-		Donne les droits au gérant sur ce forum <br />
+	</td><td> Fichiers spcialement crs pour une guilde:<br />
+		Cre un lieu <br />
+		Cre un grant (PJ) de la guilde <br />
+		Cre un chemin pour rattacher la guilde au monde <br />
+		Cre un nouveau forum dans la catgorie Guildes <br />
+		Donne les droits au grant sur ce forum <br />
 		</td></tr>
 	
 
@@ -209,12 +209,12 @@ admin/creerGuilde.php
 
 </div>
 
-<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communaut Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
 
 
 <div id='menu'>
 <img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
-	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise  jour</a></h4>
 	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
 	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
 	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
@@ -222,9 +222,9 @@ admin/creerGuilde.php
 	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
 	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
 	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
-	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
-<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
-	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide cration de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide russite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversits dans les PJs</a></h4>
 <h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
 <h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
 <img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />

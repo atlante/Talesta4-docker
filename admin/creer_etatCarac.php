@@ -6,7 +6,7 @@ $RCSfile: creer_etatCarac.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.6 $
 $Date: 2010/02/28 22:58:03 $
@@ -29,12 +29,12 @@ $bonusMax=5;
 if(!(isset($etape))){
 	
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Ce script sert à créer un jeu de données pour les tests du moteur. <br />";
-	$template_main .= "Il va créer des Etats temporaires donnant un bonus pour chaque compétence du jeu.<br />";
-	$template_main .= "Le bonus va de \$bonusMin (qui est à $bonusMin) à \$bonusMax (qui est à $bonusMax).<br />";
-	$template_main .= "\$bonusMin, \$bonusMax peuvent être modifiés pour être adaptés à votre jeu .<br />";
+	$template_main .= "Ce script sert  crer un jeu de donnes pour les tests du moteur. <br />";
+	$template_main .= "Il va crer des Etats temporaires donnant un bonus pour chaque comptence du jeu.<br />";
+	$template_main .= "Le bonus va de \$bonusMin (qui est  $bonusMin)  \$bonusMax (qui est  $bonusMax).<br />";
+	$template_main .= "\$bonusMin, \$bonusMax peuvent tre modifis pour tre adapts  votre jeu .<br />";
 		
-	$template_main .= "<input type='submit' value='Création' /><input type='hidden' name='etape' value='5' />";
+	$template_main .= "<input type='submit' value='Cration' /><input type='hidden' name='etape' value='5' />";
 	$template_main .= "</form>";
 	
 	$template_main .= "</div>";	
@@ -47,7 +47,7 @@ else if ($etape==5) {
 	$SQL ="Select id_typeetattemp  from ".NOM_TABLE_TYPEETAT."  where nomtype='Divers'";
 	$result = $db->sql_query($SQL);
 	if($db->sql_numrows($result)== 0){
-	   $template_main .= "Aucun type d'etat nommé Divers";	
+	   $template_main .= "Aucun type d'etat nomm Divers";	
 	}	
 	else {
 		

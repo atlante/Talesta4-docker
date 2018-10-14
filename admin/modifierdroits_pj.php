@@ -6,7 +6,7 @@ $RCSfile: modifierdroits_pj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/02/21 18:29:09 $
@@ -33,7 +33,7 @@ if($etape==2){
 		}
 		
 		if (defined("IN_FORUM")&& IN_FORUM==1 && (in_array (strtoupper($nom), $forum->nomsReservesForum))) 
-			$erreur .= "nom déjà utilisé pour le forum <br />";
+			$erreur .= "nom dj utilis pour le forum <br />";
 
 		if ($erreur=="") {
 			$SQL = "UPDATE ".NOM_TABLE_MJ." SET ";

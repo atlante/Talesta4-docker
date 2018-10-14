@@ -6,7 +6,7 @@ $RCSfile: modifier_quete.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/02/28 22:58:08 $
@@ -145,7 +145,7 @@ if($etape=="2"){
 			if($result) {
 			        $valeurs=array();
 			        $valeurs[1]=ConvertAsHTML($nom_quete);			        
-				$MJ->OutPut(GetMessage("queteModifiée",$valeurs),true);
+				$MJ->OutPut(GetMessage("queteModifie",$valeurs),true);
 				$etape=0;
 			}	
 			else {

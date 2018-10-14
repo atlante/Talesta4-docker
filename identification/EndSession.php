@@ -6,7 +6,7 @@ $RCSfile: EndSession.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.13 $
 $Date: 2006/02/04 09:20:29 $

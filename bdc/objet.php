@@ -6,7 +6,7 @@ $RCSfile: objet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.21 $
 $Date: 2010/01/24 16:36:51 $
@@ -102,7 +102,7 @@ if($peutvoir){
 					$template_main .= "<tr><td colspan='2'>".span("Indestructible","dur")."</td></tr>";
 				}else{					
 					if (!(isset($MJ)|| isset($for_mj))){
-						$template_main .= "<tr><td>Durabilité</td><td>".span($Objet_vu->Dur_actu."/".$Objet_vu->durabilite,"mun")."</td></tr>";
+						$template_main .= "<tr><td>Durabilit</td><td>".span($Objet_vu->Dur_actu."/".$Objet_vu->durabilite,"mun")."</td></tr>";
 					}				
 					else 
 					$template_main .= "<tr><td>durabilite Max</td><td>".span($Objet_vu->durabilite,"dur")."</td></tr>";

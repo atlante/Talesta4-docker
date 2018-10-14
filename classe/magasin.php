@@ -6,7 +6,7 @@ $RCSfile: magasin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2010/01/24 16:36:41 $

@@ -6,7 +6,7 @@ $RCSfile: listequete.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/02/28 22:58:06 $
@@ -162,13 +162,13 @@ if (isset($HTTP_POST_VARS['etape']) && (!isset($HTTP_GET_VARS['etape']))
 	
 	$template_main .= "<table width='100%' class='details'>";
 	$template_main .= "<tr><td colspan='14' align='center'>Liste des quetes</td></tr>";
-	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'><span class='c5'>Durée (en j)</span></td><td align='right'><span class='c2'>Publique ?</span></td><td align='right'>Refus Possible ? </td><td align='center'>cyclique ?</td><td align='center'><span class='c5'>Proposée par</span></td><td>Réservé aux</td></tr>";
+	$template_main .= "<tr><td align='center'><span class='c5'>N&deg;</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'><span class='c5'>Dure (en j)</span></td><td align='right'><span class='c2'>Publique ?</span></td><td align='right'>Refus Possible ? </td><td align='center'>cyclique ?</td><td align='center'><span class='c5'>Propose par</span></td><td>Rserv aux</td></tr>";
 	while($row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td><span class='c5'>".$row["id_quete"]."</span></td>";
 		$template_main .= "<td><span class='quete'>".$row["nom_quete"]."</span></td>";
 		$template_main .= "<td>".$liste_type_quete[$row["type_quete"]]."</td>";
 		if ($row["duree_quete"]==-1)
-			$duree = "illimitée";
+			$duree = "illimite";
 		else $duree = $row["duree_quete"];
 		$template_main .= "<td><span class='c5'>".$duree."</span></td>";
 		$ano = $row["public"];

@@ -6,7 +6,7 @@ $RCSfile: lieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.21 $
 $Date: 2006/09/04 20:43:50 $
@@ -21,16 +21,16 @@ if(!defined("__LIEU.PHP") ) {
 		
 		var $ID;			///< identifiant du lieu
 		var $nom;			///< nom du lieu
-		var $flags;			///< le paramétrage du lieu en ce qui concerne les actions faisables dans le lieu	
+		var $flags;			///< le paramtrage du lieu en ce qui concerne les actions faisables dans le lieu	
 		var $trigramme;			///< trigramme du lieu
 		var $provoqueetat;
 		var $Chemins;			///< la collection de tous les chemins qui partent de ce lieu
 		var $Magasins;			///< la collection de tous les magasins qui sont dans ce lieu
-		var $difficultedesecacher;	///< utilisé pour reussite_secacher, comparé avec 1d10=> 10 se cacher est très dur
-		var $cheminfichieraudio;	///< le chemin d'accès au fichier audio que l'on entend dans le lieu
+		var $difficultedesecacher;	///< utilis pour reussite_secacher, compar avec 1d10=> 10 se cacher est trs dur
+		var $cheminfichieraudio;	///< le chemin d'accs au fichier audio que l'on entend dans le lieu
 		//var $typemimefichieraudio;
 		var $EtatTempSpecifique;	///< l'etat temp a avoir pour pouvoir acceder au lieu
-		var $apparitionMonstre;         ///< booleen qui indique si des monstres peuvent apparaitre dans ce lieu a l'arrivée d'un PJ
+		var $apparitionMonstre;         ///< booleen qui indique si des monstres peuvent apparaitre dans ce lieu a l'arrive d'un PJ
                 var $type_lieu_apparition;      ///< type de lieu pour les apparitions de monstres (cf. $liste_type_lieu_apparition dans include/const)
                 var $possedeQuetesPubliques;    ///< boolean qui indique s'il y a des PJs/MJs dans ce lieu qui proposent des quetes publiques
                 
@@ -124,10 +124,10 @@ if(!defined("__LIEU.PHP") ) {
 				$chaine=span($chaine." (M)","mort");
 			}						
 			else if($PA < 0 && $PI < 0){
-				$chaine=span($chaine." (P)","paralysé");
+				$chaine=span($chaine." (P)","paralys");
 			}
 			if($dissimule > 0){
-				$chaine=span($chaine." (D)","dissimulé");
+				$chaine=span($chaine." (D)","dissimul");
 			}						
 
 			$tmp = '<a href="javascript:a(\'voir_desc.'.$phpExtJeu.'?id_perso='.$id_perso.'\');">';

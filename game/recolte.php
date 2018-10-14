@@ -6,7 +6,7 @@ $RCSfile: recolte.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2006/09/05 05:52:15 $

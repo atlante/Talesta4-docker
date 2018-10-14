@@ -6,7 +6,7 @@ $RCSfile: desengagement.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2010/01/24 17:44:01 $
@@ -39,7 +39,7 @@ if(defined("ENGAGEMENT") && ENGAGEMENT==1) {
 				$template_main .= "<br /><input type='radio' name='typeact' value='ruse' />Par la ruse<br />";	
 				$template_main .= "<br /><input type='radio' name='typeact' value='propdes' />A l'amiable<br />";
 
-				$template_main .= "<br /><input type='radio' name='typeact' value='mort' />L'adversaire est mort ou assomé<br />";
+				$template_main .= "<br /><input type='radio' name='typeact' value='mort' />L'adversaire est mort ou assom<br />";
 				$template_main .= "<br />".BOUTON_ENVOYER;
 				$template_main .= "<input type='hidden' name='etape' value='1' />";
 				$template_main .= "</form></center>";
@@ -49,7 +49,7 @@ if(defined("ENGAGEMENT") && ENGAGEMENT==1) {
 		}
 		else{ 
 			$template_main .= "<center><br /><br />";
-			$template_main .= GetMessage("pasengagé");
+			$template_main .= GetMessage("pasengag");
 			$template_main .= "</center>";
 		}	
 	} 

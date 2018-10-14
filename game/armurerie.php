@@ -6,7 +6,7 @@ $RCSfile: armurerie.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.24 $
 $Date: 2010/01/24 17:44:00 $
@@ -37,7 +37,7 @@ if(!isset($etape)){
 	$SQL .= "concat(concat( concat( concat( concat( concat( concat( concat( concat( concat( concat( concat( T2.nom, '- ' ) , T2.sous_type ) , 
 	CASE WHEN T2.type = 'Armure' THEN concat( concat( ' (Protege de ', T2.competence ) , ')' ) 
 	ELSE '' END ) , ' - ' ) , CASE WHEN T2.type = 'Armure' THEN concat( T2.degats_min, ' pts de protect' ) 
-	ELSE concat( 'Degats :', T2.degats_min ) END ) , ' à ' ) , T2.degats_max ) , ' - ' ) , substring( T2.description, 1, 40 ) ), '... ' )";
+	ELSE concat( 'Degats :', T2.degats_min ) END ) , '  ' ) , T2.degats_max ) , ' - ' ) , substring( T2.description, 1, 40 ) ), '... ' )";
 	if(defined("AFFICHE_PRIX_OBJET_SORT") && AFFICHE_PRIX_OBJET_SORT==1)
 		$SQL .= "  , T2.prix_base ) , ' POs - ' )";
 	$SQL .= ", T2.poids ) , ' kg' ) 

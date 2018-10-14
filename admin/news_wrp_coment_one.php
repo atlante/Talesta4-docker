@@ -6,7 +6,7 @@ $RCSfile: news_wrp_coment_one.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.5 $
 $Date: 2006/01/31 12:26:19 $
@@ -27,7 +27,7 @@ $template_main .= "<title>".NOM_JEU." Modifier Aspect Commentaire</title>\n";
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_wrp_comment_one.php
@@ -35,11 +35,11 @@ $template_main .= "<title>".NOM_JEU." Modifier Aspect Commentaire</title>\n";
 	if (isset ($_POST['mod'])) {
 		if (($fichier = fopen ('../news/html/comment_one.html', "w+b"))!==false) {
 			if(fwrite ($fichier, $_POST['contenu'])===false) {
-				$template_main .= "Probleme à l'écriture de '../news/html/comment_one.html'";
+				$template_main .= "Probleme  l'criture de '../news/html/comment_one.html'";
 			}
 			else 
 			if (fclose ($fichier)===false)
-				$template_main .= "Probleme à la fermeture de '../news/html/comment_one.html'";
+				$template_main .= "Probleme  la fermeture de '../news/html/comment_one.html'";
 		}
 		else die ("impossible d'ouvrir le fichier '../news/html/comment_one.html' en ecriture");	
 	} else {

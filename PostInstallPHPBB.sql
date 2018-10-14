@@ -30,7 +30,7 @@ where id_mj=1 and config_name='board_email';
 
 # Creation de differents Groupes d utilisateurs
 
-# group_type =1 pour les rendre visibles mais fermé (pas d'adhesion puisque les affectations sont automatiques a la creation du PJ)
+# group_type =1 pour les rendre visibles mais ferm (pas d'adhesion puisque les affectations sont automatiques a la creation du PJ)
 INSERT INTO phpbb_groups (group_type, group_name, group_description, group_moderator, group_single_user) 
 	values( 1, 'MJ', 'Groupe des MJs', 2, 0);
 select @groupMJ:=last_insert_id();
@@ -40,7 +40,7 @@ INSERT INTO phpbb_groups (group_type, group_name, group_description, group_moder
 	values( 1, 'PJ_PNJ', 'Groupe des PJs/PNJs', 2, 0);
 select @groupPJ:=last_insert_id();
 
-# Creation de differentes Catégories et forums
+# Creation de differentes Catgories et forums
 
 
 SELECT @t1:=ifnull(max(cat_id)+1,1) from phpbb_categories;
@@ -53,7 +53,7 @@ INSERT INTO phpbb_categories (cat_id, cat_title, cat_order)
 
 
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Accueil des nouveaux', 'FAQ, Fonctionnement, Règles ....',  @t2*10,  0, 0, 0, 0, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Accueil des nouveaux', 'FAQ, Fonctionnement, Rgles ....',  @t2*10,  0, 0, 0, 0, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 
@@ -61,14 +61,14 @@ INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Demande des joueurs', 'Pour tout problème hors role play rencontré ', @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Demande des joueurs', 'Pour tout problme hors role play rencontr ', @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Annonces ', 'Pour toute annonce hors role play (besoin de coopération ..) ',  @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Annonces ', 'Pour toute annonce hors role play (besoin de coopration ..) ',  @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 
@@ -86,7 +86,7 @@ SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 
 
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Demande de joueurs', 'Pour toute demande en relation avec le jeu (sauf les problèmes) ',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Demande de joueurs', 'Pour toute demande en relation avec le jeu (sauf les problmes) ',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 
@@ -99,7 +99,7 @@ INSERT INTO phpbb_categories (cat_id, cat_title, cat_order)
 
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'HVG -- Forge', 'Forum à propos de la Forge',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'HVG -- Forge', 'Forum  propos de la Forge',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 
@@ -121,18 +121,18 @@ SELECT @t1:=ifnull(max(cat_id)+1,1) from phpbb_categories;
 
 
 INSERT INTO phpbb_categories (cat_id, cat_title, cat_order) 
-	values ( @t1,'Modifs techniques à apporter', @t1*10);
+	values ( @t1,'Modifs techniques  apporter', @t1*10);
 	
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 	
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Idées', 'Vous voulez émettre une suggestion pour améliorer les fonctionnalités du jeu.... C\'est ici.',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Ides', 'Vous voulez mettre une suggestion pour amliorer les fonctionnalits du jeu.... C\'est ici.',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;
 
 INSERT INTO phpbb_forums ( forum_id,cat_id, forum_name, forum_desc,  forum_order,  auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_vote, auth_pollcreate) 
-	values(@t2,@t1, 'Bugs', 'encore une coquille des développeurs. C\'est ici qu\'il faut se plaindre.',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
+	values(@t2,@t1, 'Bugs', 'encore une coquille des dveloppeurs. C\'est ici qu\'il faut se plaindre.',   @t2*10,  1, 1, 1, 1, 1, 1, 3, 3, 1, 1);
 
 INSERT INTO phpbb_auth_access (group_id, forum_id, auth_mod) values (@groupMJ, @t2,1);
 SELECT @t2:=ifnull(max(forum_id)+1,1) from phpbb_forums;

@@ -33,8 +33,8 @@ $Date: 2010/01/24 16:35:40 $
 </select></td><td><span class='c0'>Le Sous type du Sort</span></td></tr>
 <tr><td>Effets Mini  sur la cible: </td><td><input type='text' name='Degats_Min' value='' size='5' /></td><td><span class='c0'>Les Effets Minimum que va provoquer le sort sur la cible:</span>
 <ul>
-<li><span class='c0'>les dégâts sur les points de vie (PV) si le sort est de type Attaque,</span></li>
-<li><span class='c0'>les dégâts sur les points d'action (PA) si le sort est de type Paralysie,</span></li> 
+<li><span class='c0'>les dgts sur les points de vie (PV) si le sort est de type Attaque,</span></li>
+<li><span class='c0'>les dgts sur les points d'action (PA) si le sort est de type Paralysie,</span></li> 
 <li><span class='c0'>les apports sur les points de vie (PV) si le sort est de type Soin</span></li> 
  </ul>
  </td></tr>
@@ -78,14 +78,14 @@ $Date: 2010/01/24 16:35:40 $
 <option value='Artefact Majeur'>Artefact Majeur</option>
 <option value='Observation'>Observation</option>
 </select></td><td><span class='c0'>La competence qui sera utilis&eacute;e dans les jets de d&eacute;s.</span></td></tr>
-<tr><td>Cible du sort (N'est pas utilisé pour le moment): </td><td><select  name='typecible'>	<option value='1'>1 PJ</option>
+<tr><td>Cible du sort (N'est pas utilis pour le moment): </td><td><select  name='typecible'>	<option value='1'>1 PJ</option>
 	<option value='2'>1 Zone</option>
 	<option value='3'>Lanceur</option>
 </select></td></tr>
-<tr><td>Peut être lancé à distance: (N'est pas utilisé pour le moment)</td><td><select  name='sortdistant'>	<option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td></tr>
+<tr><td>Peut tre lanc  distance: (N'est pas utilis pour le moment)</td><td><select  name='sortdistant'>	<option value='0' selected='selected'>Non</option><option value='1'>Oui</option></select></td></tr>
 <tr><td>Utilisable uniquement par</td><td><select name='ID_EtatTempSpecifique'>
 	<option value=''>&nbsp;</option>
-	<option value='30'>Adulte expérimenté</option>
+	<option value='30'>Adulte expriment</option>
 
 	<option value='13' selected='selected'>Elfe</option>
 	<option value='28'>Enfant</option>
@@ -94,7 +94,7 @@ $Date: 2010/01/24 16:35:40 $
 	<option value='8'>Fatique morale</option>
 	<option value='9'>Femelle</option>
 
-	<option value='6'>Force de Géant de Pierre</option>
+	<option value='6'>Force de Gant de Pierre</option>
 	<option value='18'>Gobelin</option>
 	<option value='16'>Humain</option>
 	<option value='3'>ivre</option>
@@ -105,7 +105,7 @@ $Date: 2010/01/24 16:35:40 $
 	<option value='17'>Mannequin</option>
 	<option value='14'>Nain</option>
 	<option value='31'>Viellard</option>
-</select></td><td><span class='c0'>Le sort ne sera utilisable uniquement par un PJ ayant cet état temporaire. Comme les états temporaires incluent les races, l'age... On peut limiter l'utilisation d'un sort à une race...</span></td></tr>
+</select></td><td><span class='c0'>Le sort ne sera utilisable uniquement par un PJ ayant cet tat temporaire. Comme les tats temporaires incluent les races, l'age... On peut limiter l'utilisation d'un sort  une race...</span></td></tr>
 </table></form>
 <script type='text/javascript'>
 	var chainetemp = "";
@@ -176,8 +176,8 @@ $Date: 2010/01/24 16:35:40 $
 
 				
 </script>
-<table class='detailscenter'  width='60%'><tr><td>Influence sur les états<br />(<span id='etatajout' class='etatajout'>Etats Ajoutes</span><br /><span id='etatsupprime' class='etatsupprime'>Etats Supprimes</span>)</td><td>	<form action='creer_magie.php' method='post'><select  name='provoqueetat'>
-	<option value='4'>ADULTE EXPÉRIMENTÉ</option>
+<table class='detailscenter'  width='60%'><tr><td>Influence sur les tats<br />(<span id='etatajout' class='etatajout'>Etats Ajoutes</span><br /><span id='etatsupprime' class='etatsupprime'>Etats Supprimes</span>)</td><td>	<form action='creer_magie.php' method='post'><select  name='provoqueetat'>
+	<option value='4'>ADULTE EXPRIMENT</option>
 	<option value='187'>Air Niveau -1</option>
 	<option value='144'>Air Niveau -2</option>
 	<option value='101'>Air Niveau -3</option>
@@ -608,8 +608,7 @@ $Date: 2010/01/24 16:35:40 $
 	<option value='249'>Vigilance Niveau 1</option>
 	<option value='568'>Vigilance Niveau 2</option>
 	<option value='611'>Vigilance Niveau 3</option>
-	<option value='654'>Vigilance Niveau 4</option>
-	<option value='697'>Vigilance Niveau 5</option>
+	<option value='654'>Vigilance Niveau 4</optnce Niveau 5</option>
 	<option value='197'>Vol Niveau -1</option>
 	<option value='154'>Vol Niveau -2</option>
 	<option value='111'>Vol Niveau -3</option>
@@ -620,7 +619,7 @@ $Date: 2010/01/24 16:35:40 $
 	<option value='602'>Vol Niveau 3</option>
 	<option value='645'>Vol Niveau 4</option>
 	<option value='688'>Vol Niveau 5</option>
-</select><br />Pourcentage de déclenchement: <input value='100'  name='pourcent' type='texte' /><br />Durée en heures: <input value='-1' name='duree'  type='texte' /><br /><br /><input value="Provoque l'etat" type='button' onclick="ajouteprovoqueetat('')" /><input value="Annule l'etat" type='button' onclick="ajouteprovoqueetat('-')" /><input value="Voir l'etat" type='button' onclick="a('../bdc/etat.php?for_mj=1&amp;num_etat='+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value)" /><br />&nbsp;<br /><select name="ListAdd" size='5'></select><br />&nbsp;<br /><input value="Remettre a Zero" type='button' onclick="RAZ(1)" /></form></td></tr></table>
+</select><br />Pourcentage de dclenchement: <input value='100'  name='pourcent' type='texte' /><br />Dure en heures: <input value='-1' name='duree'  type='texte' /><br /><br /><input value="Provoque l'etat" type='button' onclick="ajouteprovoqueetat('')" /><input value="Annule l'etat" type='button' onclick="ajouteprovoqueetat('-')" /><input value="Voir l'etat" type='button' onclick="a('../bdc/etat.php?for_mj=1&amp;num_etat='+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value)" /><br />&nbsp;<br /><select name="ListAdd" size='5'></select><br />&nbsp;<br /><input value="Remettre a Zero" type='button' onclick="RAZ(1)" /></form></td></tr></table>
 
 
 
@@ -632,45 +631,45 @@ $Date: 2010/01/24 16:35:40 $
 <tr><td>1 (1 PJ)</td><td>Non</td><td>Soin</td><td> Si cible n'est pas morte</td></tr>
 <tr><td>1 (1 PJ)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Si cible n'est pas morte</td></tr>
 <tr><td>1 (1 PJ)</td><td>Non</td><td>Teleport</td><td>Si cible n'est pas morte</td></tr>
-<tr><td>1 (1 PJ)</td><td>Non</td><td>AutoTeleport</td><td>non généré car correspond à la catégorie Autotéport sur le lanceur uniquement</td></tr>
-<tr><td>1 (1 PJ)</td><td>Non</td><td>Résurrection</td><td>Si cible est morte</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>AutoTeleport</td><td>non gnr car correspond  la catgorie Autotport sur le lanceur uniquement</td></tr>
+<tr><td>1 (1 PJ)</td><td>Non</td><td>Rsurrection</td><td>Si cible est morte</td></tr>
 
 <tr><td>1 (1 PJ)</td><td>Oui</td><td>Soin</td><td></td></tr>
 <tr><td>1 (1 PJ)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td></td></tr>
 <tr><td>1 (1 PJ)</td><td>Oui</td><td>Teleport</td><td></td></tr>
-<tr><td>1 (1 PJ)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
-<tr><td>1 (1 PJ)</td><td>Oui</td><td>Résurrection</td><td>Si cible est morte</td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par dfinition</td></tr>
+<tr><td>1 (1 PJ)</td><td>Oui</td><td>Rsurrection</td><td>Si cible est morte</td></tr>
 
 <tr><td>2 (1 Zone)</td><td>Non</td><td>Soin</td><td></td></tr>        
-<tr><td>2 (1 Zone)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Ok mais le lanceur étant dans la zone va prendre des degats aussi</td></tr>
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Ok mais le lanceur tant dans la zone va prendre des degats aussi</td></tr>
 <tr><td>2 (1 Zone)</td><td>Non</td><td>Teleport</td><td></td></tr>    
-<tr><td>2 (1 Zone)</td><td>Non</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
-<tr><td>2 (1 Zone)</td><td>Non</td><td>Résurrection</td><td></td></tr>
+<tr><td>2 (1 Zone)</td><td>Non</td><td>AutoTeleport</td><td>Impossible par dfinition</td></tr>
+<tr><td>2 (1 Zone)</td><td>Non</td><td>Rsurrection</td><td></td></tr>
                                                                    
 <tr><td>2 (1 Zone)</td><td>Oui</td><td>Soin</td><td></td></tr>        
 <tr><td>2 (1 Zone)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td></td></tr>
 <tr><td>2 (1 Zone)</td><td>Oui</td><td>Teleport</td><td></td></tr>    
-<tr><td>2 (1 Zone)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par définition</td></tr>
-<tr><td>2 (1 Zone)</td><td>Oui</td><td>Résurrection</td><td></td></tr>
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>AutoTeleport</td><td>Impossible par dfinition</td></tr>
+<tr><td>2 (1 Zone)</td><td>Oui</td><td>Rsurrection</td><td></td></tr>
                                                                                
 <tr><td>3 (Le lanceur)</td><td>Non</td><td>Soin</td><td> </td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Supprimé car stupide </td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Non</td><td>Teleport</td><td> Supprimé car correspond à la catégorie ci-dessous</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Attaque/Paralysie,Transfert</td><td>Supprim car stupide </td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Teleport</td><td> Supprim car correspond  la catgorie ci-dessous</td></tr>                 
 <tr><td>3 (Le lanceur)</td><td>Non</td><td>AutoTeleport</td><td> </td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Non</td><td>Résurrection</td><td> Impossible par définition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Non</td><td>Rsurrection</td><td> Impossible par dfinition</td></tr>                 
                                                                                
-<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Soin</td><td> Impossible par définition</td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td> Impossible par définition</td></tr>                         
-<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Teleport</td><td> Impossible par définition</td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Oui</td><td>AutoTeleport</td><td> Impossible par définition</td></tr>                 
-<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Résurrection</td><td> Impossible par définition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Soin</td><td> Impossible par dfinition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Attaque/Paralysie,Transfert</td><td> Impossible par dfinition</td></tr>                         
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Teleport</td><td> Impossible par dfinition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>AutoTeleport</td><td> Impossible par dfinition</td></tr>                 
+<tr><td>3 (Le lanceur)</td><td>Oui</td><td>Rsurrection</td><td> Impossible par dfinition</td></tr>                 
 </table>
 -->
 </div>
-<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communaut Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
 <div id='menu'>
 <img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
-	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise  jour</a></h4>
 	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
 	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
 	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
@@ -678,9 +677,9 @@ $Date: 2010/01/24 16:35:40 $
 	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
 	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
 	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
-	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
-<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
-	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide cration de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide russite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversits dans les PJs</a></h4>
 <h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
 <h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
 <img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />

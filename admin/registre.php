@@ -6,7 +6,7 @@ $RCSfile: registre.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2010/05/15 08:49:32 $
@@ -158,7 +158,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	        
 	    }
 	    
-	    /*     Par Dernière remise */
+	    /*     Par Dernire remise */
 	    
 	    elseif($tri=='par_dr_asc')
 	    {
@@ -171,7 +171,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	        
 	    }
 	    
-	    /*     Par Dernière remise */
+	    /*     Par Dernire remise */
 	    
 	    elseif($tri=='par_drpi_asc')
 	    {
@@ -240,12 +240,12 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	     }	
 	}
 
-    /* Fin de Recupération des variables dans la SQL */
+    /* Fin de Recupration des variables dans la SQL */
 	$result2 = $db->sql_query($SQL);
 
     $colspan = $db->sql_numfields($result2);
 	$template_main .= "<table class='detailscenter'>";
-    $template_main .= "<tr><td colspan='$colspan' align='center'><span class='c7'>Registre (Cliquez sur les titres pour ranger dans l'ordre croissant ou décroissant)</span></td></tr>";
+    $template_main .= "<tr><td colspan='$colspan' align='center'><span class='c7'>Registre (Cliquez sur les titres pour ranger dans l'ordre croissant ou dcroissant)</span></td></tr>";
 
 	$template_main .= "<tr><td>";
 	if((!isset($tri)) ||$tri=='par_id_desc')
@@ -310,25 +310,25 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_lieu_asc".$urlTRI."'><span class='c3'>Nom du Lieu</span></a>";
 	}
 	$template_main .= "</td><td>";
-	/* Dernière remise PA*/
+	/* Dernire remise PA*/
 	if((!isset($tri)) ||$tri=='par_dr_asc')
 	{    
-	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_dr_desc".$urlTRI."'><span class='c12'>Dernière remise PA</span></a>";
+	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_dr_desc".$urlTRI."'><span class='c12'>Dernire remise PA</span></a>";
 	}
 	else
 	{
-	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_dr_asc".$urlTRI."'><span class='c12'>Dernière remise PA</span></a>";
+	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_dr_asc".$urlTRI."'><span class='c12'>Dernire remise PA</span></a>";
 	}
 
 	$template_main .= "</td><td>";
-	/* Dernière remise PI*/
+	/* Dernire remise PI*/
 	if((!isset($tri)) ||$tri=='par_drpi_asc')
 	{    
-	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_drpi_desc".$urlTRI."'><span class='c12'>Dernière remise PI</span></a>";
+	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_drpi_desc".$urlTRI."'><span class='c12'>Dernire remise PI</span></a>";
 	}
 	else
 	{
-	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_drpi_asc".$urlTRI."'><span class='c12'>Dernière remise PI</span></a>";
+	$template_main .= "<a href='".NOM_SCRIPT."?tri=par_drpi_asc".$urlTRI."'><span class='c12'>Dernire remise PI</span></a>";
 	}
 	$template_main .= "</td><td>";
 	/* Date conexion */

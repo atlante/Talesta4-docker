@@ -6,7 +6,7 @@ $RCSfile: miseenpage.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.23 $
 $Date: 2010/01/24 19:33:12 $
@@ -111,8 +111,8 @@ if(!defined("__MISEENPAGE.PHP") ) {
 			"Petite Arbalete"	=>"../templates/$template_name/images/Icones/IconPetiteArbalete.png",
 			"Grande Arbalete"	=>"../templates/$template_name/images/Icones/IconGrandeArbalete.png",
 			"Arts Martiaux"		=>"../templates/$template_name/images/Icones/IconArtsMartiaux.png",
-			"Lame Longue à une main"=>"../templates/$template_name/images/Icones/IconLameLongue.png",
-			"Lame Longue à 2 mains"	=>"../templates/$template_name/images/Icones/IconLameLongue.png",
+			"Lame Longue  une main"=>"../templates/$template_name/images/Icones/IconLameLongue.png",
+			"Lame Longue  2 mains"	=>"../templates/$template_name/images/Icones/IconLameLongue.png",
 			"Soin Naturel"	=>"../templates/$template_name/images/Icones/Iconsoinnaturel.png",
 			"Nage"	=>"../templates/$template_name/images/Icones/IconNage.png",
 			"Escalade"	=>"../templates/$template_name/images/Icones/IconEscalade.png"			
@@ -339,7 +339,7 @@ if(!defined("__MISEENPAGE.PHP") ) {
                          else   $largMax=LARG_MAX_LIEU;     
 
         		//logdate("nomImage ".$nomImage);
-        		$imagehw = GetImageSize($nomImage); /* L'index 0 contient la largeur. L'index 1 contient la longueur. L'index 2 contient le type de l'image : 1 = GIF, 2 = JPG, 3 = PNG, 5 = PSD, 6 = BMP. L'index 3 contient la chaîne &agrave; placer dans les balises html : "height=xxx width=xxx".  */
+        		$imagehw = GetImageSize($nomImage); /* L'index 0 contient la largeur. L'index 1 contient la longueur. L'index 2 contient le type de l'image : 1 = GIF, 2 = JPG, 3 = PNG, 5 = PSD, 6 = BMP. L'index 3 contient la chane &agrave; placer dans les balises html : "height=xxx width=xxx".  */
         		//logdate("imagehw ".$imagehw);
         		if ($imagehw==FALSE) {
         			if ($largMax==-1 && $hautMax==-1)
@@ -371,8 +371,8 @@ if(!defined("__MISEENPAGE.PHP") ) {
 	
 	
 		/** \brief fonction retournant le tableau a afficher pour voir l'image du lieu et la description.
-		     Cette fonction est utilisée dans game/menu.php et admin/voir_lieu.php.
-		     L'image du lieu est diminuee s'il le faut pour conserver une taille définie par l'admin dans la config du jeu
+		     Cette fonction est utilise dans game/menu.php et admin/voir_lieu.php.
+		     L'image du lieu est diminuee s'il le faut pour conserver une taille dfinie par l'admin dans la config du jeu
                     \param $id_lieu: l'ID du lieu
 		*/
 		function afficheImageLieu($id_lieu) {
@@ -532,7 +532,7 @@ if(!defined("__MISEENPAGE.PHP") ) {
 			if ((!function_exists('tmp_chown'))||( (function_exists('tmp_chown'))&&(tmp_chown($filename)) ) ) {
 				/*if (! file_exists("../".$DIR_ANNONCES))
 					if (!mkdir("../".$DIR_ANNONCES,0744)) {
-						logDate ("impossible de créer le rep '../".$DIR_ANNONCES."'",E_USER_WARNING,1);
+						logDate ("impossible de crer le rep '../".$DIR_ANNONCES."'",E_USER_WARNING,1);
 					}			
 				*/	
 				if (file_exists($nom))

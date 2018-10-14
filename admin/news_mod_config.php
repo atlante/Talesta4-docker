@@ -6,7 +6,7 @@ $RCSfile: news_mod_config.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:19 $
@@ -25,7 +25,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_mod_config.php
@@ -38,7 +38,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		$sql ='UPDATE '.NOM_TABLE_CONFIG_NEWS.' SET title="'.$_POST['title'].'", nbre_news="'.$_POST['nbre_news'].'", nom_archive="'.$_POST['nom_archive'].'", nom_proposer="'.$_POST['nom_proposer'].'", nom_commentaires="'.$_POST['nom_commentaires'].'", nom_index="'.$_POST['nom_index'].'" WHERE id="'.$_POST['id'].'"';
 		$template_main .= $sql;
 		if ($db->sql_query ($sql))
-			$template_main .= 'Votre configuration a bien été modifiée';
+			$template_main .= 'Votre configuration a bien t modifie';
 		else $template_main .= $db->erreur;	
 	} else {
 		//mysql_connect (DB_HOST, DB_LOGIN, DB_PASS);

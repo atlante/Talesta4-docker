@@ -6,7 +6,7 @@ $RCSfile: modifier_info_pj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.28 $
 $Date: 2010/05/15 08:53:54 $
@@ -63,7 +63,7 @@ if($etape==2){
 
 			if ($anciennom<>$nom) {		
 				if (defined("IN_FORUM")&& IN_FORUM==1 && (in_array (strtoupper($nom), $forum->nomsReservesForum))) {
-		   			$erreur .= "nom déjà utilisé pour le forum <br />";
+		   			$erreur .= "nom dj utilis pour le forum <br />";
 				}
 		
 				if(defined("IN_FORUM")&& IN_FORUM==1 && ($forum->uservalide($nom)===false))
@@ -158,11 +158,11 @@ if($etape==2){
 				$description = str_replace("?>","",$description);
 				if (($f = fopen($nom_fichier,"w+b"))!==false) {
 					if (fwrite($f,$description)===false) {
-						$template_main .= "Probleme à l'écriture de '".$nom_fichier."'";
+						$template_main .= "Probleme  l'criture de '".$nom_fichier."'";
 					}
 					else 
 					if (fclose ($f)===false)
-						$template_main .= "Probleme à la fermeture de '".$nom_fichier."'";
+						$template_main .= "Probleme  la fermeture de '".$nom_fichier."'";
 				}	
 				else die ("impossible d'ouvrir le fichier '".$nom_fichier."' en ecriture");					
 				$MJ->OutPut("Informations de ".span(ConvertAsHTML($nom),"pj")." correctement modifi&eacute;es",true);

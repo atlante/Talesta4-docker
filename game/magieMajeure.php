@@ -6,7 +6,7 @@ $RCSfile: magieMajeure.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2010/01/24 17:44:02 $
@@ -100,7 +100,7 @@ if(!isset($etape)){
 			$SQL = "Select distinct P.id_perso as idselect, P.nom as labselect FROM ".NOM_TABLE_REGISTRE."  P WHERE  P.pv>0 and P.archive=0 and P.id_perso <> $PERSO->ID";
 			$var1=faitSelect("id3_cible_att",$SQL,"");
 			if ($var1[0]>0) {
-				$template_main .= "<input type='radio' name='typeact' value='attaque3' />Lancer le sort offensif à distance";
+				$template_main .= "<input type='radio' name='typeact' value='attaque3' />Lancer le sort offensif  distance";
 				$template_main .= $var[1];
 				$template_main .= " Sur ";
 				$template_main .= $var1[1];		
@@ -117,7 +117,7 @@ if(!isset($etape)){
 	if($PERSO->PossedeSortSoin(3)){
 		$SQL = "Select distinct P.id_perso as idselect, P.nom as labselect FROM ".NOM_TABLE_REGISTRE."  P WHERE  P.pv>0 and P.archive=0";		$var1=faitSelect("id3_cible_soin",$SQL,"");
 		if ($var1[0]>0) {
-			$template_main .= "<input type='radio' name='typeact' value='soin3' />Lancer le sort de soin à distance";
+			$template_main .= "<input type='radio' name='typeact' value='soin3' />Lancer le sort de soin  distance";
 			$SQL=$PERSO->listeSorts(array(), array('Soin'),3);
 			$var=faitSelect("id3_sort_soin",$SQL,"");
 			$template_main .= $var[1];
@@ -137,7 +137,7 @@ if(!isset($etape)){
 		$var1=faitSelect("id3_cible_tel",$SQL,"");
 		if ($var1[0]>0) {
 			$opt=true;
-			$template_main .= "<input type='radio' name='typeact' value='teleport3' />Lancer le sort de teleportation à distance";
+			$template_main .= "<input type='radio' name='typeact' value='teleport3' />Lancer le sort de teleportation  distance";
 			$SQL=$PERSO->listeSorts(array(), array('Teleport'),3);
 			$var=faitSelect("id3_sort_tel",$SQL,"");
 			$template_main .= $var[1];

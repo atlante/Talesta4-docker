@@ -6,7 +6,7 @@ $RCSfile: menu_site.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.11 $
 $Date: 2010/01/24 10:30:07 $
@@ -18,7 +18,7 @@ if(!defined("__MENU_SITE.PHP") ) {
 	Define("__MENU_SITE.PHP",	0);
 	$liens_menu=array();	
 	$existesConfig = file_exists("../include/config.".$phpExtJeu);
-	array_push ($liens_menu, array(1,"javascript:a('../admin/gethelp.$phpExtJeu?page=Install.htm')","Aide à l'installation","", !$existesConfig));
+	array_push ($liens_menu, array(1,"javascript:a('../admin/gethelp.$phpExtJeu?page=Install.htm')","Aide  l'installation","", !$existesConfig));
 	array_push ($liens_menu, array(1,"../main/index.".$phpExtJeu,			"Accueil",			"",$existesConfig));
 	array_push ($liens_menu, array(1,"../main/aide_interface.".$phpExtJeu,			"Aide Interface",			"",$existesConfig));
 	array_push ($liens_menu, array(1,"../main/joueurs.".$phpExtJeu,			"Liste des participants",			"",$existesConfig));

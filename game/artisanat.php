@@ -6,7 +6,7 @@ $RCSfile: artisanat.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.3 $
 $Date: 2006/01/31 12:26:23 $
@@ -74,19 +74,19 @@ if(!isset($etape)){
 			$SQL=$PERSO->listeObjets(array("ProduitNaturel"), $SousTypeProduit,-1,0,0,-1);
 			$var1= faitSelect("id_objetMateriau",$SQL);	
 			if ($var1[0]>0) {
-				$template_main .= "<br />Que voulez vous créer ?<br />";
+				$template_main .= "<br />Que voulez vous crer ?<br />";
 				$template_main .= $var[1];		
 				$template_main .= "<br />avec quel outil ?<br />";		
 				$template_main .= $var2[1];		
-				$template_main .= "<br />et à partir de quel matériau ?<br />";		
+				$template_main .= "<br />et  partir de quel matriau ?<br />";		
 				$template_main .= $var1[1];
 				$template_main .= "<br />".BOUTON_ENVOYER;
 			}
-			else $template_main .= "<br />Vous n'avez pas d'objets de ce type à utiliser. <br />";		
+			else $template_main .= "<br />Vous n'avez pas d'objets de ce type  utiliser. <br />";		
 		}
 		else $template_main .= "<br />Vous n'avez aucun outil pour pratiquer cet artisanat. <br />";		
 	}
-	else $template_main .= "<br />Aucun objet de ce matériau à créer. <br />";	
+	else $template_main .= "<br />Aucun objet de ce matriau  crer. <br />";	
 	$template_main .= "<input type='hidden' name='etape' value='1' />";
 	$template_main .= "<input type='hidden' name='action' value='$action' />";
 	$template_main .= "</form></div>";

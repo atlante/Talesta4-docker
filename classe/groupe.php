@@ -6,7 +6,7 @@ $RCSfile: groupe.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.12 $
 $Date: 2006/09/04 20:44:39 $

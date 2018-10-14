@@ -6,7 +6,7 @@ $RCSfile: liste_ppa.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/09/04 20:54:20 $
@@ -118,12 +118,12 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	        
 	    }
         }
-        /* Fin de Recupération des variables dans la SQL */
+        /* Fin de Recupration des variables dans la SQL */
 	$result2 = $db->sql_query($SQL);
 	if ($db->sql_numrows($result2)) {
                 $colspan = $db->sql_numfields($result2);
         	$template_main .= "<table class='detailscenter'>";
-                $template_main .= "<tr><td colspan='$colspan' align='center'><span class='c7'>Liste des PPA à traiter (Cliquez sur les titres pour ranger dans l'ordre croissant ou décroissant)</span></td></tr>";
+                $template_main .= "<tr><td colspan='$colspan' align='center'><span class='c7'>Liste des PPA  traiter (Cliquez sur les titres pour ranger dans l'ordre croissant ou dcroissant)</span></td></tr>";
         
         	$template_main .= "<tr><td>";
         	if((!isset($tri)) ||$tri=='par_id_desc')
@@ -160,25 +160,25 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
             /* QtePA */
             if((!isset($tri)) ||$tri=='par_qte_pa_asc')
             {    
-            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pa_desc".$urlTRI."'>Quantité de PA</a>";
+            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pa_desc".$urlTRI."'>Quantit de PA</a>";
             }
             else
             {
-            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pa_asc".$urlTRI."'>Quantité de PA</a>";
+            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pa_asc".$urlTRI."'>Quantit de PA</a>";
             }
         
         	$template_main .= "</td><td>";
             /* QtePI */
             if((!isset($tri)) ||$tri=='par_qte_pi_asc')
             {    
-            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pi_desc".$urlTRI."'>Quantité de PI</a>";
+            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pi_desc".$urlTRI."'>Quantit de PI</a>";
             }
             else
             {
-            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pi_asc".$urlTRI."'>Quantité de PI</a>";
+            $template_main .= "<a href='".NOM_SCRIPT."?tri=par_qte_pi_asc".$urlTRI."'>Quantit de PI</a>";
             }
         
-        	$template_main .= "</td><td> Détail</td><td>";
+        	$template_main .= "</td><td> Dtail</td><td>";
         
         	/* date_ppa */
         	if((!isset($tri)) ||$tri=='par_la_asc')

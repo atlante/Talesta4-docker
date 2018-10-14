@@ -6,7 +6,7 @@ $RCSfile: listesort.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2010/02/28 22:58:06 $
@@ -38,7 +38,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	if (!isset($competence))
 		$competence="";
 	$template_main .= "filtrer par type: " . $varType[1]. ", sous type: " . $varsousType[1];
-	$template_main .= ", compétence: <select name='competence' onChange='submit()'>";
+	$template_main .= ", comptence: <select name='competence' onChange='submit()'>";
 		$temp = $liste_magie;
 		ksort($temp);
 		reset($temp);
@@ -76,7 +76,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	
 	$template_main .= "<table width='100%' class='details'>";
 	$template_main .= "<tr><td colspan='13' align='center'>Liste des sorts</td></tr>";
-	$template_main .= "<tr><td align='center'><span class='c5'>N°</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'>Sous-type</td><td align='right'>Cout PA</td><td align='right'>Cout PI</td><td align='right'>Cout PO</td><td align='right'>Cout PV</td><td align='center'><span class='c5'>Dégats</span></td><td align='center'>place</td><td align='center'>charges</td><td align='center'>Carac.</td><td align='center'>Compétence</td><td align='center'>anonyme</td><td align='center'>Perm.</td><td align='center'>Prix</td><td align='center'>Réservé aux</td><td>Sort Distant</td></tr>";
+	$template_main .= "<tr><td align='center'><span class='c5'>N</span></td><td align='center'><span class='c0'>nom</span></td><td align='center'>type</td><td align='center'>Sous-type</td><td align='right'>Cout PA</td><td align='right'>Cout PI</td><td align='right'>Cout PO</td><td align='right'>Cout PV</td><td align='center'><span class='c5'>Dgats</span></td><td align='center'>place</td><td align='center'>charges</td><td align='center'>Carac.</td><td align='center'>Comptence</td><td align='center'>anonyme</td><td align='center'>Perm.</td><td align='center'>Prix</td><td align='center'>Rserv aux</td><td>Sort Distant</td></tr>";
 	//for($i=0;$i<$db->sql_numrows($result2);$i++){
 	while(	$row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td><span class='c5'>".$row["id_magie"]."</span></td>";
@@ -96,7 +96,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 
 		$degatmin = $row["degats_min"];
 		$degatmax = $row["degats_max"];
-		$template_main .= "<td><span class='c5'> de $degatmin à $degatmax"."</span></td>";
+		$template_main .= "<td><span class='c5'> de $degatmin  $degatmax"."</span></td>";
 		$template_main .= "<td>".$row["place"]."</td>";
 		$template_main .= "<td>".$row["charges"]."</td>";
 		$template_main .= "<td>".$row["caracteristique"]."</td>";

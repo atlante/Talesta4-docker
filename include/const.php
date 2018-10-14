@@ -6,7 +6,7 @@ $RCSfile: const.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.36 $
 $Date: 2010/01/24 19:33:13 $
@@ -18,9 +18,9 @@ if(!defined("__CONST.PHP") ) {
 	Define("__CONST.PHP",	0);
 
 
-	Define("FICHIER_LOG", "../logs/error.log"); //Fichier dans lequel les erreurs sont stockées si DEBUG_MODE >= 1. 
+	Define("FICHIER_LOG", "../logs/error.log"); //Fichier dans lequel les erreurs sont stockes si DEBUG_MODE >= 1. 
 
-	Define("REP_HTML", "../html/"); //Répertoire dans lequel les fichiers générés sont stockées si DEBUG_HTML égale 1. 
+	Define("REP_HTML", "../html/"); //Rpertoire dans lequel les fichiers gnrs sont stockes si DEBUG_HTML gale 1. 
 
 	/** malus cumulatifs lors d'attaques multples: 
 	// attaque main droite => -2 ; attaque main gauche => -2 + -4 => -6
@@ -52,9 +52,9 @@ if(!defined("__CONST.PHP") ) {
 	);
 
 	/**
-		L'affichage dans la fiche de perso ne depand pas du n° affecte
+		L'affichage dans la fiche de perso ne depand pas du n affecte
 		mais uniquement de l'ordre d'apparition dans le tableau.
-		competences sont decoupees en competencesArmes et competenceAutres pour pouvoir créer des armures protegeant
+		competences sont decoupees en competencesArmes et competenceAutres pour pouvoir crer des armures protegeant
 		des competencesArmes
 	*/	
 	$liste_competencesArmes = array(
@@ -70,7 +70,7 @@ if(!defined("__CONST.PHP") ) {
 	);      
 	
 	/**
-		L'affichage dans la fiche de perso ne depand pas du n° affecte
+		L'affichage dans la fiche de perso ne depand pas du n affecte
 		mais uniquement de l'ordre d'apparition dans le tableau
 	*/	
 	$liste_competencesAutres = array(
@@ -108,7 +108,7 @@ if(!defined("__CONST.PHP") ) {
         		"ArtisanOutil"=>241,    
             "ArtisanParcheminMagique"=>242,	
             "ArtisanEnsorceleur"=>243,  
-        		"Orfèvre"=>244      	
+        		"Orfvre"=>244      	
         );       
         
 
@@ -131,7 +131,7 @@ if(!defined("__CONST.PHP") ) {
 			"FouillerLieu"=>9,
 			"EntendreCriExterieur"=>10,
 			"Parler"=>11,
-			"Recevoir des sorts extérieurs"=>12,
+			"Recevoir des sorts extrieurs"=>12,
 			"SoignerAvecObjet"=>13
 			
 	);
@@ -235,12 +235,12 @@ if(!defined("__CONST.PHP") ) {
 		"Armurerie-Recharge"=>3,		///< un magasin qui recharge des objets de type ArmeMelee, ArmeJet, Armure
 		"Armurerie-Repare"=>4,			///< un magasin qui repare des objets de type ArmeMelee, ArmeJet, Armure
 		"Magasin Magique-Recharge"=>5,		///< un magasin qui permet de recharger des sorts
-		"Lieu d'apprentissage"=>6,		///< un magasin qui permet de se former à une compétence
+		"Lieu d'apprentissage"=>6,		///< un magasin qui permet de se former  une comptence
 		"Produits Naturels"=>7			///< pas un magasin mais un lieu de production de produits naturels (carriere, foret, ....)
 	);
 
 	$liste_relations=array(
-		0=>"Allié",
+		0=>"Alli",
 		1=>"Amical",
 		2=>"Neutre",
 		3=>"Inamical",
@@ -250,10 +250,10 @@ if(!defined("__CONST.PHP") ) {
 
 	$liste_reactions=array(
 		0=>"Tenter de fuir",
-		1=>"Appeler à l'aide (ou au voleur)",
-		2=>"Riposter avec arme(s) équipée(s)",
-		3=>"Riposter avec sort préféré",
-		4=>"Pas de réaction",
+		1=>"Appeler  l'aide (ou au voleur)",
+		2=>"Riposter avec arme(s) quipe(s)",
+		3=>"Riposter avec sort prfr",
+		4=>"Pas de raction",
 		5=>"Voler"		
 	);
 
@@ -309,15 +309,15 @@ if(!defined("__CONST.PHP") ) {
 	);
 
 	$liste_etat_quete=array(
-		1=>"Proposée",					///< le proposant propose la quete au PJ
-		2=>"Acceptée (en cours)",       		///< le PJ accepte la quete
-		3=>"Refusée",					///< le PJ refuse la quete
-		4=>"Abandonnée",				///< le PJ abandonne la quete
-		5=>"Echouée",					///< le PJ a echoue
-		6=>"Réussie (en attente de validation)",	///< le PJ declare avoir temine la quete
-		7=>"Réussie (validée)",				///< la quete est bien réussie (validée par le proposant ou automatiquement)
-		8=>"Annulée par proposant",
-		9=>"Echouée (temps limite atteint)"		///< le PJ a echoue a cause du temps			
+		1=>"Propose",					///< le proposant propose la quete au PJ
+		2=>"Accepte (en cours)",       		///< le PJ accepte la quete
+		3=>"Refuse",					///< le PJ refuse la quete
+		4=>"Abandonne",				///< le PJ abandonne la quete
+		5=>"Echoue",					///< le PJ a echoue
+		6=>"Russie (en attente de validation)",	///< le PJ declare avoir temine la quete
+		7=>"Russie (valide)",				///< la quete est bien russie (valide par le proposant ou automatiquement)
+		8=>"Annule par proposant",
+		9=>"Echoue (temps limite atteint)"		///< le PJ a echoue a cause du temps			
 	);
 	
 	$liste_type_propose_quete=array(
@@ -326,7 +326,7 @@ if(!defined("__CONST.PHP") ) {
 	);	
 	
 	$liste_type_lieu_apparition=array(	            
-                    1=>"Autre/Indéfini"
+                    1=>"Autre/Indfini"
 	);	
 
         if (array_key_exists  ("liste_type_lieu_apparitionPerso", get_defined_vars()) && is_array($liste_type_lieu_apparitionPerso))
@@ -334,23 +334,23 @@ if(!defined("__CONST.PHP") ) {
            	$liste_type_lieu_apparition = $liste_type_lieu_apparition + $liste_type_lieu_apparitionPerso;
      
 	//For MJ
-	/** Modif Hixcks pour gérer les armes à deux mains ....
+	/** Modif Hixcks pour grer les armes  deux mains ....
 	La valeur du tableau est elle meme un tableau qui contient: 
-		- La chaine de caractere affichée lors de la création de l'objet
-		- La partie du corps qui sera équipée avec l'objet
-		- la quantité totale disponible pour un PJ normal :
-			2 bras (pour les armes et les boucliers), 10 doigts (pour les bagues), 1 tête (pour les casques...)
-			, 1 paire de jambes (pour les bottes, jambières ...), 1 corps (pour les armures, plastron ), 1 cou (pour les amulettes, colliers ....)
-		- la quantité qu'occupe l'objet (1 bras pour une épée courte, 2 bras pour une épée à 2 mains)
-		- nouveaute de la 3.4, la compétence utilisée pour réparer l'objet ou pour le créer en combinant d'autres objets
-	=> On pourra mettre 10 bagues (1 par doigt), 1 épée courte et un bouclier, ou 2 épées à une main
-	Pour les objets que l'on utilise mais dont on ne s'équipe pas (Ex: livre ..) , on peut laisser le denier paramètre à 0 et mettre n'importe quoi a l'avant dernier
+		- La chaine de caractere affiche lors de la cration de l'objet
+		- La partie du corps qui sera quipe avec l'objet
+		- la quantit totale disponible pour un PJ normal :
+			2 bras (pour les armes et les boucliers), 10 doigts (pour les bagues), 1 tte (pour les casques...)
+			, 1 paire de jambes (pour les bottes, jambires ...), 1 corps (pour les armures, plastron ), 1 cou (pour les amulettes, colliers ....)
+		- la quantit qu'occupe l'objet (1 bras pour une pe courte, 2 bras pour une pe  2 mains)
+		- nouveaute de la 3.4, la comptence utilise pour rparer l'objet ou pour le crer en combinant d'autres objets
+	=> On pourra mettre 10 bagues (1 par doigt), 1 pe courte et un bouclier, ou 2 pes  une main
+	Pour les objets que l'on utilise mais dont on ne s'quipe pas (Ex: livre ..) , on peut laisser le denier paramtre  0 et mettre n'importe quoi a l'avant dernier
 	*/
 	
 		$liste_type_objs=array(
        			"ArmeMelee;Lame Courte"=>array("Arme - Lame Courte","Bras",2,1,"ArtisanArmeMelee"),
-			"ArmeMelee;Lame Longue à une main"=>array("Arme - Lame Longue à une main","Bras",2,1,"ArtisanArmeMelee"),
-			"ArmeMelee;Lame Longue à 2 mains"=>array("Arme - Lame à 2 mains","Bras",2,2,"ArtisanArmeMelee"),
+			"ArmeMelee;Lame Longue  une main"=>array("Arme - Lame Longue  une main","Bras",2,1,"ArtisanArmeMelee"),
+			"ArmeMelee;Lame Longue  2 mains"=>array("Arme - Lame  2 mains","Bras",2,2,"ArtisanArmeMelee"),
 			"ArmeMelee;Masse Legere"=>array("Arme - Masse Legere","Bras",2,1,"ArtisanArmeMelee"),
 			"ArmeMelee;Masse Lourde"=>array("Arme - Masse Lourde","Bras",2,1,"ArtisanArmeMelee"),
 			"ArmeMelee;Hache Courte"=>array("Arme - Hache Courte","Bras",2,1,"ArtisanArmeMelee"),
@@ -427,7 +427,7 @@ if(!defined("__CONST.PHP") ) {
 			"Teleport Self"=>"Teleport Self",
 			"Transfert"=>"Transfert",
 			"Resurrection"=> "Resurrection" /*,
-			"Réparation d'objet"=>"Réparation d'objet", 
+			"Rparation d'objet"=>"Rparation d'objet", 
 			"Invocation de monstres"=>"Invocation de monstres",
 			"Invocation objet"=>"Invocation objet"*/
 		);
@@ -442,7 +442,7 @@ if(!defined("__CONST.PHP") ) {
 	
 	
 	/**
-	Cette fonction sert a transformer les données saisies par l'utilisateur
+	Cette fonction sert a transformer les donnes saisies par l'utilisateur
 	avant de les stocker en base	
 	*/
 	function ConvertAsHTML($msg){

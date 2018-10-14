@@ -6,7 +6,7 @@ $RCSfile: creerPNJ.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.29 $
 $Date: 2010/05/15 08:55:00 $
@@ -236,21 +236,21 @@ if($etape==2){
 							
                         		if(! file_exists ("../pjs/descriptions/"))
                         			if (! mkdir("../pjs/descriptions/",0744)) {
-                        				logDate ("impossible de créer le rep '../pjs/descriptions/'",E_USER_WARNING,1);
+                        				logDate ("impossible de crer le rep '../pjs/descriptions/'",E_USER_WARNING,1);
                         				$erreur=1;
                         			}							
 					if(($f = fopen("../pjs/descriptions/desc_".$result_id.".txt","w+b"))!==false) {
 						if (fwrite($f,$description)===false) {
-							$template_main .= "Probleme à l'écriture de '../pjs/descriptions/desc_".$result_id.".txt'";
+							$template_main .= "Probleme  l'criture de '../pjs/descriptions/desc_".$result_id.".txt'";
 						}
 						else 
 						if (fclose ($f)===false)
-							$template_main .= "Probleme à la fermeture de '../pjs/descriptions/desc_".$result_id.".txt'";
+							$template_main .= "Probleme  la fermeture de '../pjs/descriptions/desc_".$result_id.".txt'";
 					}	
 					else $template_main .= "impossible d'ouvrir le fichier '../pjs/descriptions/desc_".$result_id.".txt'";
 					if ($pnj==1) 
 						$MJ->OutPut("pnj ".span(ConvertAsHTML($nom),"pj")." correctement inscrit",true);
-					else 	$MJ->OutPut(span(ConvertAsHTML($nom),"pj")." correctement ajouté au bestaire",true);
+					else 	$MJ->OutPut(span(ConvertAsHTML($nom),"pj")." correctement ajout au bestaire",true);
 					$etape=0;
 				}
 			}

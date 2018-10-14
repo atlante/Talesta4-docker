@@ -6,7 +6,7 @@ $RCSfile: index.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.11 $
 $Date: 2006/01/31 12:26:22 $

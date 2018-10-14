@@ -6,7 +6,7 @@ $RCSfile: creer_Livre.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2010/02/28 22:58:03 $
@@ -30,12 +30,12 @@ $coeffDegats = 5;
 if(!(isset($etape))){
 	
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Ce script sert à créer un jeu de données pour les tests du moteur. <br />";
-	$template_main .= "Il va créer des Livres (objets de type Divers, sous-type Livre) permettant au lecteur d'obtenir un bonus pour chaque compétence du jeu.<br />";
-	$template_main .= "Le bonus (etat temporaire non limité en durée de niveau du bonus) va de \$bonusMin (qui est à $bonusMin) à \$bonusMax (qui est à $bonusMax), le prix de ces manuels est de niveau donné * \$coeffPrix (actuellement à $coeffPrix), la difficulé d'apprentissage est de niveau accordé * \$coeffDegats (actuellement à $coeffDegats).<br />";
-	$template_main .= "\$bonusMin, \$bonusMax, \$coeffPrix et \$coeffDegats peuvent être modifiés pour être adaptés à votre jeu .<br />";
-	$template_main .= " <b>Le script creer_etatCarac doit avoir été utilisé avant celui-ci. </b><br />";
-	$template_main .= "<input type='submit' value='Création' /><input type='hidden' name='etape' value='1' />";
+	$template_main .= "Ce script sert  crer un jeu de donnes pour les tests du moteur. <br />";
+	$template_main .= "Il va crer des Livres (objets de type Divers, sous-type Livre) permettant au lecteur d'obtenir un bonus pour chaque comptence du jeu.<br />";
+	$template_main .= "Le bonus (etat temporaire non limit en dure de niveau du bonus) va de \$bonusMin (qui est  $bonusMin)  \$bonusMax (qui est  $bonusMax), le prix de ces manuels est de niveau donn * \$coeffPrix (actuellement  $coeffPrix), la difficul d'apprentissage est de niveau accord * \$coeffDegats (actuellement  $coeffDegats).<br />";
+	$template_main .= "\$bonusMin, \$bonusMax, \$coeffPrix et \$coeffDegats peuvent tre modifis pour tre adapts  votre jeu .<br />";
+	$template_main .= " <b>Le script creer_etatCarac doit avoir t utilis avant celui-ci. </b><br />";
+	$template_main .= "<input type='submit' value='Cration' /><input type='hidden' name='etape' value='1' />";
 	$template_main .= "</form>";
 	
 	$template_main .= "</div>";	
@@ -48,7 +48,7 @@ else if ($etape=="1") {
         	$SQL ="Select id_typeetattemp  from ".NOM_TABLE_TYPEETAT."  where nomtype='Divers'";
         	$result = $db->sql_query($SQL);
         	if($db->sql_numrows($result)== 0){
-        	   $template_main .= "Aucun type d'etat nommé Divers";	
+        	   $template_main .= "Aucun type d'etat nomm Divers";	
         	}	
         	else {
         		$chaine2="";
@@ -73,7 +73,7 @@ else if ($etape=="1") {
         			        $sqlEtat = "select id_etattemp from ".NOM_TABLE_ETATTEMPNOM." where nom='".$nomCompetence ." Niveau ".$bonus_malus. "'";
                                         $result = $db->sql_query($sqlEtat);
                                 	if($db->sql_numrows($result)== 0){
-                                	   $template_main .= "Aucun etat nommé '".$nomCompetence ." Niveau ".$bonus_malus. "'";
+                                	   $template_main .= "Aucun etat nomm '".$nomCompetence ." Niveau ".$bonus_malus. "'";
                                 	}	
                                 	else {        			        
                 				$type="Divers;Livre";

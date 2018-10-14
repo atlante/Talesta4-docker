@@ -6,7 +6,7 @@ $RCSfile: magasinmag.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.23 $
 $Date: 2010/01/24 17:44:02 $
@@ -32,7 +32,7 @@ if(!isset($etape)){
 	$SQL = "SELECT T1.pointeur as idselect, ";
 	if(defined("AFFICHE_PRIX_OBJET_SORT") && AFFICHE_PRIX_OBJET_SORT==1)
 		$SQL .= "concat(concat(";	
-	$SQL .= "concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(T2.nom,'-  '),T2.type),'-'),T2.sous_type), ' - Degats : '),T2.degats_min),' à '),T2.degats_max), substring(T2.description,1,40)),'...  ('), case when T2.charges > 0 then concat(T2.charges,' charges, ') else 'charges infinies, ' end)";
+	$SQL .= "concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(concat(T2.nom,'-  '),T2.type),'-'),T2.sous_type), ' - Degats : '),T2.degats_min),'  '),T2.degats_max), substring(T2.description,1,40)),'...  ('), case when T2.charges > 0 then concat(T2.charges,' charges, ') else 'charges infinies, ' end)";
 	if(defined("AFFICHE_PRIX_OBJET_SORT") && AFFICHE_PRIX_OBJET_SORT==1)
 		$SQL .= ",T2.prix_base),' POs, ')";
 	$SQL .= ", T2.place),' pl)' ) as labselect FROM ".NOM_TABLE_MAGASIN." T1, ".NOM_TABLE_MAGIE." T2 WHERE T1.pointeur = T2.id_magie AND id_lieu =".$PERSO->Lieu->ID." AND T1.type = ".$liste_types_magasins["Magasin Magique"];

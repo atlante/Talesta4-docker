@@ -6,7 +6,7 @@ $RCSfile: reparation.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.4 $
 $Date: 2006/01/31 12:26:25 $
@@ -61,7 +61,7 @@ if(!isset($etape)){
 			$template_main .= $var[1];		
 			$template_main .= "<br />".BOUTON_ENVOYER;
 		}
-		else $template_main .= "<br />Vous n'avez pas d'objets de ce type à reparer. <br />";		
+		else $template_main .= "<br />Vous n'avez pas d'objets de ce type  reparer. <br />";		
 	}
 	else $template_main .= "<br />Vous n'avez aucun objet pour pratiquer l'artisanat. <br />";		
 	$template_main .= "<input type='hidden' name='etape' value='1' />";

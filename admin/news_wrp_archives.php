@@ -6,7 +6,7 @@ $RCSfile: news_wrp_archives.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.5 $
 $Date: 2006/01/31 12:26:19 $
@@ -25,7 +25,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_wrp_archive.php
@@ -33,10 +33,10 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	if (isset ($_POST['mod'])) {
 		if (($fichier = fopen ('../news/html/archive.html', "w+b"))!==false) {
 			if (fwrite ($fichier, $_POST['contenu'])===false) {
-				$template_main .= "Probleme à l'écriture de '../news/html/archive.html'";
+				$template_main .= "Probleme  l'criture de '../news/html/archive.html'";
 			}
 			if (fclose ($fichier)===false)
-				$template_main .= "Probleme à la fermeture de '../news/html/archive.html'";
+				$template_main .= "Probleme  la fermeture de '../news/html/archive.html'";
 		}	
 		else die ("impossible d'ouvrir le fichier '../news/html/archive.html'");
 	} else {

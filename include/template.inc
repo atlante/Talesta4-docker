@@ -25,7 +25,7 @@ function parsetemplate($var_temp)
     if (defined("NOM_JEU"))
     	$var_temp = str_replace ('{NOM_JEU}', NOM_JEU, $var_temp);
     else $var_temp = str_replace ('{NOM_JEU}', "Talesta 4+", $var_temp);	
-    $var_temp = str_replace ('{SCRIPT_GEN}', "<!-- Généré à partir du script, ".NOM_SCRIPT.", le [".date("d/m/Y à H:s")."] //-->", $var_temp);
+    $var_temp = str_replace ('{SCRIPT_GEN}', "<!-- Gnr  partir du script, ".NOM_SCRIPT.", le [".date("d/m/Y  H:s")."] //-->", $var_temp);
     if (isset($titrepage))
     	$var_temp = str_replace ('{TITRE_PAGE}', $titrepage, $var_temp);
     else $var_temp = str_replace ('{TITRE_PAGE}',"", $var_temp);   
@@ -35,7 +35,7 @@ function parsetemplate($var_temp)
     if (defined("META_DESCRIPTION"))
     	$var_temp = str_replace ('{META_KEYWORDS}', META_KEYWORDS, $var_temp);
     else 	
-    	$var_temp = str_replace ('{META_KEYWORDS}', "Moteur, jeux de roles, PHP, jdr, communauté", $var_temp);
+    	$var_temp = str_replace ('{META_KEYWORDS}', "Moteur, jeux de roles, PHP, jdr, communaut", $var_temp);
     $var_temp = str_replace ('{MENU_SITE}', $menu_site, $var_temp);
     
     if (!isset($barre))

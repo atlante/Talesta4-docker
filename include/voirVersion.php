@@ -6,7 +6,7 @@ $RCSfile: voirVersion.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/09/06 06:12:39 $
@@ -79,10 +79,10 @@ function parcoursRepertoire($rep) {
 
         $rep = "..";
         
-        $template_main .= "<div class='centerSimple'> Version utilisée : " .VERSION . "<br /><br />";
+        $template_main .= "<div class='centerSimple'> Version utilise : " .VERSION . "<br /><br />";
         $template_main .= "Checksum des fichiers <br /></div> ";
         $template_main .= "<table class='detailscenter'>";
-        $template_main .= "<tr><td>Nom fichier</td><td>MD5</td><td>Révision</td><td>Date</td></tr>";
+        $template_main .= "<tr><td>Nom fichier</td><td>MD5</td><td>Rvision</td><td>Date</td></tr>";
         parcoursRepertoire($rep);
         $template_main .= "</table>";
 	

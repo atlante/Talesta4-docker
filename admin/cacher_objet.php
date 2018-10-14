@@ -6,7 +6,7 @@ $RCSfile: cacher_objet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2006/02/23 07:31:32 $

@@ -6,7 +6,7 @@ $RCSfile: SessionLeym.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2010/01/24 17:44:16 $
@@ -54,7 +54,7 @@ class SessionLeym{
 	function existe(){
 		global $db;
 		if( ($this->Valide > 0) ){
-			//réduction des requetes => transferes 
+			//rduction des requetes => transferes 
 			//$SQL = "UPDATE ".NOM_TABLE_REGISTRE." SET lastaction = '".time()."', WHERE id_perso='".$this->id_joueur."' ";
 			//$db->sql_query($SQL);
 			$SQL = "DELETE FROM ".NOM_TABLE_PERSOETATTEMP." WHERE fin > -1 AND fin < ".time() ." AND id_perso= ".$this->id_joueur;

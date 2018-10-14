@@ -6,7 +6,7 @@ $RCSfile: maj_version_talesta.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2010/02/28 22:58:06 $
@@ -42,12 +42,12 @@ if(isset($_GET['action']))
 		<table width='90%'>
 
 
-			<tr><td colspan='2'>Vous &ecirc;tes sur le point de mettre à jour Talesta4+. Il est conseillé d'avoir fait un backup des fichiers HTTP et de la base avant de continuer.<br />
-			Il est aussi conseillé de vérifier que le fichier 'include/config.$phpExtJeu' est accessible en écriture par le moteur et que son contenu est en 2 parties autour de la ligne 60:<ol>
-			    <li>Une première (du début jusqu'à la ligne 60) avec les définitions des tables et des paramètres de connexion à la base,</li>
-			    <li>une seconde (après la ligne 60) avec les définitions des parmètres du jeu.</li>
+			<tr><td colspan='2'>Vous &ecirc;tes sur le point de mettre  jour Talesta4+. Il est conseill d'avoir fait un backup des fichiers HTTP et de la base avant de continuer.<br />
+			Il est aussi conseill de vrifier que le fichier 'include/config.$phpExtJeu' est accessible en criture par le moteur et que son contenu est en 2 parties autour de la ligne 60:<ol>
+			    <li>Une premire (du dbut jusqu' la ligne 60) avec les dfinitions des tables et des paramtres de connexion  la base,</li>
+			    <li>une seconde (aprs la ligne 60) avec les dfinitions des parmtres du jeu.</li>
 			    </ol>
-			 Si vous avez modifié ce script à la main, ce n'est peut être plus le cas.<br /><br /></td></tr>";
+			 Si vous avez modifi ce script  la main, ce n'est peut tre plus le cas.<br /><br /></td></tr>";
 
 			  $listeversionLivree=array();
 			  $rep = "../include/db/";
@@ -68,19 +68,19 @@ if(isset($_GET['action']))
 
 						$template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">Votre version actuelle est :</td><td> ".VERSION."<input type='hidden' name='oldversion' value='".VERSION."' /></td></tr>";
 					if (count($listeversionLivree)==0) {
-						$template_main .= "<tr><td></td><td>Aucun script de mise à jour n'est présent.</td></tr>";
+						$template_main .= "<tr><td></td><td>Aucun script de mise  jour n'est prsent.</td></tr>";
 						$continue=0;
 					}						  
 					else {
 					        if (count($listeversionLivree)==1) {
 						        $versionLivree=array_pop($listeversionLivree);
-                                                        $template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">La version à installer est :</td><td>".$versionLivree."<input type=\"hidden\" size=\"50\" name=\"versionLivree\" value='$versionLivree' /></td></tr>";
+                                                        $template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">La version  installer est :</td><td>".$versionLivree."<input type=\"hidden\" size=\"50\" name=\"versionLivree\" value='$versionLivree' /></td></tr>";
         					        if ($versionLivree==VERSION) 
                 						$continue=-1;
                 					else	$continue=1;
 		        			}
 			        		else {
-				        		$template_main .= "<tr><td align=\"right\">Attention, la version à installer n'a pu être déterminée automatiquement. <br />Il vous faut la choisir:</td>";
+				        		$template_main .= "<tr><td align=\"right\">Attention, la version  installer n'a pu tre dtermine automatiquement. <br />Il vous faut la choisir:</td>";
 					        	$var=faitSelect("versionLivree","","",-50,array(),$listeversionLivree);
 						        $template_main .="<td valign='bottom'>". $var[1]."</td></tr>";
 						$continue=1;
@@ -94,37 +94,37 @@ if(isset($_GET['action']))
 					  	if (($oldVersion = strpos($file,$debutFichier))!==FALSE && ($newVersion = strpos($file,"vers"))!==FALSE) {
 						  	$versionDepartDuScript=substr($file,strlen($debutFichier),$newVersion - (strlen($debutFichier)));
 						  	$versionLivree=substr($file,$newVersion+4,-4);
-                                                  	array_push ($versionsDepart, "Passer de " .$versionDepartDuScript ." à ". $versionLivree);
+                                                  	array_push ($versionsDepart, "Passer de " .$versionDepartDuScript ."  ". $versionLivree);
 						}
 					  }
 
 					if (count($versionsDepart)>=1) {
-						$template_main .= "<tr><td align=\"right\">Attention, votre version actuelle n'a pu être déterminée automatiquement. <br />Il vous faut choisir le bon script de mise à jour (ou tout arreter et faire une installaion complète):</td>";
+						$template_main .= "<tr><td align=\"right\">Attention, votre version actuelle n'a pu tre dtermine automatiquement. <br />Il vous faut choisir le bon script de mise  jour (ou tout arreter et faire une installaion complte):</td>";
 						$var=faitSelect("choix","","",-50,array(),$versionsDepart);
 						$template_main .="<td valign='bottom'>". $var[1]."</td></tr>";
 						$continue=1;
 					}	
 					else { 
-						$template_main .= "<tr><td></td><td>Aucun script de mise à jour n'est présent.</td></tr>";
+						$template_main .= "<tr><td></td><td>Aucun script de mise  jour n'est prsent.</td></tr>";
 						$continue=0;
 					}	
 				}	
 			  	closedir($dir);
 			  	
 
-				//$template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">La version à installer est :</td><td>".$versionLivree."<input type=\"hidden\" size=\"50\" name=\"versionLivree\" value='$versionLivree' /></td></tr>";
+				//$template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">La version  installer est :</td><td>".$versionLivree."<input type=\"hidden\" size=\"50\" name=\"versionLivree\" value='$versionLivree' /></td></tr>";
 				switch ($continue){
 					case -1:	
-						$template_main .=" <tr><td></td><td>Rien à faire</td></tr></table>";
+						$template_main .=" <tr><td></td><td>Rien  faire</td></tr></table>";
 						break;
 					case 0:
-						$template_main .=" <tr><td></td><td>Impossible de mettre à jour votre version</td></tr></table>";
+						$template_main .=" <tr><td></td><td>Impossible de mettre  jour votre version</td></tr></table>";
 						break;
 					case 1:
-						$template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">Machine de base de données :</td><td>$hostbd</td></tr>
+						$template_main .= "<tr><td align=\"right\" nowrap=\"nowrap\">Machine de base de donnes :</td><td>$hostbd</td></tr>
 						<tr><td align=\"right\" nowrap=\"nowrap\">Base de donn&eacute;es :</td><td>$bdd</td></tr>
-						<tr><td align=\"right\" nowrap=\"nowrap\">Nom de l'utilisateur base de données :</td><td>$userbd</td></tr>
-						<tr><td align=\"right\" nowrap=\"nowrap\">Mot de passe utilisé :</td><td>$passbd</td></tr>";
+						<tr><td align=\"right\" nowrap=\"nowrap\">Nom de l'utilisateur base de donnes :</td><td>$userbd</td></tr>
+						<tr><td align=\"right\" nowrap=\"nowrap\">Mot de passe utilis :</td><td>$passbd</td></tr>";
 						$table_prefix = substr(NOM_TABLE_SESSIONS,0,strpos(NOM_TABLE_SESSIONS,'sessions'));
 						$template_main .="<tr><td align=\"right\" nowrap=\"nowrap\">Prefixe des tables :</td><td>$table_prefix";
 						$template_main .="<input type=\"hidden\" size=\"50\" name=\"table_prefix\" readonly='readonly' value='".$table_prefix."' /> </td></tr>";				
@@ -136,7 +136,7 @@ if(isset($_GET['action']))
 				$template_main .="</form>";
 
 			 } 	  
-			 else $template_main .= "Impossible d'accèder à '". $rep ."'";
+			 else $template_main .= "Impossible d'accder  '". $rep ."'";
 		
 		}
 		else{		
@@ -159,7 +159,7 @@ else {
 			else {
 			        if (isset($choix)) {
                                         $debutFichier = "Passer de ";
-                                        if (($oldversion = strpos($choix,$debutFichier))!==FALSE && ($newVersion = strpos($choix," à "))!==FALSE) {
+                                        if (($oldversion = strpos($choix,$debutFichier))!==FALSE && ($newVersion = strpos($choix,"  "))!==FALSE) {
                                           	$versionDepartDuScript=substr($choix,strlen($debutFichier),$newVersion - (strlen($debutFichier)));
                                           	$versionLivree=substr($choix,$newVersion+3);
                                           	$oldversion=$versionDepartDuScript;
@@ -171,7 +171,7 @@ else {
 					if((unlink($configBackup))===false)
 						$template_main .= "Impossible d'effacer le fichier '".$configBackup."'";
 					if(!copy("../include/config.".$phpExtJeu, $configBackup)){
-					        $template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de copier. Veuillez copier manuellement le fichier config.$phpExtJeu en $configBackup, afin d'avoir un backup en cas de problemes lors de la mise à jour.</p>";
+					        $template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de copier. Veuillez copier manuellement le fichier config.$phpExtJeu en $configBackup, afin d'avoir un backup en cas de problemes lors de la mise  jour.</p>";
 					}			        
 				$fichierAInstaller ="../include/db/UpdateTalesta4.".$dbmsJeu. $oldversion."vers".$versionLivree.".sql";
 				if (file_exists($fichierAInstaller)) { 
@@ -200,7 +200,7 @@ else {
 						}	
 					}						
 
-					$template_main .="<p>$nb_test_ok instructions se sont executées correctement sur $nb_test.</p><br />
+					$template_main .="<p>$nb_test_ok instructions se sont executes correctement sur $nb_test.</p><br />
 					<p>
 					A l'&eacute;tape suivante, le programme d'installation va essayer d'&eacute;crire le fichier de configuration <tt>include/config.php</tt>.<br />
 					Assurez vous que le serveur web a bien le droit d'&eacute;crire dans ce fichier, sinon vous devrez le modifier manuellement.  </p>
@@ -241,7 +241,7 @@ else {
 			$nb_lignesSimulees += $tmpCode3[1];
 			$nb_lignesLues = 2;	
 			while ($nb_lignesLues<59) {
-				//lit le fichier en ignorant les données
+				//lit le fichier en ignorant les donnes
 				fgets($monfichier);
 				$nb_lignesLues++;
 			}	
@@ -438,16 +438,16 @@ else {
 			$configCode.= "?>";
 			  
 			if ((rewind ( $monfichier)===false) ||(fwrite($monfichier , $configCode)===false)) {
-				$template_main .= "Probleme à l'écriture de '".$monfichier."'";
+				$template_main .= "Probleme  l'criture de '".$monfichier."'";
 			}
 			//efface ce qui reste si on n'est pas a la fin
 			if (feof ($monfichier)===false)
 				ftruncate($monfichier,ftell ($monfichier));
 			// SURTOUT PAS OUBLIER DE FERMER LE FICHIER...
 			if (fclose($monfichier)===false)
-				$template_main .= "Probleme à la fermeture de '".$monfichier."'";
+				$template_main .= "Probleme  la fermeture de '".$monfichier."'";
 			else {		
-				$template_main .=(" Fichier Config correctement modifié... N'oubliez pas d'utiliser le menu Configuration Générale dans Admin pour paramétrer les nouveaux paramètres. ");
+				$template_main .=(" Fichier Config correctement modifi... N'oubliez pas d'utiliser le menu Configuration Gnrale dans Admin pour paramtrer les nouveaux paramtres. ");
 				if(file_exists ( "maj_version_talesta.bak"))
 					if((unlink("maj_version_talesta.bak"))===false)
 						$template_main .= "Impossible d'effacer le fichier 'maj_version_talesta.bak'";
@@ -458,7 +458,7 @@ else {
 					if(file_exists ( "../main/install.bak"))
 						if((unlink("../main/install.bak"))===false)
 							$template_main .= "Impossible d'effacer le fichier '../main/install.bak'";
-					if(!rename("../main/install.".$phpExtJeu, "../main/install.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier ../main/install.$phpExtJeu en install.bak, sinon vous ne pourrez pas accéder au moteur.</p>";}
+					if(!rename("../main/install.".$phpExtJeu, "../main/install.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier ../main/install.$phpExtJeu en install.bak, sinon vous ne pourrez pas accder au moteur.</p>";}
 				}
 	
 			}	

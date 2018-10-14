@@ -6,7 +6,7 @@ $RCSfile: actions.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.52 $
 $Date: 2010/05/13 21:38:59 $
@@ -17,24 +17,24 @@ require_once("../include/extension.inc");
 if(!defined("ACTIONS.PHP") ) {
 	Define("ACTIONS.PHP",	0);	
 	/** 
-	    \brief riposteGroupe declenchée lorsque $ADVERSAIRE a recu une action de $ATTAQUANT. Détermine si $ADVERSAIRE fait partie d'un groupe. Dans ce cas, tous les membres du groupes vont reagir, sinon c'est le PJ seul qui va reagir
-	    \param[in] $ADVERSAIRE Le PJ qui vient de se faire aggressé
-	    \param[in] $ATTAQUANT celui qui vient d'aggressé
+	    \brief riposteGroupe declenche lorsque $ADVERSAIRE a recu une action de $ATTAQUANT. Dtermine si $ADVERSAIRE fait partie d'un groupe. Dans ce cas, tous les membres du groupes vont reagir, sinon c'est le PJ seul qui va reagir
+	    \param[in] $ADVERSAIRE Le PJ qui vient de se faire aggress
+	    \param[in] $ATTAQUANT celui qui vient d'aggress
 	    \param[in] $Attaque1type indique le type de cette aggression (dans le cas d'un soin par exemple, on ne vas pas fracasser la tete de celui qui nous l'a fait. Quoique :) )
 	    \param[in] $Attaque1anonyme indique si l'agreession etait anonyme ou non
 	Si on fait une action sur un membre d'un groupe, et que cette action n'est pas anonyme
-	Tous les membres du groupes peuvent réagir sauf si c'est une bataille entre 2 groupes différents
+	Tous les membres du groupes peuvent ragir sauf si c'est une bataille entre 2 groupes diffrents
 	On supprime le riposte de groupe si c'est une bataille entre 2 groupes (ou entre 2 membres d'un meme groupe)
 	pour que le groupe defenseur n'ait pas autant de ripostes que de membres a chaque attaque d'un membre du groupe attaquant
 	*/
 	function riposteGroupe ( $ADVERSAIRE,$ATTAQUANT,$Attaque1type, $Attaque1anonyme ) {	
 		if(defined("RIPOSTE_AUTO") && RIPOSTE_AUTO==1) {
 			if (defined("RIPOSTE_GROUPEE") && RIPOSTE_GROUPEE==1 && $ADVERSAIRE->Groupe!="" && ($ATTAQUANT->Groupe=="" || $ATTAQUANT->Groupe==null)) {
-				$GroupeAttaqué = new Groupe($ADVERSAIRE->Groupe,true);
+				$GroupeAttaqu = new Groupe($ADVERSAIRE->Groupe,true);
 				$i=0;
-				$nb_pnjs =count($GroupeAttaqué->Persos);
+				$nb_pnjs =count($GroupeAttaqu->Persos);
 				while ($i<$nb_pnjs) {
-					riposte ( $GroupeAttaqué->Persos[$i],$ATTAQUANT,$Attaque1type, $Attaque1anonyme, $ADVERSAIRE->Reaction );			
+					riposte ( $GroupeAttaqu->Persos[$i],$ATTAQUANT,$Attaque1type, $Attaque1anonyme, $ADVERSAIRE->Reaction );			
 					$i++;
 				}	
 			}	
@@ -48,9 +48,9 @@ if(!defined("ACTIONS.PHP") ) {
 		\param $ADVERSAIRE est le PJ qui a recu une aggression (ou un membre de son groupe) de ATTAQUANT et qui riposte
 		\param $ATTAQUANT est le PJ qui a commit l'aggression
 		\param $Attaque1type indique le type de cette aggression (dans le cas d'un soin par exemple, on ne vas pas fracasser la tete de celui qui nous l'a fait. Quoique :) )
-		\param $Attaque1anonyme indique si cette aggression était anonyme ou non
+		\param $Attaque1anonyme indique si cette aggression tait anonyme ou non
 		\param $reactiongroupe force tous les membres du groupe a reagir de la meme facon (si possible sinon, le PJ ne fait rien) 
-		que la personne attaquée.
+		que la personne attaque.
 		\todo les ripostes par sort de teleportation de l'aggresseur ou du magicien ne sont pas codees (Le probleme est de determiner automatiquement le lieu de teleportation)
 		
 	*/
@@ -346,7 +346,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/**
 		\brief demande l'accord d'un PJ lorsqu'il recoit un prix d'un marchand.
 		\param $id_objet ne sert qu'a etre passe en parametre dans un hidden. Peut donc etre, un id_objet, un id_sort, un id_clef ....
-		\param $prix le prix proposé par le marchand
+		\param $prix le prix propos par le marchand
 		\param $typeact le type de la transaction :  vente, achat, reparation ....
 		\param $param un tableau de parametres passes aussi en hidden		
 	*/
@@ -371,8 +371,8 @@ if(!defined("ACTIONS.PHP") ) {
 	/**
 		\brief propose l'action au MJ
 		\param $PERSO le PJ qui propose
-		\param $sommePA la quantite de PA décomptée des PA du PJ (n'est pas identique a celui du PPA si on peut prier dans le lieu) 
-		\param $sommePI la quantite de PI décomptée des PI du PJ (n'est pas identique a celui du PPA si on peut prier dans le lieu)
+		\param $sommePA la quantite de PA dcompte des PA du PJ (n'est pas identique a celui du PPA si on peut prier dans le lieu) 
+		\param $sommePI la quantite de PI dcompte des PI du PJ (n'est pas identique a celui du PPA si on peut prier dans le lieu)
 		\param $id_cible l'ID du MJ a qui on fait le PPA
 		\param $msg le message du PPA
 		\param $principal indique si c'est le PJ qui est connecte qui fait le PPA (pour savoir si on affiche le message a l'ecran ou non). Ce n'est pas le cas si le PJ a recu une attaque et qu'il a parametre son desir de fuite en cas d'agression)
@@ -406,7 +406,7 @@ if(!defined("ACTIONS.PHP") ) {
 			        values ($PERSO->ID, $id_cible,". time() ." ,\"$msg_mj\",$sommePA, $sommePI)";
 			$result = $db->sql_query($SQL);
 			if (! $principal) {
-				//proposer suite à une aggression
+				//proposer suite  une aggression
 				$valeurs[0]=$PERSO->nom;
 				affiche_resultat($ATTAQUANT,$PERSO,GetMessage("demanderFuiteSpec",$valeurs),$msg_pj,GetMessage("demanderFuiteSpec",$valeurs),false);				
 			}	
@@ -492,16 +492,16 @@ if(!defined("ACTIONS.PHP") ) {
 					$msg_soi =GetMessage("arrivee_lieu",$valeurs).$mess.GetMessage("arrivee_lieubis",$valeurs).$msg;
 			}
 		        elseif($typeact == 'voisin'){
-		                // dans ce cas pj content les lieux selectionnés
+		                // dans ce cas pj content les lieux selectionns
 		                $lst = $ACTEUR->listePJsDesLieuvoisins(1, false, false,1,$pj);
 		                $msg_cible = $mess_spect."***** Message de ".span($ACTEUR->nom,"pj")." pour l'ensemble des personnes pr&eacute;sentes dans les lieux voisins ****** <br />".$msg;
 		                $chaine = '';
 		                global $PERSO;
 		                foreach ($lst as $idperso => $value) {
 		                    $pjtemp = new Joueur($idperso,false,false,false,false,false,false);
-		                    // si le lieu est insonorisé , on entend RIEN
+		                    // si le lieu est insonoris , on entend RIEN
 		                    if ($pjtemp->Lieu->permet("EntendreCriExterieur")== true) {
-			                    //En cas d'appel au secours, on doit afficher a l'ecran cet appel à la personne qui attaque
+			                    //En cas d'appel au secours, on doit afficher a l'ecran cet appel  la personne qui attaque
 			                    //Pour les autres cela par uniquement dans le fa
 			                    if ($pjtemp->ID== $PERSO->ID)
 			                        $pjtemp->OutPut($msg_cible,true,true);
@@ -531,7 +531,7 @@ if(!defined("ACTIONS.PHP") ) {
 				for($i=0;$i<$nb_pjs;$i++){
 					$row = $db->sql_fetchrow($result);
 					$pjtemp = new Joueur($row["idselect"],false,false,false,false,false,false);
-					//En cas d'appel au secours, on doit afficher a l'ecran cet appel à la personne qui attaque 
+					//En cas d'appel au secours, on doit afficher a l'ecran cet appel  la personne qui attaque 
 					//Pour les autres cela par uniquement dans le fa
 					if ($pjtemp->ID== $PERSO->ID)
 						$pjtemp->OutPut($msg_cible,true,true);
@@ -559,13 +559,13 @@ if(!defined("ACTIONS.PHP") ) {
 						$chaine=substr($chaine,0, strlen($chaine)-2);
 				}
 
-				$msg_cible = $mess_spect."***** Message de ".span($ACTEUR->nom,"pj")." pour l'ensemble des personnes présentes du groupe ".$groupePJ->nom." , soit &agrave; ".span($chaine,"pj")." ****** <br />".$msg;
+				$msg_cible = $mess_spect."***** Message de ".span($ACTEUR->nom,"pj")." pour l'ensemble des personnes prsentes du groupe ".$groupePJ->nom." , soit &agrave; ".span($chaine,"pj")." ****** <br />".$msg;
 				for($j=0;$j<$nb_pnjs;$j++){
 					if ($PJS[$j]->RIP()==false && $PJS[$j]->Archive==false && ($PJS[$j]->ID<>$ACTEUR->ID) && ($PJS[$j]->Lieu->ID==$ACTEUR->Lieu->ID)) {
 						$PJS[$j]->OutPut($msg_cible,false,true);
 					}	
 				}
-				$msg_soi = $mess."***** Message envoy&eacute; aux membres présents du groupe ".span($groupePJ->nom,"etat_temp")." , soit &agrave; ".span($chaine,"pj")." ****** <br />".$msg;
+				$msg_soi = $mess."***** Message envoy&eacute; aux membres prsents du groupe ".span($groupePJ->nom,"etat_temp")." , soit &agrave; ".span($chaine,"pj")." ****** <br />".$msg;
 
 			}	
 		
@@ -701,15 +701,14 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$ADVERSAIRE->etreCache(0);				
 						switch($Sort->Soustype){
 							case "Attaque":{
 								$degats = $ADVERSAIRE->AbsorptionDegats($Sort->competence,$degats);
 								if($ADVERSAIRE->ModPV(-$degats)){$msg_final = "sort_attaque_01";}else{$msg_final = "sort_attaque_02";}
 								$valeurs[3]=$degats;$valeurs[4]=0;$valeurs[5]=0;
-								break;
-							}
+								bre			}
 							case "Paralysie":{
 								$degats = $ADVERSAIRE->AbsorptionDegats($Sort->competence,$degats);
 								$msg_final = "sort_paralysie_01";
@@ -728,7 +727,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$retour = $ADVERSAIRE->GererChaineEtatTemp($Sort->provoqueetat);
 						$valeurs[6] = $retour["ajouter"];$valeurs[7] = $retour["retirer"];
 	
-					} else { // raté
+					} else { // rat
 						switch($Sort->Soustype){
 							case "Attaque":{
 								if($PERSO->ModPV(-$degats)){$msg_final = "sort_attaque_03";}else{$msg_final = "sort_attaque_04";}
@@ -769,7 +768,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$sortir = $ADVERSAIRE->etreCache(0);	
 						$msg_final = "sort_teleport_01";
 						$ADVERSAIRE->DeplaceLieu($id_lieu_tel);
@@ -782,7 +781,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$valeurs[7] = $retour["retirer"];
 						if ($id_lieu_tel<> $PERSO->Lieu->ID)
 							$riposteGroupe_autorisee=false;						
-					} else { // raté
+					} else { // rat
 						$msg_final = "sort_teleport_02";
 						$valeurs[3]=0;
 						$valeurs[4]=0;
@@ -817,7 +816,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$msg_final = "sort_soin_01";
 						$ADVERSAIRE->ModPV($degats);
 						$valeurs[3]=0;
@@ -826,7 +825,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$retour = $ADVERSAIRE->GererChaineEtatTemp($Sort->provoqueetat);
 						$valeurs[6] = $retour["ajouter"];
 						$valeurs[7] = $retour["retirer"];
-					} else { // raté
+					} else { // rat
 					        /**
 					        *   Sort de soin rate provoque des degats sur lanceur
 					        */
@@ -857,7 +856,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$msg_final = "sort_resurrection_01";
 						$ADVERSAIRE->ModPV(-$ADVERSAIRE->PV+1 + $degats);
 						$valeurs[3]=0;
@@ -866,7 +865,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$retour = $ADVERSAIRE->GererChaineEtatTemp($Sort->provoqueetat);
 						$valeurs[6] = $retour["ajouter"];
 						$valeurs[7] = $retour["retirer"];
-					} else { // raté
+					} else { // rat
 						$msg_final = "sort_resurrection_02";
 						$PERSO->ModPV(round($degats/2));
 						$valeurs[3]=0;
@@ -887,14 +886,14 @@ if(!defined("ACTIONS.PHP") ) {
 					$reussite = $ADVERSAIRE->peutAccederLieu($lieu);
 				}					
 				if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}				
-				if($reussite > 0){ // Touché
+				if($reussite > 0){ // Touch
 					$msg_final = "sort_teleport_self_01";
 					$PERSO->DeplaceLieu($id_lieu_autotel);
 					$valeurs[3]=0;$valeurs[4]=0;$valeurs[5]=0;$valeurs[8]=$PERSO->Lieu->nom;
 					$retour = $PERSO->GererChaineEtatTemp($Sort->provoqueetat);
 					$valeurs[6] = $retour["ajouter"];
 					$valeurs[7] = $retour["retirer"];
-				} else { // raté
+				} else { // rat
 					$msg_final = "sort_teleport_self_02";
 					$valeurs[3]=0;
 					$valeurs[4]=0;
@@ -1048,7 +1047,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/**
 	ATTAQUANT est celui qui fait l'action sur le perso est cible.
-	Si c'est une action surprise ATTAQUANT n'est pas les perso connecté mais un pnj qui agit à l'arrivée du perso (qui est la cible)
+	Si c'est une action surprise ATTAQUANT n'est pas les perso connect mais un pnj qui agit  l'arrive du perso (qui est la cible)
 	*/
 
 	function attaquer ( $cible,$id_arme,$ATTAQUANT,$action_surprise=false,$riposteGroupe_autorisee=true,$riposteGroupe=true, $attaqueEnchainee=false, $bonusmalus ="") {
@@ -1501,7 +1500,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Pas de calcul de Reussite (automatique), augmente juste Aura et Charisme
 	    \param $PERSO Le PJ qui donne de l'argent
-	    \param $somme la quantité de Po donnée
+	    \param $somme la quantit de Po donne
 	*/
 	function reussite_donner_argent($PERSO, $somme) {
 		global $liste_comp_full;
@@ -1519,7 +1518,7 @@ if(!defined("ACTIONS.PHP") ) {
 	    \brief Pas de calcul de Reussite (automatique) si le receveur a suffisamment de place dans son sac, augmente juste Aura et Charisme
 	    \param $DONNEUR Le PJ qui donne l'objet
 	    \param $RECEVEUR Le PJ qui recoit l'objet
-	    \param $Objet la l'objet qui change de propriétaire
+	    \param $Objet la l'objet qui change de propritaire
 	*/
 	function reussite_donner_objet($DONNEUR, $RECEVEUR, $Objet) {
 		global $liste_comp_full;
@@ -1584,7 +1583,7 @@ if(!defined("ACTIONS.PHP") ) {
 	    \param $PERSO Le PJ qui negocie avec le marchand
 	    \param $action est le sens de la transaction ("VENTE" => $PERSO vend, "ACHAT" => $PERSO achete ou recharge ou fait reparer)
 	    \param $prixdebase Le prix stocke dans la BD pour l'objet de la transaction 	    
-	    \warning suite à de nombreuses tricheries, les pourcentages de remises ont ete modifiées: Un marchand vend toujours plus cher qu'il n'achete
+	    \warning suite  de nombreuses tricheries, les pourcentages de remises ont ete modifies: Un marchand vend toujours plus cher qu'il n'achete
 	    Compare 2 competences avec d20
 	*/
 	function reussite_negociationprix($PERSO, $action, $prixdebase) {
@@ -1605,8 +1604,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$PERSO->AugmenterComp($liste_comp_full["Charisme"],1);
 					if ($action="VENTE")
 						$prix = round($prixdebase *90 / 100);
-					else $prix = round($prixdebase *110 / 100);	
-				}
+					else $prix = round($prixdebase *110 / 100);	
 		} else {
 				$PERSO->AugmenterComp($liste_comp_full["Aura"],1);
 				if($reussite < -5){
@@ -1686,7 +1684,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action apprendre le sort \a $Sort par le PJ \a $PERSO
 	    \param $PERSO Celui qui apprend
-	    \param $Sort sort étudié
+	    \param $Sort sort tudi
 	    Compare Intelligence et d10, $Sort->GetdifficulteUtilisation() et d10,  $Sort->competence de $PERSO avec d10
 	*/
 	function reussite_apprentissageSort($PERSO, $Sort) {
@@ -1721,7 +1719,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action nager par le PJ \a $PERSO pour emprunter le chemin d'ID \a $id_chemin
 	    \param $PERSO Celui qui nage
-	    \param $id_chemin chemin emprunté
+	    \param $id_chemin chemin emprunt
 	    Compare Nage et Dexterite et d20, Chemins[$id_chemin]->difficulte et d10		    
 	*/
 	function reussite_nage($PERSO,$id_chemin) {
@@ -1746,7 +1744,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action escalader par le PJ \a $PERSO pour emprunter le chemin d'ID \a $id_chemin
 	    \param $PERSO Celui qui escalade
-	    \param $id_chemin chemin emprunté
+	    \param $id_chemin chemin emprunt
 	    Compare Nage et Dexterite et d20, Chemins[$id_chemin]->difficulte et d10
 	*/
 	function reussite_escalade($PERSO,$id_chemin) {
@@ -1772,7 +1770,7 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action crocheter par le PJ \a $PERSO pour emprunter le chemin d'ID \a $id_chemin
 	    \param $PERSO Celui qui crochete
-	    \param $id_chemin chemin emprunté
+	    \param $id_chemin chemin emprunt
 	    Compare Nage et Dexterite et d20, Chemins[$id_chemin]->difficulte et d10
 	*/
 	function reussite_crochetage($PERSO, $id_chemin) {
@@ -1802,7 +1800,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite de l'utilisation d'un passe-partout.
-	    utilise les compétences Crochetage et Dexterite du PJ
+	    utilise les comptences Crochetage et Dexterite du PJ
 	    \param $PERSO Le PJ qui utilise le passe partout
 	    \param $Objet le passe partout
 	    \param $id_chemin l'ID du chemin 
@@ -1900,8 +1898,8 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action sort de teleportation
 	    \param $LANCEUR le jeteur de sort
-	    \param $CIBLE le PJ sur qui le sort lancé
-	    \param $Sort le sort lancé
+	    \param $CIBLE le PJ sur qui le sort lanc
+	    \param $Sort le sort lanc
 	    Compare les competences $Sort->caracteristique et $Sort->competence du lanceur et de la cible, $Sort->GetdifficulteUtilisation() et d10
 	*/
 	function reussite_sort_teleport($LANCEUR, $CIBLE,$Sort) {
@@ -1950,8 +1948,8 @@ if(!defined("ACTIONS.PHP") ) {
 	/*! 
 	    \brief Calcule la reussite de l'action sort d'attaque
 	    \param $LANCEUR le jeteur de sort
-	    \param $CIBLE le PJ sur qui le sort lancé
-	    \param $Sort le sort lancé
+	    \param $CIBLE le PJ sur qui le sort lanc
+	    \param $Sort le sort lanc
 	    Compare les competences $Sort->caracteristique et $Sort->competence du lanceur et de la cible, $Sort->GetdifficulteUtilisation() et d10
 	*/
 	function reussite_sort_attaque($LANCEUR, $CIBLE,$Sort) {
@@ -2122,8 +2120,8 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite d'un vol d'une bourse
-	    utilise les compétences Vol et Dexterite du voleur
-	    et Vigilance et  Dexterite du volé
+	    utilise les comptences Vol et Dexterite du voleur
+	    et Vigilance et  Dexterite du vol
 	    \param $VOLEUR Le voleur
 	    \param $VOLE celui qui risque de se faire voler
 	*/
@@ -2186,7 +2184,7 @@ if(!defined("ACTIONS.PHP") ) {
 			while(($row = $db->sql_fetchrow($requete)) && ($trouve==false) ){
 				if ($row["idselect"] == $ATTAQUANT->ID)
 					$trouve=true;						
-					//attaquant est cache mais attaqué le sait => pas de bonus
+					//attaquant est cache mais attaqu le sait => pas de bonus
 			}
 			$attaquantdissimuleAvantAttaque = (!($trouve));
 		}	
@@ -2258,7 +2256,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 		$reussite = ($cmp_att + lanceDe(20)+ lanceDe($cmp_att))
 			- ($PlanMed->GetdifficulteUtilisation() + lanceDe(40)+lanceDe(40));
-		if($reussite > 0){ // Touché
+		if($reussite > 0){ // Touch
 			if($reussite > 5){
 				if ($competence!="")
 					$SOIGNEUR->AugmenterComp($competence,4);
@@ -2281,7 +2279,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 
 	function soin_vegetal($SOIGNEUR,$id_blesse,$id_obj) {
-	// Début soin végétal par Uriel
+	// Dbut soin vgtal par Uriel
 		global $liste_pas_actions;
 		global $liste_pis_actions;
 		global $liste_comp_full;
@@ -2326,7 +2324,7 @@ if(!defined("ACTIONS.PHP") ) {
 			$degats = lancede($PlanMed->Degats[1]-$PlanMed->Degats[0])+$PlanMed->Degats[0];
 			//if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 				
-			if($reussite > 0){ // Touché
+			if($reussite > 0){ // Touch
 				if ($PlanMed->type == "Soins") {
         				$msg_final = "soinobjetPV_01";
         				$msg_final_adv = "soinobjetPV_adv01";
@@ -2341,7 +2339,7 @@ if(!defined("ACTIONS.PHP") ) {
 				$retour = $BLESSE->GererChaineEtatTemp($PlanMed->provoqueetat);
 				$valeurs[6] = $retour["ajouter"];$valeurs[7] = $retour["retirer"];
         		        traceAction("SoinObjet", $PERSO, "", $BLESSE, $degats, " avec ".$PlanMed->nom);				
-			} else { // raté
+			} else { // rat
 	
 				$msg_final = "soinobjet_02";
 				$msg_final_adv = "soinobjet_adv02";
@@ -2383,7 +2381,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite d'un desengagement par la force
-	    utilise les compétences Force des 2 protagonistes
+	    utilise les comptences Force des 2 protagonistes
 	    \param $PERSO celui qui tente le desengagement
 	    \param $ADVERSAIRE son adversaire
 	*/
@@ -2396,8 +2394,8 @@ if(!defined("ACTIONS.PHP") ) {
 	
 
 	/*! 
-	    \brief Calcule la reussite d'un desengagement par la dextérité
-	    utilise les compétences Dexterite des 2 protagonistes
+	    \brief Calcule la reussite d'un desengagement par la dextrit
+	    utilise les comptences Dexterite des 2 protagonistes
 	    \param $PERSO celui qui tente le desengagement
 	    \param $ADVERSAIRE son adversaire
 	*/
@@ -2410,7 +2408,7 @@ if(!defined("ACTIONS.PHP") ) {
 		
 	/*! 
 	    \brief Calcule la reussite d'un desengagement par la ruse
-	    utilise les compétences Intelligence des 2 protagonistes
+	    utilise les comptences Intelligence des 2 protagonistes
 	    \param $PERSO celui qui tente le desengagement
 	    \param $ADVERSAIRE son adversaire
 	*/		
@@ -2529,7 +2527,7 @@ if(!defined("ACTIONS.PHP") ) {
 				}	
 				elseif($typeact == "propdes") {	
 					$SQL = "update ".NOM_TABLE_ENGAGEMENT." set propdes=1 WHERE (id_perso = ".$ACTEUR->ID." AND id_adversaire = ".$ADVERSAIRE->ID.")";
-					$result = $db->sql_query($SQL);
+					$result = $db->);
 					//$ACTEUR->OutPut(GetMessage("propdes",$valeurs));
 					//$ADVERSAIRE->OutPut(GetMessage("propdes_adv",$valeurs),false);
 					$msg_acteur = GetMessage("propdes",$valeurs);
@@ -2598,8 +2596,8 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite de l'action combiner objet
-	    \param $PERSO le PJ qui veut créer
-	    \param $objet l'objet à créer
+	    \param $PERSO le PJ qui veut crer
+	    \param $objet l'objet  crer
 	    Compare les competences Intelligence et d10, $objet->GetDifficulteUtilisation() et d10
 	*/
 	function reussite_combiner_objet($PERSO,$objet) {
@@ -2632,9 +2630,9 @@ if(!defined("ACTIONS.PHP") ) {
 	    retourne $reussite qui est la quantite recoltee
 	    \brief Calcule la reussite de l'action recolte
 	    \param $RECOLTANT le PJ qui veut recolter
-	    \param $competence la compétence utilisée pour le calcul de la réussite de l'action
-	    \param $Objet l'objet à recolter (de la classe ObjetMagasin et non pas Objet)
-	    \param $Outil l'objet à utiliser (si besoin)
+	    \param $competence la comptence utilise pour le calcul de la russite de l'action
+	    \param $Objet l'objet  recolter (de la classe ObjetMagasin et non pas Objet)
+	    \param $Outil l'objet  utiliser (si besoin)
 	*/		
 	function reussite_recolte($RECOLTANT,$competence, $Objet,$Outil=null){
 		if ($Objet->quantite>0 || $Objet->stockmax==-1) {
@@ -2648,7 +2646,7 @@ if(!defined("ACTIONS.PHP") ) {
 			else $reussite=0;
 			
 			/**
-			   stockmax sert pour la rareté de l'objet recherché.
+			   stockmax sert pour la raret de l'objet recherch.
 			*/
 			if ($Objet->stockmax <0)
 				$reussite += lanceDe(10);
@@ -2698,8 +2696,8 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite de l'action 
-	    \param[in] $ARTISAN le PJ qui veut réparer
-	    \param[in] $Outil l'outil utilisé
+	    \param[in] $ARTISAN le PJ qui veut rparer
+	    \param[in] $Outil l'outil utilis
 	    \return $reussite qui est un nombre >0 si action est reussie
 	    
 	*/		
@@ -2724,7 +2722,7 @@ if(!defined("ACTIONS.PHP") ) {
 		else $caracteristique="";	
 
 		$reussite = $cmp_att - $Outil->GetDifficulteUtilisation() + lanceDe(10);
-		if($reussite > 0){ // Touché
+		if($reussite > 0){ // Touch
 			if($reussite > 5){
 				if ($competence!="")
 					$ARTISAN->AugmenterComp($competence,4);
@@ -2746,7 +2744,7 @@ if(!defined("ACTIONS.PHP") ) {
 
 
 	function reparation($ARTISAN,$typeact,$id_outil,$id_objetAreparer) {
-	// Début artisanat par Uriel
+	// Dbut artisanat par Uriel
 		global $liste_pas_actions;
 		global $liste_pis_actions;
 		global $liste_comp_full;
@@ -2798,16 +2796,16 @@ if(!defined("ACTIONS.PHP") ) {
 			}
 
 			$reussite = reussite_reparation($ARTISAN, $Outil);			
-			if($reussite > 0){ // Touché
+			if($reussite > 0){ // Touch
 				if ($Objet_AR->Dur_actu >= $Objet_AR->durabilite) {
-					$msg_final = "reparation_armure_03";	// pas besoin de réparer
+					$msg_final = "reparation_armure_03";	// pas besoin de rparer
 				}
 				else {
 					$msg_final = "reparation_armure_01";	// reparation ok
 					$valeurs[2]=$Outil->Degats[1];
 					$Objet_AR->Reparer($Outil->Degats[1]);
 				}
-			} else { // raté
+			} else { // rat
 				$Outil->Abime();
 				$msg_final = "reparation_armure_02";
 			}
@@ -2839,9 +2837,9 @@ if(!defined("ACTIONS.PHP") ) {
 
 	/*! 
 	    \brief Calcule la reussite de l'action 
-	    \param $ARTISAN le PJ qui veut réparer
-	    \param $Outil l'outil utilisé
-	    \param $Materiau l'objet produit naturel utilisé
+	    \param $ARTISAN le PJ qui veut rparer
+	    \param $Outil l'outil utilis
+	    \param $Materiau l'objet produit naturel utilis
 	    \param $ObjetAcreer l'objet que l'on veut creer
 	    
 	*/		
@@ -2870,7 +2868,7 @@ if(!defined("ACTIONS.PHP") ) {
 		$reussite = $reussite - $ObjetAcreer->GetDifficulteUtilisation() + lanceDe(10);
 		
 		$reussite += $Materiau->GetDifficulteUtilisation() - lanceDe(10);
-		if($reussite > 0){ // Touché
+		if($reussite > 0){ // Touch
 			if($reussite > 5){
 				if ($competence!="")
 					$ARTISAN->AugmenterComp($competence,4);
@@ -2936,7 +2934,7 @@ if(!defined("ACTIONS.PHP") ) {
 			}
 
 			$reussite = reussite_artisanat($ARTISAN, $Outil, $ObjetMateriau, $ObjetAcreer);
-			if($reussite > 0){ // Touché
+			if($reussite > 0){ // Touch
 				if ($ObjetMateriau->Detruire()) {
 					if ($ARTISAN->AcquerirObjet($ObjetAcreer)) {					
 						$msg_final = "creation_objet_01";	//creation reussie
@@ -2945,7 +2943,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$msg_final = "sacplein";	// sac plein
 					}
 				}
-			} else { // raté
+			} else { // rat
 				$Outil->Abime();
 				if ($reussite < -5) {
 					//rate + objet_materiau detruit
@@ -3054,7 +3052,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$ADVERSAIRE->etreCache(0);				
 						switch($Sort->Soustype){
 							case "Attaque":{
@@ -3081,7 +3079,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$retour = $ADVERSAIRE->GererChaineEtatTemp($Sort->provoqueetat);
 						$valeurs[6] = $retour["ajouter"];$valeurs[7] = $retour["retirer"];
 	
-					} else { // raté
+					} else { // rat
 						switch($Sort->Soustype){
 							case "Attaque":{
 								if( $PERSO->ModPV(-$degats)){$msg_final = "sort_attaque_03";}else{$msg_final = "sort_attaque_04";}
@@ -3122,7 +3120,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 					if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 					if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-					if($reussite > 0){ // Touché
+					if($reussite > 0){ // Touch
 						$sortir = $ADVERSAIRE->etreCache(0);	
 						$msg_final = "sort_teleport_01";
 						$ADVERSAIRE->DeplaceLieu($id_lieu_tel);
@@ -3135,7 +3133,7 @@ if(!defined("ACTIONS.PHP") ) {
 						$valeurs[7] = $retour["retirer"];
 						if ($id_lieu_tel<> $PERSO->Lieu->ID)
 							$riposteGroupe_autorisee=false;						
-					} else { // raté
+					} else { // rat
 						$msg_final = "sort_teleport_02";
 						$valeurs[3]=0;
 						$valeurs[4]=0;
@@ -3161,7 +3159,7 @@ if(!defined("ACTIONS.PHP") ) {
 				$degats = lancede($Sort->Degats[1]-$Sort->Degats[0])+$Sort->Degats[0];
 				if (($reussite > 5) || ($reussite < -5) ){$degats*=2;}
 				if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}
-				if($reussite > 0){ // Touché
+				if($reussite > 0){ // Touch
 					$msg_final = "sort_soin_01";
 					$ADVERSAIRE->ModPV($degats);
 					$valeurs[3]=0;
@@ -3170,7 +3168,7 @@ if(!defined("ACTIONS.PHP") ) {
 					$retour = $ADVERSAIRE->GererChaineEtatTemp($Sort->provoqueetat);
 					$valeurs[6] = $retour["ajouter"];
 					$valeurs[7] = $retour["retirer"];
-				} else { // raté
+				} else { // rat
 					$msg_final = "sort_soin_02";
 					$PERSO->ModPV(round($degats/2));
 					$valeurs[3]=0;
@@ -3190,14 +3188,14 @@ if(!defined("ACTIONS.PHP") ) {
 					$reussite = $ADVERSAIRE->peutAccederLieu($lieu);
 				}					
 				if( ($Sort->anonyme == 1) && ($reussite > 0)){$valeurs[1]="Quelqu'un";}				
-				if($reussite > 0){ // Touché
+				if($reussite > 0){ // Touch
 					$msg_final = "sort_teleport_self_01";
 					$PERSO->DeplaceLieu($id_lieu_autotel);
 					$valeurs[3]=0;$valeurs[4]=0;$valeurs[5]=0;$valeurs[8]=$PERSO->Lieu->nom;
 					$retour = $PERSO->GererChaineEtatTemp($Sort->provoqueetat);
 					$valeurs[6] = $retour["ajouter"];
 					$valeurs[7] = $retour["retirer"];
-				} else { // raté
+				} else { // rat
 					$msg_final = "sort_teleport_self_02";
 					$valeurs[3]=0;
 					$valeurs[4]=0;
@@ -3304,11 +3302,11 @@ if(!defined("ACTIONS.PHP") ) {
 					break;
 				case "DonnerArgent":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'donne  ".span($complement1 ." Pos","po") . " à ". ConvertAsHTML($adversaire->nom)."',".time().")";
+					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'donne  ".span($complement1 ." Pos","po") . "  ". ConvertAsHTML($adversaire->nom)."',".time().")";
 					break;
 				case "DonnerObjet":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'donne  ".ConvertAsHTML(span($complement1,"objet")) . " à ". ConvertAsHTML($adversaire->nom)."',".time().")";
+					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'donne  ".ConvertAsHTML(span($complement1,"objet")) . "  ". ConvertAsHTML($adversaire->nom)."',".time().")";
 					break;
 				case "RamasserObjet":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
@@ -3324,15 +3322,15 @@ if(!defined("ACTIONS.PHP") ) {
 					break;
 				case "DetruireObjet":	
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'détruit  ".ConvertAsHTML(span($complement1,"objet")) . ConvertAsHTML($commentaireAction)."',".time().")";
+					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'dtruit  ".ConvertAsHTML(span($complement1,"objet")) . ConvertAsHTML($commentaireAction)."',".time().")";
 					break;					
 				case "VolerPJ":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'vole ".ConvertAsHTML(span($complement1 ." Pos","po"))." à ". ConvertAsHTML($adversaire->nom)."',".time().")";
+					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'vole ".ConvertAsHTML(span($complement1 ." Pos","po"))."  ". ConvertAsHTML($adversaire->nom)."',".time().")";
 					break;
 				case "Attaquer":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", 'inflige ".ConvertAsHTML($complement1) . " degats à ". ConvertAsHTML($adversaire->nom) . " ".ConvertAsHTML($complement2)."', ".time().")";
+					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", 'inflige ".ConvertAsHTML($complement1) . " degats  ". ConvertAsHTML($adversaire->nom) . " ".ConvertAsHTML($complement2)."', ".time().")";
 					break;
 				case "SeCacher":
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
@@ -3352,26 +3350,26 @@ if(!defined("ACTIONS.PHP") ) {
 					break;
 				case "Crocheter":			
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' crochette la porte menant à ".ConvertAsHTML($commentaireAction)."', ".time().")";
+					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' crochette la porte menant  ".ConvertAsHTML($commentaireAction)."', ".time().")";
 					break;
 				case "MotPasse":			
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' teste le mot de passe menant à ".ConvertAsHTML($commentaireAction)."', ".time().")";
+					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' teste le mot de passe menant  ".ConvertAsHTML($commentaireAction)."', ".time().")";
 					break;
 				case "SeDeplacer":			
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' se déplace à ".ConvertAsHTML($commentaireAction)."', ".time().")";
+					$action."',".$acteur->ID.",".$acteur->Lieu->ID.", ' se dplace  ".ConvertAsHTML($commentaireAction)."', ".time().")";
 					break;
 				case "Desengager":
                				switch($complement1){
         					case 'force':{$texte= "en utilisant sa force"; break;}
-        					case 'dexte':{$texte= "en utilisant sa dextérité"; break;}
+        					case 'dexte':{$texte= "en utilisant sa dextrit"; break;}
         					case 'ruse':{$texte= "en utilisant sa ruse"; break;}
         					case 'propdes':{$texte ="d'un commun accord"; break;}
         					case 'mort':{$texte = "car ce dernier est mort"; break;}
                 			}
 					$SQL="insert into ". NOM_TABLE_TRACE_ACTIONS ." (action, id_acteur, id_lieu,detail, heure_action) values ('".
-					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'se dégage de son combat avec ". ConvertAsHTML($adversaire->nom)." ".ConvertAsHTML($texte)."', ".time().")";
+					$action."',".$acteur->ID.", ".$acteur->Lieu->ID.",'se dgage de son combat avec ". ConvertAsHTML($adversaire->nom)." ".ConvertAsHTML($texte)."', ".time().")";
 					break;					
 				case "Manger":
                				switch($commentaireAction){

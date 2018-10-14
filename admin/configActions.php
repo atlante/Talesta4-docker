@@ -6,7 +6,7 @@ $RCSfile: configActions.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2010/02/28 22:58:02 $
@@ -45,7 +45,7 @@ if(isset($action) && $action=='write')
 	$Modif .="Define(\"INSCRIPTIONS_OUVERTES\", ".$inscription.");      	//0 pour empecher les inscriptions\n";
 	$Modif .="Define(\"MAINTENANCE_MODE\", ".$maintenance.");         		// Mettez a 0 pour que tous les PJS et MJS puissent se connecter\n";
 	$Modif .="                      						// Mettez a 1 cette variable pour bloquer le jeu (tous les PNJ et PJ)\n";
-	$Modif .="                      						// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui créé à l'init de la base\n";
+	$Modif .="                      						// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui cr  l'init de la base\n";
 	$Modif .="Define(\"IN_NEWS\", ".$news.") ;               		//commentez la ligne pour ne pas utiliser les news ou mettre 0\n";
 	$Modif .="Define(\"COUNT_QCM\", ".$qcm.");               		//Pour definir le nombre de question que l'on veut poser avant l'inscription. Si 0 => Inscription sans questionnaire\n";
 
@@ -66,7 +66,7 @@ if(isset($action) && $action=='write')
 	if (!isset($debug_jeu_only))
 		$debug_jeu_only=0;
 	$Modif .="Define(\"DEBUG_JEU_ONLY\", ".$debug_jeu_only .");          	// Mettez a 0, pour avoir du debug du jeu + forum +...; 1 pour le jeu uniquement\n";
-	$Modif .="Define(\"DEBUG_HTML\", ".$mode_html.");             		// Mettez a 1 si vous voulez stocker les fichiers HTML générés pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
+	$Modif .="Define(\"DEBUG_HTML\", ".$mode_html.");             		// Mettez a 1 si vous voulez stocker les fichiers HTML gnrs pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 	$Modif .="Define(\"SHOW_TIME\", ".$time_sql.");             		// Mettez a 1 si vous voulez voir les temps d'execution (SQL et PHP) (Rem: L'affichage se fera de toute facon si DEBUG_MODE=1). Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 	$Modif .="Define(\"AFFICHE_CONNECTES\", ".$whosonline.");       	// Mettez a 1 si vous voulez voir le sous-menu des PJ et MJ connectes dans le menu de gauche (genere plus de SQL)\n";
 
@@ -80,7 +80,7 @@ if(isset($action) && $action=='write')
 	        $creeMembrePNJ=0;	
 	$Modif .=listeParamForum($foruminclus, $lien_forum, $typeforumChoix,$typeforum, $aff_ava, $nb_aff_ava, $hautMaxLieu, $largMaxLieu , $creeMembrePNJ);
 	$Modif .= "Define(\"AFFICHE_XP\",	".$xp_lvl."); // Mettez a 1 si vous voulez voir les infos d'XP et de niveau\n";
-	$Modif .= "Define(\"AFFICHE_PV\",	".$pv_degat."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dégats\n";
+	$Modif .= "Define(\"AFFICHE_PV\",	".$pv_degat."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dgats\n";
 	$Modif .= "\n";
 	if ($pj_autop=="")
 	        $pj_autop=80;
@@ -118,10 +118,10 @@ if(isset($action) && $action=='write')
 	if ($qRemisePo=="")
 	        $qRemisePo=0;
 	        
-	$Modif .="Define(\"QUANTITE_REMISE_PAS\", ".$qRemisePa.");		//nb de PA ajoutés à chaque remise de PAs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_PVS\", ".$qRemisePv.");		//nb de PV ajoutés à chaque remise de PVs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_PIS\", ".$qRemisePi.");		//nb de PI ajoutés à chaque remise de PIs  \n";
-	$Modif .="Define(\"QUANTITE_REMISE_POS\", ".$qRemisePo.");		//nb de PO ajoutés à chaque remise de POs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PAS\", ".$qRemisePa.");		//nb de PA ajouts  chaque remise de PAs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PVS\", ".$qRemisePv.");		//nb de PV ajouts  chaque remise de PVs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_PIS\", ".$qRemisePi.");		//nb de PI ajouts  chaque remise de PIs  \n";
+	$Modif .="Define(\"QUANTITE_REMISE_POS\", ".$qRemisePo.");		//nb de PO ajouts  chaque remise de POs  \n";
 
 	if ($remisePI=="")
 	        $remisePI=90;
@@ -210,7 +210,7 @@ if(isset($action) && $action=='write')
                 C'est l'inverse pour 	$liste_type_lieu_apparitionPerso=array(	            
                                                 2=>"Foret",                    
                                                 3=>"Caverne, Sous-terrain",
-                                                4=>"Ville fortitiée")	
+                                                4=>"Ville fortitie")	
                 */
                function modifieListe($nomliste,$cleMini,$posLibelle="valeur", $posID="cle") {
                         global ${"chaine_".$nomliste};
@@ -296,16 +296,16 @@ if(isset($action) && $action=='write')
 	$Modif .= "?>";
 	
 	if (fwrite($monfichier , $Modif)===false) {
-		$template_main .= "Probleme à l'écriture de '".$monfichier."'";
+		$template_main .= "Probleme  l'criture de '".$monfichier."'";
 	}
 	//efface ce qui reste si on n'est pas a la fin
 	if (feof ($monfichier)===false)
 		ftruncate($monfichier,ftell ($monfichier));
 	// SURTOUT PAS OUBLIER DE FERMER LE FICHIER...
 	if (fclose($monfichier)===false)
-		$template_main .= "Probleme à la fermeture de '".$monfichier."'";
+		$template_main .= "Probleme  la fermeture de '".$monfichier."'";
 	
-	$template_main .="Constantes reconfigurées... ";
+	$template_main .="Constantes reconfigures... ";
 	if (isset($MessageWarning) && $MessageWarning<>"") $template_main .= "<br />Mais, ". $MessageWarning;
 }
 else

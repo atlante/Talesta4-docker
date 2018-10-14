@@ -93,7 +93,7 @@ $Date: 2010/01/24 16:35:39 $
 <tr><td>Competence Sp&eacute;: </td><td><select name='CompetenceSpe'><option value='' selected='selected'>Aucune</option><option value='Etourdissant'>Etourdissant</option><option value='Vampire'>Vampire</option></select></td><td><span class='c0'>Si l'objet est une arme, represente ses possibilites speciales. Vampire provoque des degats sur la cible ET soigne l'attaquant. Etourdissant retire des PAs a la cible plutot que des PVs</span></td></tr>
 <tr><td>Utilisable uniquement par</td><td><select name='ID_EtatTempSpecifique'>
 	<option value=''>&nbsp;</option>
-	<option value='30'>Adulte expérimenté</option>
+	<option value='30'>Adulte expriment</option>
 
 	<option value='13' selected='selected'>Elfe</option>
 	<option value='28'>Enfant</option>
@@ -102,7 +102,7 @@ $Date: 2010/01/24 16:35:39 $
 	<option value='8'>Fatique morale</option>
 	<option value='9'>Femelle</option>
 
-	<option value='6'>Force de Géant de Pierre</option>
+	<option value='6'>Force de Gant de Pierre</option>
 	<option value='18'>Gobelin</option>
 	<option value='16'>Humain</option>
 	<option value='3'>ivre</option>
@@ -113,7 +113,7 @@ $Date: 2010/01/24 16:35:39 $
 	<option value='17'>Mannequin</option>
 	<option value='14'>Nain</option>
 	<option value='31'>Viellard</option>
-</select></td><td><span class='c0'>L'objet ne sera utilisable uniquement par un PJ ayant cet état temporaire. Comme les états temporaires incluent les races, l'age... On peut limiter l'utilisation d'un objet à une race...</span></td></tr>
+</select></td><td><span class='c0'>L'objet ne sera utilisable uniquement par un PJ ayant cet tat temporaire. Comme les tats temporaires incluent les races, l'age... On peut limiter l'utilisation d'un objet  une race...</span></td></tr>
 </table>
 </form>
 
@@ -186,8 +186,8 @@ $Date: 2010/01/24 16:35:39 $
 
 				
 </script>
-<table class='detailscenter'  width='60%'><tr><td>Influence sur les états<br />(<span id='etatajout' class='etatajout'>Etats Ajoutes</span><br /><span id='etatsupprime' class='etatsupprime'>Etats Supprimes</span>)</td><td>	<form action='creer_objet.php' method='post'><select  name='provoqueetat'>
-	<option value='4'>ADULTE EXPÉRIMENTÉ</option>
+<table class='detailscenter'  width='60%'><tr><td>Influence sur les tats<br />(<span id='etatajout' class='etatajout'>Etats Ajoutes</span><br /><span id='etatsupprime' class='etatsupprime'>Etats Supprimes</span>)</td><td>	<form action='creer_objet.php' method='post'><select  name='provoqueetat'>
+	<option value='4'>ADULTE EXPRIMENT</option>
 	<option value='187'>Air Niveau -1</option>
 	<option value='144'>Air Niveau -2</option>
 	<option value='101'>Air Niveau -3</option>
@@ -565,7 +565,7 @@ $Date: 2010/01/24 16:35:39 $
 	<option value='22'>Psychique Niveau -5</option>
 	<option value='237'>Psychique Niveau 1</option>
 	<option value='280'>Psychique Niveau 2</option>
-	<option value='599'>Psychique Niveau 3</option>
+	<value='599'>Psychique Niveau 3</option>
 	<option value='642'>Psychique Niveau 4</option>
 	<option value='685'>Psychique Niveau 5</option>
 	<option value='225'>Sagesse Niveau -1</option>
@@ -630,7 +630,7 @@ $Date: 2010/01/24 16:35:39 $
 	<option value='602'>Vol Niveau 3</option>
 	<option value='645'>Vol Niveau 4</option>
 	<option value='688'>Vol Niveau 5</option>
-</select><br />Pourcentage de déclenchement: <input value='100'  name='pourcent' type='texte' /><br />Durée en heures: <input value='-1' name='duree'  type='texte' /><br /><br /><input value="Provoque l'etat" type='button' onclick="ajouteprovoqueetat('')" /><input value="Annule l'etat" type='button' onclick="ajouteprovoqueetat('-')" /><input value="Voir l'etat" type='button' onclick="a('../bdc/etat.php?for_mj=1&amp;num_etat='+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value)" /><br />&nbsp;<br /><select name="ListAdd" size='5'></select><br />&nbsp;<br /><input value="Remettre a Zero" type='button' onclick="RAZ(1)" /></form></td></tr></table>
+</select><br />Pourcentage de dclenchement: <input value='100'  name='pourcent' type='texte' /><br />Dure en heures: <input value='-1' name='duree'  type='texte' /><br /><br /><input value="Provoque l'etat" type='button' onclick="ajouteprovoqueetat('')" /><input value="Annule l'etat" type='button' onclick="ajouteprovoqueetat('-')" /><input value="Voir l'etat" type='button' onclick="a('../bdc/etat.php?for_mj=1&amp;num_etat='+document.forms[1].provoqueetat.options[document.forms[1].provoqueetat.selectedIndex].value)" /><br />&nbsp;<br /><select name="ListAdd" size='5'></select><br />&nbsp;<br /><input value="Remettre a Zero" type='button' onclick="RAZ(1)" /></form></td></tr></table>
 
 <script type='text/javascript'>
 	var chainetemp2 = "";
@@ -662,10 +662,10 @@ $Date: 2010/01/24 16:35:39 $
 
    
     
-<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communauté Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
+<br /><div class ='centerSimple'>Programmation &copy;Leym 2001-2003 &copy;La communaut Talesta 2003-2006 &copy;l'equipe de dev de prophecy 2003-2004 <br /> Graphismes &copy;Mantus 2001-2003<br /></div><br /></div>
 <div id='menu'>
 <img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
-	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise  jour</a></h4>
 	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
 	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
 	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
@@ -673,9 +673,9 @@ $Date: 2010/01/24 16:35:39 $
 	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
 	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
 	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
-	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
-<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
-	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide cration de PNJ </a></h4>
+<h4><a class='t1' href='../Docs/aide.htm'>Aide russite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4><h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversits dans les PJs</a></h4>
 <h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
 <h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
 <img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />

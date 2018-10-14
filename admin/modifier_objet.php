@@ -6,7 +6,7 @@ $RCSfile: modifier_objet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.22 $
 $Date: 2010/02/28 22:58:08 $

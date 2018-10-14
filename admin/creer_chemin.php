@@ -6,7 +6,7 @@ $RCSfile: creer_chemin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.18 $
 $Date: 2006/04/17 21:24:50 $
@@ -108,7 +108,7 @@ if($etape=="1"|| $etape=="10"){
 			if ($result!==false) 
 				$MJ->OutPut($msg,true);
 			else {
-				$MJ->OutPut("le chemin n'a pu être cree (Raison: $db->erreur;)" ,true);	
+				$MJ->OutPut("le chemin n'a pu tre cree (Raison: $db->erreur;)" ,true);	
 				$etape=0.5;	
 			}	
 		}	

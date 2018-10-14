@@ -6,7 +6,7 @@ $RCSfile: registrelieux.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2010/02/28 22:58:09 $
@@ -44,7 +44,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	$template_main .="<table width='100%'><tr><td align='center'><a href=\"registrelieux.$phpExtJeu?tri=par_nom&amp;filtreTrigramme=$filtreTrigramme\"><span class='c0'>Tri par nom</span></a></td><td align='center'><a href=\"registrelieux.$phpExtJeu?tri=par_trigramme&amp;filtreTrigramme=$filtreTrigramme\"><span class='c0'>Tri par trigramme</span></a></td><td align='center'><a href=\"registrelieux.$phpExtJeu?tri=par_id&amp;filtreTrigramme=$filtreTrigramme\"><span class='c0'>Tri par id</span></a></td></tr></table>";
 	$template_main .= "<table width='100%' class='detailscenter'>";
 	$template_main .= "<tr><td colspan='7' align='center'><span class='c7'>Table des lieux</span></td></tr>";
-	$template_main .= "<tr><td><span class='c5'>N°</span></td><td><span class='c0'>nom du Lieu</span></td><td><span class='c7'>trigramme</span></td><td>Type de lieu (critère pour les apparitions automatiques de monstres)</td><td>Accessible uniquement par</td><td>Liste des persos présents</td><td>Magasins dans le lieu</td></tr>";
+	$template_main .= "<tr><td><span class='c5'>N</span></td><td><span class='c0'>nom du Lieu</span></td><td><span class='c7'>trigramme</span></td><td>Type de lieu (critre pour les apparitions automatiques de monstres)</td><td>Accessible uniquement par</td><td>Liste des persos prsents</td><td>Magasins dans le lieu</td></tr>";
 	while($row = $db->sql_fetchrow($result2)){
 		$template_main .= "<tr><td><span class='c5'>".$row["id_lieu"]."</span></td>";
 		$template_main .= "<td><span class='c0'>".$row["nom"]."</span></td>";
@@ -65,7 +65,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		while($row_perso = $db->sql_fetchrow($result_perso)){
 			$template_main .="".$row_perso["nom"];
 			if ($row_perso["dissimule"]==1) 
-				$template_main .= " (Caché) ";
+				$template_main .= " (Cach) ";
 			if ($row_perso["pv"]<=0) 
 				$template_main .= " (Mort) ";
 			$template_main .= "<br />";

@@ -6,7 +6,7 @@ $RCSfile: fa_mj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:17 $
@@ -37,7 +37,7 @@ if($etape=="1"){
 			$fagz = $MJcible->GetCheminFA();			
 			if(file_exists($fagz)){		
 				$temp=TAILLE_MAX_FA*1024;
-				$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autorisés</p>";
+				$template_main .= "<p align='right'>Taille du FA: ".filesize ($fagz)." octets sur ".$temp." autoriss</p>";
 			}
 			$template_main .= ($contenu);
 

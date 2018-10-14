@@ -6,7 +6,7 @@ $RCSfile: objetmagasin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.3 $
 $Date: 2010/01/24 16:36:42 $
@@ -19,7 +19,7 @@ if(!defined("__OBJETMAG.PHP") ) {
 
 	class ObjetMagasin extends Objet{
 
-		var $stockmax;		///< quantite Max de l'objet pour le magasin (-1 pour illimité => ne gere pas le stock)
+		var $stockmax;		///< quantite Max de l'objet pour le magasin (-1 pour illimit => ne gere pas le stock)
 		var $quantite;		///< quantite de l'objet (diminue avec la vente a un PJ... )
 		var $remisestock;	///< temps au bout duquel la quantite revient a stockmax (-1 pour jamais)
 		var $derniereremise;

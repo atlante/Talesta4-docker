@@ -6,7 +6,7 @@ $RCSfile: forum.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:27 $
@@ -30,7 +30,7 @@ if (defined('IN_FORUM') && (IN_FORUM==1)) {
 		else $template_main .= "<iframe name='forum' src='". $forum->URLadministrationForum."' height='800' width='99%'></iframe>";
 	//Fin affichage du forum
 }
-else $template_main .= "Aucun forum n'est installé avec ce jeu";
+else $template_main .= "Aucun forum n'est install avec ce jeu";
 
 if(!defined("SESSION_POUR_MJ")) {
 	if(!defined("__MENU_SITE.PHP")){include('../main/menu_site.'.$phpExtJeu);}

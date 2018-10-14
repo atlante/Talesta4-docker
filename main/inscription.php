@@ -6,7 +6,7 @@ $RCSfile: inscription.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.27 $
 $Date: 2010/05/15 08:41:50 $
@@ -19,7 +19,7 @@ if(!defined("__titre.'.$phpExtJeu")){include('../include/titre.'.$phpExtJeu);}
 $titrepage = $inscription;
 if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 
-$err_inscriptionsfermees = "Les inscriptions sont fermées pour le moment.";
+$err_inscriptionsfermees = "Les inscriptions sont fermes pour le moment.";
 if(!isset($etape)) {
 	if ((!defined("INSCRIPTIONS_OUVERTES")) || INSCRIPTIONS_OUVERTES){
 		if ((!defined("COUNT_QCM")) || (COUNT_QCM ==0)) {
@@ -84,7 +84,7 @@ if(isset($etape)){
 			$erreur .= "Adresse Mail incorrecte ou bannie par le forum <br />";
 			
 		if(defined("IN_FORUM")&& IN_FORUM==1 && (in_array (strtoupper($nom), $forum->nomsReservesForum))) 
-			$erreur .= "Nom déjà utilisé pour le forum <br />";
+			$erreur .= "Nom dj utilis pour le forum <br />";
 
 		if(defined("IN_FORUM")&& IN_FORUM==1 && ($forum->uservalide($nom)===false))
 			$erreur .= "Nom interdit par le forum <br />";
@@ -140,7 +140,7 @@ if(isset($etape)){
 		if(isset($erreur))
 			$ok_QCM = true;
 		else {	
-			    $ok_QCM = true; // Vérifier si l'Internaute a répondu à toutes les questions
+			    $ok_QCM = true; // Vrifier si l'Internaute a rpondu  toutes les questions
 			    for($idx = 0; ($idx < $nbReponsesADonner) && $ok_QCM; $idx++)
 			      	//$ok_QCM = $_POST['reponse_QCM'.$idx] > 0;		      	
 			    if ($ok_QCM && COUNT_QCM >0)   {
@@ -226,7 +226,7 @@ if(isset($etape)){
 			$template_main .= "</form></div>";
 		}
 	        else
-	          unset($etape); // réafficher le QCM
+	          unset($etape); // rafficher le QCM
 
 	 }
   	
@@ -235,7 +235,7 @@ if(isset($etape)){
 // 16/10/2004: The Darkness - QCM
 if(!isset($etape)) {
 	logdate("nbReponsesADonner".$nbReponsesADonner);
-      	if (!isset($repList)) { // Si erreur dans QCM, reprendre les même questions
+      	if (!isset($repList)) { // Si erreur dans QCM, reprendre les mme questions
 	        for($idx = 0; $idx < $nbReponsesADonner; $idx++) {
 	          $SQL = "SELECT * FROM ".NOM_TABLE_QCM;
 	          if ($idx > 0) {
@@ -266,12 +266,12 @@ if(!isset($etape)) {
 	.'<input type="hidden" name="etape" value="1" />';
 	$template_main .= "<center>";
 	$template_main .= "<h3>Etape 1 : Questionnaire</h3><br />";
-	$template_main .= "Ce simple questionnaire a pour but de vérifier que vous avez bien lu et compris les règles.<br /><br /><br />";
+	$template_main .= "Ce simple questionnaire a pour but de vrifier que vous avez bien lu et compris les rgles.<br /><br /><br />";
 	$template_main .= "</center>";
 	$template_main .= '<input type="hidden" name="nbReponsesADonner" value="'.$nbReponsesADonner.'" />';
 	$template_main .= '<input type="hidden" name="nbQuestions"   value="'.$nbQuestions.'" />';
 	$template_main .= '<table>';
-      if (isset($repList)) $template_main .= '<center><b>Vous n\'avez pas bien répondu toutes les questions.</b></center><br/><br/>';
+      if (isset($repList)) $template_main .= '<center><b>Vous n\'avez pas bien rpondu toutes les questions.</b></center><br/><br/>';
       for($idx = 0; $idx < $nbReponsesADonner; $idx++) {
 	        if (!isset($repList))  {
 			//Pour modifier l'aparence du questionnaire, c'est ci-dessous
@@ -286,7 +286,7 @@ if(!isset($etape)) {
 		          .'<input value="4" type="radio" name="reponse_QCM'.$idx.'" />'.$QCMList[$idx]['Rep4'].
 		          '&nbsp;<br /></td></tr><tr><td colspan="5">&nbsp;</td></tr><tr><td colspan="5">&nbsp;</td></tr>'."\n";
 		}
-	        else // On reprend les mêmes questions et on conserve les réponses justes
+	        else // On reprend les mmes questions et on conserve les rponses justes
 	        {
 			$template_main .= '<tr><td colspan="5" align="left"><input type="hidden" name="ID_QCM'.$idx.'" value="'.$_POST['ID_QCM'.$idx].'" /><img src="../templates/'.urlencode($template_name).'/images/icone.gif" />'.$repList[$_POST['ID_QCM'.$idx]]['question'].'</td>'
 		          .'</tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>';

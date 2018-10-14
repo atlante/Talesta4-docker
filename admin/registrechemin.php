@@ -6,7 +6,7 @@ $RCSfile: registrechemin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.6 $
 $Date: 2006/02/23 22:34:32 $
@@ -48,8 +48,8 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		
 	$vartrigrammedepart=faitSelect("filtretrigrammedepart",$SQLtrigramme,"",$filtretrigrammedepart, array(),array("&nbsp;")," onChange='submit()' ");
 	$vartrigrammearrivee=faitSelect("filtretrigrammearrivee",$SQLtrigramme,"",$filtretrigrammearrivee, array(),array("&nbsp;")," onChange='submit()' ");
-	$template_main .=", trigramme du lieu de départ : " . $vartrigrammedepart[1];
-	$template_main .=", trigramme du lieu de d'arrivée: " . $vartrigrammearrivee[1];
+	$template_main .=", trigramme du lieu de dpart : " . $vartrigrammedepart[1];
+	$template_main .=", trigramme du lieu de d'arrive: " . $vartrigrammearrivee[1];
 	
    	$template_main .= "</form>"; 
       $SQL = "Select T1.id_clef as idselect,T1.type as type, T2.trigramme as trigrammedepart, T3.trigramme as trigrammearrivee,concat(concat(T2.trigramme,'-'),T2.nom) as labselect1, concat(concat(T3.trigramme,'-'),T3.nom) as labselect2,T1.difficulte as difficulte,T1.pass as pass,T1.distance as distance from ".NOM_TABLE_CHEMINS." T1, ".NOM_TABLE_LIEU." T2,".NOM_TABLE_LIEU." T3 WHERE T1.id_lieu_1 = T2.id_lieu AND T1.id_lieu_2 = T3.id_lieu";
@@ -70,11 +70,11 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 
 
    $result2 = $db->sql_query($SQL);
-   $template_main .="<table width='100%'><tr><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_trigrammeDepart&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par trigramme du lieu de départ</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_trigrammeArrivee&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par trigramme du lieu d'arrivée</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_type&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par type</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_id&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par id</span></a></td></tr></table>";
+   $template_main .="<table width='100%'><tr><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_trigrammeDepart&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par trigramme du lieu de dpart</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_trigrammeArrivee&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par trigramme du lieu d'arrive</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_type&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par type</span></a></td><td align='center'><a href=\"".NOM_SCRIPT."?tri=par_id&amp;filtreType=$filtreType&amp;filtretrigrammearrivee=$filtretrigrammearrivee&amp;filtretrigrammedepart=$filtretrigrammedepart\"><span class='c0'>Tri par id</span></a></td></tr></table>";
        
    $template_main .= "<table width='100%' class='details'>"; 
    $template_main .= "<tr><td colspan='7' align='center'><span class='c7'>Table des chemins</span></td></tr>"; 
-   $template_main .= "<tr><td><span class='c5'>Numéro</span></td>   <td><span class='c0'>Départ</span></td>   <td><span class='c0'>Arrivée</span></td>"; 
+   $template_main .= "<tr><td><span class='c5'>Numro</span></td>   <td><span class='c0'>Dpart</span></td>   <td><span class='c0'>Arrive</span></td>"; 
    $template_main .= "<td><span class='c5'>type</span></td>   <td><span class='c0'>difficulte</span></td>   <td><span class='c7'>pass </span></td>   <td><span class='c7'>distance </span></td>"; 
    //for($i=0;$i<$db->sql_numrows($result2);$i++){ 
 	while($row2 = $db->sql_fetchrow($result2)) {

@@ -6,7 +6,7 @@ $RCSfile: reveler_entitecachee.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/01/31 12:26:25 $
@@ -37,7 +37,7 @@ if($PERSO->Archive){
 		$nbEntiteCacheeConnue = $db->sql_numrows($resultEntite);
 		if ($nbEntiteCacheeConnue>0) {
 			$i=0;
-			$template_main .= " <input type='radio' name='entite' value='uneouplus' checked='checked' /> Révéler  <br />";
+			$template_main .= " <input type='radio' name='entite' value='uneouplus' checked='checked' /> Rvler  <br />";
 			while ($nbEntiteCacheeConnue>$i) {
 				$row = $db->sql_fetchrow($resultEntite);
 				if ($row["type"]==1) {
@@ -74,7 +74,7 @@ if($PERSO->Archive){
 						$template_main .= ", ";
 			}	
 			if ($nbEntiteCacheeConnue>1) {
-				$template_main .= "<br /><input type='radio' name='entite' value='toutes' />tout ce qui est caché ici<br />";	
+				$template_main .= "<br /><input type='radio' name='entite' value='toutes' />tout ce qui est cach ici<br />";	
 				
 			}
 			// affichage des PJ que l'on sait presents ici						
@@ -83,14 +83,14 @@ if($PERSO->Archive){
 			$nb_pj_presents = $db->sql_numrows($result);
 			if ($nb_pj_presents>0) {
 				$template_main .= "\n<hr />";
-				$template_main .= "<input type='radio' name='typeact' value='pjs' checked='checked' />Révéler &agrave; ces personnes<br />";	
+				$template_main .= "<input type='radio' name='typeact' value='pjs' checked='checked' />Rvler &agrave; ces personnes<br />";	
 				for($i=0;$i<$nb_pj_presents;$i++){
 					$row = $db->sql_fetchrow($result);
 					$template_main .= "<input type='checkbox' name='pj[".$row["idselect"]."]' />".span($row["labselect"],"pj");
 					if ($i<$nb_pj_presents-1)
 						$template_main .= ", ";
 				}
-				$template_main .= "<br /><input type='radio' name='typeact' value='lieu' />Révéler &agrave; toutes les personnes du lieu<br />";
+				$template_main .= "<br /><input type='radio' name='typeact' value='lieu' />Rvler &agrave; toutes les personnes du lieu<br />";
 				
 				
 				
@@ -106,7 +106,7 @@ if($PERSO->Archive){
 						else $i++;	
 					}	
 					if ($existPersoGroupe)
-						$template_main .= "<br /> <input type='radio' name='typeact' value='".$PERSO->Groupe."' />Révéler aux membres du groupe <br />";
+						$template_main .= "<br /> <input type='radio' name='typeact' value='".$PERSO->Groupe."' />Rvler aux membres du groupe <br />";
 					else 	$template_main .= "<input type='hidden' name='groupe' value='0' />";
 				}
 				else $template_main .= "<input type='hidden' name='groupe' value='0' />";
@@ -116,7 +116,7 @@ if($PERSO->Archive){
 			}
 			else $template_main .= "Il n'y a personne ici. <br />";
 		}	
-		else $template_main .= "Il n'y a rien de caché ici à votre connaissance. <br />";
+		else $template_main .= "Il n'y a rien de cach ici  votre connaissance. <br />";
 		$template_main .= "<input type='hidden' name='etape' value='1' />";
 		$template_main .= "</form></div>";
 //		$etape=0;

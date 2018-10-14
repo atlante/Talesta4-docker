@@ -6,7 +6,7 @@ $RCSfile: mj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.19 $
 $Date: 2010/01/24 16:36:42 $
@@ -24,13 +24,13 @@ if(!defined("__MJ.PHP") ) {
 		var $nom;			///< Nom du MJ
 		var $titre;			///< titre du MJ
 		var $flags;			///< Droits du MJ (suite de 1 et 0 cf. $liste_flags_mj dans include/const.php) 
-		var $email;			///< EMail du MJ (sert pour prevenir que le FA a evolué si $wantmail =1)
+		var $email;			///< EMail du MJ (sert pour prevenir que le FA a evolu si $wantmail =1)
 		var $FANonLu;
 		var $lastaction;
-		var $wantmail;			///< Flag qui indique si le MJ désire recevoir un mail quand son fa est modifié
-		var $pass;			///< Mot de passe du MJ	(non crypté puisque c'est admin qui créée les MJs)
+		var $wantmail;			///< Flag qui indique si le MJ dsire recevoir un mail quand son fa est modifi
+		var $pass;			///< Mot de passe du MJ	(non crypt puisque c'est admin qui cre les MJs)
 		var $imageforum="";
-		var $wantmusic;			///< Flag qui indique si le MJ désire entendre les sons des lieux dans voir_lieu
+		var $wantmusic;			///< Flag qui indique si le MJ dsire entendre les sons des lieux dans voir_lieu
 		var $dispo_pour_ppa;		///< Flag qui indique si le MJ apparait dans la liste des MJs pour PPAs
 				
 		function UpdateFromBD(){
@@ -79,7 +79,7 @@ if(!defined("__MJ.PHP") ) {
 				        $contenu= $this->LireFA(0);
 				EnvoyerMail("",$this->email,"[".NOM_JEU." - Votre FA a &eacute;t&eacute; archiv&eacute;]","Bonjour ".$this->nom."; voici votre FA: <br />" . $contenu);
 				if (defined("MAIL_FA_ARCHIVES") &&  MAIL_FA_ARCHIVES!="")
-				        EnvoyerMail("",MAIL_FA_ARCHIVES,"[".NOM_JEU." - FA de ".$this->nom . " archivé]","Bonjour , voici le FA de ".$this->nom . ": <br />" .  $contenu );
+				        EnvoyerMail("",MAIL_FA_ARCHIVES,"[".NOM_JEU." - FA de ".$this->nom . " archiv]","Bonjour , voici le FA de ".$this->nom . ": <br />" .  $contenu );
 				if ((unlink($fagz))===false)
 					logDate( "Impossible d'effacer le fichier '".$fagz."'",E_USER_WARNING,1);
 				else {	
@@ -138,7 +138,7 @@ if(!defined("__MJ.PHP") ) {
                                                   $contenu_tmp .= fread($f, 8192);
                                                 }	
 						if (fclose($f)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 					}
 					else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
 				} 
@@ -150,7 +150,7 @@ if(!defined("__MJ.PHP") ) {
                                                   $contenu_tmp .= gzread($zp, 8192);
                                                 }	
 						if (gzclose($zp)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);	
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);	
 				}
 				
 				$tailleFA = filesize ($fagz);
@@ -183,7 +183,7 @@ if(!defined("__MJ.PHP") ) {
 				$fagz=$this->GetCheminFA();
 				if(! file_exists ( dirname($fagz)))
 						if (! mkdir(dirname($fagz),0700))
-							logDate ("impossible de créer le rep " .dirname($fagz),E_USER_WARNING,1);
+							logDate ("impossible de crer le rep " .dirname($fagz),E_USER_WARNING,1);
 					
 				if (!extension_loaded('zlib')) {
 					if(file_exists($fagz)){
@@ -194,7 +194,7 @@ if(!defined("__MJ.PHP") ) {
                                                           $contenu .= fread($f, 8192);
                                                         }
 							if (fclose($f)===false)
-								logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+								logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 						}
 						else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
 	
@@ -205,14 +205,14 @@ if(!defined("__MJ.PHP") ) {
 							fwrite($f,span(faitDate(time(),true),"date")."<br />");
 						}					
 						if (fwrite($f,stripslashes(nl2br($msg))."<br />&nbsp;<br />")===false) {
-							logDate( "Probleme à l'écriture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  l'criture de '".$fagz."'",E_USER_WARNING,1);
 						}
 						else
 						if (fwrite($f,$contenu)===false) {
-							logDate( "Probleme à l'écriture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  l'criture de '".$fagz."'",E_USER_WARNING,1);
 						}
 						if (fclose($f)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 					}
 					else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
 				} 

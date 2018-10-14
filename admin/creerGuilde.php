@@ -6,7 +6,7 @@ $RCSfile: creerGuilde.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/02/28 22:58:04 $
@@ -39,7 +39,7 @@ if($etape=="10"){
 					$etape=-5;
 				}
 				else {
-					$newForumID=$forum->CreeForum(ConvertAsHTML($nomGuilde),$cat_id,ConvertAsHTML($DescGuilde),"Privé");
+					$newForumID=$forum->CreeForum(ConvertAsHTML($nomGuilde),$cat_id,ConvertAsHTML($DescGuilde),"Priv");
 	
 					//creation de la guilde
 					$newGroupID= $forum->CreeGroupe($nomGuilde,$DescGuilde,$gerant);
@@ -60,10 +60,10 @@ if($etape=="10"){
 			if ($etape!=-5) {
 				$result = true;
 				if(defined("IN_FORUM")&& IN_FORUM==1) 
-					$result=$forum->creePrivateMessage("",$gerant,$MJ->nom, "", "Vous êtes gérant de la guilde ". $nomGuilde, $forum->texteEnvoyeAuGerantGuilde($nomGuilde));
+					$result=$forum->creePrivateMessage("",$gerant,$MJ->nom, "", "Vous tes grant de la guilde ". $nomGuilde, $forum->texteEnvoyeAuGerantGuilde($nomGuilde));
 				if ($result) {				
 					if(defined("IN_FORUM")&& IN_FORUM==1) 
-						$MJ->OutPut("Guilde ".span(ConvertAsHTML($nomGuilde),"pj")." correctement cr&eacute;&eacute;e. Gérant prévenu par PM.",true);
+						$MJ->OutPut("Guilde ".span(ConvertAsHTML($nomGuilde),"pj")." correctement cr&eacute;&eacute;e. Grant prvenu par PM.",true);
 					else $MJ->OutPut("Guilde ".span(ConvertAsHTML($nomGuilde),"pj")." correctement cr&eacute;&eacute;e.",true);	
 				}	
 				$etape=5;

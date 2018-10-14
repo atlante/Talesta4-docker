@@ -6,7 +6,7 @@ $RCSfile: joueur.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.56 $
 $Date: 2010/01/24 16:36:41 $
@@ -24,7 +24,7 @@ if(!defined("__JOUEUR.PHP") ) {
 		var $pass;			///< Mot de passe du PJ	(crypte)
 		var $PA;			///< Points d'action du PJ
 		var $PV;			///< Points de vie du PJ 
-		var $PO;			///< Quantité d'or du PJ 
+		var $PO;			///< Quantit d'or du PJ 
 		var $PI;			///< Points d'intellect du PJ 
 		var $XP;			///< Points d'experience du PJ 
 		var $Lieu;			///< Lieu ou se trouve le PJ (objet de la classe Lieu)
@@ -44,25 +44,25 @@ if(!defined("__JOUEUR.PHP") ) {
 		var $FANonLu;
 		var $lastaction;
 		var $wantmail;
-		var $wantmusic;			///< Flag qui indique si le PJ désire entendre les sons des lieux
+		var $wantmusic;			///< Flag qui indique si le PJ dsire entendre les sons des lieux
 		var $pnj;			///< Indique si PJ,PNJ,bestaire ou monstre (0 pour PJ, 1 pour PNJ,2 pour bestiaire, 3 pour monstre)
 		var $Reaction;
 		var $SortPrefere;
 		var $phrasepreferee;
 		var $Relation;
 		var $actionsurprise;
-		var $ConnaitLieuxSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un chemin caché dans le lieu où il se trouve	
-		var $ConnaitObjetsSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un objet caché dans le lieu où il se trouve	
-		var $Archive;			///< Flag qui indique si le PJ est archivé ou non
+		var $ConnaitLieuxSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un chemin cach dans le lieu o il se trouve	
+		var $ConnaitObjetsSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un objet cach dans le lieu o il se trouve	
+		var $Archive;			///< Flag qui indique si le PJ est archiv ou non
 		var $Groupe="";
 		var $EquipOccupe;
 		var $IP_Joueur;
-		var $dissimule;			///< Indique si le PJ est caché dans le lieu (0 pour visible, 1 pour caché)
-		var $ConnaitPersosSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un PJ caché dans le lieu où il se trouve
+		var $dissimule;			///< Indique si le PJ est cach dans le lieu (0 pour visible, 1 pour cach)
+		var $ConnaitPersosSecrets;	///< Flag qui indique si le PJ sait qu'il y a au moins un PJ cach dans le lieu o il se trouve
 		var $imageforum="";		
-		var $Engagement;                ///< Flag qui indique si le PJ est engagé dans un combat (ce qui l'empeche de quitter les lieux) 
+		var $Engagement;                ///< Flag qui indique si le PJ est engag dans un combat (ce qui l'empeche de quitter les lieux) 
 	//	var $propdes;
-		var $backGround;		///< le background du PJ indiqué à l'inscription
+		var $backGround;		///< le background du PJ indiqu  l'inscription
 		var $roleMJ;
 		var $Quetes;			///< la liste des quetes du PJ
 		var $nb_deces;                    ///< Nb de fois quele PJ est mort
@@ -72,13 +72,13 @@ if(!defined("__JOUEUR.PHP") ) {
 		/*! 
 		    \brief Constructeur
 		    \param $id_joueur: ID du PJ.
-		    \param $chargeSecrets: détermine s'il faut charger si le perso connait des secrets
-		    \param $chargeCompetence: détermine s'il faut charger les competences du PJ
-		    \param $chargeSpecs: détermine s'il faut charger les specialites du PJ
-		    \param $chargeEtats: détermine s'il faut charger les etats temps du PJ
-		    \param $chargeInventaire: détermine s'il faut charger l'inventaire du PJ
-		    \param $chargeGrimoire: détermine s'il faut charger le grimoire du PJ
-		    \param $chargeQuetes: détermine s'il faut charger les quetes du PJ
+		    \param $chargeSecrets: dtermine s'il faut charger si le perso connait des secrets
+		    \param $chargeCompetence: dtermine s'il faut charger les competences du PJ
+		    \param $chargeSpecs: dtermine s'il faut charger les specialites du PJ
+		    \param $chargeEtats: dtermine s'il faut charger les etats temps du PJ
+		    \param $chargeInventaire: dtermine s'il faut charger l'inventaire du PJ
+		    \param $chargeGrimoire: dtermine s'il faut charger le grimoire du PJ
+		    \param $chargeQuetes: dtermine s'il faut charger les quetes du PJ
 		*/		
 		function Joueur($id_joueur,$chargeSecrets=false, $chargeCompetence=false,$chargeSpecs=false,$chargeEtats=false,$chargeInventaire=false,$chargeGrimoire=false, $chargeQuetes=false){
 			global $phpExtJeu;
@@ -142,7 +142,7 @@ if(!defined("__JOUEUR.PHP") ) {
 				$this->pnj = $row["pnj"];
 				$this->Reaction = $row["reaction"];
 				/**
-				*    Si la valeur de Reaction n'est pas renseignee ou est incorrecte, on force la valeur à 4 (le joueur ne reagit pas) 
+				*    Si la valeur de Reaction n'est pas renseignee ou est incorrecte, on force la valeur  4 (le joueur ne reagit pas) 
 				*/
 				if (! array_key_exists($this->Reaction, $liste_reactions))
 				 	$this->Reaction=4;
@@ -458,7 +458,7 @@ if(!defined("__JOUEUR.PHP") ) {
 		
 		/*! 
 		    \brief augmente la competence IDComp du joueur avec $xp XP
-		    \param $IDComp le numéro et non la chaine de caractere de la compétence issue de include/const.php		    
+		    \param $IDComp le numro et non la chaine de caractere de la comptence issue de include/const.php		    
 		    \param $xp le nombre d'Xp a ajouter pour cette competence
 		    
 		*/			
@@ -889,9 +889,9 @@ if(!defined("__JOUEUR.PHP") ) {
 			if(file_exists($fagz)){	
 			        if ($contenu=='')
 				$contenu= $this->LireFA(0);
-				EnvoyerMail($this->email,$this->email,"[".NOM_JEU." - Votre FA a été archivé]","Bonjour ".$this->nom."; voici votre FA: <br />" . $contenu );
+				EnvoyerMail($this->email,$this->email,"[".NOM_JEU." - Votre FA a t archiv]","Bonjour ".$this->nom."; voici votre FA:enu );
 				if (defined("MAIL_FA_ARCHIVES") &&  MAIL_FA_ARCHIVES!="")
-				        EnvoyerMail("",MAIL_FA_ARCHIVES,"[".NOM_JEU." - FA de ".$this->nom . " archivé]","Bonjour , voici le FA de ".$this->nom . ": <br />" . $contenu );
+				        EnvoyerMail("",MAIL_FA_ARCHIVES,"[".NOM_JEU." - FA de ".$this->nom . " archiv]","Bonjour , voici le FA de ".$this->nom . ": <br />" . $contenu );
 				if ((unlink($fagz))===false)
 					logDate( "Impossible d'effacer le fichier '".$fagz."'",E_USER_WARNING,1);
 				else {	
@@ -931,7 +931,7 @@ if(!defined("__JOUEUR.PHP") ) {
               $contenu_tmp .= fread($f, 8192);
             }						
 						if (fclose($f)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 					}
 					else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
 				} 
@@ -943,7 +943,7 @@ if(!defined("__JOUEUR.PHP") ) {
               $contenu_tmp .= gzread($zp, 8192);
             }							
 						if (gzclose($zp)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);						
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);						
 				}
 				
 				$tailleFA = filesize ($fagz);
@@ -975,7 +975,7 @@ if(!defined("__JOUEUR.PHP") ) {
 			$fagz=$this->GetCheminFA();
 			if(! file_exists ( dirname($fagz)))
 				if (! mkdir(dirname($fagz),0700))
-					logDate ("impossible de créer le rep " .dirname($fagz),E_USER_WARNING,1);
+					logDate ("impossible de crer le rep " .dirname($fagz),E_USER_WARNING,1);
 			if ($filtreHTML)
 				$msg= stripslashes(nl2br($msg));			
 			if (!extension_loaded('zlib')) {
@@ -988,7 +988,7 @@ if(!defined("__JOUEUR.PHP") ) {
             }
 						
 						if (fclose($f)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 					}
 					else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
 				} else 	$contenu="";				
@@ -997,17 +997,17 @@ if(!defined("__JOUEUR.PHP") ) {
 						$writetemp= fwrite($f,span(faitDate(time(),true),"date")."<br />");
 					}	
 					if ($writetemp===false)
-						logDate( "Probleme à l'écriture de '".$fagz."'",E_USER_WARNING,1);
+						logDate( "Probleme  l'criture de '".$fagz."'",E_USER_WARNING,1);
 					else {	
 						if (fwrite($f,$msg."<br />&nbsp;<br />")===false) {
-							logDate( "Probleme à l'écriture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  l'criture de '".$fagz."'",E_USER_WARNING,1);
 						}
 						else
 						if (fwrite($f,$contenu)===false) {
-							logDate( "Probleme à l'écriture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  l'criture de '".$fagz."'",E_USER_WARNING,1);
 						}
 						if (fclose($f)===false)
-							logDate( "Probleme à la fermeture de '".$fagz."'",E_USER_WARNING,1);
+							logDate( "Probleme  la fermeture de '".$fagz."'",E_USER_WARNING,1);
 					}
 				}
 				else logDate ("impossible d'ouvrir le fichier '".$fagz."'",E_USER_WARNING,1);
@@ -1022,8 +1022,8 @@ if(!defined("__JOUEUR.PHP") ) {
               $contenu .= gzread($zp, 8192);
             }						
 						if (gzclose($zp)==FALSE)
-							logDate("Probleme à la fermeture de ".$fagz);
-					}		    else logDate("Probleme à l'ouverture de ".$fagz);			
+							logDate("Probleme  la fermeture de ".$fagz);
+					}		    else logDate("Probleme  l'ouverture de ".$fagz);			
 				}	else $contenu="";
 				$contenu=$msg."<br />&nbsp;<br />".$contenu;
 				if($date)
@@ -1033,8 +1033,8 @@ if(!defined("__JOUEUR.PHP") ) {
 				if ($zp!=FALSE) {
 					    gzwrite($zp, $contenu);
 						if (gzclose($zp)==FALSE)
-							logDate("Probleme à la fermeture de ".$fagz);			
-				}	    else 					logDate("Probleme à l'ouverture de ".$fagz);			
+							logDate("Probleme  la fermeture de ".$fagz);			
+				}	    else 					logDate("Probleme  l'ouverture de ".$fagz);			
 			
 			}
 			if($this->wantmail==1 && isset($PERSO) && $PERSO->ID<>$this->ID){
@@ -1140,7 +1140,7 @@ if(!defined("__JOUEUR.PHP") ) {
 			$etats = $chaine;
 			if($etats != ""){
 				$etats=explode("|",$etats);
-				$nb_etats = count($etats) -1; //-1 car il y a un | à la fin du dernier
+				$nb_etats = count($etats) -1; //-1 car il y a un |  la fin du dernier
 				for($i=0;$i<$nb_etats;$i++){
 			
 					$temp = explode(";",$etats[$i]);
@@ -1367,10 +1367,10 @@ if(!defined("__JOUEUR.PHP") ) {
 			$description = str_replace("?>","",$description);
 			if (($f = fopen($nom_fichier,"w+b"))!==false) {
 				if (fwrite($f,$description)===false) {
-					logDate( "Probleme à l'écriture de '".$nom_fichier."'",E_USER_WARNING,1);
+					logDate( "Probleme  l'criture de '".$nom_fichier."'",E_USER_WARNING,1);
 				}
 				if (fclose ($f)===false)
-					logDate( "Probleme à la fermeture de '".$nom_fichier."'",E_USER_WARNING,1);
+					logDate( "Probleme  la fermeture de '".$nom_fichier."'",E_USER_WARNING,1);
 			}	
 			else logDate( "impossible d'ouvrir le fichier '".$nom_fichier."' en ecriture",E_USER_WARNING,1);
 		
@@ -1771,10 +1771,10 @@ if(!defined("__JOUEUR.PHP") ) {
 
 
 		function DescriptionQuetes(){
-			$temp[0]="";$temp[1]="";$temp[2]="";$temp[3]="";$temp[4]="";$temp[5]="";$temp[6]="";$temp[7]="";$temp[8]="";
+		mp[0]="";$temp[1]="";$temp[2]="";$temp[3]="";$temp[4]="";$temp[5]="";$temp[6]="";$temp[7]="";$temp[8]="";
 			$temp[9]="<div class ='centerSimple'>Quetes</div>";
-			$temp[10]="nom (cliquez pour d&eacute;tails)";$temp[11]="Proposée par";$temp[12]=" Objectif";
-			$temp[13]="Détails";$temp[14]="Débutée le";
+			$temp[10]="nom (cliquez pour d&eacute;tails)";$temp[11]="Propose par";$temp[12]=" Objectif";
+			$temp[13]="Dtails";$temp[14]="Dbute le";
 			$temp[15]="A terminer avant";$temp[16]="";
 			$temp[17]="Quete Publique";$temp[18]="Abandon possible";$temp[19]="etat";
 			$compteur=count($temp);

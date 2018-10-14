@@ -6,7 +6,7 @@ $RCSfile: voir_desc.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/01/24 17:44:05 $
@@ -66,7 +66,7 @@ else {
 		$template_main .= "<tr><td>".stripslashes(nl2br($temp[1]))."</td></tr>";
 		$template_main .= "</table>";
 	
-		$str1 = "<br />Vous devinez que ".span($PERSO_VU->nom,"pj")." possède les caractéristiques suivantes :";	
+		$str1 = "<br />Vous devinez que ".span($PERSO_VU->nom,"pj")." possde les caractristiques suivantes :";	
 		$str2 = "<br />Et qu'il est atteint par les etats temporaires suivants :";
 		$ok1=false;
 		$ok2=false;

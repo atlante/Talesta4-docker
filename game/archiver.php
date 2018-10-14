@@ -6,7 +6,7 @@ $RCSfile: archiver.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2006/01/31 12:26:23 $
@@ -45,7 +45,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 			}
 			else {
 				if ($PERSO->Engagement)
-					$template_main .= GetMessage("engagé");
+					$template_main .= GetMessage("engag");
 				else	
 				if ($PERSO->archiver())
 					$template_main .= GetMessage("archiveOK");

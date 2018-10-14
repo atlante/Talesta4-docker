@@ -6,7 +6,7 @@ $RCSfile: motdepasseperdu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2006/01/31 12:26:23 $
@@ -69,8 +69,8 @@ if(isset($etape)){
 					$query=$forum->MAJuser($row["nom"], "","","",$row["nom"], $nouveaupass);
 				}		
 				if ($query) {		
-					EnvoyerMail("",$row["email"],"[".NOM_JEU." - Mot de passe]","Vous avez demandé votre mot de passe. Celui-ci a été initialisé à ". $nouveaupass .".\n Vous êtes invité à le modifier une fois connecté ");
-					$template_main .= "Votre mot de passe vient de vous être envoy&eacute;.";
+					EnvoyerMail("",$row["email"],"[".NOM_JEU." - Mot de passe]","Vous avez demand votre mot de passe. Celui-ci a t initialis  ". $nouveaupass .".\n Vous tes invit  le modifier une fois connect ");
+					$template_main .= "Votre mot de passe vient de vous tre envoy&eacute;.";
 					unset($erreur);	
 				}
 			}

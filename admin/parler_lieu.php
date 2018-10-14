@@ -6,7 +6,7 @@ $RCSfile: parler_lieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.21 $
 $Date: 2006/02/22 07:26:03 $

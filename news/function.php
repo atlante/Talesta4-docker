@@ -6,7 +6,7 @@ $RCSfile: function.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.5 $
 $Date: 2006/01/31 12:26:28 $
@@ -18,7 +18,7 @@ $Date: 2006/01/31 12:26:28 $
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER function.php

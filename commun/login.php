@@ -6,7 +6,7 @@ $RCSfile: login.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.18 $
 $Date: 2010/01/24 16:36:02 $
@@ -31,7 +31,7 @@ if ( (teste("Admin","1") && (!isset($MJ))) || ( (! teste("Admin","1")) && (!isse
 			if(!defined("SESSION_POUR_MJ")) define("SESSION_POUR_MJ", 1);
 		$dejasession = 4;
 		define("NO_UNSET_SESSION",0);		
-		if(isset($sessionfoiree)){ // On s'est gouré dans les params pour se connecter
+		if(isset($sessionfoiree)){ // On s'est gour dans les params pour se connecter
 				if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 				$template_main .= GetMessage("loginrefuse");
 

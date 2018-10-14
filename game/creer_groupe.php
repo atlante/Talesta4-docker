@@ -6,7 +6,7 @@ $RCSfile: creer_groupe.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2006/01/31 12:26:23 $
@@ -32,7 +32,7 @@ if(defined("GROUPE_PJS") && GROUPE_PJS==1) {
 		if(isset($nom_groupe)){
 			if ($PERSO->CreerGroupe(ConvertAsHTML($nom_groupe)))
 				$PERSO->OutPut("Groupe ".span(ConvertAsHTML($nom_groupe),"etattemp")." correctement cr&eacute;&eacute;",true);
-			else 	$PERSO->OutPut("Groupe ".span(ConvertAsHTML($nom_groupe),"etattemp")." n'a pu être cr&eacute;&eacute;. Déjà existant ?",true);
+			else 	$PERSO->OutPut("Groupe ".span(ConvertAsHTML($nom_groupe),"etattemp")." n'a pu tre cr&eacute;&eacute;. Dj existant ?",true);
 		}
 		unset($nom_groupe);
 		$template_main .= "<br /><p>&nbsp;</p>";

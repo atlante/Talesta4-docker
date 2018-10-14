@@ -6,7 +6,7 @@ $RCSfile: footer.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.13 $
 $Date: 2006/04/11 18:46:15 $
@@ -34,7 +34,7 @@ if(!defined("__FOOTER.PHP") ) {
 		}
 		$php_part = 100 - $sql_part;
 	
-	        Define("DEBUG_SQL_TIME" , 'Page générée en : '. $gentime .'s (PHP: '. $php_part .'% - SQL: '. $sql_part .'%) - Requêtes SQL : '. $executed_queries  .'');
+	        Define("DEBUG_SQL_TIME" , 'Page gnre en : '. $gentime .'s (PHP: '. $php_part .'% - SQL: '. $sql_part .'%) - Requtes SQL : '. $executed_queries  .'');
 	}	
 	else{Define("DEBUG_SQL_TIME" , '');}
 
@@ -61,16 +61,16 @@ if(!defined("__FOOTER.PHP") ) {
 		$str=ob_get_contents ();
 		if(! file_exists ( REP_HTML))
 			if (! mkdir(REP_HTML,0700))
-				logDate ("impossible de créer le rep " . REP_HTML,E_USER_WARNING,1);
+				logDate ("impossible de crer le rep " . REP_HTML,E_USER_WARNING,1);
 		if (@phpversion() >= '5.0.0') 
 			file_put_contents ( REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html",$str);
 		else {
 			if (($file=fopen(REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html","wb"))!==false) {
 				if (fwrite($file,$str)===false) {
-					logDate ("Probleme à l'écriture de '".REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html'",E_USER_WARNING,1);
+					logDate ("Probleme  l'criture de '".REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html'",E_USER_WARNING,1);
 				}
 				if (fclose ($file)===false)
-					logDate ( "Probleme à la fermeture de '".REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html'",E_USER_WARNING,1);
+					logDate ( "Probleme  la fermeture de '".REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html'",E_USER_WARNING,1);
 			}
 			else logDate ( "impossible d'ouvrir le fichier '".REP_HTML. NOM_SCRIPT .date("d_m_Y_H_i_s").".html'",E_USER_WARNING,1);
 		}	

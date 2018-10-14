@@ -6,7 +6,7 @@ $RCSfile: quetepj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/09/04 20:44:02 $
@@ -65,7 +65,7 @@ if(!defined("__QUETEPJ.PHP") ) {
 		
     
 		/**
-		*    retourne la description utilisée dans la fiche de PJ
+		*    retourne la description utilise dans la fiche de PJ
 		*    
 		*/
 		function description(){
@@ -78,7 +78,7 @@ if(!defined("__QUETEPJ.PHP") ) {
 			$temp[4]= date("d/M/Y H:i:s",$this->debut);
 			if ($this->fin != -1)
 			        $temp[5]= date("d/M/Y H:i:s",$this->fin);
-			else $temp[5]= "illimitée";
+			else $temp[5]= "illimite";
 			$temp[9]=span($liste_etat_quete[$this->etat],"etat_quete");
 			return $temp;
 		}	

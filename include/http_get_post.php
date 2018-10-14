@@ -6,7 +6,7 @@ $RCSfile: http_get_post.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.33 $
 $Date: 2010/05/15 08:48:35 $
@@ -261,12 +261,12 @@ if(!defined("__HTTPGETPOST.PHP")) {
      }
 
 
-	// Fonction spéciale de gestion des erreurs
+	// Fonction spciale de gestion des erreurs
 	function userErrorHandler($errno, $errmsg, $filename, $linenum, $vars)
 	{
 	    // Date et heure de l'erreur
 	
-	    // Définit un tableau associatif avec les chaînes d'erreur
+	    // Dfinit un tableau associatif avec les chanes d'erreur
 	    // En fait, les seuls niveaux qui nous interessent
 	    // sont E_WARNING, E_NOTICE, E_USER_ERROR,
 	    // E_USER_WARNING et E_USER_NOTICE
@@ -280,14 +280,14 @@ if(!defined("__HTTPGETPOST.PHP")) {
 		                E_CORE_WARNING    => "Core Warning",
 		                E_COMPILE_ERROR   => "Compile Error",
 		                E_COMPILE_WARNING => "Compile Warning",
-		                E_USER_ERROR      => "Erreur spécifique",
-		                E_USER_WARNING    => "Alerte spécifique",
-		                E_USER_NOTICE     => "Note spécifique",
+		                E_USER_ERROR      => "Erreur spcifique",
+		                E_USER_WARNING    => "Alerte spcifique",
+		                E_USER_NOTICE     => "Note spcifique",
 		                E_ALL => "erreur",
 		                E_STRICT          => "Runtime Notice",
 		                E_DEPRECATED   => "deprecated"
 		                );
-		    // Les niveaux qui seront enregistrés
+		    // Les niveaux qui seront enregistrs
 		    $user_errors = array(E_ALL,E_USER_NOTICE, E_USER_WARNING,E_USER_ERROR, E_COMPILE_WARNING,E_COMPILE_ERROR, E_CORE_WARNING, E_CORE_ERROR,E_NOTICE,E_PARSE, E_WARNING, E_ERROR , 	 E_STRICT  , E_DEPRECATED   );
 	    }
 	    else {
@@ -300,14 +300,14 @@ if(!defined("__HTTPGETPOST.PHP")) {
 		                32   => "Core Warning",
 		                64   => "Compile Error",
 		                128  => "Compile Warning",
-		                256  => "Erreur spécifique",
-		                512  => "Alerte spécifique",
-		                1024 => "Note spécifique",
+		                256  => "Erreur spcifique",
+		                512  => "Alerte spcifique",
+		                1024 => "Note spcifique",
 		                2047 => "erreur",
 		                2048 => "Notice",
 		                8192 => "deprecated"
 		                );
-		    // Les niveaux qui seront enregistrés
+		    // Les niveaux qui seront enregistrs
 		    $user_errors = array(1,2,4,8,16,32,64,128,256,512,1024,2047  );
 	    }
 	    global $HTTP_SERVER_VARS;
@@ -369,8 +369,8 @@ if(!defined("__HTTPGETPOST.PHP")) {
 			if ($err<>"") {
   			if(! file_exists ( DIRNAME(FICHIER_LOG)))
   				if (! mkdir( DIRNAME(FICHIER_LOG),0700)){
-  					//logDate ("impossible de créer le rep " . DIRNAME(FICHIER_LOG),E_USER_WARNING,1);
-		//			echo ("impossible de créer le rep " . DIRNAME(FICHIER_LOG));
+  					//logDate ("impossible de crer le rep " . DIRNAME(FICHIER_LOG),E_USER_WARNING,1);
+		//			echo ("impossible de crer le rep " . DIRNAME(FICHIER_LOG));
   				}	
   			$ecritureDirecte=false;
   			if (function_exists('error_log')) {				
@@ -385,14 +385,14 @@ if(!defined("__HTTPGETPOST.PHP")) {
   			}
   			if ($ecritureDirecte) {				
   				if (($f = fopen(FICHIER_LOG,"a+b"))===false) 	{
-  						//logDate ("impossible d'ouvrir ou créer le fichier '" . FICHIER_LOG."'",E_USER_WARNING,1);
+  						//logDate ("impossible d'ouvrir ou crer le fichier '" . FICHIER_LOG."'",E_USER_WARNING,1);
   				}		
   				else {	
   					if (fwrite($f,$err)===false) {
-  						//logDate( "Probleme à l'écriture de '".FICHIER_LOG."'",E_USER_WARNING,1);
+  						//logDate( "Probleme  l'criture de '".FICHIER_LOG."'",E_USER_WARNING,1);
   					}
   					if (fclose($f)===false){
-  						//logDate( "Probleme à la fermeture de '".FICHIER_LOG."'",E_USER_WARNING,1);
+  						//logDate( "Probleme  la fermeture de '".FICHIER_LOG."'",E_USER_WARNING,1);
   					}
   				}
   			}	
@@ -552,22 +552,22 @@ if(!defined("__HTTPGETPOST.PHP")) {
                                         				$nom_fichierBest="../pjs/descriptions/desc_".$id_cible.".txt";			
                                         				if (($f = fopen($nom_fichierBest,"r+b"))!==false) {
                                         					if (($description = fread($f,filesize ($nom_fichierBest)))===false) {
-                                        						$temp .= "Probleme à la lecture de '".$nom_fichierBest."'";
+                                        						$temp .= "Probleme  la lecture de '".$nom_fichierBest."'";
                                         					}
                                         					else 
                                         					if (fclose ($f)===false)
-                                        						$temp .= "Probleme à la fermeture de '".$nom_fichierBest."'";
+                                        						$temp .= "Probleme  la fermeture de '".$nom_fichierBest."'";
                                         				}	
                                         				else die ("impossible d'ouvrir le fichier '".$nom_fichier."' en ecriture");
                                         				                                        			        
                                         				$nom_fichier="../pjs/descriptions/desc_".$id_perso.".txt";			
                                         				if (($f = fopen($nom_fichier,"w+b"))!==false) {
                                         					if (fwrite($f,$description)===false) {
-                                        						$temp .= "Probleme à l'écriture de '".$nom_fichier."'";
+                                        						$temp .= "Probleme  l'criture de '".$nom_fichier."'";
                                         					}
                                         					else 
                                         					if (fclose ($f)===false)
-                                        						$temp .= "Probleme à la fermeture de '".$nom_fichier."'";
+                                        						$temp .= "Probleme  la fermeture de '".$nom_fichier."'";
                                         				}	
                                         				else die ("impossible d'ouvrir le fichier '".$nom_fichier."' en ecriture");
                                         				if ($typeCreation=="MJ")
@@ -797,8 +797,8 @@ else {
 
 		if (!extension_loaded($check_exts) && !extension_loaded($check_other))
 		{	
-			   logdate("Module de la base choisie non chargé. Modifier votre php.ini ou changer de base");
-			   die("Module de la base choisie non chargé. Modifier votre php.ini ou changer de base");
+			   logdate("Module de la base choisie non charg. Modifier votre php.ini ou changer de base");
+			   die("Module de la base choisie non charg. Modifier votre php.ini ou changer de base");
 		}
 
 		include("../include/dbTalesta.".$phpExtJeu);
@@ -809,8 +809,8 @@ else {
 			$db =$db;
 			if($db===false || !$db->db_connect_id)
 			{
-			   logdate("Impossible de se connecter à la base");
-			   die("Impossible de se connecter à la base");
+			   logdate("Impossible de se connecter  la base");
+			   die("Impossible de se connecter  la base");
 			}
 		}			
 	}

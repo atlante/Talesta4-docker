@@ -6,7 +6,7 @@ $RCSfile: apprendre.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.12 $
 $Date: 2006/01/31 12:26:23 $
@@ -112,7 +112,7 @@ if($etape==2){
 						$PERSO->OutPut($mess.GetMessage("apprentissage_02",$valeurs),true);
 				}
 			} else {
-				$valeurs[0] = " l'apprentissage de la compétence " . $valeurs[0];
+				$valeurs[0] = " l'apprentissage de la comptence " . $valeurs[0];
 				$valeurs[1] = $prix;		
 				$PERSO->OutPut($mess.GetMessage("magasin_objet_acheter_nopos",$valeurs),true);
 			}		

@@ -6,7 +6,7 @@ $RCSfile: creerMonstre.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/02/28 22:58:05 $
@@ -33,12 +33,12 @@ if($etape==1){
 
 if($etape===0){
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Quel monstre voulez vous générer ?<br />";
+	$template_main .= "Quel monstre voulez vous gnrer ?<br />";
 	$SQL = "Select T1.id_perso as idselect, T1.nom as labselect from ".NOM_TABLE_REGISTRE." T1 where T1.pnj=2 ORDER BY T1.nom ASC";
 	$var=faitSelect("id_cible",$SQL,"",-1);
 	$template_main .= $var[1];
 
-	$template_main .= "<br />Dans quel Lieu voulez vous le faire apparaître ?<br />";
+	$template_main .= "<br />Dans quel Lieu voulez vous le faire apparatre ?<br />";
 	$SQL = "Select T1.id_lieu as idselect, concat(concat(T1.trigramme,'-'),T1.nom) as labselect from ".NOM_TABLE_LIEU." T1 ORDER BY T1.trigramme, T1.nom ASC";
 	$var2= faitSelect("id_lieu",$SQL,"",-1);
 	$template_main .= $var2[1];

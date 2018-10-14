@@ -6,7 +6,7 @@ $RCSfile: modifier_spec.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2006/04/17 21:24:51 $

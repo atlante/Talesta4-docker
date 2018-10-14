@@ -6,7 +6,7 @@ $RCSfile: dep_lx.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.29 $
 $Date: 2010/01/24 17:44:01 $
@@ -26,9 +26,9 @@ if($PERSO->Archive){
 }
 else {
 	if ($PERSO->Engagement) {
-		$template_main .= GetMessage("engagé");
+		$template_main .= GetMessage("engag");
 		//pour ne rien faire de ce qu'il y a en dessous sauf les 2 includes
-		$etape="Engagé";	
+		$etape="Engag";	
 	}
 
 	else  {
@@ -144,7 +144,7 @@ else {
 			$template_main .= "<input type='text' size='25' name='pass' /><br /><hr />";
 		}	
 	
-		$SQL = "Select concat(concat(concat(concat(T1.id_clef,'$sep'),T3.trigramme),'-'),T3.nom) as idselect, concat(concat(concat(concat(concat(concat(concat(concat(concat(T2.trigramme,'-'),T2.nom),'   --->   '),T3.trigramme),'-'),T3.nom), ' coûte '),T1.difficulte),' PO' ) as labselect FROM ".NOM_TABLE_CHEMINS." T1, ".NOM_TABLE_LIEU." T2, ".NOM_TABLE_LIEU." T3 WHERE T1.id_lieu_1 = T2.id_lieu AND T1.id_lieu_2 = T3.id_lieu AND T1.id_lieu_1 = ".$PERSO->Lieu->ID." AND type = ".$liste_types_chemins["Lieu Peage"];
+		$SQL = "Select concat(concat(concat(concat(T1.id_clef,'$sep'),T3.trigramme),'-'),T3.nom) as idselect, concat(concat(concat(concat(concat(concat(concat(concat(concat(T2.trigramme,'-'),T2.nom),'   --->   '),T3.trigramme),'-'),T3.nom), ' cote '),T1.difficulte),' PO' ) as labselect FROM ".NOM_TABLE_CHEMINS." T1, ".NOM_TABLE_LIEU." T2, ".NOM_TABLE_LIEU." T3 WHERE T1.id_lieu_1 = T2.id_lieu AND T1.id_lieu_2 = T3.id_lieu AND T1.id_lieu_1 = ".$PERSO->Lieu->ID." AND type = ".$liste_types_chemins["Lieu Peage"];
 		$var= faitSelect("id_cible_peage",$SQL,"");
 		if ($var[0]>0) {
 			$template_main .= "<table width='70%' class='stats'><tr><td width='100%' align='left'><input ";
@@ -251,7 +251,7 @@ else {
 					}	
 				}
 				if ($etattrouve) {
-					//vérifie que tous les membres du groupe sont au meme endroit de depart et non engagés
+					//vrifie que tous les membres du groupe sont au meme endroit de depart et non engags
 					$i=0;
 					$engage=false;
 					while ($i<$nbPjsGroupe && ($id_lieu==$PERSO->Lieu->ID) && ($engage==false)){

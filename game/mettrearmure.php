@@ -6,7 +6,7 @@ $RCSfile: mettrearmure.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/01/24 17:44:03 $

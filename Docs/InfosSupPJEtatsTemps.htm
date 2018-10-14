@@ -27,43 +27,43 @@ $Date: 2010/01/24 16:35:38 $
  
  
  
-  <p align="center"><span class="Style1">Créer plus de diversités dans les PJs grace aux Etats Temporaires</span><br />
+  <p align="center"><span class="Style1">Crer plus de diversits dans les PJs grace aux Etats Temporaires</span><br />
     <br />
   </p>
 
-Ajout de paramètres supplémentaires aux PJs:
-  <p align="center">Exemple avec la classe de PJ (Pour info : la race, le sexe, l'age sont déjà intégrés). Il ne vous reste plus qu'à faire de même avec d'autres infos (Classe, spécialité ...) <br />
+Ajout de paramtres supplmentaires aux PJs:
+  <p align="center">Exemple avec la classe de PJ (Pour info : la race, le sexe, l'age sont dj intgrs). Il ne vous reste plus qu' faire de mme avec d'autres infos (Classe, spcialit ...) <br />
     <br />
   </p>
 
 <ul type='none'><li>Version 3.5<br />
-Suite à une demande de Youk (mais qui avait été demandée par d'autres aussi bien avant) 
-pour l'ajout d'un critere 'classe' et à une longue discussion avec Chub (Toujours plein de bonnes idées mais avec qui j'ai du mal à comprendre ce qu'il veut (et inversement)  :) mais ca s'avere toujours payant de creuser ses idées),
-Les types d'etats temporaires et leurs états ont été améliorés pour que chaque admin puisse ajouter autant de critères de caratérisation et/ou personnalisation à un PJ qu'il le désire sans avoir à ne rien modifier ni dans le code ni dans le SQL.<br />
-Chaque type d'état temporaire possède désormais: (cf. <a href='../admin/gethelp.php?page=creer_typeEtat.htm'>Aide de création de type d'etat</a>)<br />
-<ul>	<li>un champ 'critere d'inscription'. Si ce champ est à 'Oui' (stocké 1 en base), ce type d'état temporaire apparaît dans l'inscription d'un PJ avec le nom du type de l'état)</li>
-	<li>un champ 'choix obligatoire à l'inscription'. Si ce champ est à 'Oui', ce type d'état temporaire doit être renseigné par le joueur au moment de l'inscription. Si ce champ est à non( stocké à 0 en base), c'est un champ facultatif que le joueur peut remplir s'il veut personnaliser son PJ )</li>
-	<li>un champ 'critere modifiable par le PJ Post-inscription'. Si ce champ est à 'Oui', ce type peut être modifié en jeu à tout moment par le joueur. Sinon, la valeur choisie au moment de l'inscription n'est plus modifiable par le joueur </li>
+Suite  une demande de Youk (mais qui avait t demande par d'autres aussi bien avant) 
+pour l'ajout d'un critere 'classe' et  une longue discussion avec Chub (Toujours plein de bonnes ides mais avec qui j'ai du mal  comprendre ce qu'il veut (et inversement)  :) mais ca s'avere toujours payant de creuser ses ides),
+Les types d'etats temporaires et leurs tats ont t amliors pour que chaque admin puisse ajouter autant de critres de caratrisation et/ou personnalisation  un PJ qu'il le dsire sans avoir  ne rien modifier ni dans le code ni dans le SQL.<br />
+Chaque type d'tat temporaire possde dsormais: (cf. <a href='../admin/gethelp.php?page=creer_typeEtat.htm'>Aide de cration de type d'etat</a>)<br />
+<ul>	<li>un champ 'critere d'inscription'. Si ce champ est  'Oui' (stock 1 en base), ce type d'tat temporaire apparat dans l'inscription d'un PJ avec le nom du type de l'tat)</li>
+	<li>un champ 'choix obligatoire  l'inscription'. Si ce champ est  'Oui', ce type d'tat temporaire doit tre renseign par le joueur au moment de l'inscription. Si ce champ est  non( stock  0 en base), c'est un champ facultatif que le joueur peut remplir s'il veut personnaliser son PJ )</li>
+	<li>un champ 'critere modifiable par le PJ Post-inscription'. Si ce champ est  'Oui', ce type peut tre modifi en jeu  tout moment par le joueur. Sinon, la valeur choisie au moment de l'inscription n'est plus modifiable par le joueur </li>
 </ul>
-Chaque état possède désormais un champ 'Utilisable à l'inscription (PJ)'. Si ce champ est à 'Oui', l'état temporaire apparait et peut etre choisie par le joueur au moment de l'incription. 
-Sinon, cet etat n'apparait pas dans la liste de choix du type correspondant et est réservé aux PNJs.
-Ex: Type d'etat 'Classe', Etat 'Demi-dieu' sera réservé aux PNJs...
+Chaque tat possde dsormais un champ 'Utilisable  l'inscription (PJ)'. Si ce champ est  'Oui', l'tat temporaire apparait et peut etre choisie par le joueur au moment de l'incription. 
+Sinon, cet etat n'apparait pas dans la liste de choix du type correspondant et est rserv aux PNJs.
+Ex: Type d'etat 'Classe', Etat 'Demi-dieu' sera rserv aux PNJs...
 <table class='details' width='100%'>
-<tr><td> Etapes</td><td> Fichiers impactés</td></tr>
-<tr><td> Création d'un type d'Etat temporaire "Classe" en indiquant que c'est un 'critere d'inscription'</td><td>Aucun</td></tr>
-<tr><td> Création d'Etats temporaires de Classe (Ex: Ranger, Guerrier, Assassin, Druide ....) avec leurs bonus/malus spécifiques.
-Pour les multi-classés, créer une classe par type (Ex: Guerrier/Voleur, ...)</td><td>Aucun</td></tr>
+<tr><td> Etapes</td><td> Fichiers impacts</td></tr>
+<tr><td> Cration d'un type d'Etat temporaire "Classe" en indiquant que c'est un 'critere d'inscription'</td><td>Aucun</td></tr>
+<tr><td> Cration d'Etats temporaires de Classe (Ex: Ranger, Guerrier, Assassin, Druide ....) avec leurs bonus/malus spcifiques.
+Pour les multi-classs, crer une classe par type (Ex: Guerrier/Voleur, ...)</td><td>Aucun</td></tr>
 </table> 
 </li>
 <li><br /></li>
 <li>
 Version 3.3
 <table class='details' width='100%'>
-<tr><td> Etapes</td><td> Fichiers impactés</td></tr>
-<tr><td> Création d'un type d'Etat temporaire "Classe"</td><td>Aucun</td></tr>
-<tr><td> Création d'Etats temporaires de Classe (Ex: Ranger, Guerrier, Assassin, Druide ....) avec leurs bonus/malus spécifiques.
-Pour les multi-classés, créer une classe par type (Ex: Guerrier/Voleur, ...)</td><td>Aucun</td></tr>
-<tr><td> Création d'un champ ID_Classe dans TLT_Perso et TLT_Inscriptions</td><td>Talesta4.sql<br />
+<tr><td> Etapes</td><td> Fichiers impacts</td></tr>
+<tr><td> Cration d'un type d'Etat temporaire "Classe"</td><td>Aucun</td></tr>
+<tr><td> Cration d'Etats temporaires de Classe (Ex: Ranger, Guerrier, Assassin, Druide ....) avec leurs bonus/malus spcifiques.
+Pour les multi-classs, crer une classe par type (Ex: Guerrier/Voleur, ...)</td><td>Aucun</td></tr>
+<tr><td> Cration d'un champ ID_Classe dans TLT_Perso et TLT_Inscriptions</td><td>Talesta4.sql<br />
 admin/creerPNJ.php<br />
 admin/inscrire.php<br />
 admin/modifier_info_pj.php<br />
@@ -77,27 +77,27 @@ main/joueurs.php<br />
 </table>
 </li>
 </ul>
-Et voila. Dès l'inscription, le joueur choisit sa classe et recoit un état temporaire avec ses bonus/malus sans qu'il n'y ait rien à faire.
-De plus, vous pouvez, pour chaque objet ou sort, indiquer quel état temporaire est nécessaire pour utiliser cet objet ou ce sort. 
-Donc, vous pouvez désormais créer des armes et sorts spécifiques aux races.
+Et voila. Ds l'inscription, le joueur choisit sa classe et recoit un tat temporaire avec ses bonus/malus sans qu'il n'y ait rien  faire.
+De plus, vous pouvez, pour chaque objet ou sort, indiquer quel tat temporaire est ncessaire pour utiliser cet objet ou ce sort. 
+Donc, vous pouvez dsormais crer des armes et sorts spcifiques aux races.
 <br />
     <hr />
-Ajout de races, age... supplémentaires à celles existantes:
+Ajout de races, age... supplmentaires  celles existantes:
 <br />
     <br />
 <ul type='none'><li>Version 3.3
 <table class='details' width='100%'>
 <tr><td> Etapes</td></tr>
-<tr><td> Création d'Etats temporaires de type Race avec leurs bonus/malus.
-Pour les métissages, créer une race par métissage (Demi-Elfe, ....) avec ses bonus/malus spécifiques </td></tr>
+<tr><td> Cration d'Etats temporaires de type Race avec leurs bonus/malus.
+Pour les mtissages, crer une race par mtissage (Demi-Elfe, ....) avec ses bonus/malus spcifiques </td></tr>
 </table>
 </li></ul>
-C'est tout, les nouvelles races apparaissent dans la combo de sélections dans l'écran inscription.
+C'est tout, les nouvelles races apparaissent dans la combo de slections dans l'cran inscription.
 
 </div>
 <div id='menu'>
 <img src='../templates/Original/images/menu_top.jpg' height='35' width='135' border='0' alt='menu_top.jpg' />
-	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise à jour</a></h4>
+	<h4><a class='t1' href='../Docs/Install.htm'>Installation</a></h4><h4><a class='t1' href='../Docs/update.htm'>Mise  jour</a></h4>
 	<h4><a class='t1' href='../Docs/creer_chemin.htm'>Chemins</a></h4>
 	<h4><a class='t1' href='../Docs/creer_typeEtat.htm'>Types d'Etats temporaires</a></h4>
 	<h4><a class='t1' href='../Docs/creer_etattemp.htm'>Etats temporaires</a></h4>
@@ -105,10 +105,10 @@ C'est tout, les nouvelles races apparaissent dans la combo de sélections dans l'
 	<h4><a class='t1' href='../Docs/creer_objet.htm'>Objets</a></h4>
 	<h4><a class='t1' href='../Docs/creer_pnj.htm'>PNJs </a></h4>
 	<h4><a class='t1' href='../Docs/creer_sort.htm'>Sorts</a></h4>
-	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide création de PNJ </a></h4>
-	<h4><a class='t1' href='../Docs/aide.htm'>Aide réussite des actions </a></h4>
+	<h4><a class='t1' href='../Docs/tab_pnj.htm'>Aide cration de PNJ </a></h4>
+	<h4><a class='t1' href='../Docs/aide.htm'>Aide russite des actions </a></h4>
 	<h4><a class='t1' href='../Docs/IntegrationPHPBB.htm'>Integration du forum</a></h4>
-	<h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversités dans les PJs</a></h4>
+	<h4><a class='t1' href='../Docs/InfosSupPJEtatsTemps.htm'>Plus de diversits dans les PJs</a></h4>
 	<h4><a class='t1' href='../Docs/Artisanat.htm'>Aide sur l'artisanat </a></h4>
 	<h4><a class='t1' href='../Docs/FAQ_TODOetc.htm'>FAQ, TODO, lisezmoi</a></h4>
 <img src='../templates/Original/images/menu_bottom.png' alt='menu_bottom.png'  height='10' width='135' border='0' class='bottom' />

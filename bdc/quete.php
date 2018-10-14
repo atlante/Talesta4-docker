@@ -6,7 +6,7 @@ $RCSfile: quete.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/09/04 20:46:16 $
@@ -68,8 +68,8 @@ if($peutvoir){
 				$template_main .= "<tr><td>Degats</td><td>entre ".span($Quete_vu->Degats[0],"degats")." et ".span($Quete_vu->Degats[1],"degats")."</td></tr>";
 			}
 */			
-                        $template_main .= "<tr><td>Proposée par</td><td>";
-                        if (isset($MJ) || (!$Quete_vu->proposantAnonyme) || (isset($PËRSO) && $PERSO->ID == $Quete_vu->acteurProposant->ID)) {
+                        $template_main .= "<tr><td>Propose par</td><td>";
+                        if (isset($MJ) || (!$Quete_vu->proposantAnonyme) || (isset($PRSO) && $PERSO->ID == $Quete_vu->acteurProposant->ID)) {
                                 if ($Quete_vu->proposepartype==1)
                                         $template_main .= span(" MJ ".$Quete_vu->acteurProposant->nom,"mj"); 
                                 else $template_main .= span(" PJ ".$Quete_vu->acteurProposant->nom,"pj");
@@ -79,7 +79,7 @@ if($peutvoir){
                         }
                         else $template_main .= "Anonyme</td></tr>";
 			if( ($Quete_vu->duree_quete == -1) ){
-					$template_main .= "<tr><td colspan='2'>".span("durée illimitée","mun")."</td></tr>";
+					$template_main .= "<tr><td colspan='2'>".span("dure illimite","mun")."</td></tr>";
 			}else{
 					$template_main .= "<tr><td>Temps pour agir</td><td>".span($Quete_vu->duree_quete,"cha")." Jours</td></tr>";
 			}
@@ -97,7 +97,7 @@ if($peutvoir){
 			}
 
 /*			$template_main .= "<tr><td>";
-			$template_main .= "Réservée pour</td><td>";			
+			$template_main .= "Rserve pour</td><td>";			
 			if ($Quete_vu->EtatTempSpecifique!=null)
 				$template_main .= span($Quete_vu->EtatTempSpecifique->nom,"etattemp");
 			else $template_main .= "&nbsp;";	
@@ -106,7 +106,7 @@ if($peutvoir){
 
 
 			$template_main .= "<tr><td>";
-			$template_main .= "Nécessite les composantes de Quete: </td><td>";			
+			$template_main .= "Ncessite les composantes de Quete: </td><td>";			
 			if ($Quete_vu->composantes!="") {
 				$Quete_vu->setObjetsComposantesQuete();
 				$nb_composantes = count($Quete_vu->ObjetsComposantesQuete);

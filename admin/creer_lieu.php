@@ -6,7 +6,7 @@ $RCSfile: creer_lieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.25 $
 $Date: 2010/02/28 22:58:03 $
@@ -41,7 +41,7 @@ if($etape=="1" || $etape=="10"){
 		}
 		
 		if ($erreur) {
-			$MJ->OutPut("Lieu ".span(ConvertAsHTML($nom),"lieu")." n'a pu être cree (Raison: impossible de trouver '$cheminfichieraudio' dans /lieux/sons/)" ,true);	
+			$MJ->OutPut("Lieu ".span(ConvertAsHTML($nom),"lieu")." n'a pu tre cree (Raison: impossible de trouver '$cheminfichieraudio' dans /lieux/sons/)" ,true);	
 			$etape=0.5;	
 		}
 		else {
@@ -94,7 +94,7 @@ if($etape=="1" || $etape=="10"){
                 				$ext=strtolower(substr($HTTP_POST_FILES['fichierImage']['name'],strlen($HTTP_POST_FILES['fichierImage']['name'])-3));
                                  		if(! file_exists ("../lieux/vues/"))
                                  			if (! mkdir("../lieux/vues/",0744)) {
-                                 				logDate ("impossible de créer le rep '../lieux/vues/'",E_USER_WARNING,1);
+                                 				logDate ("impossible de crer le rep '../lieux/vues/'",E_USER_WARNING,1);
                                  				$erreur=1;
                                  			}	
 
@@ -110,7 +110,7 @@ if($etape=="1" || $etape=="10"){
 				}	
 			}
 			else {
-				$MJ->OutPut("Lieu ".span(ConvertAsHTML($nom),"lieu")." n'a pu être cree (Raison: $db->erreur;)" ,true);	
+				$MJ->OutPut("Lieu ".span(ConvertAsHTML($nom),"lieu")." n'a pu tre cree (Raison: $db->erreur;)" ,true);	
 				$etape=0.5;	
 			}	
 		}

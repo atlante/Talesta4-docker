@@ -6,7 +6,7 @@ $RCSfile: listeMagasin.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.16 $
 $Date: 2006/02/04 11:48:10 $

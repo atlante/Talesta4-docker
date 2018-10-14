@@ -6,7 +6,7 @@ $RCSfile: voir_lieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.15 $
 $Date: 2010/02/28 22:58:11 $
@@ -123,7 +123,7 @@ if($etape=="1")
 	$result_perso = $db->sql_query($SQL_perso);
 	if($db->sql_numrows($result_perso) == 0) $template_main .="<span class='c1'>Il n'y a personne en ce lieu</span><br />";
 	else {
-		$template_main .="<span class='c1'>Liste des personnes présentes dans ce lieu:</span><br /><table class='details'><tr><td>nom</td><td>Visible</td></tr>";
+		$template_main .="<span class='c1'>Liste des personnes prsentes dans ce lieu:</span><br /><table class='details'><tr><td>nom</td><td>Visible</td></tr>";
 		while($row_perso = $db->sql_fetchrow($result_perso)) {
 			$nom_perso=$row_perso["nom"];
 			$id_perso=$row_perso["id_perso"];

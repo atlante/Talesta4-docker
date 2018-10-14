@@ -6,7 +6,7 @@ $RCSfile: voirQueteLieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/01/24 17:44:04 $
@@ -118,13 +118,13 @@ else {
         			$template_main .= GetMessage("noparam");
         		else {                
                         	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-                        	$template_main .= " Détails de la quête ". span($Quete->nom_quete,"quete");
+                        	$template_main .= " Dtails de la qute ". span($Quete->nom_quete,"quete");
                         	
                         	
                         	
                         	$detail = $Quete->description();
                         	$template_main .="<table class='details'>";
-                                $template_main .="<tr><td>Proposée par</td><td> ". $detail[1]. "</td></tr>";
+                                $template_main .="<tr><td>Propose par</td><td> ". $detail[1]. "</td></tr>";
                                 $template_main .="<tr><td>Type de quete</td><td> ". $detail[2]. "</td></tr>";
                                 $template_main .="<tr><td>Proposition</td><td> ". $detail[3]. "</td></tr>";
                                 $template_main .="</table>";

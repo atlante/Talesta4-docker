@@ -6,7 +6,7 @@ $RCSfile: creer_Armures.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.3 $
 $Date: 2010/02/28 22:58:03 $
@@ -30,12 +30,12 @@ $coeffDegats = 5;
 if(!(isset($etape))){
 	
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
-	$template_main .= "Ce script sert à créer un jeu de données pour les tests du moteur. <br />";
-	$template_main .= "Il va créer des Armures (objets de type Armure) permettant au possesseur d'obtenir des bonus pour l'absorption de degats pour chaque compétence dans liste_magie ou liste_competencesArmes.<br />";
-	$template_main .= "Le bonus  va de \$bonusMin (qui est à $bonusMin) à \$bonusMax (qui est à $bonusMax), le prix de ces armures est de \$coeffPrix (actuellement à $coeffPrix). <br />";
-	$template_main .= "\$bonusMin, \$bonusMax, \$coeffPrix et \$coeffDegats peuvent être modifiés pour être adaptés à votre jeu .<br />";
-	$template_main .= " Remarques : Comme je n'ai pas voulu entrer dans le detail des type d'armures, toute armure pèse le même poids, encaisse autant de dégats et suporte autant de coups, ce qui est bien entendu ridicule mais pour mes tests, suffisant. <br />";
-	$template_main .= "<input type='submit' value='Création' /><input type='hidden' name='etape' value='1' />";
+	$template_main .= "Ce script sert  crer un jeu de donnes pour les tests du moteur. <br />";
+	$template_main .= "Il va crer des Armures (objets de type Armure) permettant au possesseur d'obtenir des bonus pour l'absorption de degats pour chaque comptence dans liste_magie ou liste_competencesArmes.<br />";
+	$template_main .= "Le bonus  va de \$bonusMin (qui est  $bonusMin)  \$bonusMax (qui est  $bonusMax), le prix de ces armures est de \$coeffPrix (actuellement  $coeffPrix). <br />";
+	$template_main .= "\$bonusMin, \$bonusMax, \$coeffPrix et \$coeffDegats peuvent tre modifis pour tre adapts  votre jeu .<br />";
+	$template_main .= " Remarques : Comme je n'ai pas voulu entrer dans le detail des type d'armures, toute armure pse le mme poids, encaisse autant de dgats et suporte autant de coups, ce qui est bien entendu ridicule mais pour mes tests, suffisant. <br />";
+	$template_main .= "<input type='submit' value='Cration' /><input type='hidden' name='etape' value='1' />";
 	$template_main .= "</form>";
 	
 	$template_main .= "</div>";	
@@ -69,8 +69,8 @@ else if ($etape=="1") {
 				$temp = explode(";",$type);
 				if ($temp[0]=="Armure") {
 					$chaine="";
-					$description= $temp[1]." protégeant contre ". $nomCompetence;
-					$nom = $temp[1]." protégeant contre ". $nomCompetence;
+					$description= $temp[1]." protgeant contre ". $nomCompetence;
+					$nom = $temp[1]." protgeant contre ". $nomCompetence;
 					include "./creer_objet.".$phpExtJeu;		
 					$template_main .= "<br />";
 				}

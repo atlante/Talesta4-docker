@@ -6,7 +6,7 @@ $RCSfile: mod_info.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.27 $
 $Date: 2010/05/13 21:36:12 $
@@ -31,7 +31,7 @@ if($etape=="1"){
 	if ($pass_old!="") {
 		if($PERSO->pass == md5($pass_old)){
 			if( ($pass_new1 == $pass_new2) && ($pass_new1 != '') ){$change_pass = true; }
-			else $erreur= "Les 2 saisies du nouveau mot de passe sont différentes ou vides. "; 
+			else $erreur= "Les 2 saisies du nouveau mot de passe sont diffrentes ou vides. "; 
 		}
 	  	else $erreur.= "L'ancien mot de passe n'est pas correct. "; 		  	
 	}	
@@ -108,10 +108,10 @@ if($etape=="1"){
 			$description = str_replace("?>","",$description);
 			if (($f = fopen($nom_fichier,"w+b"))!==false) {
 				if (fwrite($f,$description)===false) {
-					$template_main .= "Probleme à l'écriture de '".$nom_fichier."'";
+					$template_main .= "Probleme  l'criture de '".$nom_fichier."'";
 				}
 				if (fclose ($f)===false)
-					$template_main .= "Probleme à la fermeture de '".$nom_fichier."'";
+					$template_main .= "Probleme  la fermeture de '".$nom_fichier."'";
 			}	
 			else $template_main .= "impossible d'ouvrir le fichier '".$nom_fichier."' en ecriture";
 			*/

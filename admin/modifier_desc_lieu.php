@@ -6,7 +6,7 @@ $RCSfile: modifier_desc_lieu.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.16 $
 $Date: 2010/02/28 22:58:07 $
@@ -28,11 +28,11 @@ if($etape==2){
 	if($MJ->aDroit($liste_flags_mj["ModifierDescLieu"])){
 		if (($f = fopen("../lieux/descriptions/desc_".$id_cible.".txt","w+b"))!==false) {
 			if (fwrite($f,stripslashes($description))===false) {
-				$template_main .= "Probleme à l'écriture de '../lieux/descriptions/desc_".$id_cible.".txt'";
+				$template_main .= "Probleme  l'criture de '../lieux/descriptions/desc_".$id_cible.".txt'";
 			}
 			else  {
 			if (fclose ($f)===false)
-				$template_main .= "Probleme à la fermeture de '../lieux/descriptions/desc_".$id_cible.".txt'";
+				$template_main .= "Probleme  la fermeture de '../lieux/descriptions/desc_".$id_cible.".txt'";
 			else $MJ->OutPut("description de ".span($nom,"lieu")." correctement modifi&eacute;e");
 			}	
 		}

@@ -6,7 +6,7 @@ $RCSfile: modifier_xp_Bestiaire.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2006/09/04 20:53:40 $

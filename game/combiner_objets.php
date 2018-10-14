@@ -6,7 +6,7 @@ $RCSfile: combiner_objets.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2010/01/24 17:44:00 $
@@ -35,7 +35,7 @@ if(!isset($etape)){
 	if($db->sql_numrows($result) > 0){
 		$ListeObj = null;
 		$compteur=0;
-		$template_main .= "Choisissez les objets à combiner";
+		$template_main .= "Choisissez les objets  combiner";
 		$i=0;
 		while($row = $db->sql_fetchrow($result)){
 			$ListeObj[$compteur]= new ObjetPJ($row["id_objet"],$row["id_clef"],$i, ($row["equipe"] == 1),($row["temporaire"]==1),$row["munitions"],$row["durabilite"]);
@@ -46,7 +46,7 @@ if(!isset($etape)){
 		$template_main .= "<table class='detailscenter'>";
 		for($i=0;$i<$compteur;$i++){
 			$template_main .= "<tr>";
-			$template_main .= "<td>Sélectionner<input type='checkbox' name='sel[".$ListeObj[$i]->id_clef."]' value=".$ListeObj[$i]->ID." /></td>";
+			$template_main .= "<td>Slectionner<input type='checkbox' name='sel[".$ListeObj[$i]->id_clef."]' value=".$ListeObj[$i]->ID." /></td>";
 			if($ListeObj[$i]->estPermanent()){
 				$template_main .= "<td>#</td>";
 			}else{
@@ -95,7 +95,7 @@ if($etape=="1"){
 		CASE WHEN T1.type = 'Armure' THEN concat( concat( ' (Protege de ', T1.competence ) , ')' ) 
 		ELSE '' END ) , ' - ' ) , CASE WHEN T1.type = 'Armure' THEN concat( T1.degats_min, ' pts de protect' ) 
 		ELSE concat( 'Degats :', T1.degats_min ) 
-		END ) , ' à ' ) , T1.degats_max ) , ' - ' ) , substring( T1.description, 1, 40 ) ) , '... ' )";
+		END ) , '  ' ) , T1.degats_max ) , ' - ' ) , substring( T1.description, 1, 40 ) ) , '... ' )";
 		if(defined("AFFICHE_PRIX_OBJET_SORT") && AFFICHE_PRIX_OBJET_SORT==1)
 			$SQL .= ", T1.prix_base ) , ' POs - ' )";
 		$SQL .= ", T1.poids ) , ' kg' )  as labselect
@@ -104,7 +104,7 @@ if($etape=="1"){
 		$template_main .= "<div class ='centerSimple'>";
 		if ( $var[0]>0) {
 			$template_main .= "<form action='".NOM_SCRIPT."' method='post'>";
-			$template_main .= "Voici les objets que vous pouvez créer :";
+			$template_main .= "Voici les objets que vous pouvez crer :";
 			$template_main .= $var[1];
 			$template_main .= "<br /><input type='submit' value='Envoyer'  />";
 			$template_main .= "<input type='hidden' name='etape' value='2' />";
@@ -115,7 +115,7 @@ if($etape=="1"){
 		$template_main .= "</div>";
 	}
 	else
-	$template_main .= "vous devez sélectionner quelque chose";
+	$template_main .= "vous devez slectionner quelque chose";
 }
 if($etape=="2"){
 	if( $PERSO->ModPA($liste_pas_actions["CombinerObjets"]) && $PERSO->ModPI($liste_pis_actions["CombinerObjets"])	){

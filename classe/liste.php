@@ -6,7 +6,7 @@ $RCSfile: liste.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.9 $
 $Date: 2006/09/04 20:43:06 $

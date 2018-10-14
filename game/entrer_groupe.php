@@ -6,7 +6,7 @@ $RCSfile: entrer_groupe.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.19 $
 $Date: 2006/01/31 12:26:24 $

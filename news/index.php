@@ -6,7 +6,7 @@ $RCSfile: index.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2006/01/31 12:26:28 $
@@ -20,7 +20,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 $template_main .= "<center><hr /><h3>News de ". NOM_JEU."</h3></center><br /><br />";

@@ -6,7 +6,7 @@ $RCSfile: modifier_mj.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.23 $
 $Date: 2010/05/15 08:52:12 $
@@ -33,7 +33,7 @@ if($etape==2){
 		}
 		
 		if (defined("IN_FORUM")&& IN_FORUM==1 && (in_array (strtoupper($nom), $forum->nomsReservesForum))) 
-			$erreur .= "nom déjà utilisé pour le forum <br />";
+			$erreur .= "nom dj utilis pour le forum <br />";
 
 		if ($erreur=="") {
 			$SQL = "UPDATE ".NOM_TABLE_MJ." SET ";
@@ -109,7 +109,7 @@ if($etape=="1"){
       	$template_main .= "<input type='hidden' name='id_cible' value='".$id_cible."' />";
   }
   else 
-    $template_main .= "Données non trouvées. Synchronisez le forum avec le jeu";
+    $template_main .= "Donnes non trouves. Synchronisez le forum avec le jeu";
 	$template_main .= "</form></div>";
 }
 

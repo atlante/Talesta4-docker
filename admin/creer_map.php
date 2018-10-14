@@ -6,7 +6,7 @@ $RCSfile: creer_map.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.5 $
 $Date: 2006/01/31 12:26:16 $
@@ -22,7 +22,7 @@ $titrepage = $creer_map;
 if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 
 	/**
-	Se mettre dans le répertoire admin et lancer la commande suivante pour générer l'image et l'HTML map associée
+	Se mettre dans le rpertoire admin et lancer la commande suivante pour gnrer l'image et l'HTML map associe
 	dot -Tcmap -o ../lieux/vues/map.cmap -Tgif -o ../lieux/vues/map.gif ../lieux/descriptions/graph.txt
 	en ligne de commande pour faire la map HTML et la gif
 	
@@ -89,14 +89,14 @@ if($MJ->aDroit($liste_flags_mj["CreerCarte"])){
 		$desc.= "\tsubgraph cluster_LEGENDE {\n";		
 		//$desc .= "\t\trankdir=LR";
 		$desc .= "\t\tnode [shape=none pencolor=black]\n";
-		$desc.= "\t\tlabel = \"Légende des chemins\";\n";
-		$desc.= "\t\t\"chemins nager\" -> \"&nbsp;\" [". $styleNager. " label = \"difficulté\"];\n";
+		$desc.= "\t\tlabel = \"Lgende des chemins\";\n";
+		$desc.= "\t\t\"chemins nager\" -> \"&nbsp;\" [". $styleNager. " label = \"difficult\"];\n";
 		$desc.= "\t\t\"chemins aller\" -> \"&nbsp;&nbsp;\" [". $styleAller. " label = distance " ."];\n";
 		$desc.= "\t\t\"chemins entrer\" -> \"&nbsp;&nbsp;&nbsp;\" [". $styleEntrer/*. " label = distance "*/ ."];\n";
 		$desc.= "\t\t\"chemins passage\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;\" [". $stylePassage. " label = \"distance \"];\n";
-		$desc.= "\t\t\"chemins escalader\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $styleEscalader. " label = \"difficulté\"];\n";
-		$desc.= "\t\t\"chemins péage\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $stylePeage. " label = \"montant\"];\n";		
-		$desc.= "\t\t\"chemins secret\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $styleSecret. " label = \"difficulté\"];\n";		
+		$desc.= "\t\t\"chemins escalader\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $styleEscalader. " label = \"difficult\"];\n";
+		$desc.= "\t\t\"chemins page\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $stylePeage. " label = \"montant\"];\n";		
+		$desc.= "\t\t\"chemins secret\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $styleSecret. " label = \"difficult\"];\n";		
 		$desc.= "\t\t\"chemins guilde\" -> \"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\" [". $styleGuilde. " label = \"mot de passe\"];\n";		
 		$desc.= "\t}\n";
 
@@ -160,11 +160,11 @@ if($MJ->aDroit($liste_flags_mj["CreerCarte"])){
 		$desc .= "}\n";
 
 		if (fwrite($f,stripslashes($desc))===false) {
-			$template_main .= "Probleme à l'écriture de '".$file."'";
+			$template_main .= "Probleme  l'criture de '".$file."'";
 		}
 		else  {
 			if (fclose ($f)===false)
-				$template_main .= "Probleme à la fermeture de '".$file."'";
+				$template_main .= "Probleme  la fermeture de '".$file."'";
 			else $MJ->OutPut("fichier '".$file."' correctement modifi&eacute;");
 		}	
 	}

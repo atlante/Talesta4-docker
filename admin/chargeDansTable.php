@@ -6,7 +6,7 @@ $RCSfile: chargeDansTable.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.1 $
 $Date: 2010/02/28 22:58:02 $
@@ -56,7 +56,7 @@ function writeSQL($fichierSQL) {
         		}	
         	}						
         	
-        	$template_main .="<p>$nb_test_ok instructions se sont executées correctement sur $nb_test.</p><br />";
+        	$template_main .="<p>$nb_test_ok instructions se sont executes correctement sur $nb_test.</p><br />";
         }
         else $template_main .= "Fichier '".$fichierSQL."' inexistant";
        
@@ -72,7 +72,7 @@ if($etape==1){
 
 if($etape===0){
 	$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."'  enctype='multipart/form-data'  method='post'>";
-	$template_main.= "Fichier à importer <input name='fichierSQL' id='fichierSQL' value='' size='50' type='file' />";
+	$template_main.= "Fichier  importer <input name='fichierSQL' id='fichierSQL' value='' size='50' type='file' />";
 	$template_main .= "<input type='hidden' name='etape' value='1' />";
 	$template_main .= "<br />".BOUTON_ENVOYER;
 	$template_main .= "</form></div>";

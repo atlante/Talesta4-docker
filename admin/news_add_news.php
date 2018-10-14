@@ -6,7 +6,7 @@ $RCSfile: news_add_news.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.8 $
 $Date: 2006/04/17 21:24:51 $
@@ -25,7 +25,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_add_news.php
@@ -38,7 +38,7 @@ if (isset ($add)) {
 	$texte = addslashes ($texte);
 	$sql ="INSERT INTO ".NOM_TABLE_NEWS." (NEWS_DATE,TITRE,AUTEUR,TEXTE) VALUES ('".time ()."', '".$titre."', '".$pseudo."', '".$texte."')";
 	if($result = $db->sql_query ($sql,"",END_TRANSACTION_JEU))
-		$template_main .= 'Votre news a correctement été ajoutée';
+		$template_main .= 'Votre news a correctement t ajoute';
 	else $template_main .= $db->erreur;	
 } else {
 	$template_main .= "<div class ='centerSimple'><table width='750'><tr><td><br />Ajouter une news<br /><br /></td></tr>

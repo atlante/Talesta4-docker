@@ -6,7 +6,7 @@ $RCSfile: voler.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.17 $
 $Date: 2010/01/24 17:44:05 $
@@ -27,7 +27,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 	if(!isset($etape)){	
 		$template_main .= "<div class ='centerSimple'><form action='".NOM_SCRIPT."' method='post'>";
 		/**
-		*  Le premier parametre est mis à 0 => on peut voler les morts aussi     
+		*  Le premier parametre est mis  0 => on peut voler les morts aussi     
 		*/
 		$SQL = $PERSO->listePJsDuLieuDuPerso(0, false, true,1);
 		$var=faitSelect("id_cible",$SQL,"",-1,array($PERSO->ID));

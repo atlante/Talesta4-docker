@@ -6,7 +6,7 @@ $RCSfile: news_del_com.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.3 $
 $Date: 2006/01/31 12:26:19 $
@@ -21,10 +21,10 @@ if(!defined("__titre.'.$phpExtJeu")){include('../include/titre.'.$phpExtJeu);}
 $titrepage = $news_del_com;
 if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 /*
-* Talesta-News par Chub modifié par Ryuden
+* Talesta-News par Chub modifi par Ryuden
 
 * Script de news avec gestion commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER news_del_com.php
@@ -62,7 +62,7 @@ if(!defined("__HEADER.PHP")){include('../include/header.'.$phpExtJeu);}
 		//mysql_select_db (DB_BASE);
 		$sql ='DELETE FROM '.NOM_TABLE_COMMENT_NEWS.' WHERE id='.$_POST['id'];
 		if ($db->sql_query ($sql))
-			$template_main .= 'Le commentaire a bien été supprimé';
+			$template_main .= 'Le commentaire a bien t supprim';
 		//$db->sql_close ();
 	}
 if(!defined("__MENU_ADMIN.PHP")){include('../admin/menu_admin.'.$phpExtJeu);}

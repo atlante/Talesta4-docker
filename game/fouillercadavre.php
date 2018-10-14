@@ -6,7 +6,7 @@ $RCSfile: fouillercadavre.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/01/24 17:44:02 $
@@ -73,7 +73,7 @@ if($etape=="1"){
   				$nbObjs = count($ADVERSAIRE->Objets);
   				$i=0;
   				while($i<$nbObjs && $Objet== null){
-  					//modif du test de temporaire à 0 suite discussion avec Uriel
+  					//modif du test de temporaire  0 suite discussion avec Uriel
   					if( ($ADVERSAIRE->Objets[$i]->permanent==0) && ($ADVERSAIRE->Objets[$i]->temporaire == 0) ){
   					     if ($ADVERSAIRE->Objets[$i]->equipe == 1)
   						        $Objet = $ADVERSAIRE->Objets[$i];
@@ -88,7 +88,7 @@ if($etape=="1"){
   				$nbObjs = count($ADVERSAIRE->Objets);
   				$i=0;
   				while($i<$nbObjs && $Objet== null){
-  					//modif du test de temporaire à 0 suite discussion avec Uriel
+  					//modif du test de temporaire  0 suite discussion avec Uriel
   					if( ($ADVERSAIRE->Objets[$i]->permanent==0) && ($ADVERSAIRE->Objets[$i]->temporaire == 0) ){
   					        if(defined("FOUILLE_OBJETS_EQUIPES") && FOUILLE_OBJETS_EQUIPES==1) {
   						        $Objet = $ADVERSAIRE->Objets[$i];
@@ -111,7 +111,7 @@ if($etape=="1"){
 							//$ADVERSAIRE->OutPut(GetMessage("fouiller_cadavre_01_adv",$valeurs),false);
 							affiche_resultat($PERSO,$ADVERSAIRE,$mess.GetMessage("fouiller_cadavre_01",$valeurs),GetMessage("fouiller_cadavre_01_adv",$valeurs),$mess_spect.GetMessage("fouiller_cadavre_01_spec",$valeurs),true);						
 						}	
-						else $template_main .= GetMessage("noparam").": ChangeProprio Raté";
+						else $template_main .= GetMessage("noparam").": ChangeProprio Rat";
 					} else {
 						$temp= $mess.GetMessage("fouiller_cadavre_01",$valeurs);
 						$valeurs2[0]=$valeurs[2];

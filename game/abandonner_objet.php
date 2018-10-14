@@ -6,7 +6,7 @@ $RCSfile: abandonner_objet.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.21 $
 $Date: 2010/01/24 17:44:00 $
@@ -62,7 +62,7 @@ if(!isset($etape)){
 		$template_main .= "<br /><br />Le dissimuler ou le laisser visible ?<br />";
 		$template_main .= "Le laisser visible : <input type='radio' name='typeact' value='visible' /><br />";
 		$template_main .= "Le dissimuler : <input  type='radio' name='typeact' value='cacher' /><br />";
-		$template_main .= "Le détruire : <input type='radio' name='typeact' value='detruire' /><br />";
+		$template_main .= "Le dtruire : <input type='radio' name='typeact' value='detruire' /><br />";
 		$template_main .= "<br /><input type='submit' value='envoyer' />";
 		
 	}

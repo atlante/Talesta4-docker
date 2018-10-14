@@ -6,7 +6,7 @@ $RCSfile: install.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.19 $
 $Date: 2010/01/24 10:30:06 $
@@ -25,7 +25,7 @@ Copyright (c) 2005, Anthor <anthor@videos-numeriks.net>
 */
 $nb_test=0;
 $nb_test_ok=0;
-// On empeche l'execution du nombre de connectés... Parce que cela provoque un bug aussi... (Demande d'accès a la BDD)
+// On empeche l'execution du nombre de connects... Parce que cela provoque un bug aussi... (Demande d'accs a la BDD)
 Define("AFFICHE_CONNECTES",	0);
 //on empeche sessionleym et sessionleymmj (comprennent des acces a la base)
 Define("__BEGINSESSIONMJ.PHP",0);
@@ -33,9 +33,9 @@ Define("__BEGINSESSION.PHP",0);
 Define("SHOW_TIME",   1); 
 
 /*
-// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALLé ! hii donc ca ferez bugger... 
+// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALL ! hii donc ca ferez bugger... 
 Define("__BDD.PHP",	0);
-// Et on créé  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
+// Et on cr  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
 function closeBDD(){}
 */
 
@@ -85,7 +85,7 @@ function writeSQL($db, $config,$dbmsJeu,$versionLivree) {
         	$mysql_password = $config["mysql_password"];
         	$mysql_database = $config["mysql_database"];
         	
-        	$template_main .="<p>$nb_test_ok instructions se sont executées correctement sur $nb_test.</p><br />
+        	$template_main .="<p>$nb_test_ok instructions se sont executes correctement sur $nb_test.</p><br />
         	<p>
         	A l'&eacute;tape suivante, le programme d'installation va essayer d'&eacute;crire le fichier de configuration <tt>include/config.$phpExtJeu</tt>.<br />
         	Assurez vous que le serveur web a bien le droit d'&eacute;crire dans ce fichier, sinon vous devrez le modifier manuellement.  </p>
@@ -118,10 +118,10 @@ if(isset($_GET['action']))
 	if($_GET['action']=="newinstall")
 		{
 		//$executed_queries=0;
-		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALLé ! hii donc ca ferez bugger... 
+		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALL ! hii donc ca ferez bugger... 
 		Define("__BDD.PHP",	0);
 		Define("DEBUG_MODE",1);
-		// Et on créé  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
+		// Et on cr  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
 		function closeBDD(){}
 		//on efface config.php au cas ou il existerait s'une ancienne install foiree
 		if(file_exists ("../include/config.".$phpExtJeu)) {
@@ -154,7 +154,7 @@ if(isset($_GET['action']))
 			  }
 			  closedir($dir);
 		 } 	  
-		 else $template_main .= "Impossible d'accèder à '". $rep ."'";
+		 else $template_main .= "Impossible d'accder  '". $rep ."'";
 
 
 		$template_main .="<form action='install.$phpExtJeu' method='post'>
@@ -166,28 +166,28 @@ if(isset($_GET['action']))
 			
 			$template_main .="Talesta4+. Veuillez configurer votre moteur en utilisant le formulaire suivant.";
       
-      $template_main .=" ATTENTION !!! Pour une mise à jour,  ce n'est pas la bonne procédure.... Veuillez vous referez au 
-      <a href='../Docs/update.htm'>document concernant la mise à jour</a>"; 
+      $template_main .=" ATTENTION !!! Pour une mise  jour,  ce n'est pas la bonne procdure.... Veuillez vous referez au 
+      <a href='../Docs/update.htm'>document concernant la mise  jour</a>"; 
       
       $template_main .="<input type=\"hidden\" name=\"versionLivree\" value='$versionLivree' /></td></tr>
 	
 			<tr><td></td><td><br />NOTE: Ce programme d'installation va essayer de modifier les options de configurations dans le fichier <tt>include/config.$phpExtJeu</tt>, situ&eacute; dans votre r&eacute;pertoire include. Pour que cela fonctionne, veuillez vous assurez que votre serveur a les droits d'acc&egrave;s en &eacute;criture pour ce fichier. Si pour une raison quelconque vous ne pouvez pas faire &ccedil;a vous devrez modifier ce fichier manuellement (ce programme d'installation vous dira comment).</td></tr>
 	
 			<tr><td></td><td><br /><b>Configuration de la base de donn&eacute;es</b></td></tr>
-			<tr><td></td><td>Type de serveur de base de données. (Seuls Mysql, Oracle et PostGreSQL sont supportés pour le moment.)</td></tr>
-			<tr><td align=\"right\" nowrap=\"nowrap\">Type de base de données :</td><td>";
+			<tr><td></td><td>Type de serveur de base de donnes. (Seuls Mysql, Oracle et PostGreSQL sont supports pour le moment.)</td></tr>
+			<tr><td align=\"right\" nowrap=\"nowrap\">Type de base de donnes :</td><td>";
 			$var=faitSelect("dbmsJeu","","",0,array(),$add=$liste_type_base);
 			$template_main .= $var[1]. "</td></tr>";
 			
-			$template_main .= "<tr><td></td><td>La machine sur laquelle se trouve votre serveur de base de données.   (Ex: Machine pour Mysql (En g&eacute;n&eacute;ral c'est \"127.0.0.1\" si vous installez tout en local sur votre machine), Alias présent dans TNSNAMES.ORA pour oracle).</td></tr>
-			<tr><td align=\"right\" nowrap=\"nowrap\">Machine de base de données :</td><td><input type=\"text\" size=\"50\" name=\"config[mysql_host]\" /></td></tr>
-			<tr><td></td><td>La base de donn&eacute;es &agrave; utiliser pour Talesta4. Cette base de donn&eacute;es doit d&eacute;j&agrave; exister avant de pouvoir continuer. Remarque pour PostgreSQL, l'encodage choisi à la création de la base doit être SQL_ASCII pour plus de compatibilités avec les moteurs PHP et pour pouvoir gérer les accents (Ex : Nom de base pour mysql ou postgreSQL, laissez à vide pour oracle)</td></tr>
+			$template_main .= "<tr><td></td><td>La machine sur laquelle se trouve votre serveur de base de donnes.   (Ex: Machine pour Mysql (En g&eacute;n&eacute;ral c'est \"127.0.0.1\" si vous installez tout en local sur votre machine), Alias prsent dans TNSNAMES.ORA pour oracle).</td></tr>
+			<tr><td align=\"right\" nowrap=\"nowrap\">Machine de base de donnes :</td><td><input type=\"text\" size=\"50\" name=\"config[mysql_host]\" /></td></tr>
+			<tr><td></td><td>La base de donn&eacute;es &agrave; utiliser pour Talesta4. Cette base de donn&eacute;es doit d&eacute;j&agrave; exister avant de pouvoir continuer. Remarque pour PostgreSQL, l'encodage choisi  la cration de la base doit tre SQL_ASCII pour plus de compatibilits avec les moteurs PHP et pour pouvoir grer les accents (Ex : Nom de base pour mysql ou postgreSQL, laissez  vide pour oracle)</td></tr>
 			<tr><td align=\"right\" nowrap=\"nowrap\">Base de donn&eacute;es MySQL ou postgreSQL:</td><td><input type=\"text\" size=\"50\" name=\"config[mysql_database]\" /></td></tr>
-			<tr><td></td><td>Nom et mot de passe de l'utilisateur de base de données qui sera utilis&eacute; pour se connecter &agrave; votre base de donn&eacute;es.</td></tr>
-			<tr><td align=\"right\" nowrap=\"nowrap\">Nom de l'utilisateur base de données :</td><td><input type=\"text\" size=\"50\" name=\"config[mysql_user]\" /></td></tr>
-			<tr><td align=\"right\" nowrap=\"nowrap\">Mot de passe de l'utilisateur base de données :</td><td><input type=\"password\" size=\"50\" name=\"config[mysql_password]\" /></td></tr>
+			<tr><td></td><td>Nom et mot de passe de l'utilisateur de base de donnes qui sera utilis&eacute; pour se connecter &agrave; votre base de donn&eacute;es.</td></tr>
+			<tr><td align=\"right\" nowrap=\"nowrap\">Nom de l'utilisateur base de donnes :</td><td><input type=\"text\" size=\"50\" name=\"config[mysql_user]\" /></td></tr>
+			<tr><td align=\"right\" nowrap=\"nowrap\">Mot de passe de l'utilisateur base de donnes :</td><td><input type=\"password\" size=\"50\" name=\"config[mysql_password]\" /></td></tr>
 			<tr><td></td><td>Pr&eacute;fixe &agrave; utiliser pour toutes les tables utilis&eacute;es par Talesta4+. Ceci vous permet d'utiliser plusieurs moteurs sur une m&ecirc;me base de donnn&eacute;es en donnant diff&eacute;rents pr&eacute;fixes aux tables.</td></tr>
-			<tr><td align=\"right\" nowrap=\"nowrap\">Prefixe des tables :</td><td><input type=\"text\" size=\"50\" name=\"config[table_prefix]\" value='tlt_' /> (Pour plus de compatibilité (en cas de mise a un de lower_case_table_names par ex), il est conseillé de mettre les noms de tables en minuscules...)</td></tr>
+			<tr><td align=\"right\" nowrap=\"nowrap\">Prefixe des tables :</td><td><input type=\"text\" size=\"50\" name=\"config[table_prefix]\" value='tlt_' /> (Pour plus de compatibilit (en cas de mise a un de lower_case_table_names par ex), il est conseill de mettre les noms de tables en minuscules...)</td></tr>
 
 			<tr><td></td><td><br /><b>Configuration de votre site Talesta4</b></td></tr>
 
@@ -350,25 +350,25 @@ elseif(isset($_POST['action'])) {
 		if ($fp)
 		{
 			if(fwrite($fp, $configCode)===false) {
-				$template_main .= "Probleme à l'écriture de '../include/config.".$phpExtJeu."'";
+				$template_main .= "Probleme  l'criture de '../include/config.".$phpExtJeu."'";
 			}
 			// write
 			if (fclose($fp)===false)
-				$template_main .= "Probleme à la fermeture de '../include/config.".$phpExtJeu."'";
+				$template_main .= "Probleme  la fermeture de '../include/config.".$phpExtJeu."'";
 		
 			
-			$template_main .= "<p>Voila c'est termin&eacute; ! Vous pouvez <a href=\"../\">retourner sur votre site Talesta4+</a>. Vous pouvez vous y connecter en tant qu'admin pour personaliser votre jeu. Ensuite, vous pourrez autoriser les joueurs à s'inscrire</p>";
+			$template_main .= "<p>Voila c'est termin&eacute; ! Vous pouvez <a href=\"../\">retourner sur votre site Talesta4+</a>. Vous pouvez vous y connecter en tant qu'admin pour personaliser votre jeu. Ensuite, vous pourrez autoriser les joueurs  s'inscrire</p>";
 			
 			if(file_exists ( "../admin/maj_version_talesta.".$phpExtJeu)) {
 				if(file_exists ( "../admin/maj_version_talesta.bak"))
 					if((unlink("../admin/maj_version_talesta.bak"))===false)
 						$template_main .= "Impossible d'effacer le fichier 'admin/maj_version_talesta.bak'";
-				if(!rename("../admin/maj_version_talesta.".$phpExtJeu, "../admin/maj_version_talesta.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier admin/maj_version_talesta.$phpExtJeu en admin/maj_version_talesta.bak, sinon il y a un risque de mise à jou intenpestive de votre jeu.</p>";}
+				if(!rename("../admin/maj_version_talesta.".$phpExtJeu, "../admin/maj_version_talesta.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier admin/maj_version_talesta.$phpExtJeu en admin/maj_version_talesta.bak, sinon il y a un risque de mise  jou intenpestive de votre jeu.</p>";}
 			}			
 			if(file_exists ( "install.bak"))
 				if((unlink("install.bak"))===false)
 					$template_main .= "Impossible d'effacer le fichier 'install.bak'";
-			if(!rename("install.".$phpExtJeu, "install.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier install.$phpExtJeu en install.bak, sinon vous ne pourrez pas accéder au moteur.</p>";}
+			if(!rename("install.".$phpExtJeu, "install.bak")){	$template_main .= "<p><span class='failed'>AVERTISSEMENT :</span> Impossible de renommer. Veuillez renommer manuellement le fichier install.$phpExtJeu en install.bak, sinon vous ne pourrez pas accder au moteur.</p>";}
 		}
 		else
 		{
@@ -376,7 +376,7 @@ elseif(isset($_POST['action'])) {
 			// Not write ! hii
 			$template_main .="<p><span class=\"failed\">AVERTISSEMENT:</span> Le
 		fichier de configuration <tt>include/config.$phpExtJeu</tt> n'a pu &ecirc;tre
-		cr&eacute;&eacute;. Veuillez vous assurez que votre serveur a les droits d'acc&egrave;s en &eacute;criture pour ce fichier. Si pour une raison quelconque vous ne pouvez pas faire &ccedil;a vous devez copier les informations suivantes dans un fichier et les transf&eacute;rer au moyen d'un logiciel de transfert de fichier (ftp) sur le serveur dans le répertoire include.</p>\n";
+		cr&eacute;&eacute;. Veuillez vous assurez que votre serveur a les droits d'acc&egrave;s en &eacute;criture pour ce fichier. Si pour une raison quelconque vous ne pouvez pas faire &ccedil;a vous devez copier les informations suivantes dans un fichier et les transf&eacute;rer au moyen d'un logiciel de transfert de fichier (ftp) sur le serveur dans le rpertoire include.</p>\n";
 			$template_main .="<form action='install.$phpExtJeu' method='post'>
 			<input type='hidden' name='action' value='writeconfig' />
 			<input type='hidden' name='config' value='".  htmlentities(serialize($config2))."' />
@@ -386,9 +386,9 @@ elseif(isset($_POST['action'])) {
 		}
 	}
 	else{		
-		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALLé ! hii donc ca ferez bugger... 
+		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALL ! hii donc ca ferez bugger... 
 		Define("__BDD.PHP",	0);
-		// Et on créé  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
+		// Et on cr  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
 		function closeBDD(){}
 		// INITIALISATION HEADER DE TALESTA
 		if(!defined("__HEADER.PHP")){@include('../include/header.'.$phpExtJeu);}
@@ -398,13 +398,13 @@ elseif(isset($_POST['action'])) {
 else
 {
 
-		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALLé ! hii donc ca ferez bugger... 
+		// ON EMPECHE L'OUVERTURE DE BDD... BEN OUI YA PAS ENCORE INSTALL ! hii donc ca ferez bugger... 
 		Define("__BDD.PHP",	0);
-		// Et on créé  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
+		// Et on cr  une fonction closebdd vide...(Pour simuler la fermeture de BDD ds footer.php)
 		function closeBDD(){}
 		// INITIALISATION HEADER DE TALESTA
 		if(!defined("__HEADER.PHP")){@include('../include/header.'.$phpExtJeu);}
-		$template_main .='Ce fichier ne peut être executé seul...';
+		$template_main .='Ce fichier ne peut tre execut seul...';
 }
 
 // FINALISATION TALESTA

@@ -6,7 +6,7 @@ $RCSfile: supprimer_quete.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.2 $
 $Date: 2010/02/28 22:58:11 $
@@ -48,7 +48,7 @@ if($etape=="2"){
         			        $valeurs=array();
         			        $valeurs[1]=ConvertAsHTML($nom_quete);			        
 					if ($db->sql_query($SQL)!==false) 
-                				$MJ->OutPut(GetMessage("queteSupprimée",$valeurs),true);
+                				$MJ->OutPut(GetMessage("queteSupprime",$valeurs),true);
 				}	
 			}	
 	

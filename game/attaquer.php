@@ -6,7 +6,7 @@ $RCSfile: attaquer.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.20 $
 $Date: 2010/01/24 17:44:00 $
@@ -54,7 +54,7 @@ if(!isset($etape)){
 			$template_main .= $var2[1];
 			$template_main .= "<br /><br />".BOUTON_ENVOYER;
 		}
-		else $template_main .= "<br />Vous n'avez aucune arme équipée. <br />";		
+		else $template_main .= "<br />Vous n'avez aucune arme quipe. <br />";		
 	}
 	else $template_main .= "Il n'y a personne ici. <br />";
 	$template_main .= "<input type='hidden' name='etape' value='1' />";
@@ -77,7 +77,7 @@ if(!isset($etape)){
 					// on passe bien une string et non la valeur du malus dans le dernier param
 					// Cela permet de contrebalancer le malus avec autre chose 
 					//et de le faire 1 seule fois dans la fonction_attaquer au lieu d'en mettre partout
-					// ne pas permettre de riposte à la première attaque
+					// ne pas permettre de riposte  la premire attaque
 					if ( $i==0)									
 						$degats =attaquer ( $ADVERSAIRE,$PERSO->Objets[$i]->id_clef,$PERSO,false,false,false, true,"MALUS_ATTAQUE1_ATTAQUESENCHAINEES");	
 					else 	

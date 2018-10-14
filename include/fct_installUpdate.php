@@ -6,7 +6,7 @@ $RCSfile: fct_installUpdate.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2010/01/24 19:33:12 $
@@ -43,7 +43,7 @@ require_once("../include/extension.inc");
 			
 	function enteteInstall () {
 		global $phpExtJeu;
-		$configCode = "<?php\n// config.$phpExtJeu créée ".strftime("%c")."\n";
+		$configCode = "<?php\n// config.$phpExtJeu cre ".strftime("%c")."\n";
 		$configCode .="//Par Talesta Install Script\n";
 		$configCode .="\n";
 		$nblignes = substr_count ( $configCode, "\n");
@@ -55,8 +55,8 @@ require_once("../include/extension.inc");
 
 	function enteteMiseAjour ($secondeLigne, $versionInstallee) {
 		global $phpExtJeu;
-		$configCode = "<?php\n".substr($secondeLigne,0,-1). " mise à jour le ".strftime("%c")." pour la version ". $versionInstallee."\n";
-		$configCode .="//Par Talesta Mise à jour Script\n";
+		$configCode = "<?php\n".substr($secondeLigne,0,-1). " mise  jour le ".strftime("%c")." pour la version ". $versionInstallee."\n";
+		$configCode .="//Par Talesta Mise  jour Script\n";
 		$configCode .="\n";
 		$nblignes = substr_count ( $configCode, "\n");
 		$retour= array();
@@ -274,11 +274,11 @@ require_once("../include/extension.inc");
         	$liste_type_lieu_apparitionPerso=array(	            
                             2=>"Foret",                    
                             3=>"Caverne, Sous-terrain",
-                            4=>"Ville fortitiée",
+                            4=>"Ville fortitie",
                             5=>"Campagne",
                             6=>"Village",
-                            7=>"Intérieur d'un batiment",
-                            8=>"Désert",
+                            7=>"Intrieur d'un batiment",
+                            8=>"Dsert",
                             9=>"Plaine"
         	);	
 		return $liste_type_lieu_apparitionPerso;
@@ -309,7 +309,7 @@ require_once("../include/extension.inc");
 		$configCode .="\$userbd = \"".$config["mysql_user"]."\";\n";
 		$configCode .="\$passbd = \"".$config["mysql_password"]."\";\n";
 		$configCode .="\$bdd = \"".$config["mysql_database"]."\";\n";		
-		$configCode .="\$dbmsJeu= \"".$dbmsJeu."\"; //type de base de données \n";
+		$configCode .="\$dbmsJeu= \"".$dbmsJeu."\"; //type de base de donnes \n";
 		$nblignes = substr_count ( $configCode, "\n");
 		$retour= array();
 		$retour[0]=$configCode;
@@ -403,23 +403,23 @@ require_once("../include/extension.inc");
 	}     
 */		
 	/**
-	*       fonction utilisée lors de l'install et de la mise a jour
+	*       fonction utilise lors de l'install et de la mise a jour
 	*/
 	function listeParamInstall($params){
 		$configCode  ="Define(\"INSCRIPTIONS_OUVERTES\",". $params["INSCRIPTIONS_OUVERTES"].");      	//0 pour empecher les inscriptions\n";
 		$configCode .="Define(\"MAINTENANCE_MODE\",".$params["MAINTENANCE_MODE"].");         		// Mettez a 0 pour que tous les PJS et MJS puissent se connecter\n";
 	        $configCode .="                      				// Mettez a 1 cette variable pour bloquer le jeu (tous les PNJ et PJ)\n";
-        	$configCode .="                      				// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui créé à l'init de la base\n";
+        	$configCode .="                      				// Mettez a 2 cette variable pour bloquer le jeu (tous les PNJ et PJ) et les MJ sauf celui cr  l'init de la base\n";
 		$configCode .="Define(\"IN_NEWS\",".$params["IN_NEWS"].") ;               		//commentez la ligne pour ne pas utiliser les news ou mettre 0\n";
 		$configCode .="Define(\"COUNT_QCM\",". $params["COUNT_QCM"].");               		//Pour definir le nombre de question que l'on veut poser avant l'inscription. Si 0 => Inscription sans questionnaire.\n";
 		$configCode .="Define(\"DEBUG_MODE\",".   $params["DEBUG_MODE"].");          		// Mettez a 0, pour ne pas avoir de debug; 1 si vous voulez voir des infos de warning, erreur; 2 si pour les requetes SQL en plus; 3 pour SQL + bachtrace en plus; 4 pour erreurs warning + backtrace . Ne laissez surtout pas a 1,2,3,4 pdt le deroulement du jeu reel\n";
         	$configCode .="Define(\"DEBUG_JEU_ONLY\", ".$params["DEBUG_JEU_ONLY"] .");          	// Mettez a 0, pour avoir du debug du jeu + forum +...; 1 pour le jeu uniquement\n";
-		$configCode .="Define(\"DEBUG_HTML\",". $params["DEBUG_HTML"].");             		// Mettez a 1 si vous voulez stocker les fichiers HTML générés pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
+		$configCode .="Define(\"DEBUG_HTML\",". $params["DEBUG_HTML"].");             		// Mettez a 1 si vous voulez stocker les fichiers HTML gnrs pour valider la syntaxe HTML . Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 		$configCode .="Define(\"SHOW_TIME\",".   $params["SHOW_TIME"].");             		// Mettez a 1 si vous voulez voir les temps d'execution (SQL et PHP) (Rem: L'affichage se fera de toute facon si DEBUG_MODE=1). Ne laissez surtout pas a 1 pdt le deroulement du jeu reel\n";
 		$configCode .="Define(\"AFFICHE_CONNECTES\",".   $params["AFFICHE_CONNECTES"].");       	// Mettez a 1 si vous voulez voir le sous-menu des PJ et MJ connectes  dans le menu de gauche (genere plus de SQL)\n";
 		//$configCode .="Define(\"IN_FORUM\",". $params["IN_FORUM"].");       		// commentez la ligne pour ne pas utiliser les liens vers les forums ou mettre 0\n";
 		$configCode .="Define(\"AFFICHE_XP\",".	$params["AFFICHE_XP"]."); // Mettez a 1 si vous voulez voir les infos d'XP et de niveau\n";
-		$configCode .="Define(\"AFFICHE_PV\",".	$params["AFFICHE_PV"]."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dégats\n";
+		$configCode .="Define(\"AFFICHE_PV\",".	$params["AFFICHE_PV"]."); // Mettez a 1 si vous voulez voir les infos des Points de vie, dgats\n";
 		//$configCode .="Define(\"AFFICHE_AVATAR_FORUM\",".	$params["AFFICHE_AVATAR_FORUM"]."); // Mettez a 1 si vous voulez afficher les images des PJs dans le lieu\n";
 		//$configCode .="Define(\"AFFICHE_NB_MAX_AVATAR\",".$params["AFFICHE_NB_MAX_AVATAR"]."); // Nombre de PJs/MJs/PNJs max dans un meme lieu au dela duquel on n'affiche pas les images (pour des raisons de temps de chargement et de surcharge de la page (-1 = pas de limitation). Ne sert que si AFFICHE_AVATAR_FORUM = 1.\n";
 
@@ -433,10 +433,10 @@ require_once("../include/extension.inc");
 		$configCode .="Define(\"BASE_PIS\",". $params["BASE_PIS"].");		//nb de PI formant la base des PIs des joueurs  \n";
 		$configCode .="Define(\"BASE_POS\",". $params["BASE_POS"].");		//nb de PO formant la base des POs des joueurs  \n";
 		
-		$configCode .="Define(\"QUANTITE_REMISE_PAS\",". $params["QUANTITE_REMISE_PAS"].");		//nb de PA ajoutés à chaque remise de PAs  \n";
-		$configCode .="Define(\"QUANTITE_REMISE_PVS\",". $params["QUANTITE_REMISE_PVS"].");		//nb de PV ajoutés à chaque remise de PVs  \n";
-		$configCode .="Define(\"QUANTITE_REMISE_PIS\",". $params["QUANTITE_REMISE_PIS"].");		//nb de PI ajoutés à chaque remise de PIs  \n";
-		$configCode .="Define(\"QUANTITE_REMISE_POS\",". $params["QUANTITE_REMISE_POS"].");		//nb de PO ajoutés à chaque remise de POs  \n";
+		$configCode .="Define(\"QUANTITE_REMISE_PAS\",". $params["QUANTITE_REMISE_PAS"].");		//nb de PA ajouts  chaque remise de PAs  \n";
+		$configCode .="Define(\"QUANTITE_REMISE_PVS\",". $params["QUANTITE_REMISE_PVS"].");		//nb de PV ajouts  chaque remise de PVs  \n";
+		$configCode .="Define(\"QUANTITE_REMISE_PIS\",". $params["QUANTITE_REMISE_PIS"].");		//nb de PI ajouts  chaque remise de PIs  \n";
+		$configCode .="Define(\"QUANTITE_REMISE_POS\",". $params["QUANTITE_REMISE_POS"].");		//nb de PO ajouts  chaque remise de POs  \n";
 		
 		$configCode .="Define(\"INTERVAL_REMISEPI\",". $params["INTERVAL_REMISEPI"]."); //intervalle de temps (en heures) pour la remise des PI\n";
 		$configCode .="Define(\"INTERVAL_REMISEPA\",". $params["INTERVAL_REMISEPA"]."); //intervalle de temps (en heures) pour la remise des PA\n";
@@ -449,25 +449,25 @@ require_once("../include/extension.inc");
 	
 	
 	/**
-	*       fonction utilisée lors de la mise a jour et du menu config
+	*       fonction utilise lors de la mise a jour et du menu config
 	*/	
 	function listeParamMAJ_config($params){
-        	$configCode = "Define (\"GROUPE_PJS\", ".$params["groupePJs"]."); //Mettez 1 pour permettre aux PJs de se regrouper en groupe (pour déplacements communs par ex.) \n";
+        	$configCode = "Define (\"GROUPE_PJS\", ".$params["groupePJs"]."); //Mettez 1 pour permettre aux PJs de se regrouper en groupe (pour dplacements communs par ex.) \n";
         	$configCode .= "Define (\"RIPOSTE_AUTO\", ".$params["riposteAuto"]."); //Mettez 1 pour permettre aux PJs de riposter automatiquement en cas d'absence \n";
         	$configCode .= "Define (\"RIPOSTE_GROUPEE\", ".$params["riposteGroupee"]."); //Mettez 1 pour permettre la riposte de groupe (Si un joueur d'un groupe est attaque et que l'assaillant n'est pas dans un groupe, alors tous les membres du groupe ripostent) \n";
-        	$configCode .= "Define (\"ENGAGEMENT\", ".$params["engagement"]."); //Mettez 1 pour gérer l'engagement/dégagement lors d'une attaque avec une arme de toucher \n";
+        	$configCode .= "Define (\"ENGAGEMENT\", ".$params["engagement"]."); //Mettez 1 pour grer l'engagement/dgagement lors d'une attaque avec une arme de toucher \n";
         	$configCode .= "Define (\"SECACHER\", ".$params["secacher"]."); //Mettez 1 pour Permettre aux joueurs de se dissimuler dans un lieu  \n";
         	$configCode .= "Define (\"DISTANCE_CRI\", ".$params["distance_cri"]."); //distance en PA Maxi entre 2 lieux ou porte un cri \n";
-        	$configCode .= "Define (\"RESURRECTION\", ".$params["resurrection"]."); //Mettez 1 pour autoriser la résurrection des PJ (sinon le joueur doit refaire un nouveau PJ)  \n";
-        	$configCode .= "Define (\"PV_RESURRECTION\", ".$params["pv_resurrection"]."); //Mettez le nombre de pv qu'a un pj réssucité  \n";
+        	$configCode .= "Define (\"RESURRECTION\", ".$params["resurrection"]."); //Mettez 1 pour autoriser la rsurrection des PJ (sinon le joueur doit refaire un nouveau PJ)  \n";
+        	$configCode .= "Define (\"PV_RESURRECTION\", ".$params["pv_resurrection"]."); //Mettez le nombre de pv qu'a un pj rssucit  \n";
         	$configCode .= "Define (\"NB_MAX_RESURRECTION\", ".$params["nb_max_resurrection"]."); //Nb Max de resurrections \n";
         	$configCode .= "Define (\"LIEU_RESURRECTION\", '".$params["lieu_resurrection"]."'); //Lieu ou se retrouve le PJ apres resurrection (Pas de changement, sinon ID du lieu) \n";
         
         	$configCode .= "Define (\"AFFICHE_PRIX_OBJET_SORT\", '".$params["affiche_prix_objet_sort"]."'); //Affiche le prix des objets et des sorts\n";
           $configCode .= "Define (\"FOUILLE_OBJETS_EQUIPES\", '".$params["fouille_objets_equipes"]."'); //Autorise ou non la recuperation des objets equipes sur un mort\n";
           $configCode .= "Define (\"REUSSITE_AUTO_FOUILLE_OBJETS_EQUIPES\", '".$params["reussite_auto_fouille_objets_equipes"]."'); //La fouille d'un mort est automatiquement une reussite pour un objet equipe\n";
-	        $configCode .= "Define (\"DELAI_SUPPRESSION_MONSTRESMORTS\", '".$params["delai_suppression_monstresmorts"]."'); //Délai avant suppression des monstres morts\n";
-	        $configCode .= "Define (\"MAIL_FA_ARCHIVES\", '".$params["mail_fa_archives"]."'); //Adresse mail de réception des FA archives\n";
+	        $configCode .= "Define (\"DELAI_SUPPRESSION_MONSTRESMORTS\", '".$params["delai_suppression_monstresmorts"]."'); //Dlai avant suppression des monstres morts\n";
+	        $configCode .= "Define (\"MAIL_FA_ARCHIVES\", '".$params["mail_fa_archives"]."'); //Adresse mail de rception des FA archives\n";
 		return $configCode;      
 	}        
 	
@@ -494,7 +494,7 @@ require_once("../include/extension.inc");
 					$Modif .= "Define(\"LARG_MAX_LIEU\",	".$largMaxLieu."); // Largeur Max s'une image de lieu. (-1 = pas de limitation). \n";
 		                        if (!isset($creeMembrePNJ) || $creeMembrePNJ=="")
 		                                $creeMembrePNJ=0;		                        
-		                        $Modif .= "Define(\"CREE_MEMBRE_PNJ\",	".$creeMembrePNJ."); // Créé un membre du forum par PNJ (nécessite que chaque PNJ ait une adresse email unique). (0 = non 1 = Oui). \n";
+		                        $Modif .= "Define(\"CREE_MEMBRE_PNJ\",	".$creeMembrePNJ."); // Cr un membre du forum par PNJ (ncessite que chaque PNJ ait une adresse email unique). (0 = non 1 = Oui). \n";
 					
 					if ((!isset($typeforum)) || $typeforumChoix <> $typeforum) {
 						$forum = instancieForum ($typeforumChoix,$lien_forum);
@@ -504,7 +504,7 @@ require_once("../include/extension.inc");
 				}
 				else {
 					$Modif ="Define(\"IN_FORUM\", 0);       		// commentez la ligne pour ne pas utiliser les liens vers les forums ou mettre 0\n";
-					$GLOBALS['MessageWarning'].="Forum introuvable avec le chemin fourni. Le forum est-il déjà installé ? En attendant, le moteur va se comporter sans forum.";
+					$GLOBALS['MessageWarning'].="Forum introuvable avec le chemin fourni. Le forum est-il dj install ? En attendant, le moteur va se comporter sans forum.";
 				}	
 			}	
 			else $Modif ="Define(\"IN_FORUM\", 0);       		// commentez la ligne pour ne pas utiliser les liens vers les forums ou mettre 0\n";

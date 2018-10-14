@@ -6,7 +6,7 @@ $RCSfile: fctAdminGame.php,v $
 */
 
 /**
-Fichier regroupant des fonctions utilisées a la fois dans admin et dans game
+Fichier regroupant des fonctions utilises a la fois dans admin et dans game
 .\file
 $Revision: 1.2 $
 $Date: 2010/01/24 19:33:11 $
@@ -206,20 +206,20 @@ function EchecQuete($id_perso, $id_persoquete, $temps) {
         						break;
         						case 3:   //refusee						
         						break;
-        						case 4:   //Abandonnée						
+        						case 4:   //Abandonne						
         						break;
-        						case 5:   //Echouée						
+        						case 5:   //Echoue						
         						EchecQuete($id_cible, $toto[$i],false);
         						break;
         						case 6:   //Reussie en attente de validation
         						break;
-        						case 7:  //Réussie (validée)
+        						case 7:  //Russie (valide)
         						reussirQuete($id_cible, $toto[$i]);
         						break;
         						case 8:  //annulee par proposant					
         						AnnulerQuete($id_cible, $toto[$i]);
         						break;
-        						case 9:   //Echouée temps
+        						case 9:   //Echoue temps
         						EchecQuete($id_cible, $toto[$i],true);
         						break;
         

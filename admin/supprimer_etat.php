@@ -6,7 +6,7 @@ $RCSfile: supprimer_etat.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.10 $
 $Date: 2010/02/28 22:58:10 $
@@ -30,7 +30,7 @@ if($etape==2){
 			if ($db->sql_query($SQL,"",BEGIN_TRANSACTION_JEU)) {
 				$SQL = "DELETE FROM ".NOM_TABLE_ETATTEMP." WHERE id_etattemp = '".$id_cible."'";
 				if ($db->sql_query($SQL,"",END_TRANSACTION_JEU))
-					$MJ->OutPut("Etat ".span(ConvertAsHTML($nom_etat),"etattemp")." correctement effacé",true);
+					$MJ->OutPut("Etat ".span(ConvertAsHTML($nom_etat),"etattemp")." correctement effac",true);
 			}
 			$MJ->OutPut($db->erreur);
 		}		
@@ -53,14 +53,14 @@ if($etape=="1"){
 	$SQL ="Select T1.id_typeetattemp as idselect, T1.nomtype as labselect from ".NOM_TABLE_TYPEETAT." T1 ORDER BY T1.nomtype";
 	$var = faitSelect("id_typeetattemp",$SQL,"disabled='disabled'",$row2["id_typeetattemp"]);
 	if ($var[0]>0) {		
-		$template_main .= "type d'état ";
+		$template_main .= "type d'tat ";
 		$template_main .= $var[1];	
 		$template_main .= "<br />";
 	}
-	else $template_main .= "Aucun type d'état temporaire.<br />";	
+	else $template_main .= "Aucun type d'tat temporaire.<br />";	
 	$template_main .= "Visible par les tiers :".faitOuiNon("Visible","disabled='disabled'",$row2["visible"])."<br />";
-	$template_main .= "Utilisable à l'inscription (PJ) :".faitOuiNon("utilisableinscription","disabled='disabled'",$row2["utilisableinscription"])."<br />";
-	$template_main .= "Lieu de départ du PJ avec cet état";
+	$template_main .= "Utilisable  l'inscription (PJ) :".faitOuiNon("utilisableinscription","disabled='disabled'",$row2["utilisableinscription"])."<br />";
+	$template_main .= "Lieu de dpart du PJ avec cet tat";
 	$SQL_lieu = "Select T1.id_lieu as idselect, concat(concat(T1.trigramme,'-'),T1.nom) as labselect from ".NOM_TABLE_LIEU." T1 ORDER BY T1.trigramme, T1.nom ASC";
 	$var= faitSelect("id_lieudepart",$SQL_lieu,"disabled='disabled'",$id_lieudepart,array(),array("&nbsp;"));
 	$template_main .= $var[1];
@@ -94,7 +94,7 @@ if($etape=="1"){
 		$i++;		
 	}
         include('forms/sortFourniParEtat.form.'.$phpExtJeu);
-	$template_main .= "<br /><input type='submit' value='effacer' onclick=\"return confirm('Etes vous sur de vouloir effacer l\'état ".$row2["nom"]." ?')\" />";
+	$template_main .= "<br /><input type='submit' value='effacer' onclick=\"return confirm('Etes vous sur de vouloir effacer l\'tat ".$row2["nom"]." ?')\" />";
 	$template_main .= "<input type='hidden' name='etape' value='2' />";
 	$template_main .= "<input type='hidden' name='id_cible' value='".$id_cible."' />";
 	$template_main .= "</form></div>";

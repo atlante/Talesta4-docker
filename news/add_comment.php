@@ -6,7 +6,7 @@ $RCSfile: add_comment.php,v $
 */
 
 /**
-Briève Description à mettre ici
+Brive Description  mettre ici
 .\file
 $Revision: 1.7 $
 $Date: 2006/04/17 21:25:34 $
@@ -18,7 +18,7 @@ require_once("../include/extension.inc");
 * Talesta-News par Chub
 
 * Script de news avec gestion de smileys, commentaires et BBcode
-* Compatibilité : PHP4, MySQL3  
+* Compatibilit : PHP4, MySQL3  
 */
 
 // FICHIER add_comment.php
