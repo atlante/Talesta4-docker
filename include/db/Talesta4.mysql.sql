@@ -25,7 +25,7 @@ CREATE TABLE tlt_lieu (
   id_forum INTEGER UNSIGNED NOT NULL DEFAULT '0',
   provoqueetat VARCHAR(100) NULL,
   PRIMARY KEY  (id_lieu)
-) type=myisam;
+) ;
 
 
 
@@ -51,7 +51,7 @@ CREATE TABLE tlt_chemins (
   pass VARCHAR(50) NULL,
   distance TINYINT(4) NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -74,7 +74,7 @@ CREATE TABLE tlt_inscriptions (
   sexe TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   description blob NOT NULL,
   PRIMARY KEY  (id)
-) type=myisam;
+) ;
 
 
 
@@ -99,7 +99,7 @@ CREATE TABLE tlt_mj (
   fanonlu TINYINT(3) UNSIGNED DEFAULT '0',
   wantmail TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_mj)
-) type=myisam;
+) ;
 
 
 
@@ -134,7 +134,7 @@ CREATE TABLE tlt_magie (
   competence VARCHAR(50) NULL,
   provoqueetat VARCHAR(100) NULL,
   PRIMARY KEY  (id_magie)
-) type=myisam;
+) ;
 
 
 
@@ -171,7 +171,7 @@ CREATE TABLE tlt_objets (
   provoqueetat VARCHAR(100) NULL,
   competencespe VARCHAR(50) NULL,
   PRIMARY KEY  (id_objet)
-) type=myisam;
+) ;
 
 
 
@@ -206,7 +206,7 @@ CREATE TABLE tlt_perso (
   fanonlu TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   wantmail TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_perso)
-) type=myisam;
+) ;
 
 
 
@@ -228,7 +228,7 @@ CREATE TABLE tlt_etattempnom (
   rpo INTEGER NOT NULL DEFAULT '0',
   visible TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_etattemp)
-) type=myisam;
+) ;
 
 
 
@@ -250,7 +250,7 @@ CREATE TABLE tlt_comp (
   id_comp INTEGER NOT NULL DEFAULT '0',
   xp INTEGER NOT NULL DEFAULT '0',
   PRIMARY KEY  (id)
-) type=myisam;
+) ;
 
 
 
@@ -272,7 +272,7 @@ CREATE TABLE tlt_etattemp (
   id_comp INTEGER NOT NULL DEFAULT '0',
   bonus TINYINT(4) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -292,7 +292,7 @@ CREATE TABLE tlt_persoetattemp (
   id_etattemp INTEGER NOT NULL DEFAULT '0',
   fin INT(35) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -314,7 +314,7 @@ CREATE TABLE tlt_persomagie (
   id_magie INTEGER NOT NULL DEFAULT '0',
   charges TINYINT(4) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -339,7 +339,7 @@ CREATE TABLE tlt_persoobjets (
   temporaire TINYINT(4) NOT NULL DEFAULT '0',
   equipe TINYINT(4) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -360,7 +360,7 @@ CREATE TABLE tlt_persospec (
   id_perso INTEGER NOT NULL DEFAULT '0',
   id_spec INTEGER NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -386,7 +386,7 @@ CREATE TABLE tlt_sessions (
   lastaction INTEGER UNSIGNED NOT NULL DEFAULT '0',
   pj TINYINT(3) UNSIGNED NOT NULL DEFAULT '1',
   PRIMARY KEY  (idsession)
-) type=myisam;
+) ;
 
 
 
@@ -411,7 +411,7 @@ CREATE TABLE tlt_specnom (
   rpv INTEGER NOT NULL DEFAULT '0',
   visible TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_spec)
-) type=myisam;
+) ;
 
 
 
@@ -434,7 +434,7 @@ CREATE TABLE tlt_spec (
   id_comp INTEGER NOT NULL DEFAULT '0',
   bonus TINYINT(4) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -457,7 +457,7 @@ CREATE TABLE tlt_zone (
   type TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   pointeur INT(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_zone)
-) type=myisam;
+) ;
 
 
 
@@ -492,7 +492,7 @@ CREATE TABLE tlt_entitecachee (
   id_lieu  INTEGER NOT NULL REFERENCES tlt_lieu (id_lieu) ON DELETE cascade,
   type TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (id)
-) type=myisam;
+) ;
 
 ALTER TABLE tlt_entitecachee ADD INDEX (id_lieu);
 
@@ -503,7 +503,7 @@ CREATE TABLE tlt_entitecacheeconnuede (
   id_entitecachee INT(10) UNSIGNED NOT NULL REFERENCES tlt_entitecachee (id),  
   id_perso  INTEGER NOT NULL REFERENCES tlt_perso (id_perso) ON DELETE cascade,
   PRIMARY KEY  (id)
-) type=myisam;
+) ;
 
 ALTER TABLE tlt_entitecacheeconnuede ADD UNIQUE(id_entitecachee, id_perso);
 
@@ -524,7 +524,7 @@ CREATE TABLE tlt_archive (
   datearchivage date NOT NULL,
   datedesarchivage date NULL,
   PRIMARY KEY  (id_archive)
-) type=myisam;
+) ;
 
 
 # ajout des groupes de pj
@@ -534,7 +534,7 @@ CREATE TABLE tlt_groupe (
   id_groupe INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,  
   nom VARCHAR(50) NOT NULL,
   PRIMARY KEY  (id_groupe)
-) type=myisam;
+) ;
 
 ALTER TABLE tlt_groupe ADD UNIQUE(nom);
 
@@ -675,7 +675,7 @@ CREATE TABLE tlt_typeetattemp (
   id_typeetattemp INTEGER NOT NULL AUTO_INCREMENT,
   nomtype VARCHAR(50) NOT NULL DEFAULT '',
   PRIMARY KEY  (id_typeetattemp)
-) type=myisam;
+) ;
 
 INSERT into tlt_typeetattemp values (1,'Age') ;
 
@@ -875,7 +875,7 @@ CREATE TABLE if NOT EXISTS tlt_n_commentaires (
   auteur VARCHAR(25) NOT NULL DEFAULT '',
   texte text NOT NULL,
   KEY id (id)
-) type=myisam;
+) ;
 
 DROP TABLE IF EXISTS tlt_n_config;
 
@@ -888,7 +888,7 @@ CREATE TABLE if NOT EXISTS tlt_n_config (
   nom_commentaires VARCHAR(25) NOT NULL DEFAULT 'commentaires(#)',
   nom_INDEX VARCHAR(25) NOT NULL DEFAULT 'INDEX',
   PRIMARY KEY (id)
-) type=myisam;
+) ;
 
 	
 DROP TABLE IF EXISTS tlt_n_news;
@@ -900,7 +900,7 @@ CREATE TABLE if NOT EXISTS tlt_n_news (
   auteur VARCHAR(25) NOT NULL DEFAULT '',
   texte text NOT NULL,
   PRIMARY KEY id (id)
-) type=myisam;
+) ;
 
 
 --
@@ -960,7 +960,7 @@ CREATE TABLE tlt_qcm (
   reponse4 VARCHAR(128) NOT NULL,
   bonne TINYINT(3) UNSIGNED NOT NULL,
   PRIMARY KEY  (id_question)
-) type=myisam ;
+)  ;
 
 
 
@@ -1042,7 +1042,7 @@ CREATE TABLE tlt_engagement (
   nom	VARCHAR( 25 ) NOT NULL,
   propdes TINYINT DEFAULT '0' NOT NULL,
   PRIMARY KEY  (id_perso, id_adversaire)
-) type=myisam;
+) ;
 
 
 # mise a jour des droits pour parler
@@ -1105,7 +1105,7 @@ CREATE TABLE tlt_inscriptetattemp (
   id_inscript INTEGER NOT NULL DEFAULT '0' REFERENCES tlt_inscriptions (id) ON DELETE cascade,
   id_etattemp INTEGER NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_clef)
-) type=myisam;
+) ;
 
 
 
@@ -1157,7 +1157,7 @@ CREATE TABLE tlt_migbugobjetscaches (
   durabilite INTEGER NOT NULL DEFAULT '-1',
   munitions INTEGER NOT NULL DEFAULT '-1',
   PRIMARY KEY  (id_entite)
-) type=myisam;
+) ;
 
 
 insert into tlt_migbugobjetscaches (id,id_entiteOLD,durabilite,munitions)
@@ -1206,7 +1206,7 @@ CREATE TABLE tlt_quetes (
   id_lieu INTEGER NULL,
   proposant_anonyme TINYINT NOT NULL DEFAULT '0',
   PRIMARY KEY  (id_quete)
-) type=myisam;
+) ;
 
 DROP TABLE IF EXISTS tlt_recompensequete;
 
@@ -1216,7 +1216,7 @@ CREATE TABLE tlt_recompensequete (
   type_recompense INTEGER NOT NULL,
   recompense INTEGER NOT NULL,
   PRIMARY KEY  (id_recompensequete)
-) type=myisam;
+) ;
 
 DROP TABLE IF EXISTS tlt_persoquete;
 
@@ -1228,7 +1228,7 @@ CREATE TABLE tlt_persoquete (
   debut  INT(11) NOT NULL DEFAULT '0',
   fin  INT(11) NOT NULL DEFAULT '-1',
   PRIMARY KEY  (id_persoquete)
-) type=myisam;
+) ;
 
 update tlt_objets set type='Nourriture' where type='Divers' and sous_type='Nourriture';
 
@@ -1250,7 +1250,7 @@ CREATE TABLE tlt_apparitionmonstre (
   nb_max_lieu SMALLINT NOT NULL  DEFAULT -1,
   chance_apparition SMALLINT NOT NULL,
   PRIMARY KEY  (id_apparitionmonstre)
-) type=myisam;
+) ;
 
 
 
@@ -1267,7 +1267,7 @@ create table tlt_ppa (
   qte_pa tinyint not null default '0',
   qte_pi tinyint not null default '0',  
   PRIMARY KEY  (id_ppa)
-) type=myisam;
+) ;
 
 
 #alter table tlt_perso add img_avatar varchar(100) null;
@@ -1353,7 +1353,7 @@ id_lieu  integer NOT NULL ,
 detail varchar( 100 ) NOT NULL ,
 heure_action integer NOT NULL ,
 PRIMARY KEY ( id_trace ) 
-) TYPE = MYISAM ;
+)  ;
 
 
 ALTER TABLE `tlt_lieu` CHANGE `accessible` `accessible_telp` TINYINT( 3 ) UNSIGNED NOT NULL DEFAULT '1';
