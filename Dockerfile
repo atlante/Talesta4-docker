@@ -1,27 +1,17 @@
-# PHP 5.6 avec apache pour talesta4
-FROM php:5.6-apache
-MAINTAINER agentcobra <agentcobra@free.fr>
-LABEL maintainer="agentcobra@free.fr"
+FROM php:5.5.38-apache
+RUN apt-get update && apt-get install -y libicu-dev mariadb-client vim\
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl pdo pdo_mysql mysql mysqli \
+&& docker-php-ext-enable mysqli
 
+# Set timezone
+RUN rm /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN "date"
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y git vim
-
+COPY ./ /var/www/html
+RUN chown -R www-data:www-data .
+RUN a2enmod headers
 RUN a2enmod rewrite
-RUN sed -i "/<\/VirtualHost>/i<Directory \"\/\">\nOptions FollowSymLinks\nAllowOverride all\n<\/Directory>" /etc/apache2/sites-enabled/000-default.conf
 RUN service apache2 restart
-
-RUN git clone https://github.com/atlante/Talesta4-docker.git .
-#ADD cake cake
-#ADD plugins plugins
-#ADD vendors vendors
-#ADD .htaccess .htaccess
-#ADD index.php index.php
-
-VOLUME /var/www/html/lieux/
-
-#RUN chmod 777 app/tmp
-
-#SHELL ["cake/console/cake"]
-#RUN console
+RUN php -m
